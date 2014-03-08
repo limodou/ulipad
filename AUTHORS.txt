@@ -1,0 +1,49 @@
+﻿This is a contributing authors list. 
+
+Developer:
+
+limodou <limodou@gmail.com>                     Main programmer
+ygao <ygao2004@gmail.com>                       Developer joined at 2007/01
+
+Great thanks to:
+
+Claudio Grondi <claudio.grondi@freenet.de>      Give a good name 'UliPad'. and big help on Column Mode, Ruler functionality
+Dick Moores <rdmoores@gmail.com>                Proposal many suggestions
+Mario Lacunza <mlacunza@gmail.com>              Commit Spanish translation file and proposal many suggestions
+Ye Naiquan <Naiquan.Ye@marintek.sintef.no>      Commit Patch
+Kelie Feng                                      Create a great video about UliPad and put in ShowMeDo site, and other helps
+Jaime Wyant <pyogrammer.py@gmail.com>           Provide patches, plugins, and many suggestions
+Bo?tjan Mejak <vinetouu@gmail.com>              Fix typos and provide patches
+zhangchunlin <zhangchunlin@gmail.com>           Give some plugins, such as: mGuessLang.py and lua plugin
+Helio Perroni Filho <xperroni@gmail.com>	Give 3 patches, such as: configurable memo path, etc.
+
+Also thanks a lot:
+
+江文 <jiangwen365@gmail.com>			Provide new slash image
+Cheng XiaoSan <chengxiaosan@gmail.com>          Report bugs and proposal suggestions
+nmweizi <nmweizi@163.com>                       Report bugs and commit Patch
+Mkdir <ivan.pirog@gmail.com>                    Report bugs and commit Patch
+Aleksey <Kapkaev@yandex.ru>                     Report bugs and commit Patch
+yeyesho li <yeyesho@gmail.com>                  Give advice to NoteBook
+chaoweilun <chaoweilun@gmail.com>               Submit Traditional Chinese Translation File
+Tom Eubank <tom@afcon.com>                      Patches and documents
+Tyberius Prime <tyberius_prime@coonabibba.de>   Bug reporter and contribute plugin(dropfile)                             
+swordsp <sparas2006@gmail.com>                  Bug reporter and change suggestion
+mikem <mjmaher@iol.ie>                          Commit pylint_plugin
+魏振 <etggy@163.com>                            Provide php.acp
+Hawker                                          Linux memory display patch
+shmakes <shmakes@gmail.com>                     Good advices and code patch
+LP <liupengf12@gmail.com>                       Report bugs and commit Patch
+Bob Gao <lulihummel@gmail.com>                  Provide patch
+Ga?l Barrachon <gael.barrachon@gmail.com>       Commit French translation
+Jose Jachuf <jjachuf@gmail.com>                 Fix Spanish translation
+xw_max <xw_max@163.com>                         Provide patch about passing parameters to winpdb
+Wang Eric <glitch.wang@gmail.com>               Improve UliPad announcement, and provide 
+hase shao <typobj@googlemail.com>               Improve German translation
+sunyin51                                        Provide patches #218, and answer questions
+Roman <romis@wippies.fi>			Provide Russian translation file
+
+patch=======
+
+cjacker                                         Provide a patch #179
+d4ljoyn <d4ljoyn@gmail.com>                     Provide a patch

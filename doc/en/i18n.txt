@@ -1,0 +1,249 @@
+===================
+I18n Implementation
+===================
+
+: Author: limodou
+: Contact: limodou@gmail.com
+: Home: http://code.google.com/p/ulipad/
+: BLOG: http://www.donews.net/limodou
+: Copyright: FDL
+
+(Note: translated from Chinese Simplified by translate.google.com.  Will be improved over time.)
+
+.. contents::
+
+
+one, the usual method
+----------------------
+
+What is i18n, it is the acronym of the international (Internationalization, and I started removing the final N, among a total of 18 characters). For its realization,
+In Python documentation on the gettext in detail. While I wxPyWiki wxPyCookbook found on the realization of the international guidelines
+I have the documentation and tutorial, I began to experiment. 
+
+Example I use handbook provided, but I was revised. First, the addition of Chinese, Spanish and French removed the handle. Second, some of the information on another
+Modules, inter-module testing can be achieved. Also in this module will be conducted with international content on the list, such as:: 
+
+    Message = [_('English'), _('Chinese')]
+
+Now I usually describe a method. 
+
+#.  the main module into gettext module, it needs on the international handling 
+    of the statement, modules into before. Such as::
+
+        Gettext.install('i18ntest', './Locale', unicode=True)
+
+    Three parameters were meant to: 
+
+    * Role of domain name, the translation of documents for limited overnight 
+    * Path, the path translation of documents stored 
+    * Unicode, the use of unicode (If your application is unicode, they were here for True) 
+
+    The above instructions will install a default of the international class. 
+    We need to install a specific class of international, we will be able to::
+
+        Gettext.translation('i18ntest','./Locale',languages=['en']).Install(True)
+
+This will install designated translation of documents. Before gettext.install with two parameters, the third parameter of the specified type of language. Will gettext.translation
+Return to a new object. Implementation of the install function will be installed to support the international language of the designated processing functions. Install the Senate for the use of unicode. 
+
+#.  all need to deal with a string of international add _(), such as: English and Chinese in need of international treatment, then to into: _( 'English')
+    And _( 'Chinese'). This step may be more troublesome. 
+    After the treatment, your program is still no real translation of documents but still be running. 
+
+#.  use pygettext.py strings extraction. Pygettext.py python in the installation package onboard a tool, in tools/i18n Contents
+    In the meantime, there is a msgfmt.py procedures, to be used for the 
+    translation of documents into gettext identifiable binary files. Command-line 
+    parameters are as follows:: 
+
+        Python pygettext.py File Name
+
+Both documents were many. The python pygettext.py - help it can be seen what 
+support options. If you do not specify the output file name, it'll create a file
+named messages.pot by default. It is the most primitive to translate 
+documents into other languages. Open it you will see the following as possible:: 
+
+    # SOME DESCRIPTIVE TITLE.
+    # Copyright (C) YEAR ORGANIZATION
+    # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+    #
+    msgid ""
+    msgstr ""
+    "Project-Id-Version: PACKAGE VERSION\n"
+    "POT-Creation-Date: Mon Jun 14 13:28:26 2004\n"
+    "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+    "Last-Translator: FULL NAME <\n">EMAIL@ADDRESS>\n"
+    "Language-Team: LANGUAGE <\n">LL@li.org>\n"
+    "MIME-Version: 1.0\n"
+    "Content-Type: text/plain; charset=CHARSET\n"
+    "Content-Transfer-Encoding: ENCODING\n"
+    "Generated-By: pygettext.py 1.5\n"
+
+    #: i18ntest.py:28 i18ntest.py:76
+    msgid "MiniApp"
+    msgstr ""
+
+    #: i18ntest.py:39 i18ntest.py:85
+    msgid "E&xit"
+    msgstr ""
+
+    A messages.pot comprising the following elements: 
+
+    *  '#' to start the Notes 
+    *  empty row 
+    *  msgid OK, a translation of that, how can firms. If more firms, such as fractal:: 
+
+        Msgid ""
+        "This is a multiline \ n"
+        "Test"
+        If msgid content is empty, the document said msgstr information
+
+    * msgstr OK, that a translation can be more, the same format msgid. If msgid 
+      is empty, compared with document information. In the document information 
+      can be input Commissioner. Some asked this situation, the most important 
+      of which is charset domain specified in this document for a coded message, 
+      which is to save the document to be used in the encoding. Chinese proposals 
+      on the use utf-8 encoding. 
+
+    Then we get this pot documents, the first of its preservation for the different versions 
+    to the following translation. Such as: messages_cn.po. Translation, only consider
+    Msgid not empty, was asked to be in the msgstr. 
+
+4.  use msgfmt.py document will po mo converted to binary documents. The command line as follows:: 
+
+        Python msgfmt.py messages_cn.po
+
+    This will generate a  messages_cn.mo called the binary files. 
+
+5.  installation mo document. Mo is the fact the correct position on the document. Gettext request translation of documents organized into the following directories:: 
+
+    ./Locale/en/LC_MESSAGES
+    ./Locale/cn/LC_MESSAGES
+
+    Locale in gettext.translation in designated. En, cn language classification. 
+    LC_MESSAGES is requested. Mo also should read documents and Scope
+
+    The same, as i18ntest.mo.
+     
+    Through the steps above, with a support of the international availability of the 
+    procedure.  In wxPyWiki Guide mki18n.py used in the procedure. But I used the python's
+    own tools, and guide differentiated. 
+
+two, problems encountered
+-------------------------
+
+By the usual methods of some inconvenient place, I feel the following points: 
+
+1.  Pygettext.py can read more than one paper, but too many documents, in order not to be easily put aside. Documents do not support directory and list processing. 
+2.  When I revised the procedures, the need to translate parts of the changes, if new changes to the original content has been translated merger? 
+3.  Local / en / directory organizations such LC_MESSAGE some trouble. 
+ 
+three, the solution
+-------------------
+
+For the first one, my solution is to amend pygettext.py source. I did not realize directory, list of the documents dealt with. First The need to deal with the Python source files generated a document, a document of the party. Then pygettext.py increase in the list of documents from the command line election Xiang. The revised document if interested can download the latest source code UliPad.py (published in this paper, can only download from the cvs). 
+
+For the second question, my solution is to prepare a merger. First, it would have translated documents read out by keyword saved to a dictionary. To read the latest generation of translation of documents, translated documents for each of the translation of one, if not in the dictionary there, it will be directly inserted into the dictionary; If so, And asked not to air, then the replacement of the original Yes. Dealing with the new translation of documents, then remove dictionary keywords in the new translation of documents in the non-existent. This Points may have to pay attention to, because I always creating new translation of documents is a complete collection, I use this method to remove unwanted items translation. If the new inverted Translation document is not complete collection, removal should be removed from the dictionary keyword operation. But if removal of unwanted translation of the manual to be completed. This procedure also UliPad in the source code. 
+
+For the third question, I gettext.py access to the sourcecode. Find out why in () function. It finally, the need to generate a mo file name, as follows::
+
+    Mofile = os.path.join(localedir, lang, 'LC_MESSAGES', '%s.mo'%domain)
+
+Mo can see a document by the name of the directory, the type of language, LC_MESSAGES, and the role of the domain name. Form:: 
+
+    Localedir/lang/LC_MESSAGES/domain.mo
+
+Therefore, the need to establish this as the corresponding directory, and mo files on the corresponding directory. 
+
+My idea is: all the translation of documents on the same directory (if large projects involving many different matter on the translation process), Document Translation: overnight _ region coding. Mo. Why not encoding language? Because, as English and Chinese are the difference between English and language are en coding, From this fundamental distinction. If regional coding can be, respectively cn and tw. 
+
+So in order to achieve this role, I prepared the gettext own i18n model in achieving the gettext function also satisfied on the basis of my request. While this Modules can also operate under the default locale automatically called the corresponding translation of documents. With this document in UliPad source code. 
+
+ Thus, in UliPad with i18n related elements: 
+
+*  pygettext.py(Modified)
+*  Msgfmt.py 
+*  I18n.py (of gettext function) 
+*  Mergepo.py (Merger po language) 
+
+four, the specific use UliPad
+------------------------------
+
+UliPad in the start-up procedures - UliPad. Py around in front of Accession:: 
+
+    1    sys.path.append('./modules')
+    2    import i18n
+    3    i18n = i18n.I18n('UliPad', './lang', unicode=True)
+    4    try:
+    5        import Lang
+    6    except:
+    7        pass
+    8    else:
+    9        i18n.install(Lang.language)
+
+
+I18n is on modules in the directory. The third generation of a i18n object, it calls the same parameters gettext.install. This runs to the third line will be Called automatically default translation of documents. The default document translation: from the default system locale, be in code, and area code judgment match the translation of documents Here, if there is load; If it does not exist, not the use of any translation of documents, so the system of the international treatment. 
+
+5 trip into Lang module. It is in fact, I used a small tricks. Users can specify the type of language, if designated completed, will be in modules directory Lang.py generate a document, which reads: language = "language." That is the language of the user selected area code to preserve this document to the next Startup called corresponding language documents. Therefore, users UliPad changes in the language, only to resume the new language settings will take effect. 
+
+Into i18n only need to be initiated into the module, other modules do not have to import. 
+
+Then can be translated in all areas to join _ () (fore work). 
+
+Then generate a list of documents. 
+
+Call pygettext.py UliPad_cn.po generation language documents. 
+
+Right UliPad_cn.po translation. 
+
+Call msgfmt.py to compile UliPad_cn.po to mo file. 
+
+Will UliPad_cn.mo lang files are copied to the directory. 
+
+Start UliPad, OK, basically not a problem. 
+
+If the source code to be amended, then called pygettext.py generate new translation of documents messages.pot. Call mergepo.py (with language) the new and old Fusion. Mo to generate documents, copies of the directory lang, so cycle.  UliPad but there are also a problem: how to deal with the resources xml document. 
+
+In UliPad, like search, search and replace, text, text - including several features of this dialog are using the resources of the xml document, is not As general as to the source _ () to handle. My method is to generate resources in different languages xml documents, the need to use resources in the document, in accordance with the procedures selected The language, called the corresponding resource files. Because resources are xml document, the text encoding with the encoding xml consistent statement. The Chinese inverted Translation of documents, the proposed use utf-8 encoding. Because utf-8 is the default xml use encoding. 
+
+of: the realization of gettext
+-------------------------------
+
+Is my understanding! 
+
+Gettext function actually quite simple: the definition _ () function, and installation, according to the translation of the introduction of a document from the mo asked, and the logo applied uniocde The unicode encrypted. 
+
+A gettext clients access to the two basic functions:: gettext and ugettext. No one used to be asked transcoding, with a Unicode to be transformed into asked. Unicode under a sign that one of the two functions will be used to _ () function on. If not install any Yes, back to the default Translation is the only back, returned unchanged. Do not install any translation, gettext same can be used. 
+
+How to install _ (). 
+
+::
+
+    import __buildin__
+    __buildin__.__dict__['_']=unicode and self.ugettext or self.gettext
+
+This will be _ () function into a built-in functions, in the follow-up to the other modules can directly use it. Therefore, the use of gettext, installation to be very on
+and load it before the starup module
+
+Postscript: Why not dynamically updated interface UliPad 
+
+Since the realization of the international  treatment, if you change the use of the language, if not immediately changed the entire application better? Of course very attrĺactive, but UliPad Problems. On the one hand, all interface with the international handling of the relevant local, should use the code to achieve renewal process, workload. In addition, unless the test, a user Not always in various languages to switch to switch between, are generally fixed to a certain language, therefore, re-start after the opening of a new set of language is acceptable Program. There is one important reason: the use of _ () function in this way are only suitable for calling, the global variable or variables module powerless. Why? For example:: 
+
+    Message = _('Chinese')
+
+That defines a variable. If it is the existence of a module, module as a global variable so that when the introduction of this module, this statement will be implemented. And I. The process will be implemented first. When this statement after the message is that the implementation of specific value, and is no longer message = _ ( 'Chinese') Such a statement. So, When we change the language, the message is only one language translation, not a new translation. This is really very difficult to solve. And why in the function call Can? Strictly speaking this should be in the form of::
+
+    Call (_ ( 'Chinese'))
+
+This is because when the call is a dynamic function, parameter calculation, therefore, call on every invocation will be re-calculated parameter's value, so that way we can. General to Said that if the implementation of each can call _ () function, this can be achieved Dynamic language switching. If not, use static language switching. Therefore UliPad Use of the static language switching. 
+
+
+i18n problem of a small
+------------------------
+
+Is not only I found that the use of UliPad other people also found that sometimes in the Shell window some statement and then return to the document window, with the mouse Subject mobile text automatically selected, or even buttons are non-functional. This issue is very interesting, why he had ordered the Shell will work? Later, I found that this Because of the use of the i18n _ () function and Shell _ in the conflict caused by variable. In Shell, a command End implementation, the results on the preservation of order in _ variable. But i18n this' _ 'use of a built-in function, thus creating the two conflicts. So I had to UliPad of all _ () function has changed all Tr () (define), Now before we can solve this problem. To illustrate, PyShell (use it generated Shell window) and the variable space is UliPad Overlap. Probably not, since the i18n _ () function is built through its placement in __builtin__, and the overall situation is __builtin__ share, So it is bound to affect changes to other modules.
+ 
+Fortunately, this problem can be solved. But PyShell seem not to support Chinese. More than originally wanted to achieve some features, but bring some negative impact carefully is the best oh.
+
+`_` [Return]
+
+.. _ `[Return]`: technical.htm

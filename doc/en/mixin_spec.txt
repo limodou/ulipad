@@ -1,0 +1,19 @@
+============================
+ Mixin Development Standards
+============================
+
+(Note: translated from Chinese Simplified by translate.google.com.  Will be improved over time.)
+
+.. contents::CONTENTS
+
+Objective
+---------
+
+Document the UliPad Mixin Development Standards.
+
+Document 
+--------
+
+All Mixin modules are stored in the mixins directory.  The filename begins with a lowercase ``m``, as mAutoBack.py. Only the document simply articulated function (Mixin and plugin), general should only import generic category, for special treatment may be needed into the other category, if these are their own category
+
+The preparation, it should be an independent document. General on mixins directory. And if not an impact on the overall situation, should be in the corresponding Office Rationale function into these categories, rather than on the beginning of places.

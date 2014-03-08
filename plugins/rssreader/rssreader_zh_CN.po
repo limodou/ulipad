@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rss reader\n"
+"POT-Creation-Date: Tue Dec 20 09:50:37 2005\n"
+"PO-Revision-Date: 2006-01-19 11:26+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: newedit <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ..\plugins\rssreader\RssPage.py:152
+msgid "Subject"
+msgstr "主题"
+
+#: ..\plugins\rssreader\RssPage.py:153
+msgid "Date"
+msgstr "日期"
+
+#: ..\plugins\rssreader\RssReader.py:403
+#: ..\plugins\rssreader\RssReader.py:514
+msgid "Category Name:"
+msgstr "分类名称："
+
+#: ..\plugins\rssreader\RssReader.py:405
+msgid "Category Properties"
+msgstr "分类属性"
+
+#: ..\plugins\rssreader\RssReader.py:424
+#: ..\plugins\rssreader\RssReader.py:448
+msgid "Feed Caption:"
+msgstr "消息源标题："
+
+#: ..\plugins\rssreader\RssReader.py:425
+#: ..\plugins\rssreader\RssReader.py:449
+msgid "Feed URL:"
+msgstr "消息源URL："
+
+#: ..\plugins\rssreader\RssReader.py:426
+msgid "Home URL:"
+msgstr "主页 URL："
+
+#: ..\plugins\rssreader\RssReader.py:429
+msgid "Feed Properties"
+msgstr "消息源属性"
+
+#: ..\plugins\rssreader\RssReader.py:448
+msgid "Caption"
+msgstr "标题"
+
+#: ..\plugins\rssreader\RssReader.py:449
+msgid "New Feed URL"
+msgstr "新消息源URL"
+
+#: ..\plugins\rssreader\RssReader.py:452
+#: ..\plugins\rssreader\__init__.py:103
+msgid "Add Feed"
+msgstr "增加消息源"
+
+#: ..\plugins\rssreader\RssReader.py:514
+msgid "New Category"
+msgstr "新分类"
+
+#: ..\plugins\rssreader\RssReader.py:517
+msgid "Input"
+msgstr "输入"
+
+#: ..\plugins\rssreader\__init__.py:32
+#: ..\plugins\rssreader\__init__.py:58
+msgid "RSS Reader"
+msgstr "Rss阅读器"
+
+#: ..\plugins\rssreader\__init__.py:73
+msgid "Rss Reader database file"
+msgstr "Rss阅读器数据库文件"
+
+#: ..\plugins\rssreader\__init__.py:73
+#: ..\plugins\rssreader\__init__.py:74
+#: ..\plugins\rssreader\__init__.py:75
+#: ..\plugins\rssreader\__init__.py:76
+#: ..\plugins\rssreader\__init__.py:77
+#: ..\plugins\rssreader\__init__.py:78
+msgid "Rss Reader"
+msgstr "Rss阅读器"
+
+#: ..\plugins\rssreader\__init__.py:74
+msgid "How long to refresh the feeds"
+msgstr "多长时间刷新消息源"
+
+#: ..\plugins\rssreader\__init__.py:75
+msgid "How long to set readed flag as you are reading a post"
+msgstr "当正在阅读一个贴子时多长时间置为已读状态"
+
+#: ..\plugins\rssreader\__init__.py:76
+msgid "Refresh all the feeds as startup"
+msgstr "在启动时刷新所有消息源"
+
+#: ..\plugins\rssreader\__init__.py:77
+msgid "As leaving a feed, set all posts read"
+msgstr "当离开消息源时，置所有贴子为已读"
+
+#: ..\plugins\rssreader\__init__.py:78
+msgid "As dealing a feed, auto parse the feed information"
+msgstr "当处理消息源时，自动分析消息源的信息"
+
+#: ..\plugins\rssreader\__init__.py:90
+msgid "Add Category"
+msgstr "增加分类"
+
+#: ..\plugins\rssreader\__init__.py:91
+#: ..\plugins\rssreader\__init__.py:104
+#: ..\plugins\rssreader\__init__.py:114
+msgid "Refresh"
+msgstr "刷新"
+
+#: ..\plugins\rssreader\__init__.py:93
+msgid "Import OPML"
+msgstr "导入 OPML"
+
+#: ..\plugins\rssreader\__init__.py:94
+msgid "Export OPML"
+msgstr "导出 OPML"
+
+#: ..\plugins\rssreader\__init__.py:96
+msgid "ReCreate Database"
+msgstr "重建数据库"
+
+#: ..\plugins\rssreader\__init__.py:105
+#: ..\plugins\rssreader\__init__.py:115
+msgid "Stop Refresh"
+msgstr "停止刷新"
+
+#: ..\plugins\rssreader\__init__.py:107
+#: ..\plugins\rssreader\__init__.py:119
+msgid "Properties"
+msgstr "属性"
+
+#: ..\plugins\rssreader\__init__.py:116
+msgid "Make All Posts Read"
+msgstr "将所有贴子置为已读"
+
+#: ..\plugins\rssreader\__init__.py:117
+msgid "Delete All Posts"
+msgstr "删除所有贴子"
+
+#: ..\plugins\rssreader\__init__.py:165
+#: ..\plugins\rssreader\__init__.py:177
+msgid "Choose a OPML filename"
+msgstr "选择一个 OPML 文件"
+
+#: ..\plugins\rssreader\__init__.py:174
+msgid "Parsing OPML..."
+msgstr "正在分析 OPML ..."
+
+#: ..\plugins\rssreader\__init__.py:186
+msgid "Saving OPML..."
+msgstr "正在保存 OPML ..."
+
+#: ..\plugins\rssreader\__init__.py:199
+msgid "Confirm"
+msgstr "确认"
+
+#: ..\plugins\rssreader\__init__.py:199
+msgid ""
+"Do you really want to re-create the rss database?\n"
+"All data in it will be lost!"
+msgstr ""
+"你真的想重新创建rss数据库吗？\n"
+"所有的数据都将会丢失！"
+
+#: ..\plugins\rssreader\__init__.py:207
+msgid "Rss database is created successfully!"
+msgstr "Rss数据库被成功创建!"
+

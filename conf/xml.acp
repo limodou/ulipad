@@ -1,0 +1,13 @@
+[include]
+1 = docbook_xml.acp
+
+[autostring]
+
+[autostring_append]
+
+[autore]
+<(\w+)[^>]*(?<!/)> = \0!^</\1>
+
+[autore_append]
+
+[autovalues]

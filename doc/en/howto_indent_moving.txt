@@ -1,0 +1,31 @@
+====================================
+How to use indent moving
+====================================
+
+:Author: limodou
+:Contact: limodou@gmail.com
+
+What is Indent Moving Functionality?
+
+Sometimes we need to move cursor through class methods or functions
+quickly, and how to do that? I found I can do this according the indent 
+level. So I'v finished this funcationality according the indent level 
+to quick move cursor.
+
+**Alt + Up** 
+  Moving cursor to previous same indent level line
+
+**Alt + Down** 
+  Moving cursor to next same indent level line
+
+**Alt + Left** 
+  Moving cursor to parent indent level line, that's the indent level should 
+  less than current indent level
+
+**Alt + Right** 
+  Moving cursor to child indent level line, that's the indent level should 
+  great than current indent level
+
+And I think this feature maybe useful. 
+
+`[Return] <index.htm>`_

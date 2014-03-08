@@ -1,0 +1,24 @@
+[default]
+
+[autostring]
+
+[autostring_append]
+${<space> = !^ }
+<%include<space> = 'file="${1:}"/>${0}'
+<%inherit<space> = 'file="${1:}"/>${0}'
+<%def<space> = 'name="${1:}">\n${2:}\n</%def>${0}'
+<% = page,include,def,namespace,inherit,call,doc,text
+
+[autore]
+<(\w+)[^>]*(?<!/)> = \0!^</\1>
+
+[autore_append]
+(?i)<%page[^>]*?\s+cached<equal> = '"${1:True}"${0}'
+(?i)<%page[^>]*?\s+cache_type<equal> = '"${1:memory}"${0}'
+(?i)<%page[^>]*<space> = args,cached,cache_type
+(?i)<%namespace[^>]*<space> = file,import,name
+(?i)<%text[^>]*<space> = filter,
+(?i)<%call[^>]*<space> = expr,args
+<(\S+)[^>]*<equal> = '"${1:}"${0}'
+
+[autovalues]

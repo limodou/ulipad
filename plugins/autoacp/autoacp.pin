@@ -1,0 +1,6 @@
+[info]
+author = Jaime Wyant
+date = 2008-10-24
+version = "1.0"
+description = "Allows users to create 'sub'-acp modes"
+homepage = http://simiansector.com/ulipad/plugins/autoacp

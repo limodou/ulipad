@@ -1,0 +1,232 @@
+==========================================
+How to use the Code Snippets Window (CSW)
+==========================================
+
+:Author: Dick Moores
+:Contact: rdmoores@gmail.com
+
+.. contents:: Content
+.. sectnum::
+
+Usage
+----------
+
+The CSW provides a convenient way to save snippets of code, and categorize them
+into folders and even subfolders of these folders.
+
+The CWS will open in the left panel, by choosing **Tools** -> **Code Snippets** or
+**Window** -> **Open Code Snippets Window**. Or click on the
+**Open Snippets Window** icon on the tool bar.
+
+To begin to add snippets, you must first create a snippet file, with the
+extension ".spt". To do this, open the CWS's context menu by right-clicking
+anywhere in the CWS, and choose the **New Snippet File...** menu item. This will
+open the New Snippet File dialog. Type a name for the file, e.g.,
+CodeSnippets.spt, and click the Save button. You will then see a folder
+icon appear at the top of the CWS with the caption "Untitled". This caption
+can be changed to something else, but it's not necessary to do so.
+
+Next, create one or more subfolders to this "master folder" by using its
+context menu, and choosing **Add Sub Folder**. Do this for each of the main
+categories of snippets you think you may want, and assign captions to each
+of them. Captions can be easily renamed at any time, and new subfolders
+can be added at any time.
+
+    .. image:: snippet_01.jpg
+
+The image shows the "master folder", "Snippets", and 3 subfolders, A, B, C.
+More than one snippet file can be created--each one represented in the CSW
+by a "master folder" icon. However, for simplicity let's stay with just one
+snippet file for a while. The snippet file stores on your
+hard disk all the information about the CSW--all the folders, nodes, and their
+configuration--and is used to create what you see in the CSW. Therefore, the
+CSW folders or their snippets are not to be found separately on your hard disk.
+
+Now, let's get a snippet into subfolder A. There are two ways this can be done.
+
+**Method 1**.
+    Create a blank node by opening A's context menu and choosing **Add Sub Node**.
+
+Here's what you'll see:
+
+    .. image:: snippet_02.jpg
+
+Then single-click on the new node. This will open the lower panel, with a
+"Snippet" tab. Into this either type or paste the snippet you want to keep in
+NewNode. Save it by clicking on the Save icon just above the master folder.
+You should identify this snippet by assigning its node an appropriate caption.
+
+**Method 2**.
+    Create a node by selecting some code or text, dragging it to A and dropping
+    it on the A icon. This will create a new node that belongs to A, but this
+    node will contain the snippet you dragged. You can see the snippet, and edit
+    it if necessary at any time, by double-clicking on the node. The text of the
+    snippet will appear in the lower panel. Be sure to save the snippet when
+    you have finished with any editing.
+    
+Continue to add nodes to A by either of the 2 methods. Let's add a couple of
+more nodes, give them appropriate labels, and save them:
+
+    .. image:: snippet_03.jpg
+
+Reordering nodes within a folder.
+
+Possibly you would want to have the 3 nodes in the order math.log(), math.pow(),
+math.sqrt(). This can be easily done in either of 2 ways:
+
+1. Drag the math.pow() node and drop it on the math.log() node.
+
+or
+
+2. Drag the math.log() node and drop in on the math.pow() node while holding
+   down the Shift key.
+
+Either 1 or 2 will result in the reordering you wanted:
+
+    .. image:: snippet_03.jpg
+
+Let's say you decided that math.sqrt() would be more appropriately placed in
+category B. Simply drag and drop the math.sqrt() node onto the B icon. The result:
+
+    .. image:: snippet_05.jpg
+
+But now you realize that it would make sense to keep math.sqrt() in both A
+and B. So you need to copy math.sqrt() to A. Do this with an ordinary Copy
+and Paste: Select math.sqrt(), press Ctrl+C; select math.pow(), press Ctrl+V. Voila!:
+
+    .. image:: snippet_06.jpg
+
+With a little experimentation, you will find that any configuration of folders
+and nodes is possible. Of course, subnodes of nodes, and subfolders of nodes
+are not possible. But subfolders of subfolders of subfolders of ...  ARE possible:
+
+    .. image:: snippet_07.jpg
+
+Should you forget to save any of changes you've made in CSW, whether in a
+snippet itself, or by copying, moving, creating or deleting nodes or folders,
+when you try to close Ulipad a notice will pop up, "Some changes have been
+made to the Code Snippets Window. Do you want to save them?". Click OK.
+
+To delete a folder or node, simply highlight the caption of the folder or node
+to be deleted and press the "Delete" key.
+
+To get a snippet from the CSW into a script in the script window, place the
+caret (or cursor) at the spot you want to insert the snippet. Hold down the Ctrl
+key and click on the snippet's node. That pastes a copy of the snippet at your
+chosen spot.
+
+Appendix
+----------
+
+Snippet files and the CSW context menu.
+
+There are 7 items concerning snippet files on the CSW context menu
+
+
+1. **New Snippet File...**
+
+   Opens the New Snippet File dialogue box. Enter a filename for the new snippet
+   file, click Save, and a new snippet file will have been created. This will
+   show in the CSW as a new master folder captioned "Untitled". (A snippet file
+   cannot be deleted through the CSW. Find it in Explorer and delete it there.)
+   
+2. **Open Snippet File...**
+
+   Opens the Open Snippet File dialogue box. If necessary, navigate to the
+   folder containing the snippet file you wish to open. When you double-click
+   on the file in the dialogue box, the corresponding master folder will show
+   in the CSW.
+   
+3. **Recent Snippet Files**
+
+   Shows a list of the last snippet files opened, with the most recently
+   opened at the top. Clicking on one will open it in CSW, unless it is
+   already open.
+
+4. **Save Snippet File**
+
+   Save a snippet file to which changes have been made, by selecting
+   it's master folder and choosing "Save Snippet File".
+
+5. **Save All Snippet Files**
+
+   This will save all snippet files whether their master folders are
+   selected or not.
+
+6. **Save Snippet File As...**
+
+   Save selected snippet file to another filename.
+   
+7. **Close Snippet File**
+
+   To close a snippet file, select any folder or node of this snippet file
+   and choose Close Snippet File. The master folder (and of course its
+   subfolders and nodes) will disappear from the CSW.
+
+Miscellaneous Tips
+~~~~~~~~~~~~~~~~~~~
+
+1. It is convenient to store all snippet files in the same Explorer folder.
+   This will permit easy access to all snippet files through the Open Snippet
+   File dialogue box, which will open that folder in Explorer every time.
+
+2. It's also convenient to have the master folder icon captions be the same
+   as the filenames of their corresponding snippet files. However, even if
+   they are different, a mouse hover on a master icon in the CSW will show
+   the path and filename of the corresponding snippet file in a tooltip.
+
+3. When a master folder icon shows a small red circle with a white "!"
+   inside (see image just below), it means that an as yet unsaved change
+   has been made to one of its subfolders or nodes, or to the caption of
+   the master folder itself. To save the change, select the master folder
+   icon and click on the Save icon above the CSW (or choose Save Snippet
+   File on the context menu). Or simply click on the Save All icon. The red
+   circle and its "!" will disappear.
+
+    .. image:: snippet_09.jpg
+
+4. It is possible to have more than one snippet file open in the CSW. Each open
+   snippet file will of course have its corresponding master folder in the CSW.
+   Snippet files can be shared among Ulipad users. To use a friend's snippet
+   file, just copy it to your harddisk, and open it in the CSW. See item 2 in
+   the Appendix.
+
+5. Moving or copying folders and nodes into almost any imaginable configuration
+   is easily accomplished. Even moving and copying between separate master
+   folders (which represent separate open snippet files).
+
+6. You can change the properties of master folders and snippet nodes through
+   their context menus, the Preferences.., item. For a master folder, you can
+   change
+
+    .. image:: snippet_08.jpg
+
+Title, Author, Version, Date. and Description
+
+For a snippet node, you can change its syntax highlight language to any supported
+by UliPad.
+
+7. Ulipad has a new tool for importing into the CSW the categories and
+   snippets made using the old Ulipad tool. If there are any, they can be
+   seen by choosing Window -> Open Snippets Window. The new tool is
+   snippet_convert.py, in the Ulipad tools folder. To use it, open the
+   command prompt window, navigate to the tools folder, and execute the
+   command, "python snippet_convert.py". This will create a snippet file,
+   out.spt, in the snippets folder in Explorer. Open out.spt in the CSW
+   and you should see your old categories as subfolders to a master folder
+   captioned "Untitled". The snippets will be nodes of these subfolders.
+   At this point you may want to heed 1 and 2 above: Move out.spt to the
+   folder containing your other snippet file(s); rename out.spt to, say,
+   "MyOldSnippets.spt"; open MyOldSnippets.spt in the CSW; and finally,
+   change the "Untitled" caption to "MyOldSnippets". Then close and reopen
+   Ulipad to see that the changes have taken place in the CSW.
+
+8. To repeat from above:
+
+    a. To inspect or edit a snippet, double-click on it's node in the CSW. The
+       snippet's text will appear in the lower panel.
+
+    b. To paste the text of a snippet, whether or not it is showing in the lower
+       panel, hold down the Ctrl key and click on the snippet's node in the CSW.
+
+`[Return] <index.htm>`_

@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>项目介绍</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="id1">
+<h1 class="title">项目介绍</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">作者:</th><td class="field-body">limodou</td>
+</tr>
+<tr class="field"><th class="docinfo-name">联系:</th><td class="field-body"><a class="reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">主页:</th><td class="field-body"><a class="reference" href="http://code.google.com/p/ulipad/">http://code.google.com/p/ulipad/</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">BLOG:</th><td class="field-body"><a class="reference" href="http://www.donews.net/limodou">http://www.donews.net/limodou</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">版权:</th><td class="field-body">GPL</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic">
+<p class="topic-title first"><a id="id2" name="id2">目录</a></p>
+<ul class="auto-toc simple">
+<li><a class="reference" href="#id3" id="id18" name="id18">1&nbsp;&nbsp;&nbsp;引言</a><ul class="auto-toc">
+<li><a class="reference" href="#id4" id="id19" name="id19">1.1&nbsp;&nbsp;&nbsp;目的</a></li>
+<li><a class="reference" href="#id5" id="id20" name="id20">1.2&nbsp;&nbsp;&nbsp;简介</a></li>
+<li><a class="reference" href="#id6" id="id21" name="id21">1.3&nbsp;&nbsp;&nbsp;项目历史</a></li>
+<li><a class="reference" href="#id7" id="id22" name="id22">1.4&nbsp;&nbsp;&nbsp;术语和缩写词</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#id8" id="id23" name="id23">2&nbsp;&nbsp;&nbsp;创作思路</a></li>
+<li><a class="reference" href="#id9" id="id24" name="id24">3&nbsp;&nbsp;&nbsp;项目概述</a><ul class="auto-toc">
+<li><a class="reference" href="#id10" id="id25" name="id25">3.1&nbsp;&nbsp;&nbsp;功能</a></li>
+<li><a class="reference" href="#id11" id="id26" name="id26">3.2&nbsp;&nbsp;&nbsp;特点</a></li>
+<li><a class="reference" href="#id12" id="id27" name="id27">3.3&nbsp;&nbsp;&nbsp;项目的组织和管理</a></li>
+<li><a class="reference" href="#id13" id="id28" name="id28">3.4&nbsp;&nbsp;&nbsp;主要特性</a></li>
+<li><a class="reference" href="#id14" id="id29" name="id29">3.5&nbsp;&nbsp;&nbsp;作用范围</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#id15" id="id30" name="id30">4&nbsp;&nbsp;&nbsp;项目开发平台和工具</a></li>
+<li><a class="reference" href="#id16" id="id31" name="id31">5&nbsp;&nbsp;&nbsp;应用领域</a></li>
+</ul>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id18" id="id3" name="id3">1&nbsp;&nbsp;&nbsp;引言</a></h1>
+<p>本项目是一个个人项目，开发的目的是希望设计和开发一种方便灵活的Python编辑器，一方面有自主版权，另一方面可以在需要
+时进行定制实现特殊的功能需要。</p>
+<div class="section">
+<h2><a class="toc-backref" href="#id19" id="id4" name="id4">1.1&nbsp;&nbsp;&nbsp;目的</a></h2>
+<p>本文档用于帮助用户对项目的背景、功能、适用范围等方面进行了解，以便合理有效地使用本项目。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id20" id="id5" name="id5">1.2&nbsp;&nbsp;&nbsp;简介</a></h2>
+<p>UliPad 是一个编辑器，你可以用它来进行你的文档写作，编程开发。它使用 Python 编程语言开发，用户界面基于 wxPython
+。它除了想要完成一般编辑器的常用功能之外，最主要是想实现一种方便、灵活的框架，开发者可以方便地开发新的功能。而且
+有编程经验的用户还可以针对日常工作中的特别问题编制处理的插件，从而使之与自已的日常工作紧密结合起来。由于使用的是
+Python 这种功能强大的编程语言，你可以方便地对本软件进行修改，从而满足自已的需要。</p>
+<p>本软件采用GPL版本方式发布，欢迎您与我交流。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id21" id="id6" name="id6">1.3&nbsp;&nbsp;&nbsp;项目历史</a></h2>
+<p>本项目最早的前身应该是 FlyEdit (取意为飞翔之意，是想实现自由扩展)。最早也是使用wxPython，但那时wxPython的wxStyledTextCtrl
+组件(是Scintilla编辑器包－－一个强大的编辑器－－的wxPython的封装)还不完善，当使用多文档时(那时想使用多文档来实现)会出现问题，
+因此就放弃了wxPython。然后转向了Tcl/Tkinter(另一种跨平台的图型包，但控制受限，中文处理有些麻烦)，已经实现了Mixin机制，还可以
+允许用户编写自已的插件。它的基础是从Python IDLE中转来的，其中语法高亮等功能是使用Python来实现的，而不是Tcl/Tkinter本身所有的
+功能，因此执行效率上很慢。而且许多编辑器的功能都不具备，实现起来也很麻烦。再加上后来在Linux上测试了一下，程序运行出错，所以也
+放弃了。</p>
+<p>就在2004年4月份，我在freshmeat.net上发现了DrPython，它是一个编辑器，使用wxPython 2.4.2.4(现在已经升级到2.5.1了)，实现了
+多文档(使用wxNotebook和wxStyledTextCtrl组件)，而且功能很不错，于是我提出了一些改进了建议，并且后来成为其中一名开发者，并为
+其修改并实现了一些功能。但随着软件的庞大，修改也变得越来越困难。因为一个新的功能的实现可能要修改菜单、参数对话框、事件处理代码
+等等地方，但这些地方往往并不是在一起的，而是分散开的，这样改写程序也要同时改好几个地方，很麻烦。而且另一个人不会很清楚地知道你
+到底改了什么地方，有可能要比较好几个程序才知道改了什么地方。但如果你同时修改了好几个功能，这样比较出来的结果可能是好几个功能混
+在一起，查看改动很不方便。</p>
+<p>在经过一段时间对DrPython的修改和学习，我感到wxPython现在已经很稳定(Borland也说想要在他的C++ Builder X中使用wxWindow作为图形
+开发开台，这样看来wxWindow还是很有前途的)，因此想重新实现一种灵活方便的编程框架，特别是要用到Python强大的动态性的特征，而且许
+多新的东西都可以在开发中应用，可以学到许多wxPython的知识。因此我开始了新的项目开发。为了与FlyEdit相区别，我叫它为UliPad，意
+为“新生的编辑器”。</p>
+<p>UliPad项目于2004年4月22正式开始编码，在此前经过仔细的框架考虑。现在它使用两种基本结构：Mixin和Plugin。关于两者区别在我的blog
+中仔细进行了区分。简单地说，这两者都是对类进行扩充的机制，Mixin是用来增加新的成员变量和成员方法，而Plugin是对程序中设定的特别
+调用点进行处理的插件(有点象回调函数或伪事件)。这样，我首先实现一个基于可用的类，当实现了新的功能时，使用Mixin机制将新功能加入到
+类中。在类需要特殊处理的地方，预设插入点(不需要知道可能调用什么东西，只需要定义传入的参数接口即可)，然后需要在插入点插入新的代码
+时，使用Plugin机制来实现。因为程序中可能不止一个类需要进行扩充，可能是很多的类，因此在Mixin和Plugin的机制中，还加入了接口识别功
+能，也就是说：允许进行Mixin和Plugin的类要从统一的Mixin类进行派生，并且定义唯一的Mixin名称，用于区分不同的Mixin类。新增的Mixin或
+Plugin需要使用一个插入函数将自身插入到相应的类中，需要提供要插入的Mixin名称。这样允许Mixin的类和可以Mixin以类中的内容就可以对应
+起来了。(更详细的内容请参阅《技术手册》)</p>
+<p>在3.3版开始，UliPad更名为UliPad。</p>
+<p>Version 1.0 发布于2004/05/27</p>
+<p>Version 2.0 发布于2004/06/20</p>
+<p>Version 2.1 发布于2004/06/28</p>
+<p>Version 2.2 发布于2004/07/07</p>
+<p>Version 2.3 发布于2004/07/20</p>
+<p>Version 2.4 发布于2004/07/28</p>
+<p>Version 2.5 发布于2004/08/19</p>
+<p>Version 2.6 发布于2004/08/26</p>
+<p>Version 2.6.1 发布于2004/09/10</p>
+<p>Version 2.7 发布于2004/09/20</p>
+<p>Version 2.8 发布于2004/10/08</p>
+<p>Version 2.9 发布于2005/07/24</p>
+<p>Version 3.0 发布于2005/10/16</p>
+<p>Version 3.1 发布于2005/11/22</p>
+<p>Version 3.2 发布于2005/01/18</p>
+<p>Version 3.3 发布于2006/08/23</p>
+<p>Version 3.4 发布于2006/10/08</p>
+<p>Version 3.5 发布于2006/10/24</p>
+<p>Version 3.6 发布于2006/12/04</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id22" id="id7" name="id7">1.4&nbsp;&nbsp;&nbsp;术语和缩写词</a></h2>
+<dl class="docutils">
+<dt>Python</dt>
+<dd>一种强大的解释执行自动编译的动态型语言，纯面向对象，有灵活方便数据结构，拥有大量优秀的模块，语法
+清晰、简洁，而且可以在众多的平台上运行。</dd>
+<dt>wxPython</dt>
+<dd>wxWidgets项目的Python绑定。它是一个图型库，使用简单、方便，但同时功能强大，而且可以跨Windows,
+Mac, linux运行。</dd>
+<dt>槽类(slot class)</dt>
+<dd>一个槽类就是可以允许实现Mixin的类，也叫目标类。它可以在运行时被进行动态扩充，比如增加类的属性、方
+法等。</dd>
+<dt>Mixins</dt>
+<dd>一种在运行时动态扩充机制，比如一个槽类在运行时使用Mixins技术可以增加它的类属性和方法。它是一种统称，
+我将其再细分为Mixin和Plugin。</dd>
+<dt>Mixin</dt>
+<dd>可以向类中增加新的属性和方法。</dd>
+<dt>Plugin</dt>
+<dd>是一种（调用点/实现）框架，你需要先定义一个调用点，然后再实现它。这个引用点就定义在槽类中。一个调
+用点可以有多个实现，它们或者是全部执行，或者有选择地执行并返回结果。</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id23" id="id8" name="id8">2&nbsp;&nbsp;&nbsp;创作思路</a></h1>
+<p>软件开发是一件很痛苦的事情，大量新的需求与现有软件结构之间的冲突是造成软件难以维护的一个主要原因。很
+多软件在刚开始时可能结构很好，便于扩充，但随着软件功能的丰富，代码的增加，可能会造成结构也变得不再适应
+新需求的发展。对于编辑器软件来说，这样的问题更为明显。那么UliPad就是想在如何构造一种灵活的结构方面进
+行的一种有益地探索，同时它会发展成为一个专业、稳定地编辑器软件。因此，UliPad的设计核心就是，如何构造一
+种灵活的架构，使得新功能的增加更为方便和易于维护。</p>
+<p>UliPad使用的软件基础是Python+wxPython。因此，UliPad可以充分地享受Python的动态特性所带来的好处，同
+时由于使用了wxPython，还可以实现跨平台的运行。</p>
+<p>这样，UliPad的设计思想就是充分利用Python语言的动态特性，构造易于扩充而又灵活的软件体系。具体的实现技术
+就是全部采用Mixin和Plugin的设计与开发方法，更为通俗地说法就是分布式类编程技术，或狭义地理解为插件编程
+(但分布式类编程与插件编程是不同的，分布类编程包括Mixin和Plugin，而插件编程一般只包括Plugin，因此插件编程
+的功能扩展是有局限的)。有时为了简单，我会叫分布类编程为Mixin，具体到技术细节时，会细分Mixin和Plugin。</p>
+<p>比如，软件刚开始还是一个雏形，可能只有少数的功能。因此，会有一些实现了基础功能的类。当这些基础功能稳定，同
+时有新的需求时，这时需要对这些类进行扩展。扩展基本分为两种：</p>
+<blockquote>
+<ol class="arabic simple">
+<li>新的方法、属性的实现</li>
+<li>增加对新方法、属性的调用入口</li>
+</ol>
+</blockquote>
+<p>对于无法通过新的方法、属性实现的可能还需要增加新的类。此时可以对现有的类采用第二种扩展从而实现原有类与新
+类之间的联系。</p>
+<p>知道了扩展方式，那么在哪里去实现呢？对于第1种扩展，我的方法是，基本不动原来的类所在的文件，而是创建一个
+新的文件，在这个新文件中实现新的方法、属性。然后通过一种机制把新的方法和属性与目标类进行融合，同时这种融
+合是在运行时才实现的。这样，一个类的功能是随着开发的进行，不停地进行扩展。由于新的扩展并不是直接在原来的
+文件中进行地修改，并且在一个文件中可以同时对多个类进行扩展，因此相对容易地知道本次扩展都做了哪些工作，对
+于软件的维护非常方便。这些扩展会通过一种机制，在软件运行时自动与目标类进行融合，不需要做额外的工作。对于
+这种扩展，我叫它为Mixin扩展。对于第2种扩展，我的方法是，在原来的类中增加相应的调用接口，同时在Mixin扩展
+中增加对调用接口的具体实现，从而通过调用接口将新增的功能与原类联系起来。对于这种扩展我叫它为Plugin扩展，
+也可以叫做插件扩展。</p>
+<p>因此Mixin扩展的开发主要是对目标类进行功能扩展，如增加新的类方法，修改类方法，增加新的属性等。对于Plugin
+扩展主要是在目标类中需要寻找合适的调用位置，定义相应的调用接口。同时实现具体的Plugin实现代码。</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id24" id="id9" name="id9">3&nbsp;&nbsp;&nbsp;项目概述</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id25" id="id10" name="id10">3.1&nbsp;&nbsp;&nbsp;功能</a></h2>
+<p>本软件为一个编辑器，因此它主要适用于软件开发，特别是 Python 语言的开发，但由于它的架构灵活，因此你也可以
+编写一些应用插件来扩展它的功能。开发这款编辑器的目的是提高程序员的开发效率，因此在功能上有许多的贴心操作
+的功能。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id26" id="id11" name="id11">3.2&nbsp;&nbsp;&nbsp;特点</a></h2>
+<p>整个软件都是基于Mixins的思想开发出来的，因此许多功能你可以根据需要去掉，而不会对整个软件有影响。正是因为
+这种灵活的编辑框架，因此开发和维护都相对容易。这种编程的框架你也可以提取出来用在其它的项目开发当中。</p>
+<p>它同时是一款国际化的软件，可以自动识别系统所使用的编码从而显示相应的本地语言。目前支持中文和英文。它对中
+文的支持特别好。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id27" id="id12" name="id12">3.3&nbsp;&nbsp;&nbsp;项目的组织和管理</a></h2>
+<p>本项为个人项目。在项目建立时就在 <a class="reference" href="http://www.tigris.org">http://www.tigris.org</a> 上申请了项目空间 <a class="reference" href="http://http://UliPad.tigris.org">http://http://UliPad.tigris.org</a>/，
+整个项目使用CVS版本管理软件进行管理。并且在国内著名的 Python 社区 ―― 啄木鸟社区(<a class="reference" href="http://www.woodpecker.org.cn">http://www.woodpecker.org.cn</a>)
+上创建了wiki页面，发布信息和接受用户的反馈。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id28" id="id13" name="id13">3.4&nbsp;&nbsp;&nbsp;主要特性</a></h2>
+<p>下面列举的为UliPad现在具有的主要特性，某些特性是别的编辑器所不具备的。新的特性还在不停地增加中：</p>
+<dl class="docutils">
+<dt>多种语法高亮</dt>
+<dd>现支持Python, Html, C/C++语法高亮</dd>
+<dt>Python类浏览</dt>
+<dd>可以浏览Python的类结构</dd>
+<dt>Python程序运行</dt>
+<dd>可以在编辑器中直接运行Python程序，查看结果。设定运行路径，设定运行命令行参数。</dd>
+<dt>扩展选词</dt>
+<dd>可以将'.'作为单词的一部分进行选择。</dd>
+<dt>匹配选择</dt>
+<dd>可以对象( ) { } [ ] ' ' &quot; &quot;之类的包括起来的文本进行选择。如一段文本是使用()包括起来的，将插入点置于括号内，执行选择功能，则括号
+内的所有东西都被选中。如果括号之中还有嵌套的其它括号，则可以选择是优先左方向匹配选择还是优先右方向匹配选择，这样对于嵌套的括号也
+可以处理。</dd>
+<dt>选择扩大</dt>
+<dd>在选中文本之后，执行本功能可以将选择区域左右进行扩展。本功能适合与匹配选择功能一起使用。在使用完匹配选择功能之后，这时
+你只选中了括号中的内容，但括号本身并未被选择，使用选择扩大可以将括号进行选中。</dd>
+<dt>复制功能</dt>
+<dd>增加了许多复制功能。有些思路是从Vim中来的。在输入文本中，很有可能是拷贝以前的输入。这样，你可以只输入头几个字母，然后
+使用复制功能(包括字符，单词和句子)，这样可以从以前已经录入过的文本中查找开始头符与当前输入一致的文本(可能是词或句子)，会在当前位
+置显示一个提示窗口，你可以继续执行从而实现备选词或句子的前后翻动。当找到可以复制的内容时，输入回车即可补齐当前输入。极大方便输入。</dd>
+<dt>文本括起</dt>
+<dd>可以将选中的文本使用某些字符包括起来，如(),{}。有些是定义好的，如果没有的话，可以用户输入自定义引用字符串。</dd>
+<dt>直接查找</dt>
+<dd>一般编辑器的查找功能可以先将要查找的内容选中，然后打开查找对话框，这时刚才选中的内容即出现在查询对话框中，然后执行查找
+就可以进行查找了。但有时还是不方便，于是NewEit提供了按F4键直接对选中的内容进行查找，不会再打开查找对话框。</dd>
+<dt>跳转到上次修改</dt>
+<dd>UliPad可以记住上次修改的地方。当由于查阅程序而离开了刚才修改过的地方，使用本功能可以直接跳回到刚才改过的地方。</dd>
+<dt>代码片段</dt>
+<dd>可以将重复性的文本保存为代码片段，在需要时将其插入文档中。</dd>
+<dt>Ftp功能</dt>
+<dd>可以对远程的Ftp站点上的文件进行：打开、编辑、保存、删除、改名、新建文件、新建目录、上传、下传。</dd>
+<dt>Blog编辑</dt>
+<dd>增过加入Blog插件就可以方便地进行Blog的写作。</dd>
+<dt>文本转Html</dt>
+<dd>支持reStructuredText -&gt; html, python source -&gt; html, textile -&gt; html</dd>
+<dt>内置Html查看器</dt>
+<dd>可以使用内置的Html查看器来浏览Html文件(在Windows下是使用IE)</dd>
+<dt>向导功能</dt>
+<dd>用户可以自定义模块，实现代码自动套用和代码框架的自动生成。</dd>
+<dt>目录浏览</dt>
+<dd>可以打开一个或多个目录在左边栏，方便对文件进行编辑，浏览和切换。</dd>
+<dt>自动扩展</dt>
+<dd>可以根据输入的内容自动实现追加、替换、正则查找等功能。</dd>
+</dl>
+<p>UliPad基本上是按照EditPlus的功能来实现的，同时加入了我认为在编程中非常方便的功能。因此有些功能与EditPlus是相似的，
+不再叙述，更详细地请参阅《用户手册》。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id29" id="id14" name="id14">3.5&nbsp;&nbsp;&nbsp;作用范围</a></h2>
+<p>本软件是跨平台的软件，安装和配置简单。可以运行在象Windows, Mac, linux的环境下，只要安装好Python和wxPython即可运行本
+软件。在Windows下同时还提供可执行的安装程序以方便用户安装。如果要安装一些第三方插件，需要按照插件地说明安装相应的其
+它软件包。</p>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id30" id="id15" name="id15">4&nbsp;&nbsp;&nbsp;项目开发平台和工具</a></h1>
+<p>本软件是跨平台的。在项目初期是使用一般的文本编辑工具进行了，在项目具备一定功能之后就变成自开发的了，即自已开发自已。</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id31" id="id16" name="id16">5&nbsp;&nbsp;&nbsp;应用领域</a></h1>
+<p>用于文档编辑、软件开发。当开发出特殊功能的插件后还可以用于其它目的，如：听MP3、Blog编辑、文件格式转换（这些已经有相
+应的插件）。</p>
+<p><a class="reference" href="index.htm">[返回]</a></p>
+</div>
+</div>
+</body>
+</html>

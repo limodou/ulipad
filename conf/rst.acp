@@ -1,0 +1,17 @@
+[include]
+
+[autostring]
+
+[autostring_append]
+
+[autore]
+
+[autore_append]
+^: = status:,copyright:,author:,abstract:,address:,contact:,dedication:,version:,authors:,date:,organization:,revision:
+^\.\.<space> = footer::,figure::,danger::,sectnum::,image::,admonition::,replace::,topic::,raw::,warning::,caution::,rubric::,unicode::,table::,sidebar::,contents::,csv-table::,container::,hint::,highlights::,target-notes::,tip::,note::,list-table::,restructuredtext-test-directive::,role::,section-numbering::,include::,header::,attention::,important::,pull-quote::,compound::,date::,default-role::,class::,parsed-literal::,title::,line-block::,meta::,error::,epigraph::
+
+[autovalues]
+
+[auto_default]
+
+[auto_complete]

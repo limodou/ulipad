@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pytts\n"
+"POT-Creation-Date: Sun Oct 02 23:10:41 2005\n"
+"PO-Revision-Date: 2005-10-02 23:13+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: NewEdit <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ..\plugins\pytts\__init__.py:35
+msgid "Start Read Document"
+msgstr "开读朗读文档"
+
+#: ..\plugins\pytts\__init__.py:35
+msgid "Start read current document."
+msgstr "开始朗读当前文档。"
+
+#: ..\plugins\pytts\__init__.py:36
+msgid "Stop Read Document"
+msgstr "停止朗读文档"
+
+#: ..\plugins\pytts\__init__.py:36
+msgid "Stop read current document."
+msgstr "停止朗读文档"
+
+#: ..\plugins\pytts\__init__.py:46
+msgid "Document"
+msgstr "文档"
+
+#: ..\plugins\pytts\__init__.py:46
+msgid "TTS speak rate:"
+msgstr "TTS朗读速度："
+
+#: ..\plugins\pytts\__init__.py:78
+msgid "Cann't import pyTTS module, please install it first."
+msgstr "不能导入 pyTTS 模块，请先进行安装。"
+

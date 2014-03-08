@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>Introduction</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="introduction">
+<h1 class="title">Introduction</h1>
+<p>: Author: limodou
+: Contact: <a class="reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a>
+: Home: <a class="reference" href="http://code.google.com/p/ulipad/">http://code.google.com/p/ulipad/</a>
+: BLOG: <a class="reference" href="http://www.donews.net/limodou">http://www.donews.net/limodou</a>
+: Copyright: GPL</p>
+<p>(Note: translated from Chinese Simplified by translate.google.com.  Will be improved over time.)</p>
+<p>Contents ..:: CONTENTS
+Sectnum ..:</p>
+<pre class="literal-block">
+section
+</pre>
+<div class="section">
+<h1><a id="id1" name="id1">INTRODUCTION</a></h1>
+<p>This item is a personal project development objective is to design and develop a convenient and flexible Python editor, on the one hand to have independent copyright, on the other hand may be required
+When the realization of the special features customization needs.</p>
+<p>Objective
+News</p>
+<p>This document to help users of the project background, function, the scope of understanding and respect for rational, and effective use of the item.</p>
+<p>Introduction
+Ape</p>
+<p>UliPad is an editor, you can use it to carry out your document writing, programming development. It uses Python programming language development, user interface-based scripting
+. In addition to the completion of the general editor commonly used features, the most important thing is to realize a convenient, flexible framework, developers can easily develop new features. But
+Programming experience with the users can also address the daily work of the special problems of handling plug-ins, allowing them their own day-to-day work and closely integrated. The use of the
+This powerful Python programming language, you can easily make changes to the software to meet their own needs.</p>
+<p>GPL version of this software is released manner, and I welcome your exchange.</p>
+<div class="section">
+<h2><a id="project-history" name="project-history">Project history</a></h2>
+<p>First, the predecessor of the item should be FlyEdit (from the Italian word for the hovercraft, is to achieve freedom extended). The first is the use of scripting, but then the scripting wxStyledTextCtrl
+Components (yes Scintilla editor packets - a powerful editor - the scripting package) is not perfect, when using multiple files when (then want to use to achieve more documents) will have problems,
+Therefore waive scripting. Then to the Tcl / Tkinter (also a cross-platform graphics package, but limited control, some trouble in Chinese), has achieved Mixin mechanism, but also
+Allows users to prepare their own plug-ins. It is based on the Python IDLE to the transit, syntax highlighted features such as the use of Python to achieve, not Tcl / Tkinter itself all
+Functional, the efficiency is very slow. And many editors do not have the function, it is very troublesome to achieve. Plus later in the Linux testing, running mistakes, so it
+Abandoned.</p>
+<p>In April 2004, I discovered DrPython freshmeat.net, it is an editor, use scripting 2.4.2.3.2.3 (now upgraded to 2.5.1), and realized
+Multi-document (using wxNotebook and wxStyledTextCtrl components), and function very well, and I made some suggestions to improve, and later become a developer, and
+Its revised and implemented some features. But with the huge software, the amendment has become increasingly difficult. Because one of the new features may have to revise the menu, dialog parameters, incident handling code
+Etc., but these places are not together, but spread open, such rewriting procedures to be several places at the same time, very troublesome. And another person is not clearly know you
+What has changed in the end, might better than several procedures to know what changed. But if you also amend a number of functions, the results of this comparison may be several functional mixed
+Together, the changes look very inconvenient.</p>
+<p>After a period of time right DrPython changes and learning, I am now very stable scripting (Borland also said he wants to C + + Builder X used as a graphics wxWindow
+Development House, in view of this wxWindow or promising), want to achieve a flexible programming framework, in particular to use Python is a powerful dynamic characteristics, and Xu
+Many new things can be in developing applications can learn a lot of scripting knowledge. So I started a new project development. To distinguish FlyEdit, I call for UliPad, Italy
+&quot;Freshmen editors.&quot;</p>
+<p>UliPad project in 2004, officially began on April 22 coding, after carefully considering the framework. Now it uses two basic structure: Mixin and Plugin. The difference between the two in my blog
+In a careful distinction. Simply put, both of which are right for the expansion of the mechanism is to increase Mixin new members and the members of variables, and Plugin is a special procedure set
+Call processing plug-in points (a bit like a callback function or pseudo-events). So, I first of a class based on the available when the realization of a new function, the use of the new mechanism will function Mixin joined the
+Category. The category needs special treatment, the default insertion sites (call may not know what they need only definition of the parameters interface can be imported), and then insert the need to insert a new code points
+, The use of Plugin mechanisms to achieve. Because more than one procedure may need to expand the category, probably a lot of categories, and therefore Mixin Plugin mechanism, also joined the interface Recognition gong
+That, in other words: Mixin and Plugin allows for the reunification of the Mixin from a derivative of, and the only definition Mixin name for the distinction between different types Mixin. New or Mixin
+Plugin need to use a function to insert itself into the corresponding category, the need to provide the name inserted Mixin. This allows Mixin Mixin like to be kind and the content can counterparts
+Up. (More details please refer to the contents of &quot;technical manuals&quot;)</p>
+<p>In version 3.3, UliPad renamed UliPad.</p>
+<p>2004/05/27 Version 1.0 Released</p>
+<p>2004/06/20 Version 2.0 Released</p>
+<p>2004/06/28 Version 2.1 Released</p>
+<p>2004/07/07 Version 2.2 Released</p>
+<p>2004/07/20 Version 2.3 Released</p>
+<p>2004/07/28 Version 2.4 Released</p>
+<p>2004/08/19 Version 2.5 Released</p>
+<p>2004/08/26 Version 2.6 Released</p>
+<p>2004/09/10 Version 2.6.1 Released</p>
+<p>2004/09/20 Version 2.7 Released</p>
+<p>2004/10/08 Version 2.8 Released</p>
+<p>2005/07/24 Version 2.9 Released</p>
+<p>2005/10/16 Version 3.0 Released</p>
+<p>Version 3.1 released in 2005-11-23</p>
+<p>2005/01/18 Version 3.2 Released</p>
+<p>2006/08/23 Version 3.3 Released</p>
+<p>2006/10/08 Version 3.4 Released</p>
+<p>2006/10/24 Version 3.5 Released</p>
+<p>2006/12/04 Version 3.6 Released</p>
+</div>
+<div class="section">
+<h2><a id="terminology-and-acronyms" name="terminology-and-acronyms">Terminology and acronyms</a></h2>
+<dl class="docutils">
+<dt>Python</dt>
+<dd>A powerful explanation of the dynamic implementation of automatic compiler language, pure object-oriented, flexible data structure, and lots of excellent module Grammar
+Clear, concise, and can run on many platforms.</dd>
+<dt>Scripting</dt>
+<dd>WxWidgets project Python binding. It is a map of the use of simple, convenient, but powerful, but also across Windows,
+Mac, Linux operation.</dd>
+<dt>Cells (slot class)</dt>
+<dd>A trough of Mixin realize is that we can allow the class, also known as target category. It can be conducted at runtime dynamic expansion, such as increasing class attribute,
+Law.</dd>
+<dt>Mixins</dt>
+<dd>In a run-time dynamic expansion mechanisms, such as a slot type at run time Mixins technology can increase its class attributes and methods. It is a common name,
+I will further broken down into its Mixin and Plugin.</dd>
+<dt>Mixin</dt>
+<dd>Can the addition of new properties and methods.</dd>
+<dt>Plugin</dt>
+<dd>A (called points / realization) framework, you need to call first definition of a point, and then achieve it. This reference point in the definition of slot category. A -
+A number of points can be used to achieve, or all of their implementation, or selective implementation and return results.</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h1><a id="creative-thinking" name="creative-thinking">Creative Thinking</a></h1>
+<p>Software development is a very painful thing, the demand for a large number of new and existing software architecture is the result of conflict between the software difficult to maintain a major reason. Very
+More software may structure at the beginning of a very good, easy expansion, but with the rich software, code, the structure may be becoming no longer fit
+Demand for new development. For editing software, such issues become even more obvious. Then UliPad is how to structure a flexible structure Jin
+A useful to explore, it will become a professional, stable editing software. Therefore, UliPad core of the design is how to structure a
+Species flexible architecture, the new features make it more convenient and more easy maintenance.</p>
+<p>UliPad use of the software is based on Python + scripting. Therefore, UliPad Python can fully enjoy the dynamic character of the benefits of the same
+When the use of the scripting, but also the realization of cross-platform operation.</p>
+<p>Thus, the design concept is UliPad take full advantage of the dynamic characteristics of the Python language, structure and easy to expand flexible software system. Specific Technology
+Mixin and that the use of Plugin Design and Development, France is distributed more put it in simple terms of programming, or narrowly interpreted as a plug-in program
+(Distributed category but programming and plug-in programming is different, including the distribution of programming and Mixin Plugin, and generally include only programming plug-Plugin, plug-in programming
+The expansion is functional limitations). Sometimes simple to, I will call for the distribution of programming Mixin, specifically the technical details, and will be broken down Mixin Plugin.</p>
+<p>For example, or a software prototype has just begun, with only a few functions. Therefore, there will be some function of the foundation class. When these basic functions stability, the same
+When a new demand, then need to expand these categories. There are two basic expansion:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>New methods, attributes the realization</li>
+<li>Increase the new method, called attributes of the entrance</li>
+</ol>
+</blockquote>
+<p>Not for the adoption of a new method of the attribute may also need to add a new category. At this time the existing categories can be used to achieve the second expansion of the original and new
+The link between categories.</p>
+<p>Know the extension, then where to achieve? For the first expansion of a species, my method is the basic fixed category of the original document, but rather to create a
+The new document, in this new document in a new way, attribute. Then through a mechanism of the new methods and attributes of a fusion with the target, while the melting
+When it is running in a realized. This is a function of the development, and continuously expand. The new expansion is not directly in the original
+A revised document, and a document simultaneously on a number of expansion, it is relatively easy to know that this expansion has done what work,
+In software maintenance is very convenient. These extensions will be through a mechanism in the software runs automatically and objectives of fusion, no need for additional work. For
+Such an extension, I called for the expansion of Mixin. For the first two kinds of expansion, I was in the original category corresponding increase in the call interface, while expanding Mixin
+The increase in the interface called a concrete realization, which will be added by calling the interface function and the type of link. I called for such an extension for Plugin expansion
+Also called a plug-in expansion.</p>
+<p>Therefore Mixin expansion of the main development objectives of the extended functionality, such as adding new categories, such changes, add new attributes. For Plugin
+Expansion of the main objectives is the need to find suitable locations call, a call to the corresponding definition of interface. At the same time achieve concrete Plugin code.</p>
+</div>
+<div class="section">
+<h1><a id="project-overview" name="project-overview">Project Overview</a></h1>
+<p>Function
+News
+This software is an editor, it is mainly applied to software development, especially the development of the Python language, but because of its flexible structure, so you can
+Plug-in the preparation of applications to expand its functions. The editor of the development aims to improve the efficiency of the development programmer, it has many features in the operating close
+The function.</p>
+<p>Features
+- - - - - -</p>
+<p>Mixins are based on the software developed by the idea, many of the features you may need to disable, and will not affect the entire software. It is precisely because
+This flexible editing framework, the development and maintenance are relatively easy. In the framework of this program you can extract out with the development of other projects.</p>
+<p>It also is an international software automatically identifies the coding system used to display the corresponding local language. Currently supports Chinese and English. In its
+Text of support particularly good.</p>
+<div class="section">
+<h2><a id="the-project-organization-and-management" name="the-project-organization-and-management">The project organization and management</a></h2>
+<p>This personal project. The project, established in the <a class="reference" href="http://www.tigris.org">http://www.tigris.org</a> <a class="reference" href="http://http://UliPad.tigris.org/">http://http://UliPad.tigris.org/</a> space for the project,
+The entire project management software using CVS version management. Famous domestic and Python communities - Woodpecker communities (<a class="reference" href="http://www.woodpecker.org.cn">http://www.woodpecker.org.cn</a>)
+Create a wiki pages, release of information and user feedback.</p>
+</div>
+<div class="section">
+<h2><a id="main-characteristics" name="main-characteristics">Main characteristics</a></h2>
+<p>The following list of UliPad now with the main characteristics of some other editor is not available. New features are constantly increasing:</p>
+<dl class="docutils">
+<dt>Many syntax highlighted</dt>
+<dd>Now Python support, Html, C / C + + syntax highlighted</dd>
+<dt>Python category View</dt>
+<dd>Python can browse the class structure</dd>
+<dt>Python operating procedures</dt>
+<dd>The editor can run directly Python procedures to check the results. Set running path, setting running command line parameters.</dd>
+<dt>Expansion term election</dt>
+<dd>Can '. 'As part of the word choice.</dd>
+<dt>Matching choice</dt>
+<dd>Can Object () () [] '' &quot;&quot; of the text to include a choice. If a text is to use (), including up will be inserted into points in brackets, the selection, brackets
+Of all things being selected. If there are nested parentheses other brackets, they can choose a priority direction of matching choice left or right direction matching priority choice for this also nested parentheses
+Can handle.</dd>
+<dt>Expanding choices</dt>
+<dd>In the selected text, the implementation of this function can be selected area about expansion. Matching the functional fit and function with the use of choice. End choice in the use of matching function, then
+You chose in brackets, but was not chosen their own brackets, the use of options to expand the brackets can be selected.</dd>
+<dt>Replication</dt>
+<dd>Increased many replication. Some ideas from the Vim in the past. Importing text, very likely to be copied before importation. Thus, you can import only the first few letters and then
+Duplicate functions (including characters, words and phrases), so that from the time before the beginning of the text of the search at the first input consistent with the current text (which may be words or phrases), in the present -
+Purchase a hint that window, you may continue to achieve the implementation of alternative words or phrases around the pan. When the contents can be replicated to find the input current round will be filled importation. Importation of great convenience.</dd>
+<dt>The text surrounding the</dt>
+<dd>Text can be selected, including the use of certain characters, such as (),{}. Some definition is good, if not, then you can use the user-defined strings.</dd>
+<dt>Direct View</dt>
+<dd>General editor of the first search function can be selected to identify the contents, then open the View dialog box, then select the content that is just emerging in the inquiry dialog box, then the search
+The search can be carried out. But sometimes inconvenient, so NewEit F4 keys provided by the selected content directly to search, the search will not open the dialog box.</dd>
+<dt>Jump to the last change</dt>
+<dd>UliPad can remember where the last change. When the inspection procedures have changed from the place, the use of this function can be directly jump back to just turn over the place.</dd>
+<dt>Code fragments</dt>
+<dd>The text can be saved as repetitive code fragment, the need will be inserted in the document.</dd>
+<dt>Ftp function</dt>
+<dd>Can a remote site on the paper Ftp: open, edit, preserve, delete, rename, in the new document, the new directory, upload, under Chuan.</dd>
+<dt>Blog Editor</dt>
+<dd>Joined by a blog can easily plug-in for blog writing.</dd>
+<dt>Text to Html</dt>
+<dd>Support reStructuredText -&gt; html, python source -&gt; html, textile -&gt; html</dd>
+<dt>Built-in viewer Html</dt>
+<dd>Html can use built-in viewer to browse Html (in Windows is to use IE)</dd>
+<dt>Wizard function</dt>
+<dd>Users can customize modules of code automatically apply the framework and code generated automatically.</dd>
+<dt>Contents View</dt>
+<dd>To open one or more directories on the left column for the paper for editing, browsing and switching.</dd>
+<dt>Automatic expansion</dt>
+<dd>According to the importation of additional content automatically replaced, and so is the search function.</dd>
+</dl>
+<p>UliPad EditPlus is basically in accordance with the functions to be achieved, I think joined the program in a very convenient function. So some function and EditPlus is similar,
+No longer described in more detail please refer to the &quot;user manual.&quot;</p>
+</div>
+<div class="section">
+<h2><a id="role-of" name="role-of">Role of</a></h2>
+<p>The software is cross-platform software, simple installation and configuration. As can be run on Windows, Mac, Linux environment, as well installation can run Python and the scripting
+Software. Also under Windows executable installation procedures provide a user-friendly installation. To install some third-party plug-ins, you need to install the plug-in to its corresponding
+It packages.</p>
+</div>
+</div>
+<div class="section">
+<h1><a id="project-development-platform-and-tools" name="project-development-platform-and-tools">Project development platform and tools</a></h1>
+<p>The software is cross-platform. Early in the project is the use of general text editing tools, the project must have become functional after the development, which own their own development.</p>
+</div>
+<div class="section">
+<h1><a id="application-areas" name="application-areas">Application areas</a></h1>
+<p>For document editing, software development. When developed a special plug-in functions can also be used after other purposes, such as: listen to MP3 blog editing, file format conversion (of these have been
+Should the plugin).</p>
+<p><cite>_</cite> [Return]</p>
+<!-- _ `[Return]`: index.htm -->
+</div>
+</div>
+</body>
+</html>

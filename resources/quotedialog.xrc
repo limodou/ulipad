@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+  <object class="wxDialog" name="QuoteDialog">
+    <title>Quote Char Select...</title>
+    <centered>1</centered>
+    <size>340, 210</size>
+    <object class="wxRadioBox" name="ID_KIND">
+      <label>Quote Type</label>
+      <content>
+        <item>'  xxx  '</item>
+        <item>&quot;  xxx  &quot;</item>
+        <item>'''  xxx  '''</item>
+        <item>&quot;&quot;&quot;  xxx  &quot;&quot;&quot;</item>
+        <item>(  xxx )</item>
+        <item>[  xxx  ]</item>
+        <item>{  xxx  }</item>
+        <item>&lt;  xxx  &gt;</item>
+        <item>/*  xxx  */</item>
+      </content>
+      <dimension>3</dimension>
+      <pos>10, 2</pos>
+      <style>wxRA_SPECIFY_COLS</style>
+    </object>
+    <object class="wxCheckBox" name="ID_USER">
+      <label>User Define Quote Char</label>
+      <checked>0</checked>
+      <pos>10, 100</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_START">
+      <pos>100, 120</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_END">
+      <pos>100, 145</pos>
+    </object>
+    <object class="wxButton" name="ID_OK">
+      <label>OK</label>
+      <default>1</default>
+      <pos>250, 120</pos>
+      <size>80, -1</size>
+    </object>
+    <object class="wxButton" name="ID_CANCEL">
+      <label>Cancel</label>
+      <pos>250, 145</pos>
+      <size>80, -1</size>
+    </object>
+    <object class="wxStaticText">
+      <label>Start Chars:</label>
+      <pos>10, 125</pos>
+    </object>
+    <object class="wxStaticText">
+      <label>End Chars:</label>
+      <pos>10, 149</pos>
+    </object>
+    <style>wxDEFAULT_DIALOG_STYLE</style>
+  </object>
+</resource>

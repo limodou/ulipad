@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+  <object class="wxDialog" name="BlogSiteManageDialog">
+    <title>Blog站点管理</title>
+    <size>380,200</size>
+    <style>wxDEFAULT_DIALOG_STYLE</style>
+    <object class="wxStaticText">
+      <label>Blog站点：</label>
+      <pos>5,3</pos>
+    </object>
+    <object class="wxListBox" name="ID_SITE">
+      <content/>
+      <pos>5, 20</pos>
+      <size>100, 85</size>
+    </object>
+    <object class="wxStaticText">
+      <label>站点名称：</label>
+      <pos>125, 20</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_NAME">
+      <pos>200, 18</pos>
+      <size>100, 20</size>
+    </object>
+    <object class="wxStaticText">
+      <label>用户姓名：</label>
+      <pos>125, 43</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_USER">
+      <pos>200, 41</pos>
+      <size>100, 20</size>
+    </object>
+    <object class="wxStaticText">
+      <label>口    令：</label>
+      <pos>125, 68</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_PASSWORD">
+      <pos>200, 64</pos>
+      <size>100, 20</size>
+      <style>wxTE_PASSWORD</style>
+    </object>
+    <object class="wxCheckBox" name="ID_UTF_8">
+      <label>使用UTF-8</label>
+      <pos>200, 93</pos>
+    </object>
+    <object class="wxStaticText">
+      <label>XmlRpc Url:</label>
+      <pos>5, 120</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_URL">
+      <pos>75, 118</pos>
+      <size>226, 20</size>
+    </object>
+    <object class="wxStaticText">
+      <label>数据路径：</label>
+      <pos>5, 142</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_DATAPATH">
+      <pos>75, 140</pos>
+      <size>200, 20</size>
+    </object>
+    <object class="wxButton" name="ID_BROWSE">
+      <label>...</label>
+      <pos>278, 139</pos>
+      <size>24, 22</size>
+    </object>
+    <object class="wxButton" name="ID_ADD">
+      <label>增加</label>
+      <pos>310, 20</pos>
+      <size>60, 22</size>
+    </object>
+    <object class="wxButton" name="ID_DELETE">
+      <label>删除</label>
+      <pos>310, 44</pos>
+      <size>60, 22</size>
+    </object>
+    <object class="wxButton" name="ID_UPDATE">
+      <label>更新</label>
+      <pos>310, 68</pos>
+      <size>60, 22</size>
+    </object>
+    <object class="wxButton" name="ID_CLOSE">
+      <label>关闭</label>
+      <pos>310, 139</pos>
+      <size>60, 22</size>
+    </object>
+  </object>
+</resource>

@@ -1,0 +1,90 @@
+========================
+HOW TO CREATE SNIPPETS
+========================
+
+:Author: Dick Moores
+:Contact: rdmoores@gmail.com
+
+On the Ulipad menubar, Tool->Snippets will show 2 items, Snippets Categories Manager... and Snippets Code Manager... .
+
+To create a snippet you must first have a category for it in the Categories Manager. 
+
+Let's say you want to create a simple snippet such as  "from math import pi", and you don't yet have a category created for it. You're thinking you'd like "Imports" as its category. So open the Snippets Categories Manager (Tool->Snippets->Snippets Categories Manager).
+
+1. In the Category Text textbox (upper right in the Categories Manager) enter "Imports" (no quotes). 
+
+2. Press the Add button, then the OK button to close the Categories Manager. (If you want to add another category before closing the Categories Manager, press Apply instead of OK.)
+
+
+HOW TO CREATE A SNIPPET IN THE CODE MANAGER
+---------------------------------------------
+
+1. Open the Code Manager (Tool->Snippets->Snippets Code Manager)
+
+2. In the Snippets Categories textbox (upper left) select the category containing the snippet you want. The Snippet Code textbox should show a list of the snippets already in that category, if any. For your "from math import pi" snippet you made the category, "Imports". So select it.
+
+3. Type an abbreviation for your new snippet in the Abbreviation textbox (uppermost of the righthand column of textboxes). For "from math import pi" you could use the whole snippet as the abbreviation because it's short, or simply use "pi".
+
+4. Enter whatever you like (or nothing) in the textboxes below the Abbreviation textbox. However, the Abbreviation textbox must have an entry for your snippet.
+
+5. Type (or paste) the code for your snippet in the big Code textbox at the bottom of the Code Manager.
+
+6. Press the Add button. Then if you want to add another snippet in the same or a different category, press the Apply button. If adding to a different category, remember to first select that category in the Snippet Categories textbox. When you're finished adding snippets, press the OK button. 
+
+
+HOW TO INSERT A SNIPPET INTO YOUR CODE
+-----------------------------------------
+
+1. On the Ulipad menubar, Window->Open Snippets Window. This should open the Snippets Window to the left of the main window. This window has an upper part (with the snippets categories) and a lower part (showing the contents of the category selected above in the snippets categories)
+
+2. With the main window showing a document into which you want to insert a snippet, from the upper window select the category you want. For our example, select "Imports".
+
+3. Place the caret exactly where you want the snippet to be inserted in the document.
+
+4. Locate the snippet in the lower window and double click on either its abbreviation or its description (if you've given it one). Voila!
+
+
+HOW TO EDIT A SNIPPET
+-----------------------
+
+1. Open the Code Manager (Tool->Snippets->Snippets Code Manager).
+
+2. Select the snippet's category (in the Snippet Categories textbox) and then the snippet (in the Snippet Code textbox). This should make the snippet's code visible, and also the abbreviation and other (if any) info you entered for the snippet. Make the edits you want and then press the Update button. Then press the OK button. You're done.
+
+
+HOW TO EDIT A CATEGORY NAME
+-----------------------------
+
+1. Open the Category Manager (Tool->Snippets->Snippets Categories Manager).
+
+2. Select the category you want to edit. The name should now also appear in the Category Text textbox, where you can now edit it. 
+
+3. When editing is completed, press the Update button, then the OK button. You're done.
+
+
+ABOUT THE GROUP OF 8 BUTTONS ON THE RIGHT SIDE OF THE CATEGORIES MANAGER
+--------------------------------------------------------------------------
+
+1. The Add and Update buttons have already been covered above.
+
+2. To use any of the remaining 6 buttons, first select a category.
+
+3. The Add Sub button is used to create a sub-category to an already existing category or sub-category. First, select that existing category, for example "Imports". To create a sub-category to Imports, edit "Imports" in the Category Text textbox to the sub-category name you want, say "used_infrequently". Then press the Add Sub button. This will create the sub-category. Pressing the OK button or the Apply button will save the change to disk. Upon reopening the Category Manager you should find the sub-category "used_infrequently" indented under the category "Imports". Sub-categories to sub-categories can be created by the same process.
+
+4. The Delete button is used to delete a category or a sub-category. However, you cannot delete a category that has one or more sub-categories. You must delete these first. As usual, after deleting, press the Apply or the OK button to save the change.
+
+5. The Up and Down buttons are used to move a selected category up or down in the list of categories. Again, click the OK button or the Apply button to save the change.
+
+6. The Left and Right buttons move a selected category in or out of category or sub-category status. For example, selecting the "used_infrequently" sub-category and pressing the Left button will move "used_infrequently" to the left, thereby making it into a main category, and no longer a sub-category of "Imports". Don't forget to save the change.
+
+
+
+
+
+
+
+
+
+
+
+

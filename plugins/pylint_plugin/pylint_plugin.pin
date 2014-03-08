@@ -1,0 +1,32 @@
+[info]
+author = mikem
+date = 2007-11-24
+version = "1.0"
+description = "Runs PyLint on the current file"
+homepage = 
+
+[modules]
+PyLint = PyLint
+logilab-common = logilab-common
+logilab-astng = logilab-astng
+
+[PyLint]
+name = PyLint
+homepage = http://www.logilab.org/project/pylint
+download = http://www.logilab.org/project/pylint
+description = "Pylint is a python tool that checks if a module satisfies a coding standard. Pylint can be seen as another PyChecker since nearly all tests you can do with PyChecker can also be done with Pylint. But Pylint offers some more features, like checking line-code's length, checking if variable names are well-formed according to your coding standard, or checking if declared interfaces are truly implemented, and much more. The big advantage with Pylint is that it is highly configurable, customizable, and you can easily write a small plugin to add a personal feature."
+version = "0.13.2"
+
+[logilab-common]
+name = logilab-common
+homepage = http://www.logilab.org/project/logilab-common
+download = http://www.logilab.org/project/logilab-common
+description = "a bunch of modules providing low level functionnalities shared among some python projects devel"
+version = "0.25.0"
+
+[logilab-astng]
+name = logilab-astng
+homepage = http://www.logilab.org/project/logilab-astng
+download = http://www.logilab.org/project/logilab-astng
+description = "The aim of this module is to provide a common base representation of python source code for projects such as pychecker, pyreverse, pylint... Well, actually the development of this library is essentialy governed by pylint's needs."
+version = "0.17.1"

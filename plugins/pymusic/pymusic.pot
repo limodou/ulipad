@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Sun Oct 02 23:14:13 2005\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\pymusic\MusicListManage.py:36
+msgid "Add"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:40
+msgid "AddDir"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:44
+msgid "Delete"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:48
+msgid "OpenList"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:53
+msgid "SaveList"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:62
+msgid "Id"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:63
+msgid "Author - Title"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:64
+msgid "Time(S)"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:65
+msgid "Path"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:138
+#: ..\plugins\pymusic\MusicListManage.py:182
+msgid "Can't add this file or this file isn't a media file!"
+msgstr ""
+
+#: ..\plugins\pymusic\MusicListManage.py:139
+#: ..\plugins\pymusic\MusicListManage.py:183
+#: ..\plugins\pymusic\__init__.py:145
+msgid "Error"
+msgstr ""
+
+#: ..\plugins\pymusic\PyM3u.py:7
+msgid "Can't load the music list file"
+msgstr ""
+
+#: ..\plugins\pymusic\PyM3u.py:9
+msgid "Can't save the music list file"
+msgstr ""
+
+#: ..\plugins\pymusic\VolumeDialog.py:11
+msgid "Volume"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:29
+msgid "Music"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:45 ..\plugins\pymusic\__init__.py:70
+msgid "Music Open Window."
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:45 ..\plugins\pymusic\__init__.py:70
+msgid "Music Play"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:48 ..\plugins\pymusic\__init__.py:72
+msgid "Music Stop"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:48 ..\plugins\pymusic\__init__.py:72
+msgid "Music Stop."
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:51 ..\plugins\pymusic\__init__.py:74
+msgid "Music Pause"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:51 ..\plugins\pymusic\__init__.py:74
+msgid "Music Pause."
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:54 ..\plugins\pymusic\__init__.py:76
+msgid "Music Volume"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:54 ..\plugins\pymusic\__init__.py:76
+msgid "Music Volume."
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:144
+msgid "Can't play!"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:167 ..\plugins\pymusic\__init__.py:174
+msgid "Open Music List Window"
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:167 ..\plugins\pymusic\__init__.py:174
+msgid "Open Music List Window."
+msgstr ""
+
+#: ..\plugins\pymusic\__init__.py:180 ..\plugins\pymusic\__init__.py:184
+#: ..\plugins\pymusic\__init__.py:190 ..\plugins\pymusic\__init__.py:195
+msgid "MusicList"
+msgstr ""
+

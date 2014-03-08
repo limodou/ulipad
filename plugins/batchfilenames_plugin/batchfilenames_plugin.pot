@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Sun Jul 08 22:45:20 2007\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\batchfilenames_plugin\__init__.py:27
+msgid "Batch filenames rename"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\__init__.py:40
+msgid "Batch Filenames Rename"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\__init__.py:40
+msgid "Batch filenames rename."
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:40
+msgid "Directory"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:41
+msgid "Source Filenames"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:42
+msgid "Results"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:49
+msgid "Add Files"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:53
+msgid "Remove Files"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:57
+msgid "Clear Results"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:60
+msgid "Select All"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:63
+msgid "Select"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:66
+msgid "Skip filename suffix"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:73
+msgid "Apply"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:79
+msgid "Template"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:83
+msgid "Start Num"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:88
+msgid "Create"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:94
+msgid "Current Result"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:99
+msgid "Update"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:104
+msgid "Group Mode"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:105
+msgid "Find"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:109
+#: ..\plugins\batchfilenames_plugin\batchrename.py:127
+msgid "Replace"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:113
+msgid "Regular Mode"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:117
+msgid "Start from cursor"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:119
+msgid ""
+"If you set this, the process will begin from \n"
+"the cursor position of \"Current Result\" field"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:123
+msgid "Delete"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:131
+msgid "Insert"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:164
+msgid "Open"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:245
+msgid "Confirm"
+msgstr ""
+
+#: ..\plugins\batchfilenames_plugin\batchrename.py:245
+msgid ""
+"Do you want to apply these changes?\n"
+"These changes will not be undo."
+msgstr ""
+

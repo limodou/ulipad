@@ -1,0 +1,17 @@
+[info]
+author = limodou
+date = 2006-10-20
+version = "0.1"
+description = "Concurrent programming support"
+homepage = 
+
+[modules]
+SPyRO = SPyRO
+
+[SPyRO]
+name = SPyRO
+homepage = http://lsc.fie.umich.mx/~sadit/spyro/spyro.html
+download = http://lsc.fie.umich.mx/~sadit/spyro/spyro.html
+description = "SPyRO (Simple Python Remote Objects) is an experiment to achieve an efficient oobject communication without lossing portability. SPyRO is an multilingual Object Request Broker (ORB). SPyRO uses the most efficient (or available) connection between peers to minimize costs of transport and parsing in the communication."
+version = "0.9.19"
+

@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Mon Nov 13 16:00:01 2006\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\pairprog\Concurrent.py:50
+msgid "Name"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:53
+msgid "Host"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:56
+msgid "Port"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:59 ..\plugins\pairprog\Concurrent.py:336
+msgid "Start Server"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:61 ..\plugins\pairprog\Concurrent.py:361
+msgid "Connect Server"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:117 ..\plugins\pairprog\Concurrent.py:140
+msgid "Username should not be empty or '*'"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:123 ..\plugins\pairprog\Concurrent.py:146
+msgid "Host address cannot be empty!"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:184
+msgid "Add Current Document"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:185
+msgid "Remove Document"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:191
+msgid "Reget Document"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:216
+msgid "Kick User"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:248
+msgid "%(user)s selects %(filename)s"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:260
+msgid "%(user)s discards %(filename)s"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:263 ..\plugins\pairprog\Concurrent.py:277
+#: ..\plugins\pairprog\Concurrent.py:300
+msgid "You should select one item first"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:265 ..\plugins\pairprog\Concurrent.py:279
+#: ..\plugins\pairprog\Concurrent.py:302
+msgid "No item exists"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:293
+msgid "User [%s] has been kicked off"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:326
+msgid "Stop Server"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:351
+msgid "Disconnect Server"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:382
+msgid "System"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:424
+msgid "Username [%s] has also existed! Please try another"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:438
+msgid "User [%s] has entered the chatroom"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:479
+msgid "User [%s] has leaved the chatroom"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:534
+msgid "User [%(user)s] asks file [%(filename)s]"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:540
+msgid "Cann't find the file [%s]"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:588
+msgid "Server is closed"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:618 ..\plugins\pairprog\Concurrent.py:621
+msgid "User Name"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:622
+msgid "Action"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:634
+msgid "Documents"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:636
+msgid "Document Name"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:648
+msgid "Chat Box"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:656
+msgid "Message"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:659
+msgid "Send"
+msgstr ""
+
+#: ..\plugins\pairprog\Concurrent.py:661
+msgid "Clear"
+msgstr ""
+
+#: ..\plugins\pairprog\mConcurrent.py:99
+msgid "Collaborative Programming"
+msgstr ""
+
+#: ..\plugins\pairprog\mConcurrent.py:99
+msgid "Collaborative programming."
+msgstr ""
+
+#: ..\plugins\pairprog\mConcurrent.py:110
+msgid "Collaborative"
+msgstr ""
+

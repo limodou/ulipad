@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Sun Oct 02 23:19:41 2005\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\wizard\WizardPanel.py:39
+msgid "Refresh"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:45 ..\plugins\wizard\mWizard.py:57
+#: ..\plugins\wizard\mWizard.py:61 ..\plugins\wizard\mWizard.py:66
+#: ..\plugins\wizard\mWizard.py:71
+msgid "Wizard"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:112
+msgid "Input a data file:"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:112
+msgid "Open"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:126 ..\plugins\wizard\WizardPanel.py:151
+msgid "Input saving filename:"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:126 ..\plugins\wizard\WizardPanel.py:151
+msgid "Save"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:139 ..\plugins\wizard\WizardPanel.py:164
+msgid "Completed!"
+msgstr ""
+
+#: ..\plugins\wizard\WizardPanel.py:167
+msgid "There is something wrong, see the error.log!"
+msgstr ""
+
+#: ..\plugins\wizard\mWizard.py:33 ..\plugins\wizard\mWizard.py:40
+msgid "Open Wizard Window"
+msgstr ""
+
+#: ..\plugins\wizard\mWizard.py:33 ..\plugins\wizard\mWizard.py:40
+msgid "Opens wizard window."
+msgstr ""
+
+#: ..\plugins\wizard\mWizard.py:52
+msgid "Open wizard window."
+msgstr ""
+
+#: ..\plugins\wizard\mWizard.py:52
+msgid "wizard"
+msgstr ""
+

@@ -1,0 +1,20 @@
+[default]
+
+[autostring]
+{block<space> = "{% block ${1:name} %}${0}{% endblock %}"
+{trans<space> = "{% trans \"!^\" %}"
+{if<space> = "{% if ${1:} %}${0}{% endif %}"
+{comment<space> = "{% comment %}!^{% endcomment %}"
+{load<space> = "{% load !^ %}"
+{for<space> = "{% for ${1:} in ${2:}%}${0}{% endfor %}"
+{#<space> = {# !^ #}
+
+[autostring_append]
+{{<space> = !^ }}
+{%<space> = @acp.python.django_acp.tags
+
+[autore]
+
+[autore_append]
+
+[autovalues]

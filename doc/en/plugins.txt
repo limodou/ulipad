@@ -1,0 +1,197 @@
+======================
+ Plugin Introduction
+======================
+
+:Author: limodou, Dick Moores
+:Email: limodou@gmail.com
+:Homepage: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+:Copyleft: GPL
+
+.. contents:: Content
+.. sectnum::
+
+Introduction
+---------------
+
+BlogEdit (Deprecated)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Can be used to write blogs, and communicate with a server via xml-rpc. 
+Requires that the server supports blogapi and metawebblogapi. This plugin 
+needs more testing.
+
+closeother
+~~~~~~~~~~~~~~~~
+
+Close others documents except current one. Close all other documents 
+except the current one. Installation will add menu items to the File menu 
+and to the document tab context menu.
+
+djangoproj
+~~~~~~~~~~~~
+
+Django<http://www.djangoproject.com/> support. Django is a web framework.
+
+docbook
+~~~~~~~~~~~
+
+Can be used for writing docbook documents.
+
+dosprompt (Windows platform)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Open DOS window in bottom pane.
+
+fortran
+~~~~~~~~~~~~
+
+Add fortran language syntax highlight support.
+
+jQuery
+~~~~~~~~~
+
+jQuery support.
+
+outline (Under development)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Like leo<http://webpages.charter.net/edreamleo/front.html>.
+
+pairprog
+~~~~~~~~~~~~~
+
+You can use it on collaborative programming.
+
+pymusic
+~~~~~~~~~~~
+
+Play mp3 music.
+
+tts_plugin (Windows platform)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Read current document or selected text via TTS<http://en.wikipedia.org/wiki/Speech_synthesis>.
+
+rssreader (Deprecated)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+A test rss reader plugin.
+
+ruby
+~~~~~~~~
+
+Ruby support. 
+
+ruler
+~~~~~~~
+
+Add ruler for document.
+
+showerror
+~~~~~~~~~~~~~
+
+Add some menu items related to error.txt and debug.txt of UliPad.
+
+spellcheck
+~~~~~~~~~~~~~~
+
+Spell check for current document.
+
+wizard
+~~~~~~~~~~
+
+Wizard framework. 
+
+mako_plugin
+~~~~~~~~~~~~~~
+
+mako<http://www.makotemplates.org/> is a python template system. 
+This plugin can provide mako project name, and also support .mko file suffix.
+When you open a .mko file, this plugin also can support simple syntax highlight.
+And also support some input assistant, for example: key words prompt, etc.
+
+batchfilenames_plugin
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This plugin can be used to rename batch filenames. It supports regular find and
+replace, simple template creation.
+
+svn_plugin
+~~~~~~~~~~~~~~~
+
+Subversion version control support. You should install pysvn module first.
+You can find pysvn at http://pysvn.tigris.org/ 
+
+emacskey
+~~~~~~~~~~~
+
+Emacs keybinding.
+
+winpdb (Discarded)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+It has been merged into UliPad. So if you found this plugin displayed in plugin
+manager dialog, maybe you are using the old version or winpdb plugin folder is
+still exists in plugins folder. You should upgrade to the latest version, and
+check whether the plugins/winpdb is still exists, if it's existed, just remove
+it.
+
+pylint_plugin
+~~~~~~~~~~~~~~~~~~
+
+Using pylint module to check the syntax and convention of current python program.
+
+How to install it?
+=====================
+
+1. Install three package
+
+  * pylint http://www.logilab.org/project/pylint
+  * logilab-common http://www.logilab.org/project/logilab-common
+  * logilab-astng http://www.logilab.org/project/logilab-astng
+
+2. Check the pylint_plugin in [Tool]->[Plugin Manager...]
+
+3. Restart the UliPad
+
+How to run it?
+================
+
+[Tool]->[Pylint]
+
+Then it'll automatically check current python program syntax and convention.
+You'll see a panel appearing in the bottom pane.
+The attatchment is the interface. If you double click on one item,
+then the caret will automatically jump to the line.
+
+web2py_plugin
+~~~~~~~~~~~~~~~~~~
+
+Supply web2py shell menu. You should set a directory as web2py project first, 
+then when you select a app folder in ``applications`` folder, on the context
+menu there will be a ``Start web2py Shell``, so you can start a shell window 
+to test current selected app of web2py.
+
+canvas_test_plugin
+~~~~~~~~~~~~~~~~~~~~
+
+You can write graphic drawing code directly, and then see the result. 
+
+How to use it?
+================
+
+#. Check casvas_test_plugin and restart UliPad
+#. Run [Tool]->[Canvas Test]
+#. In Canvas Test window, write down graphic API. You'll see there already 
+   has two lines::
+
+      import wx
+      dc = wx.PaintDC(self)
+
+   these lines are used to enable code completion support.
+#. Write down your code after dc = wx.PaintDC(self)
+#. Then click the refresh button 
+
+
+`[Return] <index.htm>`_

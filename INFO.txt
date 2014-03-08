@@ -1,0 +1,20 @@
+The UliPad is a flexiable project. It is based on lots of mixins and 
+plugins. So expand it is more easily. 
+
+It is writtened in Python + wxPython.
+
+The lastest software version is :
+
+ * Python 2.5.2 
+ * wxPython 2.8.7.1+ Unicode Version 
+
+Mission:
+
+   Build a neatly and powerful editor. And expanding function is more 
+easily. 
+
+The main features: 
+
+ * An flexible mixin and plugin framework 
+ * User can add his own plugin to process the text 
+ 

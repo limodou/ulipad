@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Mon Nov 13 10:32:56 2006\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\spellcheck\SpellCheck.py:40
+#: ..\plugins\spellcheck\SpellCheck.py:235
+msgid "Start"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:42
+msgid "Replace"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:45
+msgid "Replace All"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:48
+msgid "Ignore"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:51
+msgid "Ignore All"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:57
+msgid "Suggest"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:60
+msgid "Available Dict"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:99
+msgid "This document cann't be spell checked"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:135
+msgid "No more error found"
+msgstr ""
+
+#: ..\plugins\spellcheck\SpellCheck.py:221
+msgid "Stop"
+msgstr ""
+
+#: ..\plugins\spellcheck\__init__.py:28 ..\plugins\spellcheck\__init__.py:41
+msgid "Spell Check"
+msgstr ""
+
+#: ..\plugins\spellcheck\__init__.py:41
+msgid "Spell check for current document."
+msgstr ""
+
+#: ..\plugins\spellcheck\__init__.py:50
+msgid ""
+"You should install PyEnchant module first.\n"
+" Or there are something wrong as import the module"
+msgstr ""
+

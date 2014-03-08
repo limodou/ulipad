@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: spell check 1.0\n"
+"POT-Creation-Date: Mon Nov 13 10:32:56 2006\n"
+"PO-Revision-Date: 2006-11-13 10:36+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: ulipad <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ..\plugins\spellcheck\SpellCheck.py:40
+#: ..\plugins\spellcheck\SpellCheck.py:235
+msgid "Start"
+msgstr "开始"
+
+#: ..\plugins\spellcheck\SpellCheck.py:42
+msgid "Replace"
+msgstr "替换"
+
+#: ..\plugins\spellcheck\SpellCheck.py:45
+msgid "Replace All"
+msgstr "替换全部"
+
+#: ..\plugins\spellcheck\SpellCheck.py:48
+msgid "Ignore"
+msgstr "忽略"
+
+#: ..\plugins\spellcheck\SpellCheck.py:51
+msgid "Ignore All"
+msgstr "忽略全部"
+
+#: ..\plugins\spellcheck\SpellCheck.py:57
+msgid "Suggest"
+msgstr "建议"
+
+#: ..\plugins\spellcheck\SpellCheck.py:60
+msgid "Available Dict"
+msgstr "可用字典"
+
+#: ..\plugins\spellcheck\SpellCheck.py:99
+msgid "This document cann't be spell checked"
+msgstr "此文档无法进行拼写检查"
+
+#: ..\plugins\spellcheck\SpellCheck.py:135
+msgid "No more error found"
+msgstr "没有发现更多错误"
+
+#: ..\plugins\spellcheck\SpellCheck.py:221
+msgid "Stop"
+msgstr "停止"
+
+#: ..\plugins\spellcheck\__init__.py:28
+#: ..\plugins\spellcheck\__init__.py:41
+msgid "Spell Check"
+msgstr "拼写检查"
+
+#: ..\plugins\spellcheck\__init__.py:41
+msgid "Spell check for current document."
+msgstr "对当前文档进行拼写检查。"
+
+#: ..\plugins\spellcheck\__init__.py:50
+msgid ""
+"You should install PyEnchant module first.\n"
+" Or there are something wrong as import the module"
+msgstr ""
+"你需要先安装PyEnchant模块。\n"
+"或者在导入模块时有其它的错误"
+

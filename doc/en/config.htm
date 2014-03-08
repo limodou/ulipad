@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>UliPad Configuration File (config.ini)</title>
+<meta name="author" content="limodou, Tom Eubank" />
+<meta name="copyright" content="FDL" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="ulipad-configuration-file-config-ini">
+<h1 class="title">UliPad Configuration File (config.ini)</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>limodou, Tom Eubank</td></tr>
+<tr><th class="docinfo-name">Contact:</th>
+<td><a class="first reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a>, <a class="last reference" href="mailto:tom&#64;afcon.com">tom&#64;afcon.com</a></td></tr>
+<tr class="field"><th class="docinfo-name">Homepage:</th><td class="field-body"><a class="reference" href="http://code.google.com/p/ulipad/">http://code.google.com/p/ulipad/</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">BLOG:</th><td class="field-body"><a class="reference" href="http://www.donews.net/limodou">http://www.donews.net/limodou</a></td>
+</tr>
+<tr><th class="docinfo-name">Copyright:</th>
+<td>FDL</td></tr>
+</tbody>
+</table>
+<p>UliPad is highly configuable, but many of them don't has a visual or GUI
+operation interface. So here is detail description about it.</p>
+<p>As default, config.ini will not be created, untill you change some settings of
+UliPad. So if you want to change the option in config.ini, and there is no such
+a file, you can create this file manually in UliPad installed folder or its conf
+folder, that's the same. I always create it in UliPad installed folder, because you
+can easily find it.</p>
+<div class="section">
+<h1><a id="debug-mode" name="debug-mode">Debug mode</a></h1>
+<p>When you install UliPad, the debug.txt file is created in the UliPad root
+directory.  However, it remains empty until you enable the debug setting, after which
+UliPad outputs a lot of information into debug.txt, including: menu items,
+shortcuts, plugins, mixins, etc.  The <tt class="docutils literal"><span class="pre">debug</span></tt> setting is stored in the
+section of the configuration file as follows:</p>
+<pre class="literal-block">
+[default]
+debug = 1
+</pre>
+<p>If <tt class="docutils literal"><span class="pre">debug</span> <span class="pre">=</span> <span class="pre">1</span></tt>, debug information is written to debug.txt.  If <tt class="docutils literal"><span class="pre">debug</span> <span class="pre">=</span> <span class="pre">0</span></tt>
+(or unspecified), then there is no debug information. For now, you can switch
+the debug mode in Preference Dialog.</p>
+</div>
+<div class="section">
+<h1><a id="shortcut-keys" name="shortcut-keys">Shortcut Keys</a></h1>
+<p>Shortcut keys for menu items are stored in two sections used of the configuration
+file. The <tt class="docutils literal"><span class="pre">main_hotkey</span></tt> section defines shortcuts for the menu bar.  The
+<tt class="docutils literal"><span class="pre">editor_hotkey</span></tt> section defines shortcuts for editing. For example:</p>
+<pre class="literal-block">
+[main_hotkey]
+IDM_FILE_SAVEAS=F12
+</pre>
+<p>Each shortcut is defined by specifying the menu-item ID and one or more key names.
+Key names include: <em>shift keys</em> (<tt class="docutils literal"><span class="pre">Ctrl</span></tt>, <tt class="docutils literal"><span class="pre">Shift</span></tt>, <tt class="docutils literal"><span class="pre">Alt</span></tt>, etc.), <em>function
+keys</em> (e.g., <tt class="docutils literal"><span class="pre">F1</span></tt>, <tt class="docutils literal"><span class="pre">Esc</span></tt>, <tt class="docutils literal"><span class="pre">Tab</span></tt>, <tt class="docutils literal"><span class="pre">Enter</span></tt>, etc.) and <em>letter keys</em> (e.g.,
+<tt class="docutils literal"><span class="pre">A</span></tt>, etc.).  Each shortcut can contain zero or more shift keys followed by a
+single function key, or one or more shift keys followed by a single letter key.
+Use <tt class="docutils literal"><span class="pre">+</span></tt> to combine key names, for example: <tt class="docutils literal"><span class="pre">Ctrl+A</span></tt>.</p>
+<p>You can use one of the following methods to locate valid entries for the menu-item ID.</p>
+<ol class="arabic">
+<li><p class="first">Open mixins/Import.py source file, and serach for <tt class="docutils literal"><span class="pre">IDM_</span></tt>, for example:</p>
+<pre class="literal-block">
+(100, 'IDM_FILE_NEW', tr('New') + '\tCtrl+N', wx.ITEM_NORMAL,
+    'OnFileNew', tr('Creates a new document')),
+(105, 'IDM_FILE_NEWMORE', tr('New') + '...', wx.ITEM_NORMAL,
+    None, tr('Creates a new document')),
+(110, 'IDM_FILE_OPEN', tr('Open') + '\tCtrl+O', wx.ITEM_NORMAL,
+    'OnFileOpen', tr('Opens an existing document')),
+</pre>
+<p>The following menu item ID's are found above: <tt class="docutils literal"><span class="pre">IDM_FILE_NEW</span></tt>, <tt class="docutils literal"><span class="pre">IDM_FILE_NEWMORE</span></tt>,
+<tt class="docutils literal"><span class="pre">IDM_FILE_OPEN</span></tt>. But some menu items may start with <tt class="docutils literal"><span class="pre">wx.ID_</span></tt>, because they
+are stocked IDs also used in UliPad.</p>
+<blockquote>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p>Populating debug.txt</p>
+<p>If debug.txt is empty, populate it as follows:</p>
+<blockquote class="last">
+<ol class="arabic simple">
+<li>Enable debug mode.</li>
+<li>Exit and restart UliPad.</li>
+<li>Open debug.txt.</li>
+</ol>
+</blockquote>
+</div>
+</blockquote>
+</li>
+<li><p class="first">Search for instances of <tt class="docutils literal"><span class="pre">[makemenu]</span> <span class="pre">makeaccelerator</span></tt> in debug.txt to locate
+the various lists of menu ID's with their current shortcuts.  If an menu item
+has no shortcuts defined, its key-name list is empty (<tt class="docutils literal"><span class="pre">[]</span></tt>).</p>
+</li>
+</ol>
+<pre class="literal-block">
+[ INFO] -- [makemenu] makeaccelerator...
+[ INFO] --  IDM_FILE_NEWMORE_NULL []
+[ INFO] --  IDM_FILE_NEW [Ctrl+N]
+[ INFO] --  IDM_FILE_NEWMORE []
+[ INFO] --  IDM_FILE_OPEN [Ctrl+O]
+[ INFO] --  IDM_FILE_REOPEN [Ctrl+Shift+O]
+[ INFO] --  IDM_FILE_RECENTFILES []
+</pre>
+</div>
+<div class="section">
+<h1><a id="default-fonts" name="default-fonts">Default Fonts</a></h1>
+<p>If you don't like the default fonts of the Editor, Message Window, or Shell
+Window, you can change them:</p>
+<pre class="literal-block">
+[default]
+editor_font = &quot;fontname&quot;
+editor_fontsize = 12
+editor_linesize = 10
+message_font = &quot;fontname&quot;
+message_fontsize = 10
+shell_font = &quot;fontname&quot;
+shell_fontsize = 10
+</pre>
+<p>And you can also change the caret-line background color:</p>
+<pre class="literal-block">
+[default]
+message_caretlineback = #FF0000
+</pre>
+<p>You can also change the tab control color of documents area:</p>
+<pre class="literal-block">
+[default]
+editor_tab_color = #98FB98
+</pre>
+<p>Here the color is represented using hexidecimal <tt class="docutils literal"><span class="pre">#XXXXXX</span></tt>. I think you can also
+use <tt class="docutils literal"><span class="pre">red</span></tt>, <tt class="docutils literal"><span class="pre">green</span></tt>, etc.</p>
+<p>You can also set default color theme by defined default_style session, for
+example you can define a blue theme with:</p>
+<pre class="literal-block">
+[default_style]
+STC_STYLE_TEXT = u&quot;fore:#8DB0D3&quot;
+STC_STYLE_NUMBER = u&quot;fore:#FF00FF&quot;
+STC_STYLE_STRING = u&quot;fore:#00FF80&quot;
+STC_STYLE_COMMENT = u&quot;italic,fore:#008040&quot;
+STC_STYLE_COMMENTBLOCK = u&quot;italic,fore:#008040&quot;
+STC_STYLE_KEYWORD1 = u&quot;fore:#FFFF00&quot;
+STC_STYLE_KEYWORD2 = u&quot;fore:#AFFFEE&quot;
+STC_STYLE_IDENTIFIER = u&quot;fore:#8DB0D3&quot;
+STC_STYLE_OPERATOR = u&quot;fore:#F0804F&quot;
+STC_STYLE_CHARACTER = u&quot;fore:#E19618&quot;
+STC_STYLE_REGEX = u&quot;fore:#FFFF80&quot;
+STC_STYLE_DEFAULT = u&quot;fore:#FFFFFF,back:#112435,face:%(mono)s,size:%(size)d&quot;
+STC_STYLE_LINENUMBER = u&quot;fore:#FFFFFF,back:#1F4661,face:%(mono)s,size:%(lnsize)d&quot;
+STC_STYLE_CONTROLCHAR = u&quot;fore:#FFFFFF&quot;
+STC_STYLE_BRACELIGHT = u&quot;bold,fore:#FF0000&quot;
+STC_STYLE_BRACEBAD = u&quot;bold,fore:#0000FF&quot;
+STC_STYLE_CARET_FORE = u&quot;fore:#FF0000&quot;
+STC_STYLE_CARETLINE_BACK = u&quot;back:#5F0054&quot;
+STC_STYLE_SELECTION_BACK = u&quot;back:#2E9F27&quot;
+STC_STYLE_FOLDER = u&quot;back:#3476A3&quot;
+STC_STYLE_MARKER = u&quot;fore:#F0804F,back:#FFFFFF&quot;
+STC_STYLE_TAG = u&quot;fore:#15852B&quot;
+STC_STYLE_TAG1 = u&quot;fore:#2CEF50&quot;
+STC_STYLE_TAGKEY = u&quot;fore:#FFFF00&quot;
+STC_STYLE_ATTRNAME = u&quot;fore:#F0804F&quot;
+STC_STYLE_ATTRVALUE = u&quot;fore:#156EB2&quot;
+STC_STYLE_CLASSNAME = u&quot;fore:#BBFF4F&quot;
+STC_STYLE_DEFNAME = u&quot;fore:#4179C5&quot;
+STC_STYLE_LINK = u&quot;fore:#FEFF8F,underline&quot;
+STC_STYLE_STRINGEOL = u&quot;fore:#FF6F82,back:#E0C0E0,eol&quot;
+STC_STYLE_TRIPLE = &quot;fore:#00FF80&quot;
+</pre>
+<p>And this will effect all language syntax color theme. Because almost all syntax
+theme reference these color, but not all of them. Some of them are special:</p>
+<pre class="literal-block">
+STC_STYLE_DEFAULT           #default style
+STC_STYLE_LINENUMBER        #line number margin
+STC_STYLE_CARET_FORE        #caret foreground
+STC_STYLE_CARETLINE_BACK    #caret line background
+STC_STYLE_SELECTION_BACK    #selected text background
+STC_STYLE_FOLDER            #folder margin background
+STC_STYLE_MARKER            #folder marker foreground and background
+</pre>
+<p>For Chinese user, there is a YaHei font from Microsoft, see this article
+<a class="reference" href="http://www.x-force.cn/article.asp?id=396">http://www.x-force.cn/article.asp?id=396</a>, so above STC_STYLE_DEFAULT is just
+use this font, and if you want other font, please change it or just omit it.</p>
+</div>
+<div class="section">
+<h1><a id="directory-browser-file-icons" name="directory-browser-file-icons">Directory-browser File Icons</a></h1>
+<p>UliPad can recognize some files type, and show different icons to these files.
+And if you don't like these icons and want to add some new file icons, you can
+change them in config.ini. For now, UliPad supports: .txt, .ini, .html, .py,
+.pyw, .xml, .bat, .htm.</p>
+<pre class="literal-block">
+[fileimages]
+.pyw = file_py.gif
+.c = item.gif
+.ini = file_txt.gif
+.py = file_py.gif
+.txt = file_txt.gif
+.html = file_html.gif
+.xml = file_xml.gif
+.bat = file_txt.gif
+.htm = file_html.gif
+</pre>
+<p>If you want to change them, first you should add new image file in $(UliPad)/images folder, the
+image file format could be .gif or .png. Then add like above, the key is suffix of the filename,
+and the value is the icon filename.</p>
+</div>
+<div class="section">
+<h1><a id="ignore-files-in-directory-browser" name="ignore-files-in-directory-browser">Ignore files in Directory Browser</a></h1>
+<p>In the default configuration, UliPad ignores some file types in the Directory Browser.</p>
+<pre class="literal-block">
+[ignore]
+matches = .*,*.pyc,*.bak,*.ico,*.m3u,
+</pre>
+<p>You can extend this list to include other file types.</p>
+</div>
+<div class="section">
+<h1><a id="todo-pattern" name="todo-pattern">TODO pattern</a></h1>
+<p>UliPad supports TODO formatting with predefined entries for many files types
+(e.g., <tt class="docutils literal"><span class="pre">asp</span></tt>, <tt class="docutils literal"><span class="pre">c</span></tt>, <tt class="docutils literal"><span class="pre">css</span></tt>, <tt class="docutils literal"><span class="pre">djangotmp</span></tt>, <tt class="docutils literal"><span class="pre">fortran</span></tt>, <tt class="docutils literal"><span class="pre">html</span></tt>, <tt class="docutils literal"><span class="pre">java</span></tt>,
+<tt class="docutils literal"><span class="pre">js</span></tt>, <tt class="docutils literal"><span class="pre">perl</span></tt>, <tt class="docutils literal"><span class="pre">php</span></tt>, <tt class="docutils literal"><span class="pre">python</span></tt>, <tt class="docutils literal"><span class="pre">rst</span></tt>, <tt class="docutils literal"><span class="pre">ruby</span></tt>, <tt class="docutils literal"><span class="pre">text</span></tt>, and <tt class="docutils literal"><span class="pre">xml</span></tt>).
+Each entry consists of one or more keys and one or more patterns.  Each key is
+the language lexer name (not the file suffix), and multiple keys are separated
+with a slash (<tt class="docutils literal"><span class="pre">/</span></tt>).  Each pattern is a regular expression.  Multple patterns
+are represented using a list format: each pattern delimited with double quotes
+(<tt class="docutils literal"><span class="pre">&quot;</span></tt>), and multiple patterns separated with a comma (<tt class="docutils literal"><span class="pre">,</span></tt>).</p>
+<p>Entry with multiple keys and a single pattern:</p>
+<pre class="literal-block">
+[todo_pattern]
+python/ruby/perl = ^\s*#\s*[tT][oO][dD][oO]\s+(.*?)$
+</pre>
+<p>Sample usage:</p>
+<pre class="literal-block">
+#TODO TEST              Valid
+   # todo TEST          Valid
+print aaa #todo test    Invalid
+</pre>
+<p>Multiple keys and multiple patterns:</p>
+<pre class="literal-block">
+[todo_pattern]
+c/c++/java = &quot;^\s*//\s*[tT][oO][dD][oO]\s+(.*?)$&quot;, &quot;^\s*/\*\s*[tT][oO][dD][oO]\s+(.*?)$&quot;
+</pre>
+<p>Sample usage:</p>
+<pre class="literal-block">
+//todo TEST     Valid
+  /* todo TEST  Valid
+printf() //todo Invalid
+</pre>
+<p>If there is a file type that UliPad doesn't support yet, you can add it:</p>
+<pre class="literal-block">
+[todo_pattern]
+ruby = &quot;^\s*#\s*[tT][oO][dD][oO]\s+(.*?)$&quot;
+</pre>
+<p>Note, the following language lexer names require that you install their respective plugins:
+djangotmp (djangoproj plugin), fortran (fortran plugin), and ruby (ruby plugin).</p>
+</div>
+<div class="section">
+<h1><a id="comment-characters" name="comment-characters">Comment characters</a></h1>
+<p>You can change the characters that UliPad uses to delimit comments for each file
+type. These characters can be used in Comment and Uncomment menu.  Or press
+<tt class="docutils literal"><span class="pre">Ctrl+/</span></tt> to comment text and press <tt class="docutils literal"><span class="pre">Ctrl+\\</span></tt> to uncomment text.</p>
+<pre class="literal-block">
+[comment_chars]
+c = //
+python = #
+default = #
+</pre>
+<p>Note, the key is not the file suffix, but the language lexer name. But <cite>default</cite>
+is not a language name, just a default value.</p>
+</div>
+<div class="section">
+<h1><a id="preferred-language" name="preferred-language">Preferred language</a></h1>
+<p>UliPad support <em>i18n</em>, and when you changing the lanague, UliPad saves the
+selection in config.ini.</p>
+<pre class="literal-block">
+[language]
+default =
+</pre>
+<p>If default is empty, then UliPad attempts to automatically detect language.  If
+UliPad encounters any problems automatically detecting the language, set the
+default language to English (<tt class="docutils literal"><span class="pre">en</span></tt>).</p>
+</div>
+<div class="section">
+<h1><a id="python-path" name="python-path">Python path</a></h1>
+<p>In order to extend the python path (sys.path) to include a specific directory,
+change the pytonpath setting:</p>
+<pre class="literal-block">
+[default]
+pythonpath = &quot;d:\\&quot;,c:/,
+</pre>
+<p>Directory names should be separated by a comma (<tt class="docutils literal"><span class="pre">,</span></tt>).  Individual directory
+names may be delimited using double-quotes (e.g., <tt class="docutils literal"><span class="pre">&quot;d:\\&quot;</span></tt>); names with
+embedded white space must be quoted.</p>
+</div>
+<div class="section">
+<h1><a id="icon-set-theme" name="icon-set-theme">Icon set theme</a></h1>
+<p>You can use this option to switch other icon set theme, the setting is:</p>
+<pre class="literal-block">
+[default]
+icontheme = tango
+</pre>
+<p>And you should esure that in UliPad's <tt class="docutils literal"><span class="pre">images</span></tt> directory it should have <tt class="docutils literal"><span class="pre">theme/tango</span></tt>
+directory, and all images will be placed there. If an image can't be found in
+theme/XXXX directory, then it'll use image in <tt class="docutils literal"><span class="pre">images</span></tt> directory.</p>
+</div>
+<div class="section">
+<h1><a id="set-dde-port" name="set-dde-port">Set DDE port</a></h1>
+<p>Default, UliPad will bind 50000 port to DDE socket, but sometimes this port may
+be used by others, so you could not use DDE. So you can change the default DDE
+port in config.ini. Just write down below code in config.ini:</p>
+<pre class="literal-block">
+[server]
+port=50001
+</pre>
+</div>
+</div>
+</body>
+</html>

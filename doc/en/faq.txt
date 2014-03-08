@@ -1,0 +1,219 @@
+=====
+ FAQ
+=====
+
+:Author: limodou
+:Email: limodou@gmail.com
+:Homepage: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+:Copyleft: GPL
+
+.. contents:: Content
+.. sectnum::
+
+About Project
+===============
+
+What is UliPad
+-------------------
+
+UliPad is a General Python Editor based on Python and wxPython. It supports many features that you can 
+find in other Editors, and the main feature of it is flexible mixin and plugin architecture. So user
+can extend his own functionality into UliPad, and you can treat UliPad as a developing platform.
+
+How to find & download it
+----------------------------
+
+For now, UliPad is hosted on code.google.com site, you can find it at http://code.google.com/p/ulipad . 
+You can download the lastest version of UliPad at here_. And the svn url is: 
+
+http://ulipad.googlecode.com/svn/trunk/
+
+.. _here: http://code.google.com/p/ulipad/downloads/list
+
+How do I get the newest source code from SVN
+----------------------------------------------
+
+There are a couple of free programs that make this extremely easy.
+Windows users should get TortoiseSVN http://tortoisesvn.tigris.org/.
+Others should get RapidSVN http://rapidsvn.tigris.org/. And there is 
+also pysvn-workbench http://pysvn.tigris.org/docs/WorkBench.html written by python.
+
+This FAQ will explain the use of TortoiseSVN.
+
+Once TortoiseSVN has been installed:
+
+If you have yet to install Ulipad, create a new, empty folder for it.
+
+The following apply whether you have yet to install Ulipad, or are
+updating it with TortoiseSVN for the first time:
+
+#. Right-click within your Ulipad folder to show the context menu.
+#. Note the two menu entries, SVN Checkout, and TortoiseSVN.
+#. Click on SVN Checkout. This will call TortoiseSVN.
+#. Enter http://ulipad.googlecode.com/svn/trunk/ in
+   the "URL of repository" box.
+#. The Checkout directory should already show the folder you created
+   for Ulipad, for example, `C:\Program Files\Ulipad`.
+#. Do not check "Only check out the top folder" or "Omit externals".
+#. Select the "HEAD revision" radio button. This will ensure you get
+   the latest revision. (Should you want an earlier revision for some
+   reason, select the "Revision" button and enter the revision number)
+#. Click OK. The download will begin. When finished, you're ready to use Ulipad!
+
+The second and subsequent times you update Ulipad using TortoiseSVN:
+
+#. Right-click within your Ulipad folder to show the context menu.
+#. Click on SVN Update and leave the rest to TortoiseSVN!
+
+Hints:
+
+#. Before updating, you may want to backup your Ulipad folder.
+#. Always make a note of the number of latest revision you have.
+#. http://ulipad.googlecode.com/svn/ will show the
+   number of the latest revision available. Or using `svn update` to see 
+   the lastest revision.
+#. Keep up-to-date by subscribing to the Ulipad mailing list at
+   http://groups.google.com/group/ulipad.
+
+Starting UliPad
+==================
+
+What's DDE
+------------------
+
+DDE is dynamic data exchange, this functionality is only existed in window platform. But in UliPad, it
+uses socket to simulate this function. And UliPad will use it to keep one instance, and when you start
+UliPad with filename parameter, then the second instance will transfer the filename to the first one, 
+then the file will be opened in the first instance.
+
+How to set DDE port
+----------------------
+
+Default, UliPad will bind 50000 port to DDE socket, but sometimes this port may be used by others, so
+you could not use DDE. So you can change the default DDE port in config.ini. Just write down below code
+in config.ini::
+
+	[server]
+	port=50001
+	
+How to disable DDE
+---------------------
+
+Sometimes you may don't want to use DDE, so you can start UliPad with `-n` option::
+
+    python UliPad.py -n
+
+Usage
+========
+
+How to use code folding
+--------------------------
+
+Author: Dick Moores
+
+#. Enable code folding by checking "Show code folding margin" on Edit
+   -> Preferences, the Document tab.
+#. Click on a "-" to fold. "+" to expand.
+#. Ctrl+Shift+Left-Click anywhere in folding margin will toggle
+   between Fold All and Expand All.
+
+How to create snippets
+------------------------
+
+Author: Dick Moores
+
+A snippet is usually some bit of code that you want to keep handy for
+repeated use. Within Ulipad it can be inserted into your code with
+just a double-click on the snippet's abbreviation in a list of
+snippets in the Snippets Window.
+
+See the `Snippets How-to`_
+
+.. _`Snippets How-to`: howto_snippet.htm
+
+Please explain the Edit->Format menu
+----------------------------------------------
+
+Author: Dick Moores
+
+The top 4 items, ("Trim Trailing Spaces", "Leading Spaces To Tabs",
+"Leading Tabs To Spaces", "ALL Tabs To Spaces"):
+
+#. Before using any of these four, it's a good idea to click on View
+   -> Tabs and Spaces to make the space/tab marks visible.
+#. Select the lines you want to change and then click on the menu item
+   you want to use.
+#. If you want to change only one line, just position the caret
+   anywhere on that line. Selecting the line is not necessary.
+#. If you want the change to affect all lines in the document,
+   `Ctrl+Alt` of course will select them all.
+#. When converting spaces to tabs, if the number of leading
+   consecutive spaces in a line is not a multiple of the tab width you
+   set in Edit -> Preferences -> Document (e.g., 10 spaces and tab width
+   4), not all the spaces will be converted to tabs (for the example, 8
+   spaces will become 2 tabs, leaving 2 spaces unchanged).
+
+Increase and Decrease Indent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Select the lines you want to affect.
+#. Use the Tab key to Increase Indent (or click on the menu item).
+#. Use Shift+Tab to Decrease Indent (or click on the menu item).
+
+Comment Line and Uncomment Line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Select the lines you want to affect. If only one line, just
+   position the caret anywhere on that line.
+#. Use `Ctrl+/` to Comment the line(s) (or click on the menu item). This
+   puts a "#" at the head of each line.
+#. Use `Ctrl+\\` to Uncomment the line(s) (or click on the menu item).
+   This deletes the "#" at the head of each line.
+#. For documents in languages that use different comment characters
+   from "#", it's handy to enable "Show comment character dialog when
+   adding comment", on the Document tab in  Preferences.
+
+
+Text Quote and Unquote
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Select the text you want to enclose in quotes.
+#. `Ctrl+'` (or clicking on the menu item) will show the Quote Char Select dialog.
+#. Select the radio button for the quote characters you want and hit Enter.
+#. To Unquote, select the text to unquote plus its quote characters.
+#. `Ctrl+Shift+'` (or clicking on the menu item) will show the Quote
+   Char Select dialog.
+#. Select the radio button for the quote characters and hit Enter.
+#. If you usually use the same quote characters, it may be convenient
+   to define those characters in the dialog box, and check the "User
+   Define Quote Char" box.
+
+
+Others
+========
+
+What is config.ini used for
+------------------------------
+
+config.ini is a configure file of UliPad, default it'll be not existed. Some functionality will 
+automatically create config.ini. And if there is no such file, you can create manually.
+
+More details about it you can see `Config Description`_ .
+
+.. _`Config Description`: config.htm
+
+What is debug.txt used for
+------------------------------
+
+It's debug log of UliPad, UliPad will write some debug information into this file, for example:
+menu infos, toolbar infos, preference infos, etc. So you can use it to get some information of UliPad.
+
+What is error.txt used for
+------------------------------
+
+It's error log file. If there are errors when running UliPad, it'll write error message into this file.
+
+`[Return]`_
+
+.. _`[Return]`: index.htm

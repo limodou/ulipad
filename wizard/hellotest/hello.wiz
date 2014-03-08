@@ -1,0 +1,12 @@
+[options]
+name = u"Hello 测试"
+#'wizard' or 'program'
+execute = wizard
+file = easyHello.py
+
+#how to output processed content
+#'inline' will insert content into current position of opened document
+#'save' open a dialog to save the file
+#'newfile' create a new file in Editor
+output = save
+encoding = 

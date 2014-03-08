@@ -1,0 +1,54 @@
+from modules.meteor import *
+
+html = T('''<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Channel Newspaper</title>
+<style type="text/css">
+                html { border: 6px solid gray; }
+                body { background-color: white; color: black; font: 84% Verdana, Arial, sans-serif; margin: 12px 22px; }
+                a { color: #0002CA; }
+                a:hover { color: #6B8ADE; text-decoration: underline; }
+                span.nodescription {    color: silver;  font-size: smaller; }
+
+                /* override headings used by feeds */
+                h1,h2,h3,h4,h5,h6 { font-size: 80%; font-weight: bold; font-style: italic;      }
+
+                div.favchannel {
+                        overflow: hidden;
+                        border: 1px solid #6B8ADE;
+                        background-color: #D6DFF7;
+                        float: left;
+                        margin: 0 14px 10px 0;
+                        padding: 16px 16px 0 16px; width: 40%;
+                }
+
+                div.newspapertitle { font-weight: bold; font-size: 120%; text-align: center; padding-bottom: 12px; text-transform: uppercase; }
+                div.channel { border-bottom: 1px dotted silver; margin-top: 14px}
+                div.channeltitle { font-weight: bold; text-transform: uppercase; margin-top: 12px; margin-bottom: 18px;}
+
+                img.channel { border: none; }
+                img.icon { margin: 0 3px; border: none; }
+
+                div.newsitemcontent { line-height: 140%; }
+                div.newsitemcontent ol, div.newsitemcontent ul { list-style-position: inside;}
+                div.newsitemtitle { font-weight: bold; margin-bottom: 8px }
+                div.newsitemfooter { color: gray; font-size: xx-small; text-align: left; margin-top: 6px; margin-bottom: 18px; }
+
+                div.newsitemtitle a, div.newsitemcontent a, div.newsitemfooter a { text-decoration: none; }
+        </style><style>
+                        div.newspapertitle { margin-bottom: 12px; border-bottom: 1px dashed silver;  }
+                </style>
+</head>
+<body>
+<div class="newspapertitle"><#chanel_title#><br><a href="<#chanel_url#>"><img class="channel" src="<#chanel_image_url#>" align="bottom" style="margin-top: 8px;"></a></div>
+<#newsletter#>
+</body>
+</html>
+''')
+
+newsletter = T('''<div class="newsitemtitle"><a href="<#link#>"><#title#></a></div>
+<div class="newsitemcontent"><#description#></div>
+<div class="newsitemfooter"><#date#>
+                         | <a href="<#comments#>"><img src="<#comments_gif#>" class="icon" align="absmiddle"></a></div>
+''')

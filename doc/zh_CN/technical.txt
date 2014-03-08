@@ -1,0 +1,37 @@
+==========
+ 技术手册
+==========
+
+:作者: limodou
+:联系: limodou@gmail.com
+:主页: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+:版权: GPL
+
+.. contents:: 目录
+
+说明
+----
+
+本手册是开发 UliPad 中技术架构说明，技术规范，技术实现，及一些相关的技术文章。不少文章是从我的Blog中整理而来的。
+
+体系结构设计书
+--------------
+
+`UliPad的体系结构设计`_
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _`UliPad的体系结构设计`: architecture.htm
+
+技术规范
+--------
+
+`Plugin的发布规范`_
+~~~~~~~~~~~~~~~~~~~
+
+.. _`Plugin的发布规范`: plugin_spec.htm
+
+
+`[返回]`_
+
+.. _`[返回]`: index.htm

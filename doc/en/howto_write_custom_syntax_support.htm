@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>How to write custom syntax support</title>
+<meta name="author" content="limodou" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="how-to-write-custom-syntax-support">
+<h1 class="title">How to write custom syntax support</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>limodou</td></tr>
+<tr><th class="docinfo-name">Contact:</th>
+<td><a class="first last reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a></td></tr>
+</tbody>
+</table>
+<p>From revision 134 I changed the custom syntax support module. There are two old
+custom syntax support module: CustomLexer.py and NewCustomLexer.py in mixins
+folder. And now they are gone, NCustomLexer.py is the only one. Why I removed them:</p>
+<ol class="arabic simple">
+<li>No one seems to use CustomLexer.py module</li>
+<li>NCustomLexer.py will be more easy and suiable for user write their own syntax
+support module.</li>
+<li>All old custom syntax modules based on NewCustomLexer.py have been rewritten
+by myself.</li>
+</ol>
+<p>So I'll cover that how to use this new module, and if you are using NewCustomLexer,
+now you should migrate to this new module, and you'll find it's more easy to use.</p>
+<p>There are already many examples in UliPad which use NCustomLexer.py, so I'll
+select some of them to demostrate how to use NCustomLexer.py.</p>
+<div class="section">
+<h1><a id="the-simplest-one" name="the-simplest-one">The simplest one</a></h1>
+<p>All new customized language syntax highlight classes should be derived from
+NCustomLexer.CustomLexer class, and NCustomLexer.CustomLexer itself has some
+syntax hightlight support already. And is support below syntax element types:</p>
+<ol class="arabic simple">
+<li>Comment line</li>
+<li>Keywords</li>
+<li>String(double quoted string and single quoted string)</li>
+<li>Integer</li>
+</ol>
+<p>So if your language only have above syntax element type, so only things you need
+to do are config the parameters. And for UliPad, Fortran plugin is such thing.
+Let's see the source code of it:</p>
+<pre class="literal-block">
+from mixins.NCustomLexer import *
+
+class FortranLexer(CustomLexer):
+
+    metaname = 'fortran'
+    casesensitive = False
+
+    keywords = ('''
+        admit allocatable allocate assign assignment at backspace block call case
+        character close common complex contains continue cycle data deallocate
+        default dimension do double else elseif elsewhere end enddo endfile endif
+        endwhile entry equivalence execute exit external forall format function
+        go goto guess if implicit in inout inquire integer intent interface intrinsic
+        kind logical loop map module namelist none nullify only open operator optional
+        otherwise out parameter pointer private procedure program public quit
+        read real record recursive remote result return rewind save select sequence
+        stop structure subroutine target then to type union until use where while
+        write''').split()
+
+    preview_code = &quot;&quot;&quot;! Free Format
+program main
+write(*,*) &quot;Hello&quot; !This is also comment
+write(*,*) &amp;
+&quot;Hello&quot;
+wri&amp;
+&amp;te(*,*) &quot;Hello&quot;
+end
+&quot;&quot;&quot;
+
+    comment_begin = '!'
+</pre>
+<ol class="arabic">
+<li><p class="first">You should import everything from NCustomLexer.</p>
+</li>
+<li><p class="first">Then, you should create a new class and it should inherit CustomLexer class.</p>
+</li>
+<li><dl class="first docutils">
+<dt>You should configure some class attributes:</dt>
+<dd><dl class="first last docutils">
+<dt><strong>metaname(must)</strong></dt>
+<dd><p class="first last">Every class should define this class attribute. It will be used as an
+unique identifier.</p>
+</dd>
+<dt><strong>casesensitive(default True)</strong></dt>
+<dd><p class="first last">If <tt class="docutils literal"><span class="pre">True</span></tt>, the keywords is case sensitive and <tt class="docutils literal"><span class="pre">False</span></tt> is not case
+sensitive.</p>
+</dd>
+<dt><strong>keywords(default [])</strong></dt>
+<dd><p class="first last">It should be a keywords string list.</p>
+</dd>
+<dt><strong>preview_code(default &quot;&quot;)</strong></dt>
+<dd><p class="first last">It's a sample text of current language, so that you can see the effect
+in the Syntax Preferenece dialog.</p>
+</dd>
+<dt><strong>comment_begin</strong></dt>
+<dd><p class="first">In CustomLexer, there are some default pattern, and some of them can be
+configured. For example: comment line and string.</p>
+<p>For comment line, there are some config options predefined in CustomLexer
+class:</p>
+<pre class="literal-block">
+comment_pattern = ''
+comment_begin = '#'
+comment_end = ''
+</pre>
+<p>So you can choice which mode you want to use: defining your own comment
+line pattern or using default comment line pattern. If you leave <tt class="docutils literal"><span class="pre">comment_pattern</span></tt>
+False value, then UliPad will use default comment line pattern, and
+the pattern is:</p>
+<pre class="literal-block">
+re.compile(r'^(%s.*?)%s$' % (self.comment_begin, self.comment_end), re.M)
+</pre>
+<p>So only you to do is define the begin pattern and end pattern of a comment
+line.</p>
+<p>And if comment_pattern is not False value, then UliPad will use it to
+parse the comment line.</p>
+<p class="last">For Fortran language, the comment line is a single line, then leading with
+<tt class="docutils literal"><span class="pre">!</span></tt>. So just define <tt class="docutils literal"><span class="pre">comment_begin</span> <span class="pre">=</span> <span class="pre">'!'</span></tt> is enough.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Above codes are very simple and easy to understand. And how to hook it into UliPad?
+You can see the detail of plugins/fortran/__init__.py, and the content is:</p>
+<pre class="literal-block">
+import wx
+from modules import Mixin
+import FortranLexer
+
+def add_lexer(lexer):
+    lexer.extend([
+        (FortranLexer.FortranLexer.metaname, tr('Fortran|*.f90,*f77,*.for,*.ftn,*.f'),
+            wx.stc.STC_LEX_CONTAINER, 'fortran.stx', FortranLexer.FortranLexer),
+    ])
+Mixin.setPlugin('lexerfactory', 'add_lexer', add_lexer)
+
+def add_new_files(new_files):
+    new_files.extend([
+        ('Fortran', FortranLexer.FortranLexer.metaname),
+    ])
+Mixin.setPlugin('mainframe', 'add_new_files', add_new_files)
+</pre>
+<p>In <tt class="docutils literal"><span class="pre">add_lexer</span></tt> function, you should append new entry to <tt class="docutils literal"><span class="pre">lexer</span></tt> list. The element
+should be 5 elements tuple, and the meaning of them are:</p>
+<pre class="literal-block">
+(language name, filename wildchar, Lexer index, syntax file, Lexer class object)
+</pre>
+<p>For custom syntax, lexer index should be wx.stc.STC_LEX_CONTAINER.</p>
+<p>syntax file can be used to save the syntax configuration options and UliPad also
+can read it when highlighting this language.</p>
+<p>In <tt class="docutils literal"><span class="pre">add_new_files</span></tt> function, you can add a new menu entry to New... file menu item.</p>
+<p>And now, Fortran language is already configured well in UliPad.</p>
+<p>For new language syntax support, I suggest that you create a new plugin, just like
+Fortran plugin, and if you want to enable it, you need to check it in [Tool]-&gt;
+[Plugins Manager...] menu, and it'll be availabe in the next startup time.</p>
+<p><a class="reference" href="index.htm">[Return]</a></p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+========================
+ UliPad Technical Manual 
+========================
+
+: Author: limodou
+: Contact: limodou@gmail.com
+: Home: http://code.google.com/p/ulipad/
+: BLOG: http://www.donews.net/limodou
+: Copyright: GPL
+
+.. contents:: CONTENTS
+
+Note
+----
+
+This manual documents UliPad's technical infrastructure, technical specifications, technical achievement, and some relevant technical articles.   Many articles refer to topics in my blog.
+
+The Architectural Design
+--------------------------
+
+`UliPad architectural design _`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+UliPad .. _ `` Architecture Design: architecture.htm
+
+Technical specifications
+----------------------------
+
+`Plugin release norms _`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _ `` Plugin release norms: plugin_spec.htm
+
+
+`_` [Return]
+
+.. _ `[Return]`: index.htm

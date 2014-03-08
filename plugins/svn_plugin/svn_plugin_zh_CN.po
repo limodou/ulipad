@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ulipad\n"
+"POT-Creation-Date: Sun Aug 26 23:46:48 2007\n"
+"PO-Revision-Date: 2007-12-06 20:08+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: limodou <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ..\plugins\svn_plugin\Dialogs.py:39
+#: ..\plugins\svn_plugin\Dialogs.py:125
+#: ..\plugins\svn_plugin\Dialogs.py:174
+msgid "File"
+msgstr "文件"
+
+#: ..\plugins\svn_plugin\Dialogs.py:46
+#: ..\plugins\svn_plugin\Dialogs.py:133
+#: ..\plugins\svn_plugin\Dialogs.py:186
+msgid "Select / deselect All"
+msgstr "全部选中 / 不选中"
+
+#: ..\plugins\svn_plugin\Dialogs.py:126
+msgid "Text Status"
+msgstr "文本状态"
+
+#: ..\plugins\svn_plugin\Dialogs.py:168
+#: ..\plugins\svn_plugin\SvnSupport.py:376
+msgid "Message"
+msgstr "消息"
+
+#: ..\plugins\svn_plugin\Dialogs.py:169
+msgid "Recent Messages"
+msgstr "最近消息"
+
+#: ..\plugins\svn_plugin\Dialogs.py:175
+msgid "Extension"
+msgstr "扩展"
+
+#: ..\plugins\svn_plugin\Dialogs.py:176
+msgid "Status"
+msgstr "状态"
+
+#: ..\plugins\svn_plugin\Dialogs.py:183
+msgid "Show unversioned files"
+msgstr "显示未受控文件"
+
+#: ..\plugins\svn_plugin\Dialogs.py:236
+msgid "No files need to process."
+msgstr "没有文件需要处理。"
+
+#: ..\plugins\svn_plugin\Dialogs.py:274
+msgid "Log History"
+msgstr "日志历史"
+
+#: ..\plugins\svn_plugin\Dialogs.py:274
+msgid "Select one log"
+msgstr "选择一条日志"
+
+#: ..\plugins\svn_plugin\Dialogs.py:287
+msgid "Result"
+msgstr "结果"
+
+#: ..\plugins\svn_plugin\Dialogs.py:293
+msgid "Action"
+msgstr "动作"
+
+#: ..\plugins\svn_plugin\Dialogs.py:294
+msgid "Path"
+msgstr "路径"
+
+#: ..\plugins\svn_plugin\Dialogs.py:322
+msgid "Trust server %s"
+msgstr "信任主机 %s"
+
+#: ..\plugins\svn_plugin\Dialogs.py:325
+msgid "Server Certificate"
+msgstr "服务器证书"
+
+#: ..\plugins\svn_plugin\Dialogs.py:330
+msgid "Always trust this server"
+msgstr "总是相信这个主机"
+
+#: ..\plugins\svn_plugin\Dialogs.py:345
+msgid "Credentials"
+msgstr "证书"
+
+#: ..\plugins\svn_plugin\Dialogs.py:347
+msgid "Username:"
+msgstr "用户名："
+
+#: ..\plugins\svn_plugin\Dialogs.py:348
+msgid "Password:"
+msgstr "口  令："
+
+#: ..\plugins\svn_plugin\Dialogs.py:349
+msgid "Always uses these credentials"
+msgstr "总是使用这些证书"
+
+#: ..\plugins\svn_plugin\Dialogs.py:361
+msgid "Input Log Message"
+msgstr "输入日志消息"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:33
+msgid "SVN Settings"
+msgstr "SVN 设置"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:44
+msgid "Global ignores"
+msgstr "全局忽略"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:45
+msgid "Multiple ignores should be delimeted by space"
+msgstr "多个忽略应该用空格分开"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:47
+msgid "Enable proxy server"
+msgstr "允许使用代理服务器"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:49
+msgid "Proxy settings"
+msgstr "代理服务器设置"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:52
+msgid "Server Address"
+msgstr "服务器地址"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:54
+msgid "Port"
+msgstr "端口"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:56
+msgid "Username"
+msgstr "用户名"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:58
+msgid "Password"
+msgstr "口令"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:60
+msgid "Proxy timeout in seconds"
+msgstr "代理服务器超时(秒计)"
+
+#: ..\plugins\svn_plugin\SvnSettings.py:98
+#: ..\plugins\svn_plugin\SvnSettings.py:105
+#: ..\plugins\svn_plugin\SvnSettings.py:137
+#: ..\plugins\svn_plugin\SvnSettings.py:153
+#: ..\plugins\svn_plugin\SvnSettings.py:164
+#: ..\plugins\svn_plugin\SvnSettings.py:202
+msgid "Maybe your subversion doesn't be installed or installed uncorrectly."
+msgstr "也许你没有安装Subversion或安装不正确。"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:60
+msgid "Don't support [%s] command!"
+msgstr "不支持[%s]命令"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:68
+msgid ""
+"You should install pysvn module first.\n"
+"You can get it from http://pysvn.tigris.org/"
+msgstr ""
+"你需要先安装 pysvn 模块。\n"
+"你可以从 http://pysvn.tigris.org/ 得到它。"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:96
+msgid ""
+"The directory [%s] is existed, \n"
+"do you want to overwrite it?"
+msgstr ""
+"目录[%s]已经存在，\n"
+"想要覆盖它吗？"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:97
+msgid "Export"
+msgstr "导出"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:107
+msgid "Export completed!"
+msgstr "导出完成！"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:183
+msgid "<No Author>"
+msgstr "<无用户>"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:199
+msgid "Add"
+msgstr "增加"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:218
+msgid "Revert"
+msgstr "恢复"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:238
+msgid "New name"
+msgstr "新名字"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:239
+msgid "Rename"
+msgstr "重命名"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:273
+msgid "Commit"
+msgstr "提交"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:309
+msgid "error"
+msgstr "错误"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:401
+msgid "Select directory:"
+msgstr "选择目录："
+
+#: ..\plugins\svn_plugin\SvnSupport.py:420
+msgid "Checkout"
+msgstr "导出"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:425
+msgid "Repository"
+msgstr "仓库"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:426
+msgid "URL of repository:"
+msgstr "仓库的URL："
+
+#: ..\plugins\svn_plugin\SvnSupport.py:428
+msgid "Checkout Directory"
+msgstr "导出目录"
+
+#: ..\plugins\svn_plugin\SvnSupport.py:431
+#: ..\plugins\svn_plugin\SvnSupport.py:433
+msgid "Revision"
+msgstr "修改版"
+
+#: ..\plugins\svn_plugin\__init__.py:49
+msgid "SVN Checkout"
+msgstr "SVN 检出"
+
+#: ..\plugins\svn_plugin\__init__.py:50
+msgid "SVN Commands"
+msgstr "SVN 命令"
+
+#: ..\plugins\svn_plugin\__init__.py:55
+msgid "Settings..."
+msgstr "设置..."
+
+#: ..\plugins\svn_plugin\__init__.py:62
+msgid "SVN Update"
+msgstr "SVN 更新"
+
+#: ..\plugins\svn_plugin\__init__.py:63
+msgid "SVN Commit"
+msgstr "SVN 提交"
+
+#: ..\plugins\svn_plugin\__init__.py:67
+msgid "&List"
+msgstr "列表[&L]"
+
+#: ..\plugins\svn_plugin\__init__.py:68
+msgid "Show l&og"
+msgstr "显示日志[&o]"
+
+#: ..\plugins\svn_plugin\__init__.py:69
+msgid "&Status"
+msgstr "状态[&S]"
+
+#: ..\plugins\svn_plugin\__init__.py:70
+msgid "Di&ff"
+msgstr "比较[&f]"
+
+#: ..\plugins\svn_plugin\__init__.py:72
+msgid "&Add"
+msgstr "增加[&A]"
+
+#: ..\plugins\svn_plugin\__init__.py:73
+msgid "&Rename"
+msgstr "重命名[&R]"
+
+#: ..\plugins\svn_plugin\__init__.py:74
+msgid "&Delete"
+msgstr "删除[&D]"
+
+#: ..\plugins\svn_plugin\__init__.py:75
+msgid "Re&vert"
+msgstr "恢复[&v]"
+
+#: ..\plugins\svn_plugin\__init__.py:77
+msgid "&Export"
+msgstr "导出[&E]"
+
+#: ..\plugins\svn_plugin\__init__.py:199
+msgid "Dir Browser"
+msgstr "目录浏览"
+
+#: ..\plugins\svn_plugin\tools.py:29
+msgid "Processing..."
+msgstr "正在处理中..."
+

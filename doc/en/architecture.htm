@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>UliPad的体系结构设计</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="ulipad">
+<h1 class="title">UliPad的体系结构设计</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">作者:</th><td class="field-body">limodou</td>
+</tr>
+<tr class="field"><th class="docinfo-name">联系:</th><td class="field-body"><a class="reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">主页:</th><td class="field-body"><a class="reference" href="http://code.google.com/p/ulipad/">http://code.google.com/p/ulipad/</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">BLOG:</th><td class="field-body"><a class="reference" href="http://www.donews.net/limodou">http://www.donews.net/limodou</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">版权:</th><td class="field-body">GPL</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic">
+<p class="topic-title first"><a id="id1" name="id1">目录</a></p>
+<ul class="auto-toc simple">
+<li><a class="reference" href="#id2" id="id18" name="id18">1&nbsp;&nbsp;&nbsp;引言</a><ul class="auto-toc">
+<li><a class="reference" href="#id3" id="id19" name="id19">1.1&nbsp;&nbsp;&nbsp;编写目的</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#id4" id="id20" name="id20">2&nbsp;&nbsp;&nbsp;项目需求</a><ul class="auto-toc">
+<li><a class="reference" href="#id5" id="id21" name="id21">2.1&nbsp;&nbsp;&nbsp;需求分析</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#id6" id="id22" name="id22">3&nbsp;&nbsp;&nbsp;设计说明</a><ul class="auto-toc">
+<li><a class="reference" href="#id7" id="id23" name="id23">3.1&nbsp;&nbsp;&nbsp;概述</a></li>
+<li><a class="reference" href="#id8" id="id24" name="id24">3.2&nbsp;&nbsp;&nbsp;槽类</a></li>
+<li><a class="reference" href="#mixin" id="id25" name="id25">3.3&nbsp;&nbsp;&nbsp;Mixin部件</a></li>
+<li><a class="reference" href="#plugin" id="id26" name="id26">3.4&nbsp;&nbsp;&nbsp;Plugin部件</a><ul class="auto-toc">
+<li><a class="reference" href="#callplugin-execplugin" id="id27" name="id27">3.4.1&nbsp;&nbsp;&nbsp;callplugin与execplugin</a></li>
+<li><a class="reference" href="#id9" id="id28" name="id28">3.4.2&nbsp;&nbsp;&nbsp;Plugin部件的定义</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#id10" id="id29" name="id29">3.5&nbsp;&nbsp;&nbsp;Mixin的处理过程</a></li>
+<li><a class="reference" href="#id11" id="id30" name="id30">3.6&nbsp;&nbsp;&nbsp;几点说明</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#id12" id="id31" name="id31">4&nbsp;&nbsp;&nbsp;UliPad中的具体实现</a><ul class="auto-toc">
+<li><a class="reference" href="#id13" id="id32" name="id32">4.1&nbsp;&nbsp;&nbsp;目录结构</a></li>
+<li><a class="reference" href="#id14" id="id33" name="id33">4.2&nbsp;&nbsp;&nbsp;Mixin启动说明</a></li>
+<li><a class="reference" href="#id15" id="id34" name="id34">4.3&nbsp;&nbsp;&nbsp;了解各种槽类</a></li>
+<li><a class="reference" href="#id16" id="id35" name="id35">4.4&nbsp;&nbsp;&nbsp;窗口结构示例</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id18" id="id2" name="id2">1&nbsp;&nbsp;&nbsp;引言</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id19" id="id3" name="id3">1.1&nbsp;&nbsp;&nbsp;编写目的</a></h2>
+<p>UliPad 中使用了大量的 Mixins 技术，因此本文档的大量篇幅是来讲解 Mixins 技术。同时对整体软件功能设计
+和结构，以及一些技术关键点进行了讲解。</p>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id20" id="id4" name="id4">2&nbsp;&nbsp;&nbsp;项目需求</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id21" id="id5" name="id5">2.1&nbsp;&nbsp;&nbsp;需求分析</a></h2>
+<p>本项目的简单需求是开发一个通用的编辑工具，要求结构灵活，方便功能的维护和扩展。因此在设计上采用了分布式的
+Mixins开发框架，在功能上要求实现基本编辑工具的全部功能，同时还要针对 Python 语言的特点实现相应的支持功能。</p>
+<blockquote>
+<ol class="arabic simple">
+<li>软件应该为支持多文档编辑。因此采用流行的多Tab页结构。</li>
+<li>将界面分为几个子界面，主要为：左侧区，底部区中间的文档区。左侧和底部区用于一些辅助性子窗口的摆放，也
+使用多Tab页结构，可以分别关闭和打开。文档区用于各种各样文档的编辑和显示。</li>
+<li>相关的类和界面元素需要采用Mixins技术开发，如：窗口类、工具条、菜单、弹出菜单等</li>
+</ol>
+</blockquote>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id22" id="id6" name="id6">3&nbsp;&nbsp;&nbsp;设计说明</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id23" id="id7" name="id7">3.1&nbsp;&nbsp;&nbsp;概述</a></h2>
+<p>软件开发是一件很痛苦的事情，大量新的需求与现有软件结构之间的冲突是造成软件难以维护的一个主要原因。很
+多软件在刚开始时可能结构很好，便于扩充，但随着软件功能的丰富，代码的增加，可能会造成结构也变得不再适应
+新需求的发展。对于编辑器软件来说，这样的问题更为明显。那么UliPad就是想在如何构造一种灵活的结构方面进
+行的一种有益地探索，同时它会发展成为一个专业、稳定地编辑器软件。因此，UliPad的设计核心就是，如何构造一
+种灵活的架构，使得新功能的增加更为方便和易于维护。</p>
+<p>UliPad使用的软件基础是Python+wxPython。因此，UliPad可以充分地享受Python的动态特性所带来的好处，同
+时由于使用了wxPython，还可以实现跨平台的运行。</p>
+<p>这样，UliPad的设计思想就是充分利用Python语言的动态特性，构造易于扩充而又灵活的软件体系。具体的实现技术
+就是全部采用Mixin和Plugin的设计与开发方法，更为通俗地说法就是分布式类编程技术，或狭义地理解为插件编程
+(但分布式类编程与插件编程是不同的，分布类编程包括Mixin和Plugin，而插件编程一般只包括Plugin，因此插件编程
+的功能扩展是有局限的)。有时为了简单，我会叫分布类编程为Mixin，具体到技术细节时，会细分Mixin和Plugin。</p>
+<p>比如，软件刚开始还是一个雏形，可能只有少数的功能。因此，会有一些实现了基础功能的类。当这些基础功能稳定，同
+时有新的需求时，这时需要对这些类进行扩展。扩展基本分为两种：</p>
+<blockquote>
+<ol class="arabic simple">
+<li>新的方法、属性的实现</li>
+<li>增加对新方法、属性的调用入口</li>
+</ol>
+</blockquote>
+<p>对于无法通过新的方法、属性实现的可能还需要增加新的类。此时可以对现有的类采用第二种扩展从而实现原有类与新
+类之间的联系。</p>
+<p>知道了扩展方式，那么在哪里去实现呢？对于第1种扩展，我的方法是，基本不动原来的类所在的文件，而是创建一个
+新的文件，在这个新文件中实现新的方法、属性。然后通过一种机制把新的方法和属性与目标类进行融合，同时这种融
+合是在运行时才实现的。这样，一个类的功能是随着开发的进行，不停地进行扩展。由于新的扩展并不是直接在原来的
+文件中进行地修改，并且在一个文件中可以同时对多个类进行扩展，因此相对容易地知道本次扩展都做了哪些工作，对
+于软件的维护非常方便。这些扩展会通过一种机制，在软件运行时自动与目标类进行融合，不需要做额外的工作。对于
+这种扩展，我叫它为Mixin扩展。对于第2种扩展，我的方法是，在原来的类中增加相应的调用接口，同时在Mixin扩展
+中增加对调用接口的具体实现，从而通过调用接口将新增的功能与原类联系起来。对于这种扩展我叫它为Plugin扩展，
+也可以叫做插件扩展。</p>
+<p>因此Mixin扩展的开发主要是对目标类进行功能扩展，如增加新的类方法，修改类方法，增加新的属性等。对于Plugin
+扩展主要是在目标类中需要寻找合适的调用位置，定义相应的调用接口。同时实现具体的Plugin实现代码。</p>
+<p>这里还存在的一个要考虑的问题是，Plugin扩展要根据具体情况考虑是否需要实现。首先，实现Plugin是因为新增的方法、
+属性的使用不会自动完成，需要一个调用点。如果你扩展的方法属合某种事件机制的调用规则，那么可以不用实现Plugin接
+口，否则就要实现相应的Plugin接口。</p>
+<p>下面举一个例子，来看一下两种扩展的实现。其中有些具体的细节还没有涉及，后面会讲到:</p>
+<pre class="literal-block">
+class MainFrame(wx.Frame):
+    def __init__(self, parent, title='Test'):
+        wx.Frame.__init__(self, parent, -1, title=title)
+</pre>
+<p>上面是一个窗体，这可能就是我们的雏形。现在我们想在上面增加一个按钮，并对按钮事件进行响应。我们可以直接在
+MainFrame上修改。如果这个类很简单当然可以，但如果这个类很复杂，并且一次改动不止要改动一个地方，就不是一件
+容易的事情了。现在我们使用Mixin的方法来做。</p>
+<ol class="arabic">
+<li><p class="first">如果想使一个类可以实现分布类编程，那么需要使它成为Mixin类，我定义它为Slot类(槽类)，那么它就是一个目标
+类，将被进行Mixin扩展。改造MainFrame类如下:</p>
+<pre class="literal-block">
+import Mixin
+import wx
+
+class MainFrame(wx.Frame, Mixin):
+    __mixinname__ = 'mainframe'
+
+    def __init__(self, parent, title='Test'):
+        self.initmixin()
+        wx.Frame.__init__(self, parent, -1, title=title)
+</pre>
+</li>
+</ol>
+<p>改造很简单，使得MainFrame有一个Mixin的基类，定义一个类属性__mixinname__，如: mainframe，在__init__中调
+用self.initmixin()。这样，我们就把一个MainFame改造成了一个槽类。</p>
+<ol class="arabic" start="2">
+<li><p class="first">创建一个新文件，将用于实现具体的扩展。内容如下:</p>
+<pre class="literal-block">
+import Mixin
+import wx
+
+def init(win):
+    win.ID_CLICK = wx.NewId()
+    win.btnClick = wx.Button(win, win.ID_CLICK, 'Click Me')
+    wx.EVT_BUTTON(win.btnClick, win.ID_CLICK, win.OnClick)
+
+def OnClick(win, event):
+    print 'Click Me'
+    win.Close()
+</pre>
+</li>
+</ol>
+<p>可以看出我们在新文件中实现了两个方法，一个用来创建一个按钮，并且设置当单击按钮时，调用OnClick事件处理函数。另一个就是
+OnClick事件处理函数。如果我们不使用Mixin扩展，那么这两个函数可能是这样:</p>
+<pre class="literal-block">
+import wx
+
+class MainFrame(wx.Frame):
+
+    def __init__(self, parent, title='Test'):
+        wx.Frame.__init__(self, parent, -1, title=title)
+        self.ID_CLICK = wx.NewId()
+        self.btnClick = wx.Button(self, self.ID_CLICK, 'Click Me')
+        wx.EVT_BUTTON(self.btnClick, self.ID_CLICK, self.OnClick)
+
+    def OnClick(self, event):
+        print 'Click Me'
+        self.Close()
+</pre>
+<p>可以看出，OnClick其实是MainFrame的成员方法，而init应该位于__init__中，是__init__中的一段处理。如果使用Mixin应该如何写呢？
+结果是:</p>
+<pre class="literal-block">
+import Mixin
+import wx
+
+def init(win):
+    win.ID_CLICK = wx.NewId()
+    win.btnClick = wx.Button(win, win.ID_CLICK, 'Click Me')
+    wx.EVT_BUTTON(win.btnClick, win.ID_CLICK, win.OnClick)
+Mixin.setPlugin('mainframe', 'init', init)
+
+def OnClick(win, event):
+    print 'Click Me'
+    win.Close()
+Mixin.setMixin('mainframe', 'OnClick', OnClick)
+</pre>
+<p>setPlugin是Plugin设置方法，它将把init与槽类('mainframe')的某个调用点相关联，由槽类的实例进行调用。而setMixin是Mixin
+设置方法，它将把OnClick插入到槽类中，成为槽类的一个成员函数。</p>
+<p>同时我们还需要修改MainFrame，增加一个调用点:</p>
+<pre class="literal-block">
+import Mixin
+import wx
+
+class MainFrame(wx.Frame, Mixin):
+    __mixinname__ = 'mainframe'
+
+    def __init__(self, parent, title='Test'):
+        self.initmixin()
+        wx.Frame.__init__(self, parent, -1, title=title)
+        self.callplugin('init', self)
+</pre>
+<p>这样，槽类与Mixin文件都准备好了。如何才能将它们真正关联起来呢？很简单：在启动程序中将Mixin文件作为一个模块导入即可。这样真
+正的关联会等到运行时，首先通过导入先将所有Plugin和Mixin搜集起来，然后再等到创建实现时，通过self.initmixin()方法真正实现
+关联。并且这种操作只会执行一次。</p>
+<p>因此Mixin与Plugin的区别就是：Mixin实现类的新方法和属性，而Plugin实现调用点的具体处理。更简单地理解：Mixin是对未知的扩展，而
+Plugin是对已知的扩展。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id24" id="id8" name="id8">3.2&nbsp;&nbsp;&nbsp;槽类</a></h2>
+<p>一个槽类就是可以允许实现Mixin的类，也叫目标类。一个类成为槽类必须从Mixin类进行派生，需要定义一个__mixinname__的类属性，这个
+属性就是用来关联Mixin和Plugin与槽类的唯一标识。同时在槽类的构造函数__init__中需要调用self.initmixin()(它是Mixin类的一个方法)
+。这样，当创建槽类的实例时，就会使用此方法将所有与此槽类相关的Mixin和Plugin与槽类进行融合，从而生成最终的类。此过程是对类本身，
+而非实例本身，并且通过内部机制可以保证只执行一次。因此一个槽类只有在运行时，并且在创建了一个实例时才会是真正完整的。这一些的实现
+都要感谢Python本身的动态特性。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id25" id="mixin" name="mixin">3.3&nbsp;&nbsp;&nbsp;Mixin部件</a></h2>
+<p>这里所讲的Mixin部件包括：将成为槽类的类成员方法的方法，和成为槽类的类属性的属性。每一个Mixin部件都要在实现完成后，调用Mixin
+模块的setMixin方法来声明此Mixin部件将与哪一个槽类名进行融合、融合后的名称、及部件的对象实例。方法声明为:</p>
+<pre class="literal-block">
+setMixin(slot_class_name, binding_name, instance)
+</pre>
+<dl class="docutils">
+<dt>slot_class_name</dt>
+<dd>为槽类名称，即对应的槽类的__mixinname__的值</dd>
+<dt>binding_name</dt>
+<dd>为融合后的名称</dd>
+<dt>instance</dt>
+<dd>为Mixin部件的对象</dd>
+</dl>
+<p>举例如:</p>
+<pre class="literal-block">
+def OnClick(win, event):
+    print 'Click Me'
+    win.Close()
+Mixin.setMixin('mainframe', 'OnClick', OnClick)
+</pre>
+<p>槽类名为：'mainframe'</p>
+<p>绑定后的名字为：'OnClick'，这样，当实现融合后，在槽类的类方法为：OnClick。你也可以改名，这里没有改动。如果有两个Mixin部件的融合
+名是相同的，对于：</p>
+<ol class="arabic">
+<li><p class="first">类方法</p>
+<p>后融合的方法会替换前面融合的方法</p>
+</li>
+<li><p class="first">属性</p>
+<p>根据属性的不同有不同的处理：</p>
+<ol class="arabic">
+<li><p class="first">列表，tuple</p>
+<p>将新的内容增加到已经存在的内容之后</p>
+</li>
+<li><p class="first">字典</p>
+<p>将新的内容与已经存在的内容进地合并，如果已经存在某个键，则新的值会替换旧的值</p>
+</li>
+<li><p class="first">其它</p>
+<p>新值将替换旧值</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Mixin部件实例：即为此模块中的OnClick对象</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id26" id="plugin" name="plugin">3.4&nbsp;&nbsp;&nbsp;Plugin部件</a></h2>
+<p>在实现Plugin部件之前，应该在相应的类中加入调用点，即增加：self.callplugin()或self.execplugin()的调用。然后再在Mixin文件中定
+义相应的Plugin部件。callplugin和execplugin是Mixin模块的方法，两者很象，区别就是callplugin不处理返回值，而execplugin会处理返
+回值。Plugin部件均为方法或函数，而且一个调用点可以对应多个Plugin部件。</p>
+<div class="section">
+<h3><a class="toc-backref" href="#id27" id="callplugin-execplugin" name="callplugin-execplugin">3.4.1&nbsp;&nbsp;&nbsp;callplugin与execplugin</a></h3>
+<p>方法声明为:</p>
+<pre class="literal-block">
+callplugin('plugin_call_name', *args, **kwargs)
+execplugin('plugin_call_name', *args, **kwargs)
+</pre>
+<p>可以看出，每一个调用点都有一个字符串定义的名字，然后是相应的参数。</p>
+<p>这里先强调一点，所有plugin部件会自动根据槽类、plugin_call_name进行分类，同时还会根据执行setPlugin时指定的优先级进行排序。因此，
+plugin部件最终会组织为一棵森林，每棵对就是一个槽类，每个槽类有若干个调用点，每个调用点对应一个按优先级排序的列表，列表中的每一个
+元素就是一个plugin部件--方法。</p>
+<p>对于callplugin，它会把调用点对应的方法列表中的所有方法排优先级顺序自动执行一遍，同时传入*args, **kwargs参数。如例子中为:</p>
+<pre class="literal-block">
+self.callplugin('init', self)
+</pre>
+<p>plugin_call_name为'init'，传入参数为自身的实例对象: self。</p>
+<p>对于execplugin，它也会按方法优先级进行处理：</p>
+<ol class="arabic simple">
+<li>取出一个方法，调用它，同时传入相应的参数</li>
+<li>判断返回值，如果为假，则跳到第一步；如果为真，则结束，同时返回结果</li>
+</ol>
+<p>因此，这时函数的返回值就非常重要了。如果某个处理对其它处理没有影响，那么你不用返回任何值(这时Python会返回None)，或返回假值。如果
+某个处理执行后，不再允许其它的处理继续，则要返回一个真值。在它后面的所有函数都不会再进行处理了。这样优先级和返回值就要仔细地考虑与
+调整。</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id28" id="id9" name="id9">3.4.2&nbsp;&nbsp;&nbsp;Plugin部件的定义</a></h3>
+<p>首先定义一个函数，它的参数与相应的调用点的参数一致。然后定义完毕后，调用setPlugin来声明此函数将与哪个槽类的，哪个调用点相绑定。
+setPlugin的函数声明为:</p>
+<pre class="literal-block">
+setPlugin(slot_class_name, binding_name, instance, priority, nice)
+</pre>
+<dl class="docutils">
+<dt>slot_class_name</dt>
+<dd>槽类名称。即为对应的槽类的__mixinname__的值</dd>
+<dt>binding_name</dt>
+<dd>绑定后的名称</dd>
+<dt>instance</dt>
+<dd>Plugin部件的对象实例</dd>
+<dt>priority</dt>
+<dd>在函数列表中的顺序值。因为相同槽类的相同调入点对应的Plugin部件会组织为一个函数的列表，因此这个值代表函数的排列顺序。但它是一个
+大概的级别，一共有三个级别：HIGH, MIDDLE, LOW。相同的级别排列序列是由执行setPlugin的顺序来决定的。缺省为MIDDLE。</dd>
+<dt>nice</dt>
+<dd>定义最终优先级数。priority定义了三级分类，它们会被处理为某个确定的优先级数：HIGH=100, MIDDL=500, LOW=900。而nice则是直接设定
+这个优先级数。此参数缺省为-1，表示未定义，如果它的值 &gt;= 0，则一个Plugin部件的优先级将使用此nice值来确认，而不是使用priority来确定。
+因此，此参数与priority是互斥的，只能有一个生效。</dd>
+</dl>
+<p>为了定义一个Plugin部件的执行顺序，一种是使用优先级参数来设定，还有一种方法是设定多个调用点，将Plugin部件分派到不同的调用点上。由于调用
+点是有执行顺序的，因此也决定了Plugin部件在大的范围上的执行顺序。</p>
+</div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id29" id="id10" name="id10">3.5&nbsp;&nbsp;&nbsp;Mixin的处理过程</a></h2>
+<p>当我们按要求完成Mixin和Plugin的开发后，如何才可以实现槽类与相应的部件之间的融合或绑定呢，并且这些过程是如何被处理的呢？</p>
+<ol class="arabic">
+<li><p class="first">导入Mixin或Plugin部件模块</p>
+<p>导入这些模块，相关的属性、方法或函数由于是顶层代码，因此在导入模块中会创建相应的实例。同时，会执行这些部件后面所跟随的setMixin或
+setPlugin方法。那么这些方法会将传入的属性、方法收集到Mixin模块自身的全部变量__mixinset__中去。这样，当所有的Mixin和Plugin部件模
+块被导入后，所有这些Mixin和Plugin部件都将收集到__mixinset__中去。在收集的同时，会根据相应的槽类名称进行分类，同一个槽类名称的部件
+会放到一起。然后如果有重名的，则根据Mixin和Plugin的不同分别进行处理。具体的处理在前面已经讲过了。这样，当所有Mixin模块全部导入完毕，
+并不会立刻与相应的槽类进行融合处理，这是很重要的。</p>
+</li>
+<li><p class="first">某个槽类生成实例</p>
+<p>当某个槽类要创建实例时，由于它是从Mixin类派生而来，并且按要求它将第一时间调用Mixin基类的initmixin()方法。这个方法将首先检查是否已经
+做过融合的操作，如果已经做过，则直接返回。如果没有，则执行融合操作，并设置相应的标志位，表示执行完成。这样，融合操作就只会执行一次。
+在执行融合操作时，initmixin会自动查找__mixinset__中与自身__mixinname__相一致的Mixin和Plugin部件，并根据不同的种类进行不同的处理。
+如：Mixin组件就使用setattr()直接设置为类成员。而Plugin部件则统一放到__plugins__类属性中。</p>
+<p>这样，真正的融合工作是在某个槽类生成实例时才完成。同时这个类将真正成为一个完整的类。</p>
+</li>
+<li><p class="first">在槽类中会有一些地方是执行了callplugin()和execplugin的，从而完成对新功能的调用。</p>
+</li>
+</ol>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id30" id="id11" name="id11">3.6&nbsp;&nbsp;&nbsp;几点说明</a></h2>
+<ol class="arabic">
+<li><p class="first">为什么使用字符串作为槽类名，而不直接使用类本身呢？</p>
+<p>因为在Python中，类本身也是一个对象。如果要使用必须要先将其导入。但这样就不易将系统设计得比较松耦合，并且修改不方便。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id31" id="id12" name="id12">4&nbsp;&nbsp;&nbsp;UliPad中的具体实现</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id32" id="id13" name="id13">4.1&nbsp;&nbsp;&nbsp;目录结构</a></h2>
+<p>其本目录为:</p>
+<pre class="literal-block">
+src\
+ |
+ |---- UliPad.py             启用程序
+ |
+ |---- doc\                   文档目录
+ |
+ |---- mixins\                所有Mixin和Plugin部件存放目录。此目录内容为核心内容，同时还包括相关的类
+ |
+ |---- modules\               公共模块目录
+ |
+ |---- plugins\               非核心部件存放目录，象Blog, 文档链接等
+ |
+ |---- tools\                 一些工具脚本，包含i18n的翻译文档及工具
+ |
+ |---- resources\             对话框xml资源文件存入目录
+ |
+ |---- images\                图片目录
+</pre>
+<p>在UliPad与插件有关的内容就是mixins目录，plugins目录(不是必需)，modules/Mixin模块，UliPad.py。其中UliPad.py为启动脚本，用于处理
+命令行参数，一些环境的设定，导入Mixin和Plugin部件，创建应用实例。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id33" id="id14" name="id14">4.2&nbsp;&nbsp;&nbsp;Mixin启动说明</a></h2>
+<p>下面是从UliPad.py中取出的一个代码片段，它完成Mixin的初始化，及生成整个应用。</p>
+<p>　:</p>
+<pre class="literal-block">
+from modules import Mixin
+
+class UliPadApp(wx.App, Mixin.Mixin):
+
+    __mixinname__ = 'app'
+
+    def OnInit(self):
+        self.initmixin()    #initialize mixin
+
+        self.appname = __appname__
+        self.i18n = i18n
+        self.workpath = workpath
+        self.defaultencoding = encoding
+        self.ddeflag = ddeflag
+        self.skipsessionfile = skipsessionfile
+
+        return self.execplugin('init', self, files)
+
+import mixins
+
+app = UliPadApp(0)
+
+app.MainLoop()
+</pre>
+<p>UliPadApp就是应用槽类，它的__mixinname__为'app'。在它的OnInit中定义了一个调用点，self.execplugin('init', self, files)。它是一个
+有返回值的调用点，当返回真，程序继续运行，当返回假，程序退出。在这个调用点中，它传入了两个参数，一个是自身，一个是命令行中要打开的文件
+名列表。</p>
+<p>import mixins 是导入mixins目录下所有的Mixin部件。在mixins目录被组织为包的形式，即它有一个__init__.py，它的内容就是导入所有的Mixin部件。
+仅些而已。但现在，所有的导入均已被注释，只剩下一个import Import.py而已。这是为了减少导入文件的个数，我通过一个脚本自动将所有带注释的
+import中的模块文件自动生成了一个Import.py文件。这样就只导入这一个Import模块就可以了。如果修改了注释中的import行，重新执行脚本再重新生成
+Import.py就可以了。</p>
+<p>从上面我们可以看出，这里面根本没有一行代码是创建了UliPad的主窗口、菜单、工具条的，那么秘密就全在这个self.execplugin()上了。</p>
+<p>我们先看一看老版本的__init__.py吧:</p>
+<pre class="literal-block">
+import mPreference
+import mMainFrame
+import mMainSubFrame
+import mEditorCtrl
+import mEditor
+
+# 1.0 other
+import mComEdit
+import mToolbar
+import mIcon
+...
+</pre>
+<p>这是UliPad 1.0发布时的__init__.py中的内容(其实还有变化的，但不再提了)。</p>
+<p>就是这些import语句最后生成了你看到的UliPad。每一个import会完成一部分功能。如果你去掉某个import，会减少一些功能，但一般不会影响其它的功
+能。因此，使用Mixin你可以自已动态了决定要哪些功能，不要哪些功能。非常方便。为什么这样是可以的呢？因为功能代码都是部分相关，而不是全部相关，
+因此我们就可以把相关的功能实现集中到一起，并且通过Mixin的方法来补充新的功能，同时起到分割功能代码的作用。这样我们可以容易地知道一个功能的
+实现，需要涉及哪些类，需要在类的哪些地方加入新的方法、属性、调用点。同时这些功能的加入，又尽可能地减少对现有的其它功能的影响。这就是Mixin
+的一个主要方便之处。上面头5行import语句就是UliPad必须的。让我们看一看mMainFrame中的内容吧:</p>
+<pre class="literal-block">
+from modules import Mixin
+import wx
+
+def init(app, filenames):
+    from MainFrame import MainFrame
+
+    app.frame = MainFrame(app, filenames)
+    if app.frame:
+        app.frame.workpath = app.workpath
+        app.frame.Show(True)
+        app.SetTopWindow(app.frame)
+
+        app.frame.afterinit()
+        app.frame.editctrl.openPage()
+
+        return True, True
+    else:
+        return True, False
+Mixin.setPlugin('app', 'init', init)
+</pre>
+<p>在前面，我们在UliPadApp这个槽类中定义了一个init的调用点。那么在mMainFrame.py中我们针对这个调用点创建了一个Plugin部件。在这个部件中，
+我们导入了MainFrame，从而真正地生成了UliPad的主窗体对象。同时在MainFrame中还定义了调用点，在这个调用点中，我们使用Notebook类实现了
+UliPad的多文档编辑的基础。这样，UliPad就一步步地生成了。</p>
+<p>理解UliPad，首先要理解Mixin和Plugin的机制以及生成方法。再有就是了解UliPad中的各种槽类，有哪些调用点，这些槽类是如何关联的，也就是熟
+悉各种功能扩展点的作用、位置，从而可以实现你自已的Mixin部件。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id34" id="id15" name="id15">4.3&nbsp;&nbsp;&nbsp;了解各种槽类</a></h2>
+<p>在每次运行UliPad都会在UliPad的目录下生成一个debug.txt的文件，它是一些辅助信息，包括了所有Mixin和Plugin部件的信息，按槽类名进行分类，
+这是一个示例:</p>
+<pre class="literal-block">
+[ INFO] --  name=messagewindow
+[ INFO] --     |----mixin
+[ INFO] --            |OnIdle       mixins.Import.OnIdle
+[ INFO] --            |OnKeyDown    mixins.Import.OnKeyDown
+[ INFO] --            |OnKeyUp      mixins.Import.OnKeyUp
+[ INFO] --            |RunCheck     mixins.Import.RunCheck
+[ INFO] --     |----plugin
+[ INFO] --            |init
+[ INFO] --                    500 mixins.Import.init
+[ INFO] --  name=pythonfiletype
+[ INFO] --     |----mixin
+[ INFO] --            |menulist
+[ INFO] --            |toolbaritems
+[ INFO] --            |toollist
+[ INFO] --     |----plugin
+[ INFO] --            |on_enter
+[ INFO] --                    500 mixins.Import.on_enter
+[ INFO] --                    500 mixins.Import.on_enter
+[ INFO] --            |on_leave
+[ INFO] --                    500 mixins.Import.on_leave
+[ INFO] --                    500 mixins.Import.on_leave
+</pre>
+<p>其中name表示槽类名称，mixin为此槽类所有Mixin部件的列表，每个Mixin部件的融合名称和实例的信息。plugin为此槽类所有Plugin部件的信息，按
+调用点进行分类，分个调用点对应的Plugin部件按优先级进行排序。这样，通过debug.txt，你可以了解某个槽类都实现了哪些Mixin和Plugin部件，并
+了解都是在哪里定义的，名字叫什么。</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id35" id="id16" name="id16">4.4&nbsp;&nbsp;&nbsp;窗口结构示例</a></h2>
+<p>这里有一个示意图，表示基本的窗口框架。</p>
+<img alt="classes.png" src="classes.png" />
+<p>上图只是一个示例，下面简单介绍一下每个窗口类:</p>
+<dl class="docutils">
+<dt>mainframe</dt>
+<dd>它就是主窗体，菜单、工具条、状态条和其它的所有子窗体都置于其中</dd>
+<dt>panel</dt>
+<dd>它是一个用来管理4个SashWindow的父窗体，4个SashWindow起到分隔整个屏幕的作用，分为：上(top)、下(bottom)、左(left)、右(right)。</dd>
+<dt>top, bottom, left, right</dt>
+<dd>它们是SashWindow窗口，大小是可以改变的。此类窗体仍是起到作为父窗体的作用。</dd>
+<dt>bottombook, leftbook, rightbook</dt>
+<dd>它们是Notebook类型的窗体，用来放置象边栏一类的窗体，象：snippetwindow(代码片段窗口)、projectwindow(项目管理窗口)、shellwindow(Shell窗口)、
+messagewindow(消息窗口)、ftpwindow(ftp窗口)、blogwindow(blog管理窗口)都是放在这里面的，以多页的形式共存。</dd>
+<dt>editctrl</dt>
+<dd>是编辑器窗口的父窗口，它本身又是一个Notebook窗口，用来管理生成新的编辑器窗口，编辑器窗口的关闭等。</dd>
+<dt>documents</dt>
+<dd>是编辑器窗口，可以有多种类型，象TextEditor(一般的编辑器窗口)、HtmlViewer(Html浏览窗口)、BlogEditor(Blog编辑窗口)</dd>
+</dl>
+<p><a class="reference" href="technical.htm">[返回]</a></p>
+</div>
+</div>
+</div>
+</body>
+</html>

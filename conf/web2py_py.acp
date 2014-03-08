@@ -1,0 +1,5 @@
+[default]
+projectname = web2py
+
+[auto_complete]
+autodot = @acp.web2py.web2py.autodot

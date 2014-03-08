@@ -1,0 +1,59 @@
+=======================
+ UliPad Document
+=======================
+
+:Author: limodou
+:Contact: limodou@gmail.com
+:Homepage: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+:Copyright: GPL
+
+Thanks for you downloading and using UliPad Editor Software. This software
+is keeping improvment, so please its mailing list or my blog to get the neweset
+information about it.
+
+`Project Introduction`_ (Chinese)
+------------------------------------
+
+.. _`Project Introduction`: introduce.htm 
+
+`User Manual`_ (Chinese)
+--------------------------
+
+.. _`User Manual`: userguide.htm
+
+`Tech Manual`_ (Chinese)
+--------------------------
+
+.. _`Tech Manual`: technical.htm
+
+`Plugin Introduction`_
+------------------------
+
+.. _`Plugin Introduction`: plugins.htm
+
+`FAQ`_
+-------
+
+.. _FAQ: faq.htm
+
+`Config.ini Description`_
+---------------------------
+
+.. _`Config.ini Description`: config.htm
+
+Contribute Documents
+------------------------
+
+`Snippets Howto`_
+~~~~~~~~~~~~~~~~~~~~
+
+.. _`Snippets Howto`: howto_snippet.htm
+
+`InputAssistant Howto`_
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _`InputAssistant Howto`: howto_input_assistant.htm
+
+This document is written in reStructuredText format, and convert to html by docutils tool¡£
+And all of them is written in UliPad.

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>HOW TO CREATE SNIPPETS</title>
+<meta name="author" content="Dick Moores" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="how-to-create-snippets">
+<h1 class="title">HOW TO CREATE SNIPPETS</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>Dick Moores</td></tr>
+<tr><th class="docinfo-name">Contact:</th>
+<td><a class="first last reference" href="mailto:rdmoores&#64;gmail.com">rdmoores&#64;gmail.com</a></td></tr>
+</tbody>
+</table>
+<p>On the Ulipad menubar, Tool-&gt;Snippets will show 2 items, Snippets Categories Manager... and Snippets Code Manager... .</p>
+<p>To create a snippet you must first have a category for it in the Categories Manager.</p>
+<p>Let's say you want to create a simple snippet such as  &quot;from math import pi&quot;, and you don't yet have a category created for it. You're thinking you'd like &quot;Imports&quot; as its category. So open the Snippets Categories Manager (Tool-&gt;Snippets-&gt;Snippets Categories Manager).</p>
+<ol class="arabic simple">
+<li>In the Category Text textbox (upper right in the Categories Manager) enter &quot;Imports&quot; (no quotes).</li>
+<li>Press the Add button, then the OK button to close the Categories Manager. (If you want to add another category before closing the Categories Manager, press Apply instead of OK.)</li>
+</ol>
+<div class="section">
+<h1><a id="how-to-create-a-snippet-in-the-code-manager" name="how-to-create-a-snippet-in-the-code-manager">HOW TO CREATE A SNIPPET IN THE CODE MANAGER</a></h1>
+<ol class="arabic simple">
+<li>Open the Code Manager (Tool-&gt;Snippets-&gt;Snippets Code Manager)</li>
+<li>In the Snippets Categories textbox (upper left) select the category containing the snippet you want. The Snippet Code textbox should show a list of the snippets already in that category, if any. For your &quot;from math import pi&quot; snippet you made the category, &quot;Imports&quot;. So select it.</li>
+<li>Type an abbreviation for your new snippet in the Abbreviation textbox (uppermost of the righthand column of textboxes). For &quot;from math import pi&quot; you could use the whole snippet as the abbreviation because it's short, or simply use &quot;pi&quot;.</li>
+<li>Enter whatever you like (or nothing) in the textboxes below the Abbreviation textbox. However, the Abbreviation textbox must have an entry for your snippet.</li>
+<li>Type (or paste) the code for your snippet in the big Code textbox at the bottom of the Code Manager.</li>
+<li>Press the Add button. Then if you want to add another snippet in the same or a different category, press the Apply button. If adding to a different category, remember to first select that category in the Snippet Categories textbox. When you're finished adding snippets, press the OK button.</li>
+</ol>
+</div>
+<div class="section">
+<h1><a id="how-to-insert-a-snippet-into-your-code" name="how-to-insert-a-snippet-into-your-code">HOW TO INSERT A SNIPPET INTO YOUR CODE</a></h1>
+<ol class="arabic simple">
+<li>On the Ulipad menubar, Window-&gt;Open Snippets Window. This should open the Snippets Window to the left of the main window. This window has an upper part (with the snippets categories) and a lower part (showing the contents of the category selected above in the snippets categories)</li>
+<li>With the main window showing a document into which you want to insert a snippet, from the upper window select the category you want. For our example, select &quot;Imports&quot;.</li>
+<li>Place the caret exactly where you want the snippet to be inserted in the document.</li>
+<li>Locate the snippet in the lower window and double click on either its abbreviation or its description (if you've given it one). Voila!</li>
+</ol>
+</div>
+<div class="section">
+<h1><a id="how-to-edit-a-snippet" name="how-to-edit-a-snippet">HOW TO EDIT A SNIPPET</a></h1>
+<ol class="arabic simple">
+<li>Open the Code Manager (Tool-&gt;Snippets-&gt;Snippets Code Manager).</li>
+<li>Select the snippet's category (in the Snippet Categories textbox) and then the snippet (in the Snippet Code textbox). This should make the snippet's code visible, and also the abbreviation and other (if any) info you entered for the snippet. Make the edits you want and then press the Update button. Then press the OK button. You're done.</li>
+</ol>
+</div>
+<div class="section">
+<h1><a id="how-to-edit-a-category-name" name="how-to-edit-a-category-name">HOW TO EDIT A CATEGORY NAME</a></h1>
+<ol class="arabic simple">
+<li>Open the Category Manager (Tool-&gt;Snippets-&gt;Snippets Categories Manager).</li>
+<li>Select the category you want to edit. The name should now also appear in the Category Text textbox, where you can now edit it.</li>
+<li>When editing is completed, press the Update button, then the OK button. You're done.</li>
+</ol>
+</div>
+<div class="section">
+<h1><a id="about-the-group-of-8-buttons-on-the-right-side-of-the-categories-manager" name="about-the-group-of-8-buttons-on-the-right-side-of-the-categories-manager">ABOUT THE GROUP OF 8 BUTTONS ON THE RIGHT SIDE OF THE CATEGORIES MANAGER</a></h1>
+<ol class="arabic simple">
+<li>The Add and Update buttons have already been covered above.</li>
+<li>To use any of the remaining 6 buttons, first select a category.</li>
+<li>The Add Sub button is used to create a sub-category to an already existing category or sub-category. First, select that existing category, for example &quot;Imports&quot;. To create a sub-category to Imports, edit &quot;Imports&quot; in the Category Text textbox to the sub-category name you want, say &quot;used_infrequently&quot;. Then press the Add Sub button. This will create the sub-category. Pressing the OK button or the Apply button will save the change to disk. Upon reopening the Category Manager you should find the sub-category &quot;used_infrequently&quot; indented under the category &quot;Imports&quot;. Sub-categories to sub-categories can be created by the same process.</li>
+<li>The Delete button is used to delete a category or a sub-category. However, you cannot delete a category that has one or more sub-categories. You must delete these first. As usual, after deleting, press the Apply or the OK button to save the change.</li>
+<li>The Up and Down buttons are used to move a selected category up or down in the list of categories. Again, click the OK button or the Apply button to save the change.</li>
+<li>The Left and Right buttons move a selected category in or out of category or sub-category status. For example, selecting the &quot;used_infrequently&quot; sub-category and pressing the Left button will move &quot;used_infrequently&quot; to the left, thereby making it into a main category, and no longer a sub-category of &quot;Imports&quot;. Don't forget to save the change.</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

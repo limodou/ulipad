@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Thu Jan 19 11:25:26 2006\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\rssreader\RssPage.py:152
+msgid "Subject"
+msgstr ""
+
+#: ..\plugins\rssreader\RssPage.py:153
+msgid "Date"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:403 ..\plugins\rssreader\RssReader.py:514
+msgid "Category Name:"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:405
+msgid "Category Properties"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:424 ..\plugins\rssreader\RssReader.py:448
+msgid "Feed Caption:"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:425 ..\plugins\rssreader\RssReader.py:449
+msgid "Feed URL:"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:426
+msgid "Home URL:"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:429
+msgid "Feed Properties"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:448
+msgid "Caption"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:449
+msgid "New Feed URL"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:452 ..\plugins\rssreader\__init__.py:103
+msgid "Add Feed"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:514
+msgid "New Category"
+msgstr ""
+
+#: ..\plugins\rssreader\RssReader.py:517
+msgid "Input"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:32 ..\plugins\rssreader\__init__.py:58
+msgid "RSS Reader"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:73
+msgid "Rss Reader database file"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:73 ..\plugins\rssreader\__init__.py:74
+#: ..\plugins\rssreader\__init__.py:75 ..\plugins\rssreader\__init__.py:76
+#: ..\plugins\rssreader\__init__.py:77 ..\plugins\rssreader\__init__.py:78
+msgid "Rss Reader"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:74
+msgid "How long to refresh the feeds"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:75
+msgid "How long to set readed flag as you are reading a post"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:76
+msgid "Refresh all the feeds as startup"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:77
+msgid "As leaving a feed, set all posts read"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:78
+msgid "As dealing a feed, auto parse the feed information"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:90
+msgid "Add Category"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:91 ..\plugins\rssreader\__init__.py:104
+#: ..\plugins\rssreader\__init__.py:114
+msgid "Refresh"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:93
+msgid "Import OPML"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:94
+msgid "Export OPML"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:96
+msgid "ReCreate Database"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:105 ..\plugins\rssreader\__init__.py:115
+msgid "Stop Refresh"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:107 ..\plugins\rssreader\__init__.py:119
+msgid "Properties"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:116
+msgid "Make All Posts Read"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:117
+msgid "Delete All Posts"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:165 ..\plugins\rssreader\__init__.py:177
+msgid "Choose a OPML filename"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:174
+msgid "Parsing OPML..."
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:186
+msgid "Saving OPML..."
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:199
+msgid "Confirm"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:199
+msgid ""
+"Do you really want to re-create the rss database?\n"
+"All data in it will be lost!"
+msgstr ""
+
+#: ..\plugins\rssreader\__init__.py:207
+msgid "Rss database is created successfully!"
+msgstr ""
+

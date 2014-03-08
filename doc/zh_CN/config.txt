@@ -1,0 +1,234 @@
+=========================================
+ UliPad Configuration File (config.ini)
+=========================================
+
+:Author: limodou, Tom Eubank
+:Contact: limodou@gmail.com, tom@afcon.com
+:Homepage: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+:Copyright: FDL
+
+UliPad is highly configuable, but many of them don't has a visual or GUI
+operation interface. So here is detail description about it.
+
+As default, config.ini will not be created, untill you change some settings of 
+UliPad. So if you want to change the option in config.ini, and there is no such
+a file, you can create this file manually in UliPad installed folder or its conf
+folder, that's the same. I always create it in UliPad installed folder, because you
+can easily find it.
+
+Debug mode
+-------------
+
+When you install UliPad, the debug.txt file is created in the UliPad root 
+directory.  However, it remains empty until you enable the debug setting, after which 
+UliPad outputs a lot of information into debug.txt, including: menu items,
+shortcuts, plugins, mixins, etc.  The ``debug`` setting is stored in the  
+section of the configuration file as follows::
+
+    [default]
+    debug = 1
+
+If ``debug = 1``, debug information is written to debug.txt.  If ``debug = 0`` 
+(or unspecified), then there is no debug information. For now, you can switch
+the debug mode in Preference Dialog.
+
+Shortcut Keys
+------------------
+
+Shortcut keys for menu items are stored in two sections used of the configuration
+file. The ``main_hotkey`` section defines shortcuts for the menu bar.  The 
+``editor_hotkey`` section defines shortcuts for editing. For example::
+
+    [main_hotkey]
+    IDM_FILE_SAVEAS=F12
+
+Each shortcut is defined by specifying the menu-item ID and one or more key names.
+Key names include: *shift keys* (``Ctrl``, ``Shift``, ``Alt``, etc.), *function 
+keys* (e.g., ``F1``, ``Esc``, ``Tab``, ``Enter``, etc.) and *letter keys* (e.g., 
+``A``, etc.).  Each shortcut can contain zero or more shift keys followed by a 
+single function key, or one or more shift keys followed by a single letter key.  
+Use ``+`` to combine key names, for example: ``Ctrl+A``.
+
+You can use one of the following methods to locate valid entries for the menu-item ID. 
+
+#. Open mixins/Import.py source file, and serach for ``IDM_``, for example::
+
+    (100, 'IDM_FILE_NEW', tr('New') + '\tCtrl+N', wx.ITEM_NORMAL, 
+        'OnFileNew', tr('Creates a new document')),
+    (105, 'IDM_FILE_NEWMORE', tr('New') + '...', wx.ITEM_NORMAL, 
+        None, tr('Creates a new document')),
+    (110, 'IDM_FILE_OPEN', tr('Open') + '\tCtrl+O', wx.ITEM_NORMAL, 
+        'OnFileOpen', tr('Opens an existing document')),
+
+   The following menu item ID's are found above: ``IDM_FILE_NEW``, ``IDM_FILE_NEWMORE``, 
+   ``IDM_FILE_OPEN``. But some menu items may start with ``wx.ID_``, because they
+   are stocked IDs also used in UliPad.
+
+    .. note:: Populating debug.txt
+
+        If debug.txt is empty, populate it as follows: 
+        
+          1.  Enable debug mode.
+          2.  Exit and restart UliPad.
+          3.  Open debug.txt. 
+
+#. Search for instances of ``[makemenu] makeaccelerator`` in debug.txt to locate
+   the various lists of menu ID's with their current shortcuts.  If an menu item 
+   has no shortcuts defined, its key-name list is empty (``[]``). 
+
+::
+
+    [ INFO] -- [makemenu] makeaccelerator...
+    [ INFO] -- 	IDM_FILE_NEWMORE_NULL []
+    [ INFO] -- 	IDM_FILE_NEW [Ctrl+N]
+    [ INFO] -- 	IDM_FILE_NEWMORE []
+    [ INFO] -- 	IDM_FILE_OPEN [Ctrl+O]
+    [ INFO] -- 	IDM_FILE_REOPEN [Ctrl+Shift+O]
+    [ INFO] -- 	IDM_FILE_RECENTFILES []
+
+Default Fonts
+----------------
+
+If you don't like the default fonts of the Editor, Message Window, or Shell 
+Window, you can change them::
+
+    [default]
+    editor_font = "fontname"
+    editor_fontsize = 10
+    message_font = "fontname"
+    message_fontsize = 10
+    shell_font = "fontname"
+    shell_fontsize = 10
+
+And you can also change the caret-line background color::
+
+    [default]
+    message_caretlineback = #FF0000
+
+Here the color is represented using hexidecimal ``#XXXXXX``. I think you can also 
+use ``red``, ``green``, etc.
+
+Directory-browser File Icons
+-------------------------------
+
+UliPad can recognize some files type, and show different icons to these files. 
+And if you don't like these icons and want to add some new file icons, you can 
+change them in config.ini. For now, UliPad supports: .txt, .ini, .html, .py, 
+.pyw, .xml, .bat, .htm.
+
+::
+
+    [fileimages]
+    .pyw = file_py.gif
+    .c = item.gif
+    .ini = file_txt.gif
+    .py = file_py.gif
+    .txt = file_txt.gif
+    .html = file_html.gif
+    .xml = file_xml.gif
+    .bat = file_txt.gif
+    .htm = file_html.gif
+
+If you want to change them, first you should add new image file in $(UliPad)/images folder, the 
+image file format could be .gif or .png. Then add like above, the key is suffix of the filename,
+and the value is the icon filename.
+
+Ignore files in Directory Browser
+------------------------------------
+
+In the default configuration, UliPad ignores some file types in the Directory Browser.
+
+::
+
+    [ignore]
+    matches = .*,*.pyc,*.bak,*.ico,*.m3u,
+
+You can extend this list to include other file types.
+
+TODO pattern
+----------------
+
+UliPad supports TODO formatting with predefined entries for many files types 
+(e.g., ``asp``, ``c``, ``css``, ``djangotmp``, ``fortran``, ``html``, ``java``, 
+``js``, ``perl``, ``php``, ``python``, ``rst``, ``ruby``, ``text``, and ``xml``). 
+Each entry consists of one or more keys and one or more patterns.  Each key is 
+the language lexer name (not the file suffix), and multiple keys are separated 
+with a slash (``/``).  Each pattern is a regular expression.  Multple patterns 
+are represented using a list format: each pattern delimited with double quotes 
+(``"``), and multiple patterns separated with a comma (``,``).  
+
+Entry with multiple keys and a single pattern::
+
+    [todo_pattern]
+    python/ruby/perl = ^\s*#\s*[tT][oO][dD][oO]\s+(.*?)$
+
+Sample usage::
+
+    #TODO TEST              Valid
+       # todo TEST          Valid
+    print aaa #todo test    Invalid
+
+Multiple keys and multiple patterns::
+
+    [todo_pattern]
+    c/c++/java = "^\s*//\s*[tT][oO][dD][oO]\s+(.*?)$", "^\s*/\*\s*[tT][oO][dD][oO]\s+(.*?)$"
+
+Sample usage::
+
+    //todo TEST     Valid
+      /* todo TEST  Valid
+    printf() //todo Invalid
+
+If there is a file type that UliPad doesn't support yet, you can add it::
+
+    [todo_pattern]
+    ruby = "^\s*#\s*[tT][oO][dD][oO]\s+(.*?)$"
+
+Note, the following language lexer names require that you install their respective plugins: 
+djangotmp (djangoproj plugin), fortran (fortran plugin), and ruby (ruby plugin).
+
+Comment characters
+----------------------
+
+You can change the characters that UliPad uses to delimit comments for each file 
+type. These characters can be used in Comment and Uncomment menu.  Or press 
+``Ctrl+/`` to comment text and press ``Ctrl+\\`` to uncomment text. 
+
+::
+
+    [comment_chars]
+    c = //
+    python = #
+    default = #
+
+Note, the key is not the file suffix, but the language lexer name. But `default` 
+is not a language name, just a default value. 
+
+Preferred language
+--------------------
+
+UliPad support *i18n*, and when you changing the lanague, UliPad saves the 
+selection in config.ini.
+
+::
+
+    [language]
+    default = 
+    
+If default is empty, then UliPad attempts to automatically detect language.  If 
+UliPad encounters any problems automatically detecting the language, set the 
+default language to English (``en``). 
+
+Python path
+-------------------
+
+In order to extend the python path (sys.path) to include a specific directory, 
+change the pytonpath setting::
+
+    [default]
+    pythonpath = "d:\\",c:/,
+    
+Directory names should be separated by a comma (``,``).  Individual directory 
+names may be delimited using double-quotes (e.g., ``"d:\\"``); names with 
+embedded white space must be quoted.

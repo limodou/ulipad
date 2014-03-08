@@ -1,0 +1,285 @@
+==============
+  Introduction
+==============
+
+: Author: limodou
+: Contact: limodou@gmail.com
+: Home: http://code.google.com/p/ulipad/
+: BLOG: http://www.donews.net/limodou
+: Copyright: GPL
+
+(Note: translated from Chinese Simplified by translate.google.com.  Will be improved over time.)
+
+Contents ..:: CONTENTS
+Sectnum ..::  
+
+    section
+
+INTRODUCTION
+------------
+
+This item is a personal project development objective is to design and develop a convenient and flexible Python editor, on the one hand to have independent copyright, on the other hand may be required
+When the realization of the special features customization needs.
+
+Objective
+News
+
+This document to help users of the project background, function, the scope of understanding and respect for rational, and effective use of the item.
+
+Introduction
+Ape
+
+UliPad is an editor, you can use it to carry out your document writing, programming development. It uses Python programming language development, user interface-based scripting
+. In addition to the completion of the general editor commonly used features, the most important thing is to realize a convenient, flexible framework, developers can easily develop new features. But
+Programming experience with the users can also address the daily work of the special problems of handling plug-ins, allowing them their own day-to-day work and closely integrated. The use of the
+This powerful Python programming language, you can easily make changes to the software to meet their own needs.
+
+GPL version of this software is released manner, and I welcome your exchange.
+
+
+Project history
+~~~~~~~~~~~~~~~
+
+First, the predecessor of the item should be FlyEdit (from the Italian word for the hovercraft, is to achieve freedom extended). The first is the use of scripting, but then the scripting wxStyledTextCtrl
+Components (yes Scintilla editor packets - a powerful editor - the scripting package) is not perfect, when using multiple files when (then want to use to achieve more documents) will have problems,
+Therefore waive scripting. Then to the Tcl / Tkinter (also a cross-platform graphics package, but limited control, some trouble in Chinese), has achieved Mixin mechanism, but also
+Allows users to prepare their own plug-ins. It is based on the Python IDLE to the transit, syntax highlighted features such as the use of Python to achieve, not Tcl / Tkinter itself all
+Functional, the efficiency is very slow. And many editors do not have the function, it is very troublesome to achieve. Plus later in the Linux testing, running mistakes, so it
+Abandoned.
+
+In April 2004, I discovered DrPython freshmeat.net, it is an editor, use scripting 2.4.2.3.2.3 (now upgraded to 2.5.1), and realized
+Multi-document (using wxNotebook and wxStyledTextCtrl components), and function very well, and I made some suggestions to improve, and later become a developer, and
+Its revised and implemented some features. But with the huge software, the amendment has become increasingly difficult. Because one of the new features may have to revise the menu, dialog parameters, incident handling code
+Etc., but these places are not together, but spread open, such rewriting procedures to be several places at the same time, very troublesome. And another person is not clearly know you
+What has changed in the end, might better than several procedures to know what changed. But if you also amend a number of functions, the results of this comparison may be several functional mixed
+Together, the changes look very inconvenient.
+
+After a period of time right DrPython changes and learning, I am now very stable scripting (Borland also said he wants to C + + Builder X used as a graphics wxWindow
+Development House, in view of this wxWindow or promising), want to achieve a flexible programming framework, in particular to use Python is a powerful dynamic characteristics, and Xu
+Many new things can be in developing applications can learn a lot of scripting knowledge. So I started a new project development. To distinguish FlyEdit, I call for UliPad, Italy
+"Freshmen editors."
+
+UliPad project in 2004, officially began on April 22 coding, after carefully considering the framework. Now it uses two basic structure: Mixin and Plugin. The difference between the two in my blog
+In a careful distinction. Simply put, both of which are right for the expansion of the mechanism is to increase Mixin new members and the members of variables, and Plugin is a special procedure set
+Call processing plug-in points (a bit like a callback function or pseudo-events). So, I first of a class based on the available when the realization of a new function, the use of the new mechanism will function Mixin joined the
+Category. The category needs special treatment, the default insertion sites (call may not know what they need only definition of the parameters interface can be imported), and then insert the need to insert a new code points
+, The use of Plugin mechanisms to achieve. Because more than one procedure may need to expand the category, probably a lot of categories, and therefore Mixin Plugin mechanism, also joined the interface Recognition gong
+That, in other words: Mixin and Plugin allows for the reunification of the Mixin from a derivative of, and the only definition Mixin name for the distinction between different types Mixin. New or Mixin
+Plugin need to use a function to insert itself into the corresponding category, the need to provide the name inserted Mixin. This allows Mixin Mixin like to be kind and the content can counterparts
+Up. (More details please refer to the contents of "technical manuals")
+
+In version 3.3, UliPad renamed UliPad.
+
+2004/05/27 Version 1.0 Released
+
+2004/06/20 Version 2.0 Released
+
+2004/06/28 Version 2.1 Released
+
+2004/07/07 Version 2.2 Released
+
+2004/07/20 Version 2.3 Released
+
+2004/07/28 Version 2.4 Released
+
+2004/08/19 Version 2.5 Released
+
+2004/08/26 Version 2.6 Released
+
+2004/09/10 Version 2.6.1 Released
+
+2004/09/20 Version 2.7 Released
+
+2004/10/08 Version 2.8 Released
+
+2005/07/24 Version 2.9 Released
+
+2005/10/16 Version 3.0 Released
+
+Version 3.1 released in 2005-11-23
+
+2005/01/18 Version 3.2 Released
+
+2006/08/23 Version 3.3 Released
+
+2006/10/08 Version 3.4 Released
+
+2006/10/24 Version 3.5 Released
+
+2006/12/04 Version 3.6 Released
+
+Terminology and acronyms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Python
+     A powerful explanation of the dynamic implementation of automatic compiler language, pure object-oriented, flexible data structure, and lots of excellent module Grammar
+     Clear, concise, and can run on many platforms.
+Scripting
+     WxWidgets project Python binding. It is a map of the use of simple, convenient, but powerful, but also across Windows,
+     Mac, Linux operation.
+Cells (slot class)
+     A trough of Mixin realize is that we can allow the class, also known as target category. It can be conducted at runtime dynamic expansion, such as increasing class attribute,
+     Law.
+Mixins
+     In a run-time dynamic expansion mechanisms, such as a slot type at run time Mixins technology can increase its class attributes and methods. It is a common name,
+     I will further broken down into its Mixin and Plugin.
+Mixin
+     Can the addition of new properties and methods.
+Plugin
+     A (called points / realization) framework, you need to call first definition of a point, and then achieve it. This reference point in the definition of slot category. A -
+     A number of points can be used to achieve, or all of their implementation, or selective implementation and return results.
+
+
+Creative Thinking
+------------------
+
+Software development is a very painful thing, the demand for a large number of new and existing software architecture is the result of conflict between the software difficult to maintain a major reason. Very
+More software may structure at the beginning of a very good, easy expansion, but with the rich software, code, the structure may be becoming no longer fit
+Demand for new development. For editing software, such issues become even more obvious. Then UliPad is how to structure a flexible structure Jin
+A useful to explore, it will become a professional, stable editing software. Therefore, UliPad core of the design is how to structure a
+Species flexible architecture, the new features make it more convenient and more easy maintenance.
+
+UliPad use of the software is based on Python + scripting. Therefore, UliPad Python can fully enjoy the dynamic character of the benefits of the same
+When the use of the scripting, but also the realization of cross-platform operation.
+
+Thus, the design concept is UliPad take full advantage of the dynamic characteristics of the Python language, structure and easy to expand flexible software system. Specific Technology
+Mixin and that the use of Plugin Design and Development, France is distributed more put it in simple terms of programming, or narrowly interpreted as a plug-in program
+(Distributed category but programming and plug-in programming is different, including the distribution of programming and Mixin Plugin, and generally include only programming plug-Plugin, plug-in programming
+The expansion is functional limitations). Sometimes simple to, I will call for the distribution of programming Mixin, specifically the technical details, and will be broken down Mixin Plugin.
+
+For example, or a software prototype has just begun, with only a few functions. Therefore, there will be some function of the foundation class. When these basic functions stability, the same
+When a new demand, then need to expand these categories. There are two basic expansion:
+
+  1. New methods, attributes the realization
+  2. Increase the new method, called attributes of the entrance
+
+Not for the adoption of a new method of the attribute may also need to add a new category. At this time the existing categories can be used to achieve the second expansion of the original and new
+The link between categories.
+
+Know the extension, then where to achieve? For the first expansion of a species, my method is the basic fixed category of the original document, but rather to create a
+The new document, in this new document in a new way, attribute. Then through a mechanism of the new methods and attributes of a fusion with the target, while the melting
+When it is running in a realized. This is a function of the development, and continuously expand. The new expansion is not directly in the original
+A revised document, and a document simultaneously on a number of expansion, it is relatively easy to know that this expansion has done what work,
+In software maintenance is very convenient. These extensions will be through a mechanism in the software runs automatically and objectives of fusion, no need for additional work. For
+Such an extension, I called for the expansion of Mixin. For the first two kinds of expansion, I was in the original category corresponding increase in the call interface, while expanding Mixin
+The increase in the interface called a concrete realization, which will be added by calling the interface function and the type of link. I called for such an extension for Plugin expansion
+Also called a plug-in expansion.
+
+Therefore Mixin expansion of the main development objectives of the extended functionality, such as adding new categories, such changes, add new attributes. For Plugin
+Expansion of the main objectives is the need to find suitable locations call, a call to the corresponding definition of interface. At the same time achieve concrete Plugin code.
+
+Project Overview
+-----------------
+
+Function
+News
+This software is an editor, it is mainly applied to software development, especially the development of the Python language, but because of its flexible structure, so you can
+Plug-in the preparation of applications to expand its functions. The editor of the development aims to improve the efficiency of the development programmer, it has many features in the operating close
+The function.
+
+Features
+- - - - - -
+
+Mixins are based on the software developed by the idea, many of the features you may need to disable, and will not affect the entire software. It is precisely because
+This flexible editing framework, the development and maintenance are relatively easy. In the framework of this program you can extract out with the development of other projects.
+
+It also is an international software automatically identifies the coding system used to display the corresponding local language. Currently supports Chinese and English. In its
+Text of support particularly good.
+
+The project organization and management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This personal project. The project, established in the http://www.tigris.org http://http://UliPad.tigris.org/ space for the project,
+The entire project management software using CVS version management. Famous domestic and Python communities - Woodpecker communities (http://www.woodpecker.org.cn)
+Create a wiki pages, release of information and user feedback.
+
+Main characteristics
+~~~~~~~~~~~~~~~~~~~~~~
+
+The following list of UliPad now with the main characteristics of some other editor is not available. New features are constantly increasing:
+
+Many syntax highlighted
+   Now Python support, Html, C / C + + syntax highlighted
+
+Python category View
+   Python can browse the class structure
+
+Python operating procedures
+   The editor can run directly Python procedures to check the results. Set running path, setting running command line parameters.
+
+Expansion term election
+   Can '. 'As part of the word choice.
+
+Matching choice
+   Can Object () () [] \ '\' \ "\" of the text to include a choice. If a text is to use (), including up will be inserted into points in brackets, the selection, brackets
+   Of all things being selected. If there are nested parentheses other brackets, they can choose a priority direction of matching choice left or right direction matching priority choice for this also nested parentheses
+   Can handle.
+
+Expanding choices
+   In the selected text, the implementation of this function can be selected area about expansion. Matching the functional fit and function with the use of choice. End choice in the use of matching function, then
+   You chose in brackets, but was not chosen their own brackets, the use of options to expand the brackets can be selected.
+
+Replication
+   Increased many replication. Some ideas from the Vim in the past. Importing text, very likely to be copied before importation. Thus, you can import only the first few letters and then
+   Duplicate functions (including characters, words and phrases), so that from the time before the beginning of the text of the search at the first input consistent with the current text (which may be words or phrases), in the present -
+   Purchase a hint that window, you may continue to achieve the implementation of alternative words or phrases around the pan. When the contents can be replicated to find the input current round will be filled importation. Importation of great convenience.
+
+The text surrounding the
+   Text can be selected, including the use of certain characters, such as (),{}. Some definition is good, if not, then you can use the user-defined strings.
+
+Direct View
+   General editor of the first search function can be selected to identify the contents, then open the View dialog box, then select the content that is just emerging in the inquiry dialog box, then the search
+   The search can be carried out. But sometimes inconvenient, so NewEit F4 keys provided by the selected content directly to search, the search will not open the dialog box.
+
+Jump to the last change
+   UliPad can remember where the last change. When the inspection procedures have changed from the place, the use of this function can be directly jump back to just turn over the place.
+
+Code fragments
+   The text can be saved as repetitive code fragment, the need will be inserted in the document.
+
+Ftp function
+   Can a remote site on the paper Ftp: open, edit, preserve, delete, rename, in the new document, the new directory, upload, under Chuan.
+
+Blog Editor
+   Joined by a blog can easily plug-in for blog writing.
+
+Text to Html
+   Support reStructuredText -> html, python source -> html, textile -> html
+
+Built-in viewer Html
+   Html can use built-in viewer to browse Html (in Windows is to use IE)
+
+Wizard function
+   Users can customize modules of code automatically apply the framework and code generated automatically.
+
+Contents View
+   To open one or more directories on the left column for the paper for editing, browsing and switching.
+
+Automatic expansion
+   According to the importation of additional content automatically replaced, and so is the search function.
+
+UliPad EditPlus is basically in accordance with the functions to be achieved, I think joined the program in a very convenient function. So some function and EditPlus is similar,
+No longer described in more detail please refer to the "user manual."
+
+Role of
+~~~~~~~~~~~
+
+The software is cross-platform software, simple installation and configuration. As can be run on Windows, Mac, Linux environment, as well installation can run Python and the scripting
+Software. Also under Windows executable installation procedures provide a user-friendly installation. To install some third-party plug-ins, you need to install the plug-in to its corresponding
+It packages.
+
+Project development platform and tools
+---------------------------------------
+
+The software is cross-platform. Early in the project is the use of general text editing tools, the project must have become functional after the development, which own their own development.
+
+Application areas
+------------------
+
+For document editing, software development. When developed a special plug-in functions can also be used after other purposes, such as: listen to MP3 blog editing, file format conversion (of these have been
+Should the plugin).
+
+
+`_` [Return]
+
+.. _ `[Return]`: index.htm

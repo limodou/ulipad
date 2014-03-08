@@ -1,0 +1,44 @@
+=======================
+ UliPad Documentations
+=======================
+
+:Author: limodou
+:Contact: limodou@gmail.com
+:Homepage: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+
+Thanks for you downloading and using UliPad Editor Software. This software
+is keeping improvment, so please keep up with its mailing list or my blog 
+to get the latest information about UliPad.
+
+Introduction
+---------------
+
+* `Project Introduction <introduce.htm>`_ (Chinese)
+* `Change Log <changelog.htm>`_
+* `Plugin Introduction <plugins.htm>`_
+
+
+Manual
+--------
+
+* `User Manual <userguide.htm>`_ (Chinese)
+* `Tech Manual <technical.htm>`_ (Chinese)
+
+HowTo
+~~~~~~~~
+
+* `Config.ini Description <config.htm>`_
+* `Indent Moving Howto <howto_indent_moving.htm>`_
+* `Write Custom Syntax Support Howto <howto_write_custom_syntax_support.htm>`_
+* `Snippets Howto <howto_snippet.htm>`_
+* `InputAssistant Howto <howto_input_assistant.htm>`_
+
+FAQ
+-------
+
+* `FAQ <faq.htm>`_
+
+
+All documents are written in reStructuredText format, and convert to html by docutils tool¡£
+And all of them are written in UliPad.

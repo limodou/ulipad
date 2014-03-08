@@ -1,0 +1,973 @@
+﻿$Rev: 564 $
+[2013/10/15]
+InputAssistant.py   Fix get_calltip bug.
+
+[2011/04/21]
+mPad.py             Add configurable memo file support. So you can set something like this:
+                    
+                    [default]
+                    memo = "C:\\path\\to\\memo.txt"
+scriptils.py        Add some useful methods to support scripts files. Such as emptytab, newtab, etc.
+LexerClass1.py mLexer.py Add Bash support.
+
+All above thanks to Helio Perroni Filho <xperroni@gmail.com>
+[2010/04/22]
+mGuessLang.py       Add #! /usr/bin/env python support thanks for zhangchunlin
+plugin/ruby/mClassBrowser.py
+                    Fix ruby class browser bug
+Add Lua plugin      Thanks to zhangchunlin.
+
+[2008/06/02]
+mEncoding.py EncodingDialog.py
+                    Migirate EncodingDialog from xrc to meide
+LexerBase.py mLexerBase.py LexerClass.py
+                    Add default color theme support, you can set it in Preference
+                    
+[2008/05/14]
+mPythonProject.py   Add Create Python Package in context menu of Directory Browser Window
+
+[2008/05/12]
+RegexWindow.py      Improve regex window, and when you set Unicode flag, it'll 
+                    automatically convert \uXXXX to unichr
+[2008/05/05]
+mEditorCtrl.py      Fix Cancel Save file will prompt save as dialog again bug
+
+[2008/05/01]
+mFormat.py          Fix strip tailing spaces bug
+
+-------------------------------------- 4.0 -----------------------------
+[2008/04/24]
+Fix                 Cann't to Can't
+
+[2008/04/19]
+mInputAssistant.py  Add config menu, and add toggle input assistant menu item
+DirBrowser.py       Fix refresh directory bug
+
+[2008/04/18]
+mWrapText.py wraptext.py
+                    Add wrap text feature
+
+[2008/04/15]
+doc                 Modify the documents
+mEditorCtrl.py      Add copy filename to clipboard menu on document area tab context menu
+
+[2008/04/14]
+mEditorCtrl.py mDirBrowser.py DireBrowser.py
+                    Add Open Explorer Window Here menu to editoctrl tab
+                    Move Close Other to Close menu group in notebook context menu
+                    Add tool button snippet and modify open dirbrowser and snippet as check toolbutton
+                    Change `explorer.exe %s` as `explorer.exe /e, %s`
+ruler/__init__.py   Fix ruler bug
+DirBrowser.py       When add path, it'll automatically pop up project setting dialog
+
+[2008/04/12]
+mLexer.py mLexerClass1.py
+                    Add slice syntax support
+mCheckUpdate.py     Add auto check update
+
+[2008/04/10]
+mCommands.py mConcurrent.py
+                    Improve caret display(process KILL_FOCUS event if in command mode or concurrent mode)
+
+[2008/04/09]
+mFileNew.py         Can remember the last new file type(select new type menu first),
+                    then when you select new menu, it'll use the last new file type as default
+PrefDialog.py mInputAssistant.py
+                    Improve preference dialog input assistant checkbox process.
+                    When you check the first checkbox(Enable input assistant) it'll
+                    automatically toggle other 5 checkboxes.
+
+[2008/04/03]
+SyntaxCheck.py      Fix exception process bug
+
+[2008/03/31]
+mLineending.py      Add line ending mixture check when saving file feature
+FindReplace.py      Add search text count
+
+[2008/03/27]
+EditorFactory.py    Chanage left double click to right double click
+common.py makemenu.py
+                    Change setmenutext to use fix width to set the menu text, replace with '\t'
+[2008/03/22]
+web2py_plugin       Add web2py plugin
+
+[2008/03/17]
+HtmlPage.py mRestFileType.py Del acp/rst
+                    Improve ReST document render, and fix the setfocus lost bug when
+                    auto modified the html output, thanks a lot to ygao
+
+[2008/03/15]
+mPyRun.py           Add auto detect python interpreter in windows platform
+
+[2008/03/13]
+mScript.py          Fix script filename cannot be unicode(chinese) bug
+
+[2008/03/04]
+*                   Enhance on_modified process, improve the edit speed
+mShell.py           Strip leading space when doing "Run in Shell"
+mAutoCheck.py       Chanage auto file check to Editor on_set_focus event
+SvnSettings.py      Fix password widget is not Password type widget bug
+mFileNew.py         Fix template line-ending not match the default line-ending setting
+
+[2008/03/03]
+Editor.py mFormat.py mLineending.py
+                    Fix press tab and convert EOF too slow problem
+
+[2008/03/02]
+EditorFactory.py FlatNotebook.py
+                    Fix tab invisible bug after changing size or changing the page title
+mLineending.py      Add strip line ending when saving functionality and strip line ending menu item
+                    in Edit/Format.
+
+[2008/03/01]
+mLineending.py      Fix copy and paste lineending is not correct bug
+
+[2008/02/16]
+Editor.py mEditor.py FlatNotebook.py mInputAssistant.py
+                    Fix smart tabs bug.
+
+[2008/02/15]
+Editor.py           Skip control keys on keydown event
+
+[2008/01/18]
+common.py           Fix webopen bug, cann't correctly deal with 'mailto:'
+mDDESupport.py      Fix DDE bug, thanks to LP <liupengf12@gmail.com>
+
+[2008/01/16]
+plugins/SpellCheck.py  67598092
+                    Refactor interface
+
+[2008/01/15]
+common.py           Add icon set theme support.
+
+[2008/01/14]
+PrefDialog.py mPreference.py
+                    Change preference dialog from notebook to treebook
+AsyncAction.py mInputAssistant.py
+                    Refactor the AsyncAction class, and add get_timestep() method.
+                    Reference to ygao's implemention
+Editor.py, *        Fix if lines are folded, when goto hiding lines will no effect bug.
+
+[2008/01/12]
+DDE.py mDDESupport.py
+                    Change DDE to asyncore and asynchat framework
+
+[2008/01/11]
+mako_plugin/dirbrowserext.py makotmp.acp
+                    Fix mako tag auto complete bug #issue 14
+unicodetext.py      Fix utf-16 convertion bug
+mIndentMove.py      When moving next indent position, select the text #issue 15
+FlatNotebook.py     Fix if set DROP_DOWN_TABS_LIST style, right arrow will disappear bug
+MainFrame.py mAutoCheck.py
+                    Change auto file check and disable memory display
+
+[2008/01/10]
+EditorFactory.py    Add FNB.FNB_DROPDOWN_TABS_LIST style to EditorCtrl
+Entry.py            Using new SetFocus method of meide
+dynamicmenu.py      Fix editor shortcuts key caption error
+
+[2008/01/09]
+ShellWindow.py      Fix popup menu creation too late, so the UpdateUI will raise exception
+Editor.py           Also change popup menu creation position
+HtmlPage.py         Fix GTK platform display
+AsyncAction.py mInputassistant.py
+                    Improve AsyncAction.py using block mode and timeout parameter, so
+                    it'll natural implement the timeout delay process after press a key.
+                    And this will simplify the code. Also comment the on_key_down function,
+                    which invoke the win.mainframe.auto_routin_ac_action.put, because
+                    on_key_down is triggered by pressing control keystroke, so I think
+                    it's unnecessary. Also add ygao's if you type in the same line
+                    from last modified, and don't do analysis work. But I also judged if
+                    it's a multiline operation, if True, then it'll still trigger the
+                    analysis process.
+
+[2008/01/07]
+OutlineBrowser.py   Fix unicode convert bug
+
+[2008/01/05]
+PCInfo.py MainFrame.py MyStatusBar.py
+                    Add linux platform memory display on the statusbar
+
+[2008/01/04]
+mFormat.py mIndentMove.py
+                    Add indent cursor move functionality
+mClassBrowser.py OutlineBrowser.py
+                    Improve python class browser
+CodeSnippet.py      Fix InsertItemBefore bug
+
+[2008/01/02]
+mWindow.py mHotKey.py
+                    Fix custom hotkey error
+SvnSettings.py      Fix svn bug
+DirBrowser.py       Fix ignore bug
+
+[2007/12/25]
+DirBrowser.py
+mPyRun.py           Binding F5 to editor but not MainFrame
+CodeSnippet.py mCodeSnippet.py
+                    Improve xml reading with threading, and change the tooltip
+
+[2007/12/23]
+CodeSnippet.py mCodeSnippet.py
+                    Add new snippet
+
+[2007/12/19]
+php.acp             add php.acp thanks for 魏振 <etggy@163.com>
+
+[2007/12/18]
+canvas_test_plugin  Add Canvas Test plugin, you can directly test DC api
+
+-------------------------------------- 3.9 -----------------------------
+[2007/12/12]
+common.py           Fix webopen twice open bug
+Version.py          change 3.8 to 3.9
+
+-------------------------------------- 3.8.1 -----------------------------
+[2007/12/12]
+UliPad.py           Remove profile invoke
+
+[2007/12/11]
+SvnSupport.py       fix checkout folder spell mistake bug
+
+[2007/12/08]
+DirBrowser.py mDirBrowser.py
+                    Remember the last add path folder
+
+-------------------------------------- 3.8 -----------------------------
+[2007/12/06]
+DirBrowser.py       Fix add new directory, when opened if there are children nodes,
+                    then will not fire after_expanding event bug
+svn_plugin          Migirate svn tool to svn_plugin
+mRun.py             If the caret is at the last line of the message window, after
+                    more lines adding to message window, the caret will goto the
+                    end position, but if the caret is not at the last line, but
+                    middle of the lines, after adding lines, the caret will not
+                    jump to the end.
+
+[2007/11/28]
+mRun.py             Fix message console postion bug, thanks for swordsp
+FlatNotebook.py     Update to newest version for mac
+SyntaxDialog.py     Fix syntaxdialog bug
+
+[2007/11/26]
+acp/python/import.py
+                    Improve default identifiers process, add type judgement
+modules/wxctrl/FlatNotebook.py
+                    Upgrade to the lastest version thanks to swordsp
+
+[2007/11/23]
+ShellWindow.py      Add Paste and Run menu item in popup menu of shell window
+
+[2007/11/21]
+SvnSupport.py       Fix cann't support filename has space bug
+
+[2007/11/20]
+NCustomLexer.py     Improvement lexer process
+
+[2007/11/19]
+NCustomLexer.py     Add new custom lexer class
+
+[2007/11/08]
+dropfile plugin     Add dropfile plugin. thanks Tyberius Prime
+InputAssistant.py   Fix Alt+X Ctrl+X key press bug
+
+[2007/10/14]
+mHelp.py            Can automatically switch lanauge according the current lanaguage
+
+[2007/10/13]
+InputAssistant.py mInputAssistant.py acp
+                    Fix 'import as' bug and input assistant bug
+
+[2007/09/26]
+TodoWindow.py       Fix date undefined bug
+
+[2007/09/25]
+mHelp.py            Improve Help with meide
+
+[2007/09/24]
+FindInFiles.py      Improve Enter key process
+
+[2007/09/24]
+common.py           Fix get_config_file() bug(return '', should return a default filename
+                    if the config.ini is not existed)
+DirBrowser.py       Fix add new sub folder has no children flag bug
+
+[2007/09/23]
+DirBrowser.py mDirBrowser.py mEditorCtrl.py
+                    Made Open Command Here work in Linux
+Mixin.py            Disable RELOAD_MIXINS flag, if this is True, when you close
+                    directory browser and reopen it again, some extended menu will
+                    not work.
+FindReplace.py meide.py
+                    When you open Find & Replace panel, and if findtext or replacetext
+                    control has focus, you can press ESC to close Find & Replace panel
+
+[2007/09/22]
+mHelp.py            Fix webbrowser bug. Thanks Tom Eubank
+svn_plugin          Fix directory browser context menu process
+FlatButtons.py      Compatible process
+SvnSettings.py      Add svn proxy support under linux platform
+
+[2007/09/21]
+mHelp.py            Fix webbrowser bug. Thanks Tom Eubank
+                    remove finddialog.xrc and finddialog_zh_CN.xrc
+import_utils.py     When evalating a word, try to import it first.
+SVNSettings.py      Add windows svn proxy setting support
+
+[2007/09/20]
+FindReplaceDialog.py Removed replaced with FindReplace.py and refactor find and replace
+
+[2007/09/19]
+SvnSupport.py       Fix svn_plugin crash in Linux
+common.py           Add get_config_file_obj() function, and change the invoke.
+PrefDialog.py dict4ini.py
+                    Add config.ini support in Preference Dialog
+
+[2007/09/17]
+FindInFiles.py DirBrowser.py
+                    Improve Find in Files process with thread
+mEditorCtrl.py      If save file failed, then invoke save as
+ScriptDialog.py ShellDialog.py
+                    Fix shortcuts from 1-based bug
+plugin_spec.txt     Update document
+mLineending.py Editor.py
+                    Fix line end mix checking bug also including twice prompt dialog bug
+
+[2007/09/15]
+DirBrowser.py       Fix directory browser insert node bug
+Editor.py mUnicode.py
+                    Don't create a tmp file again, directly save the file
+mClassBrowser.py    Add option to control if show the docstring in class browser window.
+                    rename OutlookBrowser.py to OutlineBrowser.py
+meide.py            Update to latest version
+PrefDialog.py       Improve pref dialog creation, and support custom meide control.
+FindInFiles.py      Change Find in Files dialog to panel
+
+[2007/09/09]
+pyflakes SyntaxCheck.py
+                    Update to svn version
+[2007/09/08]
+Entry.py            Rewrite the code with meide module
+
+[2007/09/06]
+DirBrowser.py       Fix refresh bug
+
+[2007/09/02]
+EditorFactory.py Editor.py
+                    Fix open un-exists file will popup two message dialog bug
+DirBrowser.py       Fix adding empty directory error
+
+[2007/09/01]
+DirBrowser.py
+                    Fix adding empty directory error
+
+[2007/08/29]
+ScriptDialog.py ShellDialog.py mScript.py mShell.py
+                    Add script and shell key binding. Change shell to external tool
+ShellWindow.py      Add Alt+Enter implement the same functionality of Ctrl+Enter
+
+[2007/08/29]
+CheckList.py *      CheckList improvement.
+
+[2007/08/28]
+SvnSupport.py       Remove box.AddStretchSpacer invoke, replaced to StaticBoxSizer
+ShellDialog.py ScriptDialog.py Entry.py
+                    Fix dialog bug
+mPyRun.py           Add copy and run in shell feature
+Editor.py mView.py  Fix line number margin width, and find back End-of-line Marker menu
+ScriptDialog.py     Script Manager can find menu name from the script content, you
+                    can define it as a comment line, format is: #\s*name:(.*)$
+
+[2007/08/27]
+doc                 Change the plugin.txt, fixed bug and added some missing plugins description
+svn_plugin CheckList.py
+                    Add log history, select/deselect all, show unversioned files,
+                    different color for different status, update Chinese translation
+                    Add no files notify if where is no files need to process in
+                    'commit', 'revert' dialog
+ShellWindow.py mRun.py
+                    Improvement. Replace the popup menu, and add Copy Without Prompts
+                    menu item. And if the result cann't be convert to unicode, then
+                    display the result as repr().
+mLexerFactory.py    Fix that when you change the file type, the icon in directory
+                    and dynamic menu don't change bug
+Debug.py            Add time stamp info in debug and error file
+mPyRun.py           Add doctest functionality
+
+[2007/08/26]
+DirBrowser.py svn_plugin
+                    Improvement. Adding icon set used to indicate svn status
+                    Add saving file automatically update the svn icon status,
+                    update Chinese translation
+
+mInputAssistant.py  Changing ESC to Alt+Q to cancel snip.
+
+[2007/08/25]
+DirBrowser.py SvnSupport.py mRun.py
+                    Add refreshing current folder functionality after the svn
+                    command finished
+mSearch.py          Fix Ctrl+B bug. The position is not the right, it's less 1.
+svn_plugin          Make svn support a plugin, so if you want to use svn, you
+                    should enable the svn_plugin first.
+
+[2007/08/24]
+Editor.py           Add Ctrl+Insret => Copy, and add Ctrl+C, Ctrl+X, Ctrl+Y to
+                    Editor.py I don't if it'll fix the problem in linux
+mView.py            Change long line indicator default is true.
+InputAssistant.py SnipMixin.py mInputAssistant.py
+                    Fix snippet template indent bug(when using tab mode, the '\t'
+                    in template will be replaced with spaces). And you can press
+                    ESC to cancel current snippet.
+SvnSupport.py mVersionControl.py mRun.py Entry.py
+                    Add simple SVN support, and also many things need to finish.
+
+[2007/08/23]
+UliPad.py           Now you can set pythonpath option in config.ini/[default],
+                    and ulipad will insert it into the sys.path. pythonpath can
+                    be a string or a string list of directory.
+
+mDebug.py packages  Move winpdb package from modules to packages, fix setup
+                    file bug and change the winpdb invoke
+Print.py            Fix print margin
+
+[2007/08/22]
+Editor.py           Add Shift+Delete => Cut, Shift+Insert => Paste
+mPyRun.py           Add new option in preference, [Python]->Automatically save modified file when running python program, if it's checked, it'll automatically save the modified file.
+common.py LexerBase.py Fix print bug
+mPrint.py Print.py  Fix print bug, add print line number functionality
+
+[2007/08/21]
+mako_plugin         Add mako template syntax highlight support
+
+-------------------------------------- 3.7 -----------------------------
+[2007/08/19]
+                    Ready to release new version
+
+[2007/08/09]
+mRegister.py        Fix register to explore bug
+
+[2007/08/08]
+                    Fix document NewEdit->UliPad
+mFormat.py          Add Tab and Shift+Tab to menu item
+winpdb module       Merge new 1.20 version into ulipad
+
+[2007/08/07]
+mRecentFile.py      增加Alt+R给最近打开文件菜单
+
+[2007/07/19]
+DirBrowser.py       修正在文件浏览中无法使用光标键的bug
+
+[2007/07/11]
+mFtp.py             允许Ftp窗口在相应的面板打开，当通过面板右键菜单打开时
+
+[2007/07/09]
+RegexWindow.py      增加findall中正则式返回为tuple的list时的显示处理,对于tuple使用\t进行分割
+
+[2007/06/25]
+batchrenamefilenames_plugin
+                    增加批量改名插件
+
+[2007/06/24]
+mako_plugin mCommands.py
+                    增加mako插件，将ESC键自动进入vim模式改为原来的处理方式。
+
+[2007/06/12]
+mLexer.py           增加Lua语法设置
+
+[2007/05/15]
+                    增加繁体中文翻译文件 感谢：趙惟倫 <chaoweilun@gmail.com>
+
+[2007/05/10]
+InputAssistant.py mInputassistant.py Editor.py
+                    完善自动完成列表处理。可以响应EVT_STC_AUTOCOMP_SELECTION
+                    事件。同时增加在acp中定义\b表示unindent功能。同时去掉{##}
+                    的处理
+                    解决多行文本添加时缩近的处理
+SnipMixin.py InputAssistant.py mInputassistant.py
+                    增加自动片段域定义及跳转功能
+
+[2007/05/08]
+tts_plugin          将pytts改名为tts_plugin，同时允许修改角色
+
+[2007/04/21]
+mReloadMixins.py    修正Ctrl+H快捷键冲突的bug，改为Ctrl+M，同时去掉字符复制功能
+dict4ini.py         fix 单引号bug
+
+[2007/04/20]
+dict4ini.py         增加对BOM的识别
+
+[2007/04/19]
+dict4ini.py         Fix '\' escape
+mLexerFactory.py    Fix lexer highlight bug
+DirBrowser.py       Fix dir sort bug
+
+[2007/04/18]
+mDebug.py *         将winpdb作为核心的一部分
+DirBrowser.py LexerFactory.py
+                    修改文件名时自动切换语法高亮
+emacskey            Add emacs key bind support thanks for weeloo
+
+[2007/04/16]
+DirBrowser.py       在添加目录时自动排序
+Editor.py mView.py  增加行号显示选项
+mTodoWindow.py TodoWindow.py
+                    增加记忆ToDo窗口column大小的功能
+
+[2007/04/09]
+Reload              增加reload功能，可以在运行时修改程序自动reload，感谢ygao的贡献。
+winpdb              修正无法打开带空格的文件
+
+[2007/03/19]
+mLexerFactory.py    修复对无后缀的文件未使用缺省语法器的bug
+mSearch.py          修复可以打开多个Find窗口的bug
+
+[2007/03/16]
+Calltip.py          将calltip改为scrolledwindow
+FtpClass.py         修正refresh编码转换bug
+
+[2007/03/10]
+import_utils.py     增加calltips的处理可以支持类的__init__和__call__
+
+[2007/02/25]
+TodoWindow.py       Add Due Date column
+
+[2007/02/11]
+mDocument.py        修正自动wrap失效的bug
+
+[2007/02/10]
+faq.txt             Update documents
+
+[2007/02/07]
+mEditorCtrl.py      在保存新文件时，自动加上.py的后缀
+PyParse.py          在处理mac文件格式时，先进行\r转为\n
+
+[2007/02/02]
+LexerBase.py        修正ruler的bug
+mFolder.py          修正folder的bug
+config.txt          增加文档
+*                   Bugs fix
+
+[2007/02/01]
+mSession.py EditorFactory.py mEditorCtrl.py
+                    增加打开或关闭文件时自动保存session
+obj2ini.py          保存对象时无法进行编码转换时，忽略
+PrefDialog.py       修正bug
+Preference.py       自动处理为utf-8
+
+[2007/01/30]
+AyncAction.py PyParse.py
+                    消取异常
+acp/rst/utils.py    修复bug
+
+[2007/01/29]
+mCase.py            修正大小写反转无效的bug
+import_utils.py mInputAssistant.py InputAssistant.py Editor.py
+                    重新设置Input Assistant的多线程处理
+mDocument.py        修改Using Tab/Space为Switch Tab/Space
+
+[2007/01/28]
+NewCustomLexer.py LexerClass.py
+                    使用ZestyParser进行语法分析的处理进行xml的处理
+dynamicmenu.py      修正动态菜单不刷新的bug
+acp/import_utils.py 修正导入from xxx import yyy类时，作为基类不能正确获得属性的bug
+
+[2007/01/27]
+NewCustomLexer.py plugins/FortranLexer.py
+                    使用ZestyParser进行语法分析的处理
+LexerRst.py         改为ZestyParser进行处理
+
+[2007/01/26]
+SyntaxDialog.py LexerClass.py
+                    修正语法参数设置对话框错
+
+[2007/01/25]
+mTodoWindow.py TodoWindow.py MyPanel.py
+                    Todo Window的打开，关闭状态分Editor保存了
+PyParse.py acp/import_utils.py mInputAssistant.py InputAssistant.py
+                    在提示符自动提示中加入全文匹配功能，可选
+
+[2007/01/24]
+LexerBase.py        修正点击语法窗口确定无法关闭的问题。因为preview_code可能为None。
+
+[2007/01/23]
+TodoWindow.py       修正跳转出错的bug
+mFileNew.py         修正打开文件时，输入焦点不正确的错误
+
+[2007/01/21]
+                    增加西班牙语言支持
+
+[2007/01/20]
+TodoWindow.py       增加对重要度的支持，将文件名显示去掉。重要度就是在todo后面加!
+
+[2007/01/19]
+TodoWindow.py mTodoWindow.py
+                    修正当todo内容为空时，自动关闭todo窗口
+rst.acp mRestFileType.py rst/utils.py
+                    修正rst html view中停止刷新失效的bug。同时修正acp匹配\.错。
+FindInFiles.py      增加只显示文件名选项，增加将结果拷贝到剪粘板按钮
+DirBrowser.py       修正当打开底边栏时，双击目录浏览时，打开文件输入焦点丢失错
+SnippetWindow.py mSnippets.py
+                    保存snippet的窗口分隔线和代码分隔线的位置
+
+[2007/01/17]
+obj2ini.py          修正对对象和普通变量的支持
+
+[2007/01/13]
+mMultiView.py       修正打开主菜单上的multiview错
+SnippetWindow.py    Snippet Category允许有空格
+resources           将catelog改为category
+
+[2007/01/10]
+mMessageWindow.py MessageWindow.py
+                    增加自动保存MessageWindow的折行的功能，同时增加横向滚动条
+
+[2007/01/09]
+mWindow.py          将Ctrl+Alt+L改为Alt+Z, 将Ctrl+Alt+B改为Alt+X
+mRecentFile.py      最近打开文件个数改为20
+mFormat.py          修正Ctrl+Q为Ctrl+'
+mTodoWindow.py TodoWindow.py
+                    将原auto_todo的处理改为是否自动显示todo窗口。当todo窗口已经显示时，在保存或切换时会自动显示。如果todo窗口不存在时，当auto_todo为True时会自动打开。
+create.py           Fix在Linux下\r没有去掉的bug
+
+[2007/01/06]
+mPythonContextIndent.py SnippetWindow.py
+                    修正无缩近代码块的拷贝错误
+
+[2007/01/05]
+mFormat.py          新增一个参数选项，是否显示注释符对话框，缺省为不显示
+CustomLexer.py LexerClass.py mLexer.py
+                    将xml的lexer改为自定义
+
+[2007/01/04]
+Calltip.py          修正当calltip在右边时，会根据是否看不见而自动向左移动。感谢Ye Naiquan
+mLineending.py      修正保存后，Undo时光标况是先跳到最后的bug
+mPythonContentIndex.py SnippetWindow.py
+                    修正当Snippet添加时，缩近无效的bug。将缩近处理为一个mainframe的方法Indent_paste.
+
+[2006/12/22]
+OutlookBrowser.py   跳转时尽量使对应的行在中间感谢Aleksey
+
+[2006/12/21]
+mLineending.py      修正打开混合换行符处理慢的bug
+
+[2006/12/20]
+mFormat.py          修正editor中右键菜单缩近反缩近无效的bug
+SearchWin.py mSyntaxCheck.py
+                    增加pep8的风格检查
+Editor.py           Fix Linux saving file will change the permission bug, thanks to Mkdir
+Entry.py            修正读取文件名存为字符串的bug
+CustomLexer.py      修正处理缺省样式的bug
+
+[2006/12/14]
+Globals.py, mMainFrame.py
+                    增加pref对象
+
+[2006/12/10]
+mCTags.py           Fix 当标识符跳转时光标不显示的bug
+djangoproj/dirborwser_ext.py
+                    修正manage.py无法执行的bug
+
+[2006/12/08]
+mCTags.py           Fix ctag 支持的bug
+
+-------------------------------------- 3.6 -----------------------------
+[2006/12/03]
+mEncoding.py        修正当修改编码时，editctrl的tag页标题没有显示修改状态的bug
+
+[2006/12/02]
+mLexer.py LexerClass1.py
+                    增加Lua的语法高亮
+
+[2006/11/30]
+MusicListManage.py  修正双击播放为下一首的bug
+mConcurrent.py Concurrent.py
+                    增加保存服务器地址、端口、用户名的功能
+
+[2006/11/27]
+css.acp	            增加css的自动提示
+
+[2006/11/20]
+mPrint.py           改进打印处理。感谢lin <actionthanword AT gmail.com>
+
+[2006/11/19]
+PyParse.py mClassBrowser.py
+                    增加在类浏览中显示Function,Class的docstring的功能
+Concurrent.py       增加保存聊天内容的功能
+
+[2006/11/18]
+fortran             增加fortran插件
+
+[2006/11/17]
+CumtomLexer.py      修正语法高亮的bug
+
+[2006/11/13]
+pairprog            增加中文翻译
+
+[2006/11/12]
+pairprog            结对编程
+
+[2006/11/09]
+mRecentFile.py      删除打开最新目录功能
+
+[2006/11/08]
+pyMusic插件         修正Music插件
+
+[2006/11/07]
+PyParse.py import_utils.py
+                    增加对epydoc注释中参数类型的支持
+
+[2006/11/06]
+DirBrowser.py mEditorCtrl.py
+                    修正当文件或目录与UliPad不是一个盘符时，打开命令行窗口菜单执行失败的错误。感谢nmweizi的patch.
+
+[2006/10/31]
+mDirBrowser.py      修正当关闭目录浏览窗口时，再打开不能恢复目录的bug
+import_utils.py PyParse.py
+                    修正Python语法分析的bug
+
+[2006/10/30]
+PyParse.py InputAssistant.py RegexWindow.py
+                    修正auto-complete bug，增加正则搜索的范围设定
+
+[2006/10/28]
+mClassBrowser.py mCTags.py
+                    增加当ctags无效时的跳转，可以在当前文件内跳转
+CustomLexer.py LexerRst.py
+                    改进ReST的语法高亮处理
+
+[2006/10/27]
+acp/python/import.py acp/python/import_utils.py PyParse.py
+                    增强自动完成功能可以自动判断类型，识别类结构。目前对多值赋值和带括号的导入及带相对路径的导入尚不支持
+mClassBrowser.py    改进类结构显示，增加类变量的显示
+
+[2006/10/26]
+Editor.py mInputAssistant.py
+                    增加一个dont_analysis标志，以便在程序更新文本时不激活自动分析处理
+                    同时重载了BeginUndoAction和EndUndoAction以更新这两个标志
+
+[2006/10/25]
+mPyRun.py           修正对弹出运行参数窗口点取消时，仍然运行的bug
+
+[2006/10/24]
+OutlookBrowser.py   改进类浏览窗口中，单击class类图标可以展开和折叠
+
+-------------------------------------- 3.5 -----------------------------
+[2006/10/23]
+mColumnMode.py      将Alt+Enter改为Shift+Enter
+mRun.py             修正运行Python程序时，次数多时会Crash。主要原因是common.note()，改为SetStatusText了。
+Editor.py           去掉OnKeyDown中对按键的缓冲处理，简化处理
+
+[2006/10/20]
+Casting.py InputAssistant.py
+                    解决自动处理性能问题。因为每次按争键都重新生成了auto_routin，造成线程重复。
+                    增加对acp文件变化的判断，当不变时，不生成新的acp文件。
+
+[2006/10/19]
+EditorFactory.py mEditorCtrl.py mMultiView.py mRestFileType.py mHtmlFileType.py
+                    增加editctrl的动态弹出菜单功能，同时增加打开当前文档dos窗口的功能
+DirBrowser.py       增加文件拖放的功能，可以打开放入的一个目录
+Editor.py           增加拖拽功能
+
+[2006/10/18]
+mEditorFactory.py   修正当输入点在view中时，按Ctrl+S出错的bug。增加一个查找正确的document的处理。
+
+[2006/10/17]
+MyPanel.py mHtmlFileType.py HtmlPage.py mRestFileType.py
+                    改造对page的处理，由dict改为list，这样允许重名文件存在。
+SyntaxCheck.py      增加语法检查正确时自动关闭检查结果窗口
+MyPanel.py          增加图片列表，这样可以在侧边栏窗口的tab页上显示图标
+mSmartNav.py        修正Smart Navigation删除20个前的bug。应该是del [:-20]
+mClassBrowser.py    修正打开Python程序不显示class browser的bug
+
+[2006/10/16]
+InputAssistant.py mInputAssistant.py rest
+                    更新Input Assistant, 只有在增加或减少文本时才自动运行分析处理。更新rest的分析处理，增加设置原文档的focus的功能。
+rerange.py          更新对中文的支持。
+mRestFileType.py    增加一个停止自动刷新的checkbox在rst html view窗口上
+
+[2006/10/15]
+mSmartNav.py        增加智能导航的功能
+mRecentFile.py      将自动创建最近文件和路径的处理改为弹出窗口，提高执行速度
+EditorFactory.py    修正OnPopUpMenu中的ID不正确的错误。感谢nmweizi。并感谢提供CloseOther插件，已经放在trunk中
+maketoolbar.py      改进对自定义工具条控件的支持。
+
+[2006/10/13]
+mRun.py             修正执行python程序不重定向的bug,同时增加一个选项是否每次都显示参数设置窗口
+mRegex.py RegexWindow.py
+                    增加动态搜索正则表达式功能
+
+[2006/10/12]
+mSession.py EditorFactory.py mEditorCtrl.py
+                    增加session管理的功能，同时改进文档tab方向变化时不需要重启
+mRecentFile.py      修正创建最近菜单速度慢的bug。增加SafeYield()的调用。
+mPersonalInfo.py    增加个人信息的管理，目前只有一个姓名
+mEPyDoc.py          增加对ePyDoc生成函数说明的支持
+common.py DirectoryBrowser.py mPythonProject.py mRstProject.py djangoproj
+                    增强工程设置处理：重构，增加删除配置处理
+mEditorCtrl.py      修正Ctrl+F4会退出UliPad的bug，不过如果配成E=则无效，奇怪！
+InputAssistant.py   增强acp格式，可以通过{##}表示选中的文本了
+mEditorCtrl.py      在SaveFile中加入SetFocus()解决了保存时有语法检查时，输入集点丢失的bug
+EditorFactory.py MyPanel.py
+                    增加双击tab最大化的功能，对于侧边栏只能最大化到50%
+mLastStatus.py      增加保存侧边栏大小的功能
+
+[2006/10/11]
+SpellCheck          增加拼写检查插件
+                    更新FlatNotebook组件
+mFileNew.py         重构，修正New...与工具条菜单不一致的bug
+
+[2006/10/10]
+SyntaxDialog.py LexerBase.py
+                    修正语法高字体处理bug
+mView.py mPyRun.py  修正工具条Enable状态不正确的bug
+mSearch.py          修正打开文档时无法search的bug。主要是多视图后
+                    mainframe.document通过set_focus来设置了，原来的
+                    on_document_enter就去掉了，但在打开文档时set_focus事件并未
+                    激活。
+mSyntaxCheck.py     修正保存时不检查语法失败的bug
+mRun.py mMessageWindow.py MessageWindow.py
+                    增加不自动清除Message内容的选项，增加Shift+F5快捷键
+Editor.py           修正在Linux editor 下的OnKeyDown对Ctrl, Alt, Shift处理不正确的Bug
+
+-------------------------------------- 3.4 -----------------------------
+
+[2006/10/09]
+mEditorCtrl.py      修正当保存新建文件时，文件类型指示不正确的bug
+
+[2006/10/08]
+                    完善对django项目的支持。增加对django模板的高亮支持，扩展项目创建的支持。
+mRstProject.py      增加对rst项目的支持
+
+[2006/10/05]
+MyPanel.py          fix 更换FlatNoteBook之后右键关闭菜单无法关闭的错误
+                    将语法检查插件移到核心中去了
+
+[2006/10/03]
+mCTags.py ctags.py inputAssistant.py mInputAssistant.py Editor.py
+                    增加对ctags的支持
+                    增加FlatNotebook.py的支持
+
+[2006/10/02]
+mRestFileType.py HtmlPage.py rst.acp
+                    增加Rest的Html View，并且可以根据内容变化自动刷新
+
+[2006/09/30]
+LexerRst.py mCustomLexer.py Editor.py
+                    增加自定义语法高亮分析功能
+
+[2006/09/29]
+mMultiView.py       增加当文档改名时，view也自动变化。
+MainFrame.py mAutoCheck.py
+                    将Idle的处理置为线程方式，OnIdle不再做处理
+mDirBrowser.py mClassBrowser.py
+                    关闭时自动隐藏其它的侧边栏，加快关闭速度
+FindReplaceDialog.py
+                    修正向回查找时的一个bug。没有根据标志判断大小写。
+
+[2006/09/28]
+mCommands.py SearchWin.py Command.py Editor.py
+                    增加命令搜索功能,有Impact和正常两种模式
+mMultiView.py       增加多视图功能
+rerange.py          增加一个按第一行的空白间隔对后续行自动调整的Script
+
+[2006/09/27]
+EditorFactory.py    修正当关闭一个未存文件时，在保留后存在document丢失的问题。主要是有些消息是使用wx.CallAfter调用的，
+                    因此当对象删除了，但有些方法仍然去调用了。在savefile后面增加wx.SafeYield()调用，以确保消息执行
+MainFrame.py        修正OnIdle，在空闲时不做处理
+
+[2006/09/26]
+mComEdit.py         增加拷贝起始，结束的设置，用于字符的选择。
+HtmlPage.py         修正当编辑其它文件再切换回html窗口时，窗口自动恢复的bug。增加opened=True
+
+[2006/09/22]
+djangodot.py        增加生成django app dot图的功能
+djangoproj          修复创建app出错的bug
+
+[2006/09/19]
+EditorFactory.py mEditCtrl.py
+                    增加文档标签方向的设置。在参数中文档页面中可以设置。
+
+[2006/09/18]
+MessageWindow.py    让caretlinkback可配置，在config.ini中设置[default]message_caretlinkback = #颜色
+
+[2006/09/15]
+jQuery plugin       增加jQuery插件。可以在dir borwser中设置jQuery项目，然后就可以在编辑js文件时，在右键
+                    菜单中使用添加注释的功能了。它可以自动判断函数的位置，并生成注释模板。
+html.acp xml.acp js.acp
+                    修正标签的匹配，不匹配/>的情况。
+
+[2006/09/10]
+Editor.py           修正在Linux下运行有误的bug
+
+[2006/09/05]
+CallTip.py          修正当上下显示CallTip空间不足时，显示在下面。
+
+[2006/09/04]
+InputAssistant.py mInputAssistant.py Editor.py python.acp
+                    调整对on_char的InputAssistant的处理。原来是在on_char事件中进行处理，因此当输入很快时
+                    每次必然要执行，因此输入速度很慢，再在改为后台进程执行，因此可以中断并且提高录入速度。
+                    如果你不需要输助录入，只要继续输入即可，不会停顿。
+
+[2006/09/02]
+mLastStatus.py      修正打开上次窗口位置大小不正确的bug
+jquery.py           增加jQuery的输入支持
+
+[2006/09/01]
+mAutoCheck.py       将检查文件缺省值设为True
+InputAssistant.py mInputAssistant.py acp/import.py impor_utils.py
+                    将mAutoComplete转到Input Assistant模块中，增加Back键自动显示缺省标识符功能，去掉mAutoComplete.py模块
+mPythonContextIndent.py
+                    修正缩近粘贴的bug。修正列拷贝在文件尾时少一行的错误。
+mColumnMode.py      增加Ctrl+Enter功能，直接在下一行增加换行
+ShellWindow.py Editor.py mInputAssistant.py
+                    修正当输入焦点消失时，弹出的列表窗口和Calltip不消失的Bug。处理EVT_KILL_FOCUS事件即可。
+Debug.py            修正当DEBUG=False时仍然可以创建debug.txt和error.txt的问题
+
+[2006/08/30]
+DocumentBase.py ... 增加一个edittype的属性用来表示是否是编辑器环境，原documenttype只是用来标识不同的文档类型。
+outline             增加outline编辑功能
+
+[2006/08/28]
+mSplashWin.py       修正是否显示启动画面的选项处理有误的bug，感谢Cheng Xiaosan提示。
+mTodoWindow.py      修正打开ToDo窗口不显示的Bug，感谢Cheng Xiaosan提示。
+mRun.py mPyRun.py   修正执行GUI程序时的处理问题，不再弹出多的dos窗口了。
+MainFrame.py mEditCtrl.py
+                    修正当最小化后，再切换回来时输入焦点消失的bug. 但这样又引起每次切换窗口都回到编辑文档中了，而可能原来是在shell窗口中。因此还是改回去了。
+EditFactory.py mEditor.py
+                    将NotebookCtrl改为wx所提供的，并且修正Ctrl+Tab切换不灵的bug
+InputAssistant.py mAutoComplete.py
+                    修正在处理on_char时对选中文本的处理，editor不再做处理，而是由各plugin进行处理
+
+[2006/08/25]
+InputAssistant.py   修正排序未处理不区分大小写的bug
+
+[2006/08/24]
+mDDESuport.py       将DDE的处理改回来了，不用Single的判断了
+LexerBase.py        将样式字节全部设为7不再判断文件类型了
+OutlookBrowser.py   修正类浏览器，当保存时改变位置到最后一个类的bug，原因是在更新Tree控制时会自动跳转，增加一个activeflag标准用来控制是否在更新控制
+PyParse.py Editor.py mAutoComplete.py
+                    增加标识符自动提示功能，目前当打开文件或输入=时自动启动线程进行信息的分析
+InputAssistant.py PyParse.py mAutoComplete.py
+                    将标识符自动提示扩展到自动完成功能中，因此不只是对Python有效，而且可以通过acp文件进行控制了
+
+[2006/08/23]
+dosprompt/__init__.py
+                    修正在Tab Notebook上打开dos prompt窗口时的错误。
+UliPad.py           修正Globals.app = self的位置
+InputAssistant.py   修正2.4中的产生成为list comprehension
+
+-------------------------------------- 3.3 -----------------------------
+[2006/08/23]
+项目更名为UliPad
+setup_inno.py       去掉upx的处理，修正%L双引号，在inno中内嵌的双引号需要两个引号联写
+common.py           改ansii为ascii
+PluginDialog.py     修正模板的错误
+
+...
+others ChangeLog see ChangeLog4newEdit.txt ...
+...
+
+[2004/04/22]
+NewEdit     初始框架搭建
+
+

@@ -1,0 +1,18 @@
+[info]
+author=limodou
+date=2005/09/29
+version="1.0"
+description=Text to Speech
+homepage = http://wiki.woodpecker.org.cn/moin/NewEdit
+platform = Win
+
+[modules]
+1=pyTTS
+
+[pyTTS]
+name = pyTTS
+homepage=http://www.cs.unc.edu/~parente/tech/tr02.shtml
+download=http://sourceforge.net/projects/uncassist
+description="The pyTTS module wraps the text-to-speech services of the Microsoft Speech API (SAPI) for use in Python. It relies on the win32com library for obtaining and communicating with the SAPI COM interfaces."
+version = "3.0"
+

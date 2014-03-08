@@ -1,0 +1,16 @@
+[info]
+author=Dreamingk
+date=2004/10/03
+version="1.0"
+description=Music Play
+homepage = http://wiki.woodpecker.org.cn/moin/NewEdit
+
+[modules]
+1=pySonic
+
+[pySonic]
+name = pySonic
+homepage=http://pysonic.sourceforge.net/
+download=http://www.sf.net/projects/pysonic
+description="pySonic is a Python wrapper around the high performance, cross platform FMOD sound library. You get all the benefits of the FMOD library, but in a Pythonic, object oriented package."
+version = "0.8"

@@ -1,0 +1,31 @@
+[include]
+
+[autostring]
+<link<space> = "<link href=\"!^.css\" rel=\"stylesheet\" type=\"text/css\" />"
+<script<space> = "<script type=\"text/javascript\"${1: src=\"${2:}.js\"}>${0}</script>"
+<! = <!-- !^ -->
+<style<space> = "<style type=\"text/css\">\n<!--\n!^\n-->\n</style>\n"
+<a<space> = "<a href=\"${1:}\">${0}</a>"
+<inputtext<space> = "<input type=\"text\" name=\"!^\" value=\"\"/>"
+<inputarea<space> = "<textarea rows=\"3\" cols=\"40\" name=\"!^\"></textarea>"
+<inputbtn<space> = "<input type=\"button\" name=\"!^\" value=\"\"/>"
+<inputsubmit<space> = "<input type=\"submit\" name=\"!^\" value=\"\"/>"
+<inputpass<space> = "<input type=\"password\" name=\"!^\" value=\"\"/>"
+<inputfile<space> = "<input type=\"file\" name=\"!^\"/>"
+<html<space> = "<html>\n<head>\n<title>${1:untitled}</title>\n</head>\n<body>\n${0}\n</body>\n</html>"
+
+[autostring_append]
+< = a,blockquote,br,body,center,div,em,form,head,html,h1,h2,h3,h4,h5,h6,h7,img,input,li,link,ol,p,quote,script,style,table,td,th,title,tr,ul,
+
+[autore]
+<(\w+)[^>]*(?<!/)> = \0!^</\1>
+
+[autore_append]
+<(\w+)[^>]*<equal> = "\"!^\""
+(?i)<form[^>]*<space> = method,action,enctype,id,class
+(?i)<input[^>]*<space> = type,value,id,class,name,size,maxlength,
+(?i)<table[^>]*<space> = id,class,name,border,cellspacing,cellpadding,width,height
+<(\w+)[^>]*<space> = align,class,color
+
+[autovalues]
+enctype = "enctype=\"multipart/form-data\""

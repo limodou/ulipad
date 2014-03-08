@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+  <object class="wxDialog" name="SyntaxDialog">
+    <title>语法参数设置</title>
+    <object class="wxStaticText">
+      <label>语法选择：</label>
+      <pos>5,2</pos>
+    </object>
+    <object class="wxComboBox" name="ID_LANGUAGE">
+      <content/>
+      <pos>5, 20</pos>
+      <size>100, -1</size>
+      <style>wxCB_READONLY</style>
+    </object>
+    <object class="wxStaticText">
+      <label>文件扩展名：</label>
+      <pos>115,2</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_EXTENSIONS">
+      <pos>115, 20</pos>
+      <size>220, -1</size>
+    </object>
+    <object class="wxStaticText">
+      <label>语法项：</label>
+      <pos>5,47</pos>
+    </object>
+    <object class="wxListBox" name="ID_ITEMS">
+      <content/>
+      <pos>5,67</pos>
+      <size>160, 120</size>
+      <style>wxLB_SINGLE</style>
+    </object>
+    <object class="wxCheckBox" name="ID_CHK_FACE">
+      <label></label>
+      <pos>175, 70</pos>
+    </object>
+    <object class="wxStaticText">
+      <label>字体名称：</label>
+      <pos>190,70</pos>
+    </object>
+    <object class="wxComboBox" name="ID_FACE">
+      <content/>
+      <pos>255, 67</pos>
+      <size>140, -1</size>
+    </object>
+    <object class="wxCheckBox" name="ID_CHK_SIZE">
+      <label></label>
+      <pos>175, 96</pos>
+    </object>
+    <object class="wxStaticText">
+      <label>字体大小：</label>
+      <pos>190,96</pos>
+    </object>
+    <object class="wxComboBox" name="ID_SIZE">
+      <content>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+        <item>28</item>
+        <item>36</item>
+        <item>48</item>
+        <item>72</item>
+      </content>
+      <pos>255, 93</pos>
+      <size>50,-1</size>
+    </object>
+    <object class="wxCheckBox" name="ID_CHK_FORE">
+      <label></label>
+      <pos>175, 121</pos>
+    </object>
+    <object class="wxStaticText" name="">
+      <label>前景色：</label>
+      <pos>190,121</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_FORE_VALUE">
+      <pos>255, 118</pos>
+      <size>53,-1</size>
+    </object>
+    <object class="wxButton" name="ID_FORE">
+      <label>选择颜色</label>
+      <pos>315, 118</pos>
+      <size>90, -1</size>
+    </object>
+    <object class="wxCheckBox" name="ID_CHK_BACK">
+      <label></label>
+      <pos>175, 146</pos>
+    </object>
+    <object class="wxStaticText" name="">
+      <label>背景色：</label>
+      <pos>190,146</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_BACK_VALUE">
+      <pos>255, 143</pos>
+      <size>53,-1</size>
+    </object>
+    <object class="wxButton" name="ID_BACK">
+      <label>选择颜色</label>
+      <pos>315, 143</pos>
+      <size>90, -1</size>
+    </object>
+    <object class="wxCheckBox" name="ID_BOLD">
+      <label>粗体</label>
+      <pos>190, 171</pos>
+    </object>
+    <object class="wxCheckBox" name="ID_ITALIC">
+      <label>斜体</label>
+      <pos>255, 171</pos>
+    </object>
+    <object class="wxCheckBox" name="ID_UNDERLINE">
+      <label>下划线</label>
+      <pos>315, 171</pos>
+    </object>
+    <size>410, 420</size>
+    <object class="wxStaticText">
+      <label>预览：</label>
+      <pos>5, 195</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_PREVIEW">
+      <pos>5,215</pos>
+      <size>390, 130</size>
+    </object>
+    <object class="wxButton" name="ID_OK">
+      <label>确定</label>
+      <default>1</default>
+      <pos>150,360</pos>
+      <size>60,-1</size>
+    </object>
+    <object class="wxButton" name="ID_CANCEL">
+      <label>取消</label>
+      <pos>210,360</pos>
+      <size>60,-1</size>
+    </object>
+    <object class="wxButton" name="ID_APPLY">
+      <label>应用</label>
+      <pos>270,360</pos>
+      <size>60,-1</size>
+    </object>
+    <style>wxDEFAULT_DIALOG_STYLE</style>
+  </object>
+</resource>

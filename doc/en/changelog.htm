@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>Change Log</title>
+<meta name="author" content="limodou" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="change-log">
+<h1 class="title">Change Log</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>limodou</td></tr>
+<tr><th class="docinfo-name">Contact:</th>
+<td><a class="first last reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a></td></tr>
+</tbody>
+</table>
+<div class="contents topic">
+<p class="topic-title first"><a id="content" name="content">Content</a></p>
+<ul class="auto-toc simple">
+<li><a class="reference" href="#version" id="id3" name="id3">1&nbsp;&nbsp;&nbsp;3.9 Version</a></li>
+<li><a class="reference" href="#id1" id="id4" name="id4">2&nbsp;&nbsp;&nbsp;3.8 Version</a></li>
+<li><a class="reference" href="#id2" id="id5" name="id5">3&nbsp;&nbsp;&nbsp;3.7 Version</a></li>
+</ul>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id3" id="version" name="version">1&nbsp;&nbsp;&nbsp;3.9 Version</a></h1>
+<p>New Features and Changes:</p>
+<ol class="arabic simple">
+<li>Add php.acp thanks for 魏振 &lt;<a class="reference" href="mailto:etggy&#64;163.com">etggy&#64;163.com</a>&gt;</li>
+<li>Replace old snippet with new snippet, more details please see &lt;<a class="reference" href="howto_snippet.htm">Snippet Howto</a>&gt;</li>
+<li>Binding F5 to editor but not MainFrame, and add F5(Refresh) support in Directory Browser.</li>
+<li>Improve python class browser, threading update, change some icons</li>
+<li>Add indent cursor move functionality see &lt;<a class="reference" href="howto_indent_moving.htm">Indent Moving Howto</a>&gt;</li>
+<li>Improve threading document modification process, so you can get better efficiency</li>
+<li>Introduce meide(<a class="reference" href="http://code.google.com/p/meide">http://code.google.com/p/meide</a>) project to simplify the interface creation</li>
+<li>Add FNB.FNB_DROPDOWN_TABS_LIST style to EditorCtrl</li>
+<li>Change auto file check in Editor on_set_focus event handler</li>
+<li>Change DDE to asyncore and asynchat framework</li>
+<li>Change preference dialog from notebook to treebook</li>
+<li>Add icon set theme support</li>
+<li>Add strip line ending when saving functionality option in Preferences</li>
+<li>Strip leading space when doing &quot;Run in Shell&quot;</li>
+<li>Add auto detect python interpreter in windows platform</li>
+<li>Improve ReST document render, and fix the setfocus lost bug when auto modified
+the html output, thanks a lot to ygao</li>
+<li>Change setmenutext to use fix width to set the menu text, replace with 't'</li>
+<li>Chanage notebook left double click to right double click(enlarge notebook size)</li>
+<li>Add search text count in Find &amp; Replace pane</li>
+<li>Add line ending mixture check when saving file feature</li>
+<li>Improve preference dialog input assistant checkbox process.
+When you check the first checkbox(Enable input assistant) it'll
+automatically toggle other 5 checkboxes.</li>
+<li>Change new toolbutton to dropdown toolbutton, and it can remember the last
+new file type(select new type menu first), then when you select new menu,
+it'll create a new file with the last new file type</li>
+<li>Improve command search and pairprog plugin caret display process</li>
+<li>Add auto new version of UliPad check</li>
+<li>Add slice language syntax support</li>
+<li>Add auto pop up project setting dialog when adding directory to directoy browser window</li>
+<li>Add Open Explorer Window Here menu to editoctrl tab context menu</li>
+<li>Add open snippet tool button, change open dirbrowser and open snippet toolbutton to check toolbutton</li>
+<li>Change <tt class="docutils literal"><span class="pre">explorer.exe</span> <span class="pre">%s</span></tt> as <tt class="docutils literal"><span class="pre">explorer.exe</span> <span class="pre">/e,</span> <span class="pre">%s</span></tt> in windows platform</li>
+<li>Add copy filename to clipboard menu on document area tab context menu</li>
+<li>Add wrap text feature, via [Edit]-&gt;[Format]-&gt;[Wrap Text...]</li>
+</ol>
+<p>New Plugins:</p>
+<ol class="arabic simple">
+<li>canvas_test_plugin, you can directly test DC api</li>
+<li>web2py_plugin, supply web2py shell</li>
+</ol>
+<p>Bug fix:</p>
+<ol class="arabic simple">
+<li>Fix webopen twice open bug</li>
+<li>Fix editor shortcuts key caption error</li>
+<li>Fix if set DROP_DOWN_TABS_LIST style, right arrow will disappear bug</li>
+<li>Fix utf-16 convertion bug</li>
+<li>Fix mako tag auto complete bug #issue 14</li>
+<li>Fix if lines are folded, when goto hiding lines will no effect bug</li>
+<li>Fix DDE bug, thanks to LP &lt;<a class="reference" href="mailto:liupengf12&#64;gmail.com">liupengf12&#64;gmail.com</a>&gt;</li>
+<li>Fix webopen bug, can't correctly deal with 'mailto:'</li>
+<li>Fix smart tabs bug</li>
+<li>Fix copy and paste lineending is not correct bug</li>
+<li>Fix tab invisible bug after changing size or changing the page title</li>
+<li>Fix template line-ending not match the default line-ending setting</li>
+<li>Fix password widget is not Password type widget bug</li>
+<li>Fix script filename cannot be unicode(chinese) bug</li>
+<li>Fix syntax check exception process bug</li>
+<li>Fix ruler bug</li>
+</ol>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id4" id="id1" name="id1">2&nbsp;&nbsp;&nbsp;3.8 Version</a></h1>
+<p>New Features and Changes:</p>
+<ol class="arabic simple">
+<li>Add mako template syntax highlight support</li>
+<li>Add new option in preference, [Python]-&gt;Automatically save modified file
+when running python program, if it's checked, it'll automatically save
+the modified file.</li>
+<li>Add Shift+Delete =&gt; Cut, Shift+Insert =&gt; Paste</li>
+<li>Upgrade winpdb to lastest version</li>
+<li>Now you can set pythonpath option in config.ini/[default],
+and ulipad will insert it into the sys.path. pythonpath can
+be a string or a string list of directory.</li>
+<li>Svn support, you should install pysvn first, and also support proxy.</li>
+<li>Change long line indicator default is true.</li>
+<li>Add doctest support, you can run the doctest of current document in UliPad</li>
+<li>Add time stamp info in debug and error file</li>
+<li>Replace the shell window popup menu, and add Copy Without Prompts
+and Paste and Run menu items. And if the result can't be convert to
+unicode, then display the result as repr().</li>
+<li>Script Manager can find menu name from the script content, you
+can define it as a comment line, format is: #s*name:(.*)$</li>
+<li>Add Run in Shell menu item in Editor context menu</li>
+<li>Add script and shell key binding. Change Shell to External Tool</li>
+<li>Change Find in Files dialog to panel</li>
+<li>Using meide module to create Preference dialog</li>
+<li>Add an option to control if show the docstring in class browser window.</li>
+<li>Don't create a tmp file again, directly save the file</li>
+<li>Improve Find in Files process with thread</li>
+<li>Add some config.ini options support in Preference Dialog</li>
+<li>Refactor Find &amp; Replace with pane, but not dialog</li>
+<li>Made Open Command Here work in Linux</li>
+<li>Add dropfile plugin. thanks Tyberius Prime. Now you can drop files on
+toolbar, then UliPad will open it. Just like drop files on Directory
+Browser window.</li>
+<li>Add new custom lexer class and refactor related lexer process</li>
+<li>Upgrade FlatNotebook.py to lastest version, thanks to swordsp</li>
+<li>Improve default identifiers process, add type judgement</li>
+<li>Add pylint plugin</li>
+</ol>
+<p>Bug fix:</p>
+<ol class="arabic simple">
+<li>Fix print bug, add print line number functionality</li>
+<li>Fix snippet template indent bug(when using tab mode, the 't'
+in template will be replaced with spaces). And you can press
+Alt+Q to cancel current snippet.</li>
+<li>Fix press Ctrl+B jump position is not correct bug.</li>
+<li>Fix that when you change the file type, the icon in directory
+and dynamic menu don't change bug</li>
+<li>Fix line number margin width, and find back End-of-line Marker menu</li>
+<li>Fix adding empty directory error</li>
+<li>Fix open un-exists file will popup two message dialog bug</li>
+<li>Fix line end mix checking bug also including twice prompt dialog bug</li>
+<li>Fix webbrowser bug. Thanks Tom Eubank</li>
+<li>Fix message console postion bug, thanks for swordsp</li>
+</ol>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id5" id="id2" name="id2">3&nbsp;&nbsp;&nbsp;3.7 Version</a></h1>
+<p>New Features and Changes:</p>
+<ol class="arabic simple">
+<li>Add PEP8 sytle checking</li>
+<li>Enhance calltip showing</li>
+<li>Add a new option in Preference, which is used for when you toggle comment lines(Ctrl+/ or Ctrl+) if it'll popup a comment dialog. You can find it in Preference-&gt;Document-&gt;Show comment character dialog when adding comment.</li>
+<li>Saving auto todo window status</li>
+<li>Changing shortcut of quote dialog from Ctrl+Q to Ctrl+'</li>
+<li>Changing the number of recent files to 20</li>
+<li>Changing shortcut Ctrl+Alt+L to Alt+Z, Ctrl+Alt+B to Alt+X</li>
+<li>Saving the status of Message window word wrap</li>
+<li>Saving the snippets window position</li>
+<li>The results of find in files can only show the filenames and you can copy them to clipboard</li>
+<li>Add Spanish language translation and Traditional Chinese language translation</li>
+<li>Using ZestyParser Module to parse the source code syntax</li>
+<li>Improving input assistant functionality</li>
+<li>Adding config.txt documentation</li>
+<li>When saving files, automatically adding accordingly filename suffix</li>
+<li>Adding mixin reload mechanism, it will be very useful when developing</li>
+<li>Adding folder sort functionality when adding new folder to directory browser window</li>
+<li>Adding template in input assistant, and you can press TAB key to jump to the next field. The template just like: ${1:something}.</li>
+<li>Adding LUA syntax support</li>
+<li>Adding mako(template module) support plugin</li>
+<li>Adding batch filenames rename plugin</li>
+<li>Enable ftp window be openned left or bottom pane according to the openning position</li>
+<li>Adding Alt+R shortcut for open recently files</li>
+<li>Merging new 1.20 version winpdb to ulipad</li>
+</ol>
+<p>Bug fix:</p>
+<ol class="arabic simple">
+<li>Fix ctag support bug</li>
+<li>Fix default style bug</li>
+<li>Fix the wrong cursor jumping after undo operating</li>
+<li>Fix xml lexer type bug</li>
+<li>Fix copying bug when the text block has no indent</li>
+<li>Fix openning multi-view bug from menu items</li>
+<li>Fix the input focus losing bug when openning bottom pane or double-click on directory browser entries</li>
+<li>Fix user can open multi find dialogs bug</li>
+<li>Fix register functionality in windows</li>
+</ol>
+<p>[previous change log are skipped]</p>
+<p><a class="reference" href="index.htm">[Return]</a></p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+python msgfmt.py -o ../lang/ulipad_cn.mo ulipad_cn.po

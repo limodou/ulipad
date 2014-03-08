@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django_proj 0.2\n"
+"POT-Creation-Date: Tue Feb 07 07:35:20 2006\n"
+"PO-Revision-Date: 2006-02-08 00:31+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: NewEdit <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:39
+msgid "Install Contribute Application"
+msgstr "安装贡献App"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:40
+msgid "Django &Command"
+msgstr "Django 命令(&C)"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:44
+msgid "Install Admin"
+msgstr "安装Admin"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:48
+msgid "Start &Developing Server"
+msgstr "启动开发服务器(&D)"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:49
+msgid "Start &Shell"
+msgstr "启动Shell(&S)"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:56
+msgid "Create New Application"
+msgstr "创建新的App"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:62
+msgid "Install Application"
+msgstr "安装App"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:108
+#: ..\plugins\djangoproj\editor_ext.py:51
+msgid "There is some wrong as executing the menu."
+msgstr "在执行菜单时有错误。"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:129
+#: ..\plugins\djangoproj\dirbrowser_ext.py:151
+#: ..\plugins\djangoproj\dirbrowser_ext.py:174
+msgid "Completed!"
+msgstr "完成！"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:197
+msgid "Django application name:"
+msgstr "Django App 名字："
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:198
+msgid "Create templates directory in app folder:"
+msgstr "在 App 文件夹内创建 templates 目录："
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:199
+msgid "Create templatetags directory in app folder:"
+msgstr "在 App 文件夹内创建 templatetags 目录："
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:202
+msgid "Input"
+msgstr "输入"
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:208
+msgid "Django application name cannot be empty."
+msgstr "Django App名字不能为空。"
+
+#: ..\plugins\djangoproj\editor_ext.py:33
+msgid "&Django"
+msgstr "Django(&D)"
+
+#: ..\plugins\djangoproj\editor_ext.py:38
+msgid "&New Model"
+msgstr "创建Model(&N)"
+
+#: ..\plugins\djangoproj\editor_ext.py:38
+msgid "Create a new model."
+msgstr "创建一个新Model。"
+
+#: ..\plugins\djangoproj\res_model.py:2
+msgid "Model Name:"
+msgstr "Model名称："
+
+#: ..\plugins\djangoproj\res_model.py:7
+msgid "Field Name:"
+msgstr "字段名称："
+
+#: ..\plugins\djangoproj\res_model.py:8
+msgid "File Type:"
+msgstr "字段类型："
+
+#: ..\plugins\djangoproj\res_model.py:15
+msgid "Field Verbose:"
+msgstr "字段提示名称："
+
+#: ..\plugins\djangoproj\res_model.py:16
+msgid "Boolean parameter"
+msgstr "布尔参数"
+
+#: ..\plugins\djangoproj\res_model.py:20
+msgid "Para choices:"
+msgstr "参数 choices："
+
+#: ..\plugins\djangoproj\res_model.py:21
+msgid "Para db_column:"
+msgstr "参数 db_column："
+
+#: ..\plugins\djangoproj\res_model.py:22
+msgid "Para default:"
+msgstr "参数 default："
+
+#: ..\plugins\djangoproj\res_model.py:23
+msgid "Para help_text:"
+msgstr "参数 help_text:"
+
+#: ..\plugins\djangoproj\res_model.py:24
+msgid "Para unique_for_date:"
+msgstr "参数 unique_for_date："
+
+#: ..\plugins\djangoproj\res_model.py:25
+msgid "Para unique_for_month:"
+msgstr "参数 unique_for_month："
+
+#: ..\plugins\djangoproj\res_model.py:26
+msgid "Para unique_for_year:"
+msgstr "参数 unique_for_year："
+
+#: ..\plugins\djangoproj\res_model.py:27
+msgid "Para validator_list:"
+msgstr "参数 validator_list："
+
+#: ..\plugins\djangoproj\res_model.py:28
+msgid "(CharField)Para maxlength:"
+msgstr "(CharField)参数 maxlength："
+
+#: ..\plugins\djangoproj\res_model.py:29
+msgid "(Date*Field)Para auto_now:"
+msgstr "(Date*Field)参数 auto_now："
+
+#: ..\plugins\djangoproj\res_model.py:30
+msgid "(Date*Field)Para auto_now_add:"
+msgstr "(Date*Field)参数 auto_now_add："
+
+#: ..\plugins\djangoproj\res_model.py:31
+msgid "(File/ImageField)Para upload_to:"
+msgstr "(File/ImageField)参数 upload_to："
+
+#: ..\plugins\djangoproj\res_model.py:37
+msgid "Model Information"
+msgstr "Model信息"
+
+#: ..\plugins\djangoproj\res_model.py:38
+msgid "Fields Information"
+msgstr "字段信息"
+

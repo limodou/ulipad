@@ -1,0 +1,1932 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>UliPad User Manual</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="ulipad-user-manual">
+<h1 class="title">UliPad User Manual</h1>
+<p>: Author: limodou
+: Contact: <a class="reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a>
+: Home: <a class="reference" href="http://code.google.com/p/ulipad/">http://code.google.com/p/ulipad/</a>
+: BLOG: <a class="reference" href="http://www.donews.net/limodou">http://www.donews.net/limodou</a>
+: Copyright: GPL</p>
+<div class="contents topic">
+<p class="topic-title first"><a id="content" name="content">Content</a></p>
+<ul class="auto-toc simple">
+<li><a class="reference" href="#explanation" id="id2" name="id2">1&nbsp;&nbsp;&nbsp;Explanation</a></li>
+<li><a class="reference" href="#copyright" id="id3" name="id3">2&nbsp;&nbsp;&nbsp;Copyright</a></li>
+<li><a class="reference" href="#project-membership-and-methodology" id="id4" name="id4">3&nbsp;&nbsp;&nbsp;Project membership and methodology</a></li>
+<li><a class="reference" href="#tabbed-document-windows" id="id5" name="id5">4&nbsp;&nbsp;&nbsp;Tabbed Document Windows</a></li>
+<li><a class="reference" href="#installation-and-operating-environment" id="id6" name="id6">5&nbsp;&nbsp;&nbsp;Installation and Operating Environment</a></li>
+<li><a class="reference" href="#source-version" id="id7" name="id7">6&nbsp;&nbsp;&nbsp;Source Version</a></li>
+<li><a class="reference" href="#unicode-version" id="id8" name="id8">7&nbsp;&nbsp;&nbsp;Unicode Version</a></li>
+<li><a class="reference" href="#windows-installation-package" id="id9" name="id9">8&nbsp;&nbsp;&nbsp;Windows Installation Package</a></li>
+<li><a class="reference" href="#latest-update" id="id10" name="id10">9&nbsp;&nbsp;&nbsp;Latest update</a><ul class="auto-toc">
+<li><a class="reference" href="#version" id="id11" name="id11">9.1&nbsp;&nbsp;&nbsp;3.7 Version</a></li>
+<li><a class="reference" href="#version-3-6" id="id12" name="id12">9.2&nbsp;&nbsp;&nbsp;Version 3.6</a></li>
+<li><a class="reference" href="#version-2-6-1" id="id13" name="id13">9.3&nbsp;&nbsp;&nbsp;Version 2.6.1</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#start-ulipad" id="id14" name="id14">10&nbsp;&nbsp;&nbsp;Start UliPad</a></li>
+<li><a class="reference" href="#file-document" id="id15" name="id15">11&nbsp;&nbsp;&nbsp;File (document)</a></li>
+<li><a class="reference" href="#edit-editor" id="id16" name="id16">12&nbsp;&nbsp;&nbsp;Edit (Editor)</a><ul class="auto-toc">
+<li><a class="reference" href="#selection-option" id="id17" name="id17">12.1&nbsp;&nbsp;&nbsp;Selection (option)</a></li>
+<li><a class="reference" href="#duplication-copy" id="id18" name="id18">12.2&nbsp;&nbsp;&nbsp;Duplication (copy)</a></li>
+<li><a class="reference" href="#format-format" id="id19" name="id19">12.3&nbsp;&nbsp;&nbsp;Format (format)</a></li>
+<li><a class="reference" href="#case-case" id="id20" name="id20">12.4&nbsp;&nbsp;&nbsp;Case (case)</a></li>
+<li><a class="reference" href="#convert-conversion-2-7-new" id="id21" name="id21">12.5&nbsp;&nbsp;&nbsp;Convert (conversion) (2.7 new)</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#view-view" id="id22" name="id22">13&nbsp;&nbsp;&nbsp;View (view)</a></li>
+<li><a class="reference" href="#search-search" id="id23" name="id23">14&nbsp;&nbsp;&nbsp;Search (search)</a></li>
+<li><a class="reference" href="#document-document" id="id24" name="id24">15&nbsp;&nbsp;&nbsp;Document (document)</a><ul class="auto-toc">
+<li><a class="reference" href="#convert-line-ending-conversion-at-the-end-of-line" id="id25" name="id25">15.1&nbsp;&nbsp;&nbsp;Convert Line Ending (conversion at the end of line)</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#tool2-2-2-new" id="id26" name="id26">16&nbsp;&nbsp;&nbsp;Tool2  (2.2 new)</a><ul class="auto-toc">
+<li><a class="reference" href="#shell-command-shell-command-2-2-new" id="id27" name="id27">16.1&nbsp;&nbsp;&nbsp;Shell Command (Shell command) (2.2 new)</a></li>
+<li><a class="reference" href="#script-script-2-0-new" id="id28" name="id28">16.2&nbsp;&nbsp;&nbsp;Script (script) (2.0 new)</a></li>
+<li><a class="reference" href="#snippets-fragments-2-2-new" id="id29" name="id29">16.3&nbsp;&nbsp;&nbsp;Snippets (fragments) (2.2 new)</a></li>
+<li><a class="reference" href="#plugin-manage-plug-in-management-2-4-new" id="id30" name="id30">16.4&nbsp;&nbsp;&nbsp;Plugin Manage (plug-in management) (2.4 new)</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#option-optional" id="id31" name="id31">17&nbsp;&nbsp;&nbsp;Option (optional)</a><ul class="auto-toc">
+<li><a class="reference" href="#document-related-documents" id="id32" name="id32">17.1&nbsp;&nbsp;&nbsp;Document (related documents)</a></li>
+<li><a class="reference" href="#python-2-0-new" id="id33" name="id33">17.2&nbsp;&nbsp;&nbsp;Python(2.0 New)</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#window-window-2-6-new" id="id34" name="id34">18&nbsp;&nbsp;&nbsp;Window (window) (2.6 new)</a></li>
+<li><a class="reference" href="#id1" id="id35" name="id35">19&nbsp;&nbsp;&nbsp;Python (2.0 new)</a></li>
+<li><a class="reference" href="#help-help" id="id36" name="id36">20&nbsp;&nbsp;&nbsp;Help (Help)</a></li>
+<li><a class="reference" href="#shortcuts" id="id37" name="id37">21&nbsp;&nbsp;&nbsp;Shortcuts</a></li>
+<li><a class="reference" href="#pop-up-menu" id="id38" name="id38">22&nbsp;&nbsp;&nbsp;Pop-up menu</a></li>
+<li><a class="reference" href="#ulipad-unicode-support" id="id39" name="id39">23&nbsp;&nbsp;&nbsp;UliPad Unicode support</a></li>
+<li><a class="reference" href="#presentations" id="id40" name="id40">24&nbsp;&nbsp;&nbsp;Presentations</a><ul class="auto-toc">
+<li><a class="reference" href="#script-script-sample-preparation" id="id41" name="id41">24.1&nbsp;&nbsp;&nbsp;Script (script) sample preparation</a><ul class="auto-toc">
+<li><a class="reference" href="#the-most-simple-scripts" id="id42" name="id42">24.1.1&nbsp;&nbsp;&nbsp;The most simple scripts</a></li>
+<li><a class="reference" href="#to-increase-the-line-of-text" id="id43" name="id43">24.1.2&nbsp;&nbsp;&nbsp;To increase the line of text</a></li>
+<li><a class="reference" href="#restructuredtext-converting-documents-to-html-conversion" id="id44" name="id44">24.1.3&nbsp;&nbsp;&nbsp;ReStructuredText converting documents to HTML conversion</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#ftp-use" id="id45" name="id45">24.2&nbsp;&nbsp;&nbsp;Ftp use</a></li>
+<li><a class="reference" href="#user-defined-shortcuts-new-version-2-8" id="id46" name="id46">24.3&nbsp;&nbsp;&nbsp;User-defined shortcuts (new version 2.8)</a></li>
+<li><a class="reference" href="#catalog-browsing-3-0-new" id="id47" name="id47">24.4&nbsp;&nbsp;&nbsp;Catalog browsing (3.0 new)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>(Note: translated from Chinese Simplified by translate.google.com.  Will be improved over time.)</p>
+<div class="section">
+<h1><a class="toc-backref" href="#id2" id="explanation" name="explanation">1&nbsp;&nbsp;&nbsp;Explanation</a></h1>
+<p>This handbook uses the comparison menu function to carry on the description, the individual topic alone explains.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id3" id="copyright" name="copyright">2&nbsp;&nbsp;&nbsp;Copyright</a></h1>
+<p>This software uses the GPL copyright license.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id4" id="project-membership-and-methodology" name="project-membership-and-methodology">3&nbsp;&nbsp;&nbsp;Project membership and methodology</a></h1>
+<p>At present I am the sole developer.  If you have any recommendations or suggestions regarding UliPad or its documentation, please send me an eMail.  You can also post a message to my blog.</p>
+<p>UliPad Main Window:</p>
+<img alt="screenshot_01.jpg" src="screenshot_01.jpg" />
+<dl class="docutils">
+<dt>This image shows (from the top):</dt>
+<dd>Title Bar
+Main Menu
+Tool Bar(s)
+Tabbed Document Windows
+Status Bar</dd>
+</dl>
+<p>Certain application windows may appear on the left (next to the tabbed document windows) or at the bottom (above the status bar).</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id5" id="tabbed-document-windows" name="tabbed-document-windows">4&nbsp;&nbsp;&nbsp;Tabbed Document Windows</a></h1>
+<p>Each document that you open for editing appears in a tabbed document window.  You may have multiple windows open at one time.  The full path of the current document is be displayed in the Title Bar.  The encoding of the document determines the delimter for the file name.  Parentheses for WIN for the DOS / Windows, square brackets for UNIX for UNIX format or MAC format.  Each document may have different encoding.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id6" id="installation-and-operating-environment" name="installation-and-operating-environment">5&nbsp;&nbsp;&nbsp;Installation and Operating Environment</a></h1>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id7" id="source-version" name="source-version">6&nbsp;&nbsp;&nbsp;Source Version</a></h1>
+<p>The source version of UliPad can be used with both Windows and Linux.
+They require Python version 2.3 and above, for scripting 2.4.2.3.2.3.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id8" id="unicode-version" name="unicode-version">7&nbsp;&nbsp;&nbsp;Unicode Version</a></h1>
+<p>Source package can be unpacked into any directory.
+Python version 2.8 is strongly recommend,  for scripting version 2.4.+.+.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id9" id="windows-installation-package" name="windows-installation-package">8&nbsp;&nbsp;&nbsp;Windows Installation Package</a></h1>
+<p>Only runs in the Windows environment.  The installation process does not require the preinstallation of Python or scripting.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id10" id="latest-update" name="latest-update">9&nbsp;&nbsp;&nbsp;Latest update</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id11" id="version" name="version">9.1&nbsp;&nbsp;&nbsp;3.7 Version</a></h2>
+<p>New Features and Changes:</p>
+<ol class="arabic simple">
+<li>PEP8 sytle checking.</li>
+<li>Enhance display of tab tips.</li>
+<li>New option in Preferences dialog, which is used when you toggle comment lines (Ctrl+/ or Ctrl+).  You can add new comment characters in the Edit-&gt;Preference-&gt;Document-&gt;Show Comment Character dialog.</li>
+<li>Auto-save of TODO window status.</li>
+<li>Shortcut for quote dialog changed from Ctrl+Q to Ctrl+'.</li>
+<li>Number of recent files increased to 20.</li>
+<li>Change shortcut Ctrl+Alt+L to Alt+Z, Ctrl+Alt+B to Alt+X</li>
+<li>Save the status of Message window word wrap</li>
+<li>Saved the snippets window position.</li>
+<li>The results of find in files can only show the filenames and you can copy them to clipboard.</li>
+<li>Spanish language translation and Traditional Chinese language translation.</li>
+<li>ZestyParser Module to parse the source code syntax.</li>
+<li>Improved word-completion functionality.</li>
+<li>config.txt documentation.</li>
+<li>When saving files, automatically adding accordingly filename suffix.</li>
+<li>Mixin reload mechanism, which isvery useful during development.</li>
+<li>Folder-sort functionality to directory browser window.</li>
+<li>New template in input assistant, and you can press TAB key to jump to the next field. The template just like: ${1:something}.</li>
+<li>LUA syntax support.</li>
+<li>New mako(template module) support plugin.</li>
+<li>Renamed batch filenames to plugin.</li>
+<li>FTP window can now be opened in left or bottom pane according.</li>
+<li>Alt+R shortcut for open recently files.</li>
+<li>Merged new 1.20 version winpdb to ulipad.</li>
+</ol>
+<p>Bug fixes:</p>
+<ol class="arabic simple">
+<li>ctag support bug.</li>
+<li>default style bug.</li>
+<li>erroneous cursor jumping after processing undo.</li>
+<li>xml lexer type bug.</li>
+<li>paste text when the text block has no indent.</li>
+<li>open multi-view window from menu items.</li>
+<li>Loss of the input focus when opening bottom pane or double-click on directory browser entries.</li>
+<li>Opening multi-find dialog.</li>
+<li>Register functionality in windows.</li>
+</ol>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id12" id="version-3-6" name="version-3-6">9.2&nbsp;&nbsp;&nbsp;Version 3.6</a></h2>
+<p>New features:</p>
+<ol class="arabic simple">
+<li>Jump enhanced definition, cannot ctag support in the paper Jump</li>
+<li>Automatic completed a perfect right: automatic judgment type of structure identification</li>
+<li>The search is on the increase in the scope set</li>
+<li>Notes epydoc increase in the parameter types of support</li>
+<li>Increased support for Collaborative Development</li>
+<li>Fortran increase, Lua syntax highlighted support</li>
+<li>Strengthening of the structure and content browser that can display class attributes and docstring</li>
+<li>Additional information suggested that the automatic css</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Improved category browser window, click class category icon can be, and folding</li>
+<li>Amendments to the operating parameters window pop canceled point, the bug is still running</li>
+<li>ReStructuredText syntax highlighted that the treatment</li>
+<li>Python syntax analysis that the bug</li>
+<li>That directory browser window when closed, not open to the resumption directory bug</li>
+<li>When the file or directory that UliPad not with a drive, open a command line window failed, the wrong menu</li>
+<li>Music plug-in that the bug</li>
+<li>Delete to open the latest catalog features</li>
+<li>When the revised code amendment, editctrl the tag title page did not show changes state bug</li>
+</ol>
+<p>Version 3.5
+News</p>
+<p>New features:</p>
+<ol class="arabic simple">
+<li>Increased Message window does not automatically remove the information processing options to increase Shift + F5 keys</li>
+<li>FlatNotebook use as a component Notebook</li>
+<li>Additional plug-in spelling checker, you need to install the module pyenchant</li>
+<li>Save increase the size of the sidebar column function</li>
+<li>Double-click the Notebook increase Tab to maximize the function of the column can only maximize the sidebar to 50%</li>
+<li>Acp enhanced format, can () # # that the selected text</li>
+<li>EPyDoc increase support for the generating function</li>
+<li>Increase the personal information management, only one name</li>
+<li>Increased session management functions, improve document tab direction changes without rebooting</li>
+<li>Increased dynamic search function is the regular expression</li>
+<li>Nmweizi increase from the CloseOther plug-in can save the current document other closing documents</li>
+<li>More intelligent navigation functions, you can file access memory path</li>
+<li>An increase in the checkbox stop automatically updated in view window rst html</li>
+<li>Increase the correct syntax check automatically close inspection window</li>
+<li>Increased directory browser window to drag catalog and document the functional</li>
+<li>Notebook menu can be dynamically generated Right</li>
+<li>The Notebook right on the menu to increase the current open document Dos window function (available under Window)</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>In OnKeyDown removed in the right Input Assistant, simplify procedures</li>
+<li>That did not keep check syntax bug</li>
+<li>That was unable to open the document search bug</li>
+<li>That toolbar button Enabled state incorrect bug</li>
+<li>Font handling syntax highlighted that the bug</li>
+<li>Remodeling, that ... New Tools menu and the menu of the inconsistency bug</li>
+<li>After amendments in the importation SaveFile set point loss bug</li>
+<li>That Ctrl + F4 will withdraw from the bug UliPad</li>
+<li>To increase the installed processing: Reconstruction, increase processing removes the configuration</li>
+<li>Recent documents and recent directory pop-up menu to menu handling, could accelerate the pace of opening files</li>
+<li>Python implementation of procedures that do not redirect the bug, while an option to increase it every time that parameter setting window</li>
+<li>Improved tools for the definition of control support</li>
+<li>Update rerange.py support to the Chinese Script</li>
+<li>Input Assistant solve the performance problems</li>
+<li>Enter a Ctrl + Shift + Enter into</li>
+</ol>
+<p>Version 3.4
+News</p>
+<p>New features:</p>
+<ol class="arabic simple">
+<li>Notebook read FlatNotebook Control</li>
+<li>Increased Ctrl + Enter function directly increase for the next trip here</li>
+<li>Back button that automatically increase the default function identifier</li>
+<li>JQuery increase in the importation of support: project settings, automatic generation function Notes information</li>
+<li>Let caretlinkback can be configured in config.ini set [default] message_caretlinkback color = #</li>
+<li>Increased labeling documents direction set. The parameters can be set in the document pages</li>
+<li>Django increase production of functional dot app</li>
+<li>Copies of the initial increase, the end of the set, for the choice of characters</li>
+<li>The first visit by an increase in the gap between the follow-up to automatically adjust the Script (rerange.py)</li>
+<li>Increased multi-view function</li>
+<li>Increased orders search function, both normal mode and Impact</li>
+<li>Django template and increase ReST syntax highlighted support</li>
+<li>ReST increase project support</li>
+<li>ReST increase the Html View function, the content changes can be automatically updated</li>
+<li>Ctags increase support (Ctrl + I)</li>
+<li>Grammar check will be moved to plug-in to the core</li>
+<li>_project Increase in the installed automatic and automatic syntax highlighted bundled paper bundled acp</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>That opened the Tab Notebook dos prompt window mistakes</li>
+<li>That position Globals.app self =</li>
+<li>Automatic suggested that the identifier will be automatically extended to function, not only of Python effective, but can acp document control</li>
+<li>That category browser, and should change when the final location of a bug</li>
+<li>Set byte patterns will all seven types of documents no longer a judge</li>
+<li>Sort auxiliary input that case insensitive when the bug</li>
+<li>On_char that when dealing with the processing of the selected text, editor no longer do, but by processing plugin</li>
+<li>GUI implementation of procedures that deal with the problem, no more pop-up window of dos</li>
+<li>Pop open the window that is not displayed the Bug</li>
+<li>That is the picture that started with options error bug</li>
+<li>An increase edittype attribute to indicate whether the editor, only to the original logo documenttype different types of documents</li>
+<li>修正当DEBUG=False时仍然可以创建debug.txt和error.txt的问题</li>
+<li>That disappeared when the input focus, the pop-up list window and Calltip not disappear Bug</li>
+<li>修正缩近粘贴的bug。 Copies of the document are amended at the end of his few mistakes</li>
+<li>Input will be transferred to the Assistant mAutoComplete module</li>
+<li>The paper will examine the default value is set to True</li>
+<li>The last amendment to open the window size is not correct position bug</li>
+<li>Adjust the right on_char InputAssistant treatment, the time will soon be canceled automatically when</li>
+<li>When all amendments that CallTip lack of space, shown in the following</li>
+<li>Matching that label, right /&gt; no matching filled</li>
+<li>When that other editors to switch back to html document window, the window automatically restore the bug</li>
+<li>Idle will be home for the processing threads, do not handle OnIdle</li>
+<li>When that did not shut down a deposit documents, the existence of a reservation after missing document problem</li>
+<li>That backward look at the change when the case is not the bug</li>
+<li>Close automatically hide other side column, accelerate the closing speed</li>
+</ol>
+<p>Version 3.3
+News</p>
+<p>New features:</p>
+<ol class="arabic simple">
+<li>When running Python mistakes, mistakes in the message window can double-click Prompt Jump to the wrong source trip</li>
+<li>The increase in the directory browser window: Win open platform for resource management, file and directory copy, Cut, Paste, directory search, and other functions, while supporting Ctrl + C, Ctrl + V, Ctrl + X shortcuts</li>
+<li>In Django directory, we can start testing the server and Shell open window</li>
+<li>The cursor in some form, such as Notes, string, automatically complete ban</li>
+<li>Re-open a file, the cursor remain in the original location</li>
+<li>DDE function of port services can reuse Socket</li>
+<li>Enhanced Python documents. Automatic functions. The import from and support. Attribute function of the automatic choice</li>
+<li>Additional copies are block support. The choice before the first alt, it can choose to block out the</li>
+<li>Increased series models, according to Alt + C switch. The model can be imported as a character, in other firms in automatically</li>
+<li>More Python paper copies of the reduction in support, configuration parameters can turn off some features</li>
+<li>The need to increase the load automatically checks whether the document confirmed the need options</li>
+<li>Enhanced auto-complete, can support a combination of control characters, but the menu key combinations will implement</li>
+<li>Increasing the current paper documents to set up independent ACP function</li>
+</ol>
+<p>The new plug-in:</p>
+<ol class="arabic simple">
+<li>A gauge ruler</li>
+</ol>
+<p>New shortcuts:</p>
+<ol class="arabic simple">
+<li>Alt + C mode switching out</li>
+<li>Ctrl + Del can be deleted after the current location so blank</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>In the dialog box that help links, and can click on</li>
+<li>Some adjustment of the location of the menu</li>
+<li>Surrounding the menu shortcuts to Ctrl + ', read from Ctrl + Q</li>
+<li>News Wrap window support function</li>
+<li>Right DjangoProj improved plug-in, dynamic modification settings.py</li>
+<li>When opening files to replace the use of Unicode conversion parameters</li>
+<li>That judgment Python document coding incorrect Bug</li>
+<li>That reading, grammar configuration files were done to the Chinese character code bug</li>
+<li>That is the regular expression replaced imprecise bug</li>
+<li>Recent amendments to automatically detect shrinkage at incorrect bug</li>
+<li>Html editors that in the js code of the total wave of bug</li>
+<li>New amendments to open the file, the cursor not stay with the original line</li>
+<li>When the round that, if moved to the area below visualization, see the bug</li>
+<li>Tab conversion projects in nearly all shrink to nearly four spaces shrink</li>
+<li>Remove dialog box on the revision of the version</li>
+</ol>
+<p>Version 3.2
+News</p>
+<p>New features:</p>
+<ol class="arabic">
+<li><p class="first">When MessageWindow increase of error in the abnormal, will be based on current information automatically abnormal Jump to the wrong documents to the designated function</p>
+</li>
+<li><p class="first">Windows platform increased directory browser window, a directory of open window function Dos</p>
+</li>
+<li><p class="first">Last automatically preserve open directory, start again automatically open the last directory</p>
+</li>
+<li><p class="first">Config.ini can set the default font editor, in the Chinese environment for the &quot;m&quot;</p>
+</li>
+<li><p class="first">Judge python automatic document coding and conversion after preservation</p>
+</li>
+<li><dl class="first docutils">
+<dt>Increased new document coding default settings, user-defined coding if not empty, the user will be defined as the default coding coding. And if</dt>
+<dd><p class="first last">Air default coding is used.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Edit window in the right changes on the menu to increase the menu document coding</p>
+</li>
+<li><p class="first">Window increase TODO</p>
+</li>
+<li><p class="first">With more simple function, and can automatically keep the size and location</p>
+</li>
+<li><dl class="first docutils">
+<dt>According to the text of the Notes at automatic choice, and it can be installed in config.ini comment_chars use as a section, while language is key,</dt>
+<dd><p class="first last">A default can have as a default value</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Ruby increase classbrowser function</p>
+</li>
+<li><p class="first">Increased dynamic menu shortcuts treatment</p>
+</li>
+<li><p class="first">Generation increased debug the control default under the debug output is not needed to set up the only output config.ini</p>
+</li>
+<li><p class="first">An increase in the parameters set document syntax highlighted button</p>
+</li>
+<li><p class="first">Increased automatic extensions, and supports item processing and nested</p>
+</li>
+<li><dl class="first docutils">
+<dt>Increased simple template function, the code snippet can add &lt;# = (name inputname, description = info, defult value) # =&gt;,</dt>
+<dd><p class="first last">In this double-click pop-up dialog snippets will let you input information.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">They may set up a directory of types, with some expansion</p>
+</li>
+<li><p class="first">Increased proxy server parameters</p>
+</li>
+<li><p class="first">Increased sharing network window, only for the RSS reader</p>
+</li>
+</ol>
+<p>The new plug-in:</p>
+<ol class="arabic simple">
+<li>Rssreader RSS reader</li>
+<li>Docbook docbook support</li>
+<li>Django project support djangoproj</li>
+</ol>
+<p>New shortcuts:</p>
+<ol class="arabic simple">
+<li>Ctrl + Alt + R remove the contents of Shell window</li>
+<li>F5 Python running</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Multithreading pyw solve congestion problems running</li>
+<li>Module information indicating that the wrong question</li>
+<li>Tab in the implementation of the switch box and automatically adjust the menu at nearly shrinkage</li>
+<li>Update judge the effectiveness of the image processing</li>
+<li>The amendment ftp directory of a bug</li>
+<li>Adjustment documents switching the dynamic menu generation, and grammar switching, reduce unnecessary update</li>
+</ol>
+<p>Version 3.1
+News</p>
+<p>New features:</p>
+<ol class="arabic simple">
+<li>Increased number of plug-in</li>
+<li>Increased number of shortcuts</li>
+<li>Makedot.py increase conversion dot documents and view pictures script</li>
+<li>Increased automatic inspection directive. Preservation can automatically check Python syntax</li>
+<li>Increased automatic extensions, support for expanded document. Under the project can be achieved and the option of using paper</li>
+<li>Java increase, ruby, perl, css, syntax highlighted support javascript</li>
+<li>Increased directory browsing</li>
+<li>By setting a _project documents in support of a simple function of the project</li>
+<li>Increased RemoveBlankLine.py scripts, files can be deleted in the current space trip</li>
+<li>Increase in open document can specify when empty file, the use of a template text Filled</li>
+<li>New increase can select files syntax</li>
+</ol>
+<p>The new plug-in:</p>
+<ol class="arabic simple">
+<li>Pycheck syntax check</li>
+<li>Plug-handling wizard Wizard</li>
+<li>Plugintmp can generate a plugin framework</li>
+<li>Django django support plug-generating projects</li>
+</ol>
+<p>New shortcuts:</p>
+<ol class="arabic simple">
+<li>Alt + L to open / close the left column window</li>
+<li>Alt + B Open / Close bottom window column</li>
+<li>Alt + E to open error.txt</li>
+<li>Alt + D opened debug.txt</li>
+<li>F2 directory browser window open</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>When the revised document change, Tab pages were heading before the asterisk</li>
+<li>Increased CheckList module, plug-in management interface improvements</li>
+<li>Amendments in the notebook space, double-click the tab will close the current document bug</li>
+<li>Laws winpdb plug-in the wrong path</li>
+<li>Remove automatically added (, (, [and function</li>
+<li>Upgrade Script menu for the top menu</li>
+<li>Laws findtext is empty, the cycle of death wrong</li>
+<li>Save the title of the amendment when the asterisk is not changed bug</li>
+<li>Laws press Ctrl + Tab key when the cursor is not switching to edit window bug</li>
+<li>That button height</li>
+<li>That switch automatically shrink nearly at the menu bug</li>
+<li>Set a one-time operation to be adapted, using BeginUndoAction (), and EndUndoAction ()</li>
+<li>That can not choose automatic reduction in the use of tabs and shrink nearly menu</li>
+<li>Configuration files can be adjusted from UliPad installation directory and read conf directory</li>
+</ol>
+<p>Version 3.0
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Additional versions of the Revision of</li>
+<li>Increased directory browsing</li>
+<li>Additional information display modules, mainly for the extension of Information Display</li>
+<li>Additional plug-pytts</li>
+<li>Additional plug-winpdb</li>
+<li>Additional plug - Wizard</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Laws done automatically when a drop-down list, the drop-down list still switching window display bug</li>
+<li>Laws help information site addresses, blog, etc. Contact</li>
+<li>Removal project and the path function</li>
+<li>Extensions structure, plug-in directory</li>
+<li>Laws i18n handling, support multiple serial mo document processing, as well as document processing plug-in translation</li>
+<li>Photo processing support gif, png image and object</li>
+<li>The homepage of the repository and transferred to the SVN Woodpecker</li>
+<li>That document is not changed documents switch coding problems</li>
+<li>Laws ftp port, the problem can not be greater than 100</li>
+</ol>
+<p>Version 2.9
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>The Notes will increase and the anti-Notes shortcut (Ctrl + / Notes increase Ctrl + canceled Notes)</li>
+<li>Additional modules into specified files, selected a string by string F6 can be expressed by the introduction of module documents</li>
+<li>Startup document editing window opening delayed</li>
+<li>Increased functionality provided explanations can be implemented at runtime to use the interpreter, whether at the same time can be set using input and output redirection</li>
+<li>Increased enforcement procedures and automatically switches to the proceedings of the function of the directory</li>
+<li>The previous record increase in the function of open trails</li>
+<li>Increased Chinese directory support</li>
+<li>Close to increase the current document shortcuts Ctrl + F4</li>
+<li>To increase the protection of the abnormal into mixins</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>FTP upload changes in the document did not change the wrong text</li>
+<li>That generation plug-in the wrong document directory __init__.py</li>
+<li>Amendments were assigned to the wrong frame.workpath</li>
+<li>UliPad structural adjustment application.</li>
+<li>Find window can be closed by the ESC</li>
+<li>UliPad in the implementation of procedures, not to redirect input and output when using asynchronous implementation</li>
+<li>With DDE support the use of CallAfter</li>
+<li>Chinese version of that election, according to enter text does not remove the bug</li>
+<li>Amendments to the use of external menu os.startfile ()</li>
+<li>When snippet that did not exist when dealing with the creation Path</li>
+<li>That default coding system from the treatment</li>
+<li>That code fragment window button incorrect error handling state</li>
+<li>That done automatically, removed from the text string matching ranking incorrect Bug</li>
+<li>Changes in default coding error reading, the use utf-8 encoding</li>
+<li>That syntax color change, the documents are not updated Bug. Colourize increase in force parameters, when True, it enforceable.</li>
+<li>When changes in a document on the air when opening files, can not correctly handle the type of file handling switching</li>
+<li>When changes automatically save a document, preserve unicode not correct coding problems. But for others like ftp document preservation may be a problem.</li>
+<li>Laws targets compared with an increase __eq__, __ne__ method</li>
+<li>When no corresponding change the syntax of documents, use the default option in the set of grammar, syntax text to the use of default</li>
+<li>Laws dealing with syntax highlighted when the same type of language will no longer deal with a syntax highlighted</li>
+<li>Laws dealing with the analysis ftp list</li>
+<li>Save all changes, not all of the closure did not open the document processing</li>
+</ol>
+<p>Version 2.8
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Replacement search function, if search is a regular expression, the replacement is a regular expression substitution</li>
+<li>Shell window, message window, the implementation of Python code, Chinese import and export support</li>
+<li>Increased automatically filled, the function suggested that functional grammar</li>
+<li>The last increase in the status bar that the remaining memory field (only for Windows)</li>
+<li>Html code directly to the output to a window in Html</li>
+<li>Additional user-defined shortcuts</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Redesign Blog editing features</li>
+<li>That preservation code fragment window mistakes</li>
+<li>Amendments were selected classification code fragment, preserved by mistake when mistakes</li>
+<li>Utf-8 encoding checks to direct conversion, the use of default coding error.</li>
+<li>Amendments to the wrong Blog Links</li>
+<li>Shell Canada to amend the new orders and Script, automatic right to enter editorial suggested that state</li>
+<li>Shell, Message, code fragments window can be closed</li>
+<li>Windows platform in the registration of the resource management context menu, in accordance with extensions corresponding treatment</li>
+<li>Redesigned interface in the document search</li>
+<li>Blog for the classification of the information that describes the classification counterparts</li>
+<li>Laws wxPythonDoc plug-in for wxPythonDocument</li>
+<li>PythonDoc wxPythonDocument changes and the use of the path sys.prefix</li>
+</ol>
+<p>Version 2.7
+News</p>
+<p>New:</p>
+<ol class="arabic">
+<li><p class="first">In Windows Registry to support UliPad resources management in the context of the menu functions, while providing anti-registered.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Html text converted to increase the functions now support reSt-&gt; html, textile-&gt; html, py-&gt; html,</dt>
+<dd><p class="first last">At the same time provide a wide range of output modes: replace the current output window to the news, output to a separate window Html</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>View Html files increased functionality, you can use the built-in browser to HtmlWindow Html files. Under Windows</dt>
+<dd><p class="first last">The use of embedded IE browser to view</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">The project will increase the current management of all open documents into projects to the function</p>
+</li>
+<li><p class="first">The use of the browser window open or blog editing window, Tab label will show the different icons</p>
+</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Laws dealing with hotkeys. Shell and Message window can also use Ctrl + C, Ctrl + V, a hotkey</li>
+<li>Shell revised in order to increase a visit to the command line can not be amended to suggest Bug</li>
+<li>Shell in the implementation of that order, the error window open source Bug</li>
+<li>That category in the blank browser window with the click wrong Bug</li>
+<li>Plugins structural adjustment, increased abnormal processing functions</li>
+<li>Right version of the canceled check</li>
+</ol>
+<p>Html to increase the text and Html browsing is the key to supplement Html editor of blog writing and preview support. For Windows installation
+Procedures, the installation will be automatically registered on the registry, to be UliPad resources management in the context of the menu. Unloading automatically deleted
+Registry.</p>
+<p>The plugins function to adjust, so if you have to use a plugin needed re-setting.</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id13" id="version-2-6-1" name="version-2-6-1">9.3&nbsp;&nbsp;&nbsp;Version 2.6.1</a></h2>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Judge documents automatically shrink nearly website, automatic adjustment</li>
+<li>Additional plug-in editing features Blog</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Document not corrected version of the Bug reopened</li>
+<li>Ftp download automatically fill in the documents</li>
+<li>Ftp layout adjustment</li>
+</ol>
+<p>Update:</p>
+<p>Blog is optional plug-in installed, and so in a formal packages without. Require a separate download. To install the plug-in blog, but also the installation Meteor module.</p>
+<p>Version 2.6
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>BookMark support of Jump</li>
+<li>The current operation can be set path for the script is running</li>
+<li>Generate InnoSetup format of the Windows installation procedures</li>
+<li>Ftp increase the upload and download function</li>
+<li>Additional command line options can not open the f-last session of the documents kept by the</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>The entire structure of the software to adjust the speed of activated</li>
+<li>All the documents are processed automatically path for absolute path</li>
+</ol>
+<p>Update:</p>
+<p>Because the process of revising the structure of similar upgrade version 2.5, running UliPad should be preceded implementation tools/convert_opt2.6.py to transform UliPad.opt.
+Also you can simply delete UliPad.opt document.</p>
+<p>Version 2.5
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Increased shrinkage nearly context</li>
+<li>Increased simple project management capabilities</li>
+<li>Whether the increase will show where the cursor function</li>
+<li>An increase in the commencement or prohibit the use of psyco module from the command line option-s, the default for not opening</li>
+<li>The change increased document coding function, save the file can preserve this coding</li>
+<li>Ftp increase function remotely open, edit documents, and preservation. The directory also provides construction, the new document, delete, rename, upload, and under-functional Common Ftp</li>
+<li>Increased function automatically closed, as the importation of certain symmetric symbols, such as (),[],{} the input symbols left, the right symbols are automatically filled</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Failure of that Floder</li>
+<li>When the cursor changes to the former location blank, blank maintaining unchanged</li>
+<li>Name changes in the Chinese situation. The document will automatically be converted to unicode processing, transmission, and DDE to utf-8</li>
+<li>Syntax highlighted settings can be modified: the cursor color, background color line where the cursor, select the text color</li>
+<li>Save the file after that, when unable to find the name of the document for grammatical interpretation, will be used to change the current default style specified pattern</li>
+<li>Coding to the translation of documents into utf-8</li>
+<li><ol class="first upperalpha" start="16">
+<li>Parameters panel will be replaced by scrolledwindow</li>
+</ol>
+</li>
+<li>The redesigned into plug-in structure, according to revise the algorithm into plugin read and write plugin method</li>
+<li>Open the document syntax highlighted the window parameters, automatic light of the current document syntax types selected types of initial Grammar</li>
+</ol>
+<p>Update:</p>
+<p>Because the process of revising the structure, resulting in the original configuration files with the new version under which the error occurred. Therefore, the installation of version 2.5, can be implemented tools
+Directory convert_opt2.5.py to carry out the configuration file conversion. This procedure only to the previous version 2.5 configuration file in force. There are the simplest way is to delete the
+Configuration files can be. Meanwhile, the software provided by the plug-in (from <a class="reference" href="http://UliPad.tigris.org">http://UliPad.tigris.org</a> download) may also exist, if used to re-download.</p>
+<p>Version 2.4
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>The code fragment Import and export functions, or can be derived into a classification</li>
+<li>Increased printing, printing support HTML documents</li>
+<li>Psyco increase the acceleration modules support the use of this function first module installed psyco</li>
+<li>Increased user plug-in management functions</li>
+<li>Parameter settings can set the default new document types syntax highlighted</li>
+<li>Additional procedures to stop running Python and the menu toolbar buttons</li>
+<li>Operation Python procedures can receive input</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>DDE services in the port specified in config.ini</li>
+<li>Laws help print documents for the whole path, and the use of file: / / / protocol</li>
+<li>View changes in the document, double-click on the outcome document Jump to a few of the many problems here</li>
+<li>Laws exist when mixed carriage return, the issue of preservation of a paperwork error</li>
+</ol>
+<p>Version 2.3
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>DDE increase simulation functions, command line options to increase Prohibited DDE</li>
+<li>Increased Revcheck function requires Python 2.3 and above, 2.4 above scripting</li>
+<li>Syntax attributes set to increase: colors, fonts, grammar extensions. And through configuration files for preservation.</li>
+<li>Re-setting designated Grammar</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Some window display / hidden menu with the left window and the bottom window</li>
+<li>Save the new document to correct incorrect errors (in the second version 2.2 solution)</li>
+<li>Functionality support. Pyw Suffix</li>
+<li>Increased error log (error.txt)</li>
+<li>View corrected, the word can not preserve the option selected issues</li>
+<li>Correction re-selected menu language, check the status that is not correct errors</li>
+</ol>
+<p>Version 2.2
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Code fragments management - you can reuse the code will be saved, and when necessary inserted into documents</li>
+<li>Shell command menu management - can run some of the external orders, and generates the menu called UliPad</li>
+<li>Open and Save can choose whether or not to display the dialog box coding options to achieve the conversion document coding</li>
+<li>In the current state of the document can show that the coding</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>Amendments to the Resource Document Object Generation incorrect question</li>
+<li>Increase in preserving paper documents by automatically converted carriage return processing</li>
+<li>That preservation code fragments when utf-8 with incorrect coding errors</li>
+<li>When unicode handle failure, the paper does not deal with</li>
+<li>Increase the Tools menu, it shifted to the Script menu below</li>
+</ol>
+<p>Version 2.1
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Automatic check whether the documents were other procedures updated</li>
+<li>When opening files can be set to do it automatically backup</li>
+<li>Preservation can be re-installed after the last document</li>
+<li>Increase in order to open the file specified parameters</li>
+<li>In order to increase the use of default coding options</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>That PyShell window with a built-in function _ gettext function _ in the translation of the conflict, will be renamed for all translation function tr ()</li>
+<li>Unicode increase conversion error, and has not supported version unicode version</li>
+<li>That extended the term can not handle the election '. 'Problem</li>
+<li>Read language.ini documents, the air filter can be started and the line #</li>
+</ol>
+<p>Version 2.0
+News</p>
+<p>New:</p>
+<ol class="arabic simple">
+<li>Window layout adjustment, increase Shell and information window.</li>
+<li>The documents were different menus and toolbars can dynamically switch (now only Python).</li>
+<li>Increased script (script) management menu. Users can edit a document prepared by the processing Python procedures, and through the script menu management.</li>
+<li>Additional documents drag function now can only wait until the menu and toolbars.</li>
+<li>Python increase class browser window function.</li>
+<li>Increased international processing, users can prepare their own language corresponding asked. Now supports both Chinese and English.</li>
+<li>Increase in the document search capabilities.</li>
+<li>Increased C, HTML, XML keyword identification function.</li>
+<li>More Python implementation of the document function, and the command line parameters can be set.</li>
+<li>Ownership will increase conversion table at the box function.</li>
+</ol>
+<p>Modifications:</p>
+<ol class="arabic simple">
+<li>That can not be activated when the input focus switched to the wrong document.</li>
+<li>That maximum, minimum, preservation of incorrect coordinates wrong.</li>
+<li>That first capitalization functional errors.</li>
+<li>When the document was amended newline MIX, switching documents show that not correct mistakes.</li>
+</ol>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id14" id="start-ulipad" name="start-ulipad">10&nbsp;&nbsp;&nbsp;Start UliPad</a></h1>
+<p>UliPad start in the implementation of the command line:</p>
+<pre class="literal-block">
+Python UliPad.py-u | - v | - n | [e-defaultencoding] files ...
+
+U-show usage
+
+V-show version
+
+N Prohibited DDE-function (2.3 new)
+
+E-defaultencoding optional, default use of coding
+
+S accelerate the use of psyco-module (2.5 new)
+
+F-start the conversation overlooked last open file
+
+Files list of documents ... There can be multiple, separate spaces
+</pre>
+<p>Double-click the icon UliPad.pyw start.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id15" id="file-document" name="file-document">11&nbsp;&nbsp;&nbsp;File (document)</a></h1>
+<dl class="docutils">
+<dt>New (New)</dt>
+<dd>Generating new document</dd>
+<dt>Open (open document)</dt>
+<dd>Open the document exists, one can open multiple documents</dd>
+<dt>Reopen (re-open the document)</dt>
+<dd>After re-load the last preserve documents</dd>
+<dt>Recent Open (recently opened files)</dt>
+<dd>When users open or save a document, the document's recent documents preserved in the next users can directly from the recent documents dishes
+Single-open this document. If the file has been opened open, direct switching to the Tab pages of documents.</dd>
+<dt>Open Recent Path (recently opened Path)</dt>
+<dd>When users open or save a document, the document will be kept in the path recently path, the next user can direct path from the recent food
+Single-open the path to the latest visit. This function can also be tools of buttons to perform.</dd>
+<dt>Directory Browser (directory browser) (new version 3.1)</dt>
+<dd>Contents can browse and corresponding subdirectories. Right menu will be more functional.</dd>
+<dt>Close (closed)</dt>
+<dd>Closure of the current document</dd>
+<dt>Close All (the closure of all documentation)</dt>
+<dd>The closure of all open documents</dd>
+<dt>Save (Conservation)</dt>
+<dd>To save the current document</dd>
+<dt>Save As (Save as)</dt>
+<dd>Renamed the current document preservation</dd>
+<dt>Save All (Save all)</dt>
+<dd>Keep all open documents</dd>
+<dt>Page Setup (Page Setup) (new version 2.4)</dt>
+<dd>Print page settings</dd>
+<dt>Printer Setup (Printer configuration) (new version 2.4)</dt>
+<dd>Printer configuration</dd>
+<dt>Print Preview (Print Preview) (new version 2.4)</dt>
+<dd>Print preview effects</dd>
+<dt>Print (Print) (new version 2.4)</dt>
+<dd>Print the document</dd>
+<dt>Html File (html) (new version 2.4)</dt>
+<dd>Html files including the Print and Print Preview function</dd>
+<dt>Ftp ... (Ftp function) (new version 2.5)</dt>
+<dd>Ftp support, users can open, edit, preserve, delete, read, in the new document, the new directory, upload and-under. See more details on the use of Ftp.</dd>
+<dt>Exit (exit)</dt>
+<dd>Exit procedures</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id16" id="edit-editor" name="edit-editor">12&nbsp;&nbsp;&nbsp;Edit (Editor)</a></h1>
+<dl class="docutils">
+<dt>Undo (revoked)</dt>
+<dd>Revocation of the last editing operation</dd>
+<dt>Redo (rework)</dt>
+<dd>Rework earlier revocation action</dd>
+<dt>Cut (shear)</dt>
+<dd>Shear selected text to paste board</dd>
+<dt>Copy (copy)</dt>
+<dd>Copies of selected text to paste board</dd>
+<dt>Paste (paste)</dt>
+<dd>Paste to copy the text plate</dd>
+</dl>
+<div class="section">
+<h2><a class="toc-backref" href="#id17" id="selection-option" name="selection-option">12.1&nbsp;&nbsp;&nbsp;Selection (option)</a></h2>
+<dl class="docutils">
+<dt>Select Word (election words)</dt>
+<dd>Selected Words</dd>
+<dt>Select Word Extend (Extension elections words)</dt>
+<dd>Will '. 'As part of the word choice. Press Ctrl + mouse click can be implemented with the same function.</dd>
+<dt>Match Select (Left First) (matching options - to the left of priority)</dt>
+<dd>The option to enclose the text, such as the use of text ()[]{} '' &quot;&quot; including, the implementation of this function can be selected to enclose the text. If there are nested in a section of text, such as</dd>
+</dl>
+<pre class="literal-block">
+(Print &quot;% s% s&quot;% (a, b))
+    ^ ^ ^
+    A b c
+</pre>
+<p>In the outer brackets are &quot;&quot; and () nested. If you want to select the outer brackets within the text, it can be inserted at the point and the outer brackets, including nested at &quot;&quot; between
+As indicated above can have three locations. If it is a position, when the match left, the left will include a look at the, it will find '('. Then, the right to search and '('
+Match ')'. View matching can be identified nested parentheses right, until the website to find the right match. Then the website will include all the selected text. If they can not find a matching response
+Fu, not choice. If the insertion point at position b, then left when the search will find '&quot;', and you might not expect. This is because the double quotes (and single quotes) is not
+分左右的，因此对于它们的处理要小心些。 If the insertion point at location c, matching will still find that the left side of the '&quot;' is the first of a website, thereby creating and location
+B the same effect. So in order to select the correct text, you should insert placed in a location near the point. Or to put it in place, insert c, but the use of the right matching function.</p>
+<p>Excluding selected text found outside including at the most, is not included in most cases outside the brackets.</p>
+<dl class="docutils">
+<dt>Match Select (Right First) (matching options - the right to priority)</dt>
+<dd>Priority and left to the contrary, this function is to find the right priorities. Select the text does not include the outside, including Fu.</dd>
+<dt>Enlarge Selection (expanded choice)</dt>
+<dd>Text can be selected to the regional expansion about a character, only byte characters effectively. Choose applicable to the use of matching function, also chose to include their characters, the use of this function.</dd>
+<dt>Select Line (selected current line)</dt>
+<dd>Will the current insertion point where all the selected firms, including trailing at the end of the line.</dd>
+<dt>Select All (Select All)</dt>
+<dd>Selecting all the current document.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id18" id="duplication-copy" name="duplication-copy">12.2&nbsp;&nbsp;&nbsp;Duplication (copy)</a></h2>
+<p>Replication is the main idea of reuse previous input, including input before the characters, words and sentences. To resume the importation of used before with the previous first match of the content, so you first need
+Enter to match the beginning of characters, can be arbitrary number. Note that only deals with the identifier (English letters, numbers ,'.', '_'). Before the implementation of the functions of the corresponding match into matching forward aspirin
+Distribution and backward match. The match will identify with the character sequence began importing the same identifier, if found in the current location will be suggested that a window (with the word, sentence before matching), and if you
+To the contents of the box or round match selected by the ESC can cancel this match. If not want the match to continue the implementation of the next match.</p>
+<p>Matching input to the first few characters to match a string, the string matching identification is: starting from the current insertion point View left, if the characters on the identifier, string matching deposit, and then the next
+View. Until character identifier is not concentrated so far. Note that only matched against the angle characters, not dealing with Chinese characters.</p>
+<p>The character '. 'Is counted as set identifier, can be extended through the reproduction mode selected or not selected.</p>
+<dl class="docutils">
+<dt>Duplicate Extend Mode (extended copy mode)</dt>
+<dd>Specify '. 'As a word is a part of.</dd>
+<dt>Duplicate Current Line (copy current line)</dt>
+<dd>Copies of the current trip, inserted into the current line below.</dd>
+<dt>Duplicate Previous Char (a copy on the characters)</dt>
+<dd>向前匹配，复制匹配串后的一个字符。 Note: only right in front of the contents of a recent match, can not continue to matching.</dd>
+<dt>Duplicate Next Char (a copy of characters)</dt>
+<dd>Ditto, only backward direction.</dd>
+<dt>Duplicate Previous Word (copy on a single word)</dt>
+<dd>Forward matching, matching if successful, will be a complete success matching words that prompted window, or spaces selected by round, will be removed from the matching string of paste in the current insertion point behind. Importing &quot;abc&quot;
+Matching success &quot;abcdef&quot;, according round after &quot;def&quot; glue behind in the current insertion point. If the match is not to be continued, then the match will be the continuation of the successful start to the
+Before the match.</dd>
+<dt>Duplicate Next Word (copy of a word)</dt>
+<dd>Next match function Ibid.</dd>
+<dt>Duplicate Previous Line (a copy before the sentence)</dt>
+<dd>Matching forward, but success is matched with the entire sentence.</dd>
+<dt>Duplicate Previous Line (after copying a sentence)</dt>
+<dd>Next match function Ibid.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id19" id="format-format" name="format-format">12.3&nbsp;&nbsp;&nbsp;Format (format)</a></h2>
+<p>Format menu functions can be dealt with here or visit. If not select any text, dealing with the current insertion point of the trip. If the selected text, which deals with all the selected text trip.</p>
+<dl class="docutils">
+<dt>Trim Trailing Spaces (Removal of the tail blank)</dt>
+<dd>Remove trailing blank.</dd>
+<dt>Leading Spaces to Tabs (converted to pre blank tabs)</dt>
+<dd>The first blank will be converted to shrink by nearly requirements of the tabs.</dd>
+<dt>Leading Tabs to Spaces (pre tabs to spaces)</dt>
+<dd>The first will be converted to tabs shrink by nearly requirements of the space.</dd>
+<dt>All Tabs to Spaces (Table Address to the ownership box) (2.0 new)</dt>
+<dd>All the tabs will be converted to shrink by nearly requirements of the space.</dd>
+<dt>Increase Indent (increase of nearly shrinkage)</dt>
+<dd>Increased shrinkage in the text.</dd>
+<dt>Decrease Indent (decrease shrink nearly)</dt>
+<dd>Reduce the text of the recent shrinkage.</dd>
+<dt>Comment Line (OK Notes)</dt>
+<dd>In the selected text, add notes address. When the dialog box pops up asking you input Notes Address.</dd>
+<dt>Line Uncomment (OK removed Notes)</dt>
+<dd>Before removing selected text at the Notes. If it does not exist, not for treatment.</dd>
+<dt>Text Quote (including text)</dt>
+<dd>The selected text is enclosed with two strings. There are several predefined string can be used, including, if :()[]{} such. You can also include their own input string.</dd>
+<dt>Text 15 (including deleted from the text string)</dt>
+<dd>Selected including two removed from the text string. Strings choice Ibid.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id20" id="case-case" name="case-case">12.4&nbsp;&nbsp;&nbsp;Case (case)</a></h2>
+<dl class="docutils">
+<dt>Upper Case (into uppercase)</dt>
+<dd>The text will be selected into capital</dd>
+<dt>Lower Case (into lowercase)</dt>
+<dd>Will selected text into a small set</dd>
+<dt>Invert Case (case swap)</dt>
+<dd>Case-swap will be selected text</dd>
+<dt>Capitalize (capitalize)</dt>
+<dd>The text will be selected in the first word of all the letters into capital.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id21" id="convert-conversion-2-7-new" name="convert-conversion-2-7-new">12.5&nbsp;&nbsp;&nbsp;Convert (conversion) (2.7 new)</a></h2>
+<dl class="docutils">
+<dt>In Html Window (Html output window)</dt>
+<dd>Text conversion output options, select, converted to a Html, the results will be displayed in a separate pop-up window Html</dd>
+<dt>In Message Window (in the news window in the output)</dt>
+<dd>Text conversion output options, select, converted to a Html, the results will be displayed in the message window</dd>
+<dt>Replace Selected Text (Replacement selected text)</dt>
+<dd>Text conversion output options, select, converted to a Html, will replace the current results of the selected text</dd>
+<dt>ReSt to Html (reSt to Html)</dt>
+<dd>ReStructuredText converted to Html</dd>
+<dt>Py to Html (Py to Html)</dt>
+<dd>Python source code into Html</dd>
+<dt>Textile to Html (Tabac to Html)</dt>
+<dd>Textile converted to text format Html</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id22" id="view-view" name="view-view">13&nbsp;&nbsp;&nbsp;View (view)</a></h1>
+<dl class="docutils">
+<dt>Tabs And Spaces (tabs, and blank)</dt>
+<dd>Show or hide tabs and gaps. General tabs and spaces is not visible, if switching to demonstrate, for a space that, tabs showed an arrow.</dd>
+<dt>Indentation Guides (shrink nearly instructions)</dt>
+<dd>That shrinkage or nearly hidden instructions. If that is nearly the same reduction will be a dotted line together.</dd>
+<dt>Right Edge Indicator (right profession instructions)</dt>
+<dd>That reconnection instructions or hidden line. If that were set out in a line Department. It can help you determine whether the party too long.</dd>
+<dt>End-Of-Line Marker (at the end of line)</dt>
+<dd>Show or hide OK at the end.</dd>
+<dt>Zoom In (enlarge)</dt>
+<dd>Large screen fonts.</dd>
+<dt>Zoom Out (narrow)</dt>
+<dd>Narrow screen fonts.</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id23" id="search-search" name="search-search">14&nbsp;&nbsp;&nbsp;Search (search)</a></h1>
+<dl class="docutils">
+<dt>Find ... (search)</dt>
+<dd>View designated Series. Support is a regular expression. If the first section of selected text, was elected as a complete set of text strings will be displayed in search box. If the selected text contains carriage return, not as a complete set of strings.</dd>
+<dt>Direct Find (Direct View)</dt>
+<dd>Elected in a text, the implementation of this function will not find pop-up window, but direct search.</dd>
+<dt>Replace ... (Replacement)</dt>
+<dd>First designated string search to find a replacement after. The entire document can be matched to all Series replacement. If the implementation of this function has been selected before a text can be specified in selected within all replacement.</dd>
+<dt>Find Next (search under a)</dt>
+<dd>Look down at the next match series.</dd>
+<dt>Find Previous (find a)</dt>
+<dd>Next up the search string matching.</dd>
+<dt>In Find Files (in the document search) (2.0 new)</dt>
+<dd>In the specified directory, file extensions specified in the search for a particular string.</dd>
+<dt>Go to Line ... (OK, Jump)</dt>
+<dd>Jump to the designated trip.</dd>
+<dt>Go to Last Modify (jump last modified)</dt>
+<dd>Jump to the last local been revised.</dd>
+<dt>Toggle Marker (label switching)</dt>
+<dd>UliPad can set any number of labels, these labels can be between Jump. Set label or canceled. The labels are set to line the left side of a blue arrow.</dd>
+<dt>Clear All Marker (remove all labels)</dt>
+<dd>Remove all set label.</dd>
+<dt>Next Marker (at the next label)</dt>
+<dd>Jump to the next line of the label.</dd>
+<dt>Previous Marker (a label)</dt>
+<dd>Jump to a label on a line.</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id24" id="document-document" name="document-document">15&nbsp;&nbsp;&nbsp;Document (document)</a></h1>
+<dl class="docutils">
+<dt>Word-wrap (automatic folding OK)</dt>
+<dd>Setting / discount will automatically canceled. When installed automatic folding tour, when his words too long, according to the window size automatically for the next trip.</dd>
+<dt>Auto Indent (nearly automatic shrink)</dt>
+<dd>Setting / shrink nearly canceled automatically. When it is set automatically shrink near, press enter key, the new party will automatically maintain the party's recent shrinkage. If the removal of some function, then press the enter key, insert point of the party is always in a position.</dd>
+<dt>Change encoding ... (Save coding change) (new version 2.5)</dt>
+<dd>Change the current document coding, to be used in the preservation of this coding. The remote file conversion coding particularly useful.</dd>
+<dt>Syntax Highlight ... (syntax highlighted) (2.3 new)</dt>
+<dd>Reset the current document syntax specified.</dd>
+<dt>Syntax Preference ... (syntax parameter setting) (2.3 new)</dt>
+<dd>Grammar parameter settings can be set grammatical marker colors, font names, font size, font attributes.</dd>
+</dl>
+<div class="section">
+<h2><a class="toc-backref" href="#id25" id="convert-line-ending-conversion-at-the-end-of-line" name="convert-line-ending-conversion-at-the-end-of-line">15.1&nbsp;&nbsp;&nbsp;Convert Line Ending (conversion at the end of line)</a></h2>
+<p>Some formats can be converted to other formats newline.</p>
+<dl class="docutils">
+<dt>Convert to Windows Format (converted to Dos / Windows format)</dt>
+<dd>Conversion to Dos / Windows format</dd>
+<dt>Convert to Unix Format (converted to Unix format)</dt>
+<dd>Format conversion to Unix</dd>
+<dt>Convert to MAC Format (MAC format for conversion)</dt>
+<dd>The MAC format conversion</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id26" id="tool2-2-2-new" name="tool2-2-2-new">16&nbsp;&nbsp;&nbsp;Tool2  (2.2 new)</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id27" id="shell-command-shell-command-2-2-new" name="shell-command-shell-command-2-2-new">16.1&nbsp;&nbsp;&nbsp;Shell Command (Shell command) (2.2 new)</a></h2>
+<p>Shell will allow you to order the external orders generated menu, conducted in UliPad call.</p>
+<dl class="docutils">
+<dt>Shell Command Manage ... (Shell order management ...)</dt>
+<dd>The increase in orders for Shell, delete, rename Mobile</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id28" id="script-script-2-0-new" name="script-script-2-0-new">16.2&nbsp;&nbsp;&nbsp;Script (script) (2.0 new)</a></h2>
+<p>Script functions I have wanted to achieve, you can prepare the special purpose Python procedures, placing it under UliPad, a special document on the current text
+handling.  Take advantage of this feature, users can extend UliPad text processing functions. To be placed UliPad menu script, the first to the existence of this script, if
+No one editorial post. Then, the script management functions can be script file to the script menu. Management of the script window, you can change the description of the script (
+In a description of a mouse click, can be amended). This description will serve as a menu item displayed in the script menu.</p>
+<p>Users will be prepared script UliPad as part of the implementation, there are no restrictions on all UliPad resources can be used. But bearing in mind that the use of
+When the object to pass to win access to all resources. Win target window for the whole framework of the visit is to use the current document window, you can use win.document.
+Windows can access information visit win.messagewindow. Documents window with the document may vary, the default file type for the window wxStyledTextCtrl.
+WxStyledTextCtrl window for news category. So you can use wxStyledTextCtrl method. The most basic method for:</p>
+<pre class="literal-block">
+GetLength () returns the length of documents
+GetText () returns the contents of documents, and if Unicode version, it will return Unicode content
+AddText (text) in the current cursor, insert text
+InsertText (pos, text) in the document before the designated location inserted text
+ReplaceSelection (text) to replace selected text
+SetText (text) file to set the text for text, the text before all lost
+SelectAll () all the selected text
+SetSelection (start, end) set up regional elections
+GetSelectedText () was selected text
+GetSelection () selected by the scope of return for a tuple (start, end)
+GotoPos (pos) Jump to the designated location
+GotoLine (pos) Jump to the designated trip
+GetCurrentPos () to insert the location
+</pre>
+<p>At present there are many methods listed above only some commonly used method.</p>
+<dl class="docutils">
+<dt>Script Manage ... (script Management)</dt>
+<dd>The script for the increase, delete, rename mobile.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id29" id="snippets-fragments-2-2-new" name="snippets-fragments-2-2-new">16.3&nbsp;&nbsp;&nbsp;Snippets (fragments) (2.2 new)</a></h2>
+<p>Fragment is to achieve code reusability. In peacetime the programming you may have many code can be reusable, you can be a classification according to their organizations. At the same time
+In time of need you they can be inserted into documents. Fragment features include: the use of fragments and fragments management.</p>
+<p>When using fragments in the document will pop up a window on the left, the window is divided into upper and lower two parts.上部为片段的分类，组织为树状结构。 Bottom of the list structure,
+A breakdown shows that for every inside all the code fragments. When a choice of classification, the following code fragment will change with the classification change. When substituting
+Double-click code fragment, the selected code fragment content will be inserted into the current document at the cursor.</p>
+<p>The organization is divided into segments: the management and classification code fragment management.</p>
+<p>The classification, you can, delete, modify, add a sub. Select one, it may be moves lower. And it can change the level, by the left
+And the shift to achieve. Thus, classification of the Organization for a full tree structure. When changes to the preservation, we can select [applications] button. Keep out, choose
+[OK] button.</p>
+<p>The code fragment, you can addition, deletion, modification. We must first select a classification before it can be classified under this fragment management. When right into a classification
+OK revised, classification box will be locked until you preserve it, or abandon preservation will be released. At this point in the use of attention please.</p>
+<dl class="docutils">
+<dt>Manage Snippets Catalog (fragment Classification Management)</dt>
+<dd>Fragments of the classification management can increase, and delete, modify, the increase of mobile order (Move, Move down), change the level of classification (backspace, shift).</dd>
+<dt>Manage Snippets Code (code fragment Management)</dt>
+<dd>The separate fragments of code management can increase the deletion and modification.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id30" id="plugin-manage-plug-in-management-2-4-new" name="plugin-manage-plug-in-management-2-4-new">16.4&nbsp;&nbsp;&nbsp;Plugin Manage (plug-in management) (2.4 new)</a></h2>
+<blockquote>
+Additional users can prepare their own plug-management capabilities. Published see specific plug-in &quot;technical manuals.&quot; This function only start after the set up of plug-ins to work.</blockquote>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id31" id="option-optional" name="option-optional">17&nbsp;&nbsp;&nbsp;Option (optional)</a></h1>
+<dl class="docutils">
+<dt>Preference ... (parameters)</dt>
+<dd>UliPad set for some variable parameters.</dd>
+<dt>Language (language) (2.0 new)</dt>
+<dd>The selection process for the language used by the interface. Now supports both Chinese and English. The Chinese platform and run for the first time, if the judgment platform environment for the Chinese so,
+Automatic use of the Chinese language environment. If users want to increase their own language support, tools directory can be found in the corresponding documentation and tools for the corresponding language translation can be.
+The following steps:</dd>
+</dl>
+<ol class="arabic simple">
+<li>UliPad.pot copy of the target language to translate documents, the documents shall be: <tt class="docutils literal"><span class="pre">UliPad_locale.po</span></tt>. If China cn, tw Taiwan.</li>
+<li>You can translate the empty msgid in UliPad_locale.po, was asked in msgstr Department. Msgid consistent with the format. If there is %d like Please do not replace Fu format change their order.</li>
+<li>In build.bat document, the implementation of the orders of corresponding documents compiled as a po mo documents and copied to lang directory.</li>
+<li>Lang revised directory of language.ini document. The new language, format: the area code. Such as: fr French</li>
+<li>UliPad start, then Option-&gt; Language, plus selected new language. UliPad can restart again.</li>
+</ol>
+<dl class="docutils">
+<dt>Register to Explore (Registration resources management) (2.7 new)</dt>
+<dd>Registration will UliPad management of the resources in the context menu</dd>
+<dt>Unregister from Explore (from the resource management of the anti-Registration) (2.7 new)</dt>
+<dd>Will UliPad management of resources from the context menu-registration</dd>
+</dl>
+<div class="section">
+<h2><a class="toc-backref" href="#id32" id="document-related-documents" name="document-related-documents">17.1&nbsp;&nbsp;&nbsp;Document (related documents)</a></h2>
+<dl class="docutils">
+<dt>Double click will close the selected document</dt>
+<dd>When you were selected in a double-click Tab labels can close selected documents.</dd>
+<dt>Whitespace is visible on startup</dt>
+<dd>Selected activated UliPad, tabs and spaces are visible.</dd>
+<dt>Indentation guides is visible on startup</dt>
+<dd>Instructions were selected shrink in the past when it launched UliPad visible.</dd>
+<dt>Long line indicator is visible on startup</dt>
+<dd>Long instructions (right profession) is activated when UliPad visible.</dd>
+<dt>Long line indicator column</dt>
+<dd>Instructions set for the beginning of a long trip out, the default 100</dd>
+<dt>Tab width</dt>
+<dd>A number of tabs or spaces, for the four default</dd>
+<dt>Auto indent</dt>
+<dd>Nearly automatically shrink. Set preserved and the same features as the menu.</dd>
+<dt>Use Tabs</dt>
+<dd>Whether the reduction in the use of tabs, selected using tabs, not selected, the use of space.</dd>
+<dt>Auto detect UTF-8 encoding</dt>
+<dd>Automatically detects whether the document coding utf-8, if it is automatically corresponding data conversion.</dd>
+<dt>Auto word-wrap</dt>
+<dd>Automatic pack trip.</dd>
+<dt>Use code fold</dt>
+<dd>Whether the use of code folding function. If selected, it would be the right side of a border area code folding, code instructions for grading the situation. Click on the plus and minus sign icon,
+Code folding can achieve.</dd>
+<dt>Default line ending used in document</dt>
+<dd>The document using default at the end of the line. This option for the new document. If the document has been opened, UliPad will automatically identify the document by the end of the line at, and in the right state of the documents will
+At the end of the line type that out.</dd>
+<dt>Auto make backup file as open a file</dt>
+<dd>When opening files automatically backup files (new version 2.1)</dd>
+<dt>Auto check if there are some opened files were modified by others (new version 2.1)</dt>
+<dd>Automatic check whether an open document was revised by others</dd>
+<dt>Auto close enclosing char, like: (, [((2.5 new)</dt>
+<dd>Whether automatic right ([, (including the right to filled characters</dd>
+<dt>Auto close enclosing char, like: ', &quot;&lt;(2.5 new)</dt>
+<dd>Whether automatic right ', &quot;&lt;including the right to filled characters</dd>
+<dt>Choose where converted text is outputed (2.7 new)</dt>
+<dd>Choose where converted text output function menu with the corresponding menu Convert</dd>
+</dl>
+<p>General (Universal)
+At</p>
+<dl class="docutils">
+<dt>Max number of recent files</dt>
+<dd>A recently updated list of the greatest number.</dd>
+<dt>Max number of save find text</dt>
+<dd>Saved search string to the number. UliPad can look to the past to preserve the contents, according to the frequency of use automatically updated. The maximum value set for the number of previously preserved View
+The contents.</dd>
+<dt>Auto load the files of last session</dt>
+<dd>Last session open automatically into the document. Using this function, the last open document, the procedure will directly from the depositary. Again activated automatically when opened last dealt with the document.</dd>
+<dt>Saves current status when exit the program</dt>
+<dd>In keeping with the current state of procedure. The last refers to the implementation of the window coordinates, and the last line of the insertion points.</dd>
+<dt>Use duplication extend mode ( '. 'Will be treated as word chars)</dt>
+<dd>Set copy expansion mode, and function as Duplication Extend Word.</dd>
+<dt>Show encoding selection dialog as opening or saving file. (220 new)</dt>
+<dd>When you open or save the file selection dialog box is displayed when coding.</dd>
+<dt>Default syntax highlight. (240 new)</dt>
+<dd>The default syntax highlighted.</dd>
+<dt>Show caret line. (250 new)</dt>
+<dd>That line where the cursor. Selected this function, the cursor which will be designated to the background color. Grammar settings can be made.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id33" id="python-2-0-new" name="python-2-0-new">17.2&nbsp;&nbsp;&nbsp;Python(2.0 New)</a></h2>
+<dl class="docutils">
+<dt>Show class browser window as open source file python</dt>
+<dd>Python source files in the open category browser window display</dd>
+<dt>Use context sensitive indent (2.5 new)</dt>
+<dd>The use of context-sensitive shrink near. For example: when the input function definition, or block at the beginning, when the last of ':', and his party in the next automatic
+A recent increase in shrinkage. When the input to a return, break, continue to be an automatic reduction of indentation.</dd>
+<dt>Enable Calltip (2.8 new)</dt>
+<dd>允许函数提示功能 == Allow function suggested that function</dd>
+<dt>Enable auto completion (2.8 new)</dt>
+<dd>Allows automatic function</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id34" id="window-window-2-6-new" name="window-window-2-6-new">18&nbsp;&nbsp;&nbsp;Window (window) (2.6 new)</a></h1>
+<dl class="docutils">
+<dt>Left Window (left window) (2.3 new)</dt>
+<dd>Show or hide the left side of the window, now contains:-source code window</dd>
+<dt>Bottom Window (bottom window) (2.3 new)</dt>
+<dd>Or hidden at the bottom of that window now includes: Python Shell window, which is a Python interactive window, users can input Python orders; News
+Windows, the window is the window with Python Shell together. When Python implementation procedures can be used to show that its output. If the user prepared script can be used as an output.</dd>
+<dt>Shell Open Window (Shell window open)</dt>
+<dd>Shell open window</dd>
+<dt>Open Message Window (news window open)</dt>
+<dd>Open source window</dd>
+<dt>Snippets Open Window (code fragment open window)</dt>
+<dd>Open code fragment window</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id35" id="id1" name="id1">19&nbsp;&nbsp;&nbsp;Python (2.0 new)</a></h1>
+<p>This menu only when you open the document will be a Python.</p>
+<dl class="docutils">
+<dt>Class Browser (browse categories)</dt>
+<dd>The document will open the left side of a browser window, it will show that all the files and functions of the function. Double-click on the function name, will jump to the corresponding trip.</dd>
+<dt>Class Browser Refresh (refresh browser category)</dt>
+<dd>Category refresh browser window content. Class browser window as you edit the document automatically change when the implementation of a browser refresh function, the corresponding changes will occur.</dd>
+<dt>Run (Running)</dt>
+<dd>Current operating procedures. The results showed that in the message window.</dd>
+<dt>Arguments Set (set of command line parameters)</dt>
+<dd>Installed in the current operating procedures used by the command line parameters.</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id36" id="help-help" name="help-help">20&nbsp;&nbsp;&nbsp;Help (Help)</a></h1>
+<dl class="docutils">
+<dt>UliPad Help Document (help files)</dt>
+<dd>Open the help documentation pages.</dd>
+<dt>Extended Module Info (extension information) (3.0 new)</dt>
+<dd>View can write plug-in the configuration file extension information</dd>
+<dt>Visit Project Homepage</dt>
+<dd>Project Home visit</dd>
+<dt>Visit My Blog</dt>
+<dd>Visit my blog</dd>
+<dt>Contract to Me</dt>
+<dd>Give me e-mail</dd>
+<dt>About ...</dt>
+<dd>On the software</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id37" id="shortcuts" name="shortcuts">21&nbsp;&nbsp;&nbsp;Shortcuts</a></h1>
+<p>Use the edit button to speed up the pace. Menu shortcuts in the corresponding menu item in the right side. Some editors and the shortcut menu and no association.</p>
+<ul class="simple">
+<li>All functions explained in a former (M) expressed the corresponding menu function. *</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Shortcuts names</th>
+<th class="head">Corresponding function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>F1</td>
+<td>(M)UliPad Help Document(help files)</td>
+</tr>
+<tr><td>F2</td>
+<td>(M)Directory Browser(directory browser) (new version 3.1)</td>
+</tr>
+<tr><td>F3</td>
+<td>(M)Find Next(search next)</td>
+</tr>
+<tr><td>Shift+F3</td>
+<td>(M)Find Previous(find previous)</td>
+</tr>
+<tr><td>F4</td>
+<td>(M)Direct Find(Direct View)</td>
+</tr>
+<tr><td>Ctrl+F4</td>
+<td>(M)Close(closed)(new version 2.9)</td>
+</tr>
+<tr><td>F5</td>
+<td>(M)Operation Python procedures(3.2 Edition)</td>
+</tr>
+<tr><td>F6</td>
+<td><dl class="first last docutils">
+<dt>(M)will be present as a series of modules corresponding to</dt>
+<dd>the open source modules (new version 2.9)</dd>
+</dl>
+</td>
+</tr>
+<tr><td>F8</td>
+<td>(M)Next Marker(at the next label)(3.2 revised)</td>
+</tr>
+<tr><td>Shift+F8</td>
+<td>(M)Previous Marker(a label)(3.2 revised)</td>
+</tr>
+<tr><td>F9</td>
+<td>(M)Toggle Marker (label switching)</td>
+</tr>
+<tr><td>Ctrl+Shift+F9</td>
+<td>(M)Bookmark Clear All (the removal of all labels)</td>
+</tr>
+<tr><td>F10</td>
+<td>(M)Duplicate Extend Mode (extended copy mode)</td>
+</tr>
+<tr><td>Ctrl+A</td>
+<td>(M)Select All (Select All)</td>
+</tr>
+<tr><td>Ctrl+B</td>
+<td>(M)Go to Last Modify (jump last modified)</td>
+</tr>
+<tr><td>Ctrl+C</td>
+<td>(M)Copy (copy)</td>
+</tr>
+<tr><td>Ctrl+D</td>
+<td>to delete current line</td>
+</tr>
+<tr><td>Ctrl+Shift+D</td>
+<td>to delete the current line, and to copy paste board</td>
+</tr>
+<tr><td>Ctrl+E</td>
+<td>(M)Match Select (Left First) (matching options - to the left of priority)</td>
+</tr>
+<tr><td>Ctrl+Shift+E</td>
+<td>(M)Match Select (Right First) (matching options - the right to priority)</td>
+</tr>
+<tr><td>Ctrl+Alt+E</td>
+<td>(M)Enlarge Selection (expanded choice)</td>
+</tr>
+<tr><td>Ctrl+F</td>
+<td>(M)Find ... (search)</td>
+</tr>
+<tr><td>Ctrl+G</td>
+<td>(M)Go to Line ...(OK, Jump)</td>
+</tr>
+<tr><td>Ctrl+H</td>
+<td>(M)Replace ...(Replacement)</td>
+</tr>
+<tr><td>Ctrl+I or Ctrl+Tab</td>
+<td>(M)Increase Indent(increase of nearly shrinkage)</td>
+</tr>
+<tr><td>Ctrl+Shift+I or Shift+Tab</td>
+<td>(M)Decrease Indent(decrease shrink nearly)</td>
+</tr>
+<tr><td>Ctrl+J</td>
+<td>(M)Duplicate Current Line(copy current line)</td>
+</tr>
+<tr><td>Ctrl+L</td>
+<td>(M)Duplicate Previous Line(a copy before the sentence)</td>
+</tr>
+<tr><td>Ctrl+Shift+L</td>
+<td>(M)Duplicate Previous Line(after copying a sentence)</td>
+</tr>
+<tr><td>Ctrl+M</td>
+<td>(M)Duplicate Previous Char(a copy on the characters)</td>
+</tr>
+<tr><td>Ctrl+Shift+M</td>
+<td>(M)Duplicate Next Char(a copy of characters)</td>
+</tr>
+<tr><td>Ctrl+N</td>
+<td>(M)New(New)</td>
+</tr>
+<tr><td>Ctrl+O</td>
+<td>(M)Open(open document)</td>
+</tr>
+<tr><td>Ctrl+P</td>
+<td>(M)Duplicate Previous Word(copy on a single word)</td>
+</tr>
+<tr><td>Ctrl+Shift+P</td>
+<td>(M)Duplicate Next Word(copy of a word)</td>
+</tr>
+<tr><td>Ctrl+&quot;</td>
+<td>(M)Text Quote(including text)</td>
+</tr>
+<tr><td>Ctrl+Shift+&quot;</td>
+<td>(M)Text Unquote(including deleted from the text string)</td>
+</tr>
+<tr><td>Ctrl+R</td>
+<td>(M)Select Line(selected current line)</td>
+</tr>
+<tr><td>Ctrl+S</td>
+<td>(M)Save(Conservation)</td>
+</tr>
+<tr><td>Ctrl+T</td>
+<td>(M)Todo window(new version 3.1)(3.3 Revised Version)</td>
+</tr>
+<tr><td>Ctrl+U</td>
+<td>(M)Upper Case(into uppercase)</td>
+</tr>
+<tr><td>Ctrl+Shift+U</td>
+<td>(M)Lower Case(into lowercase)</td>
+</tr>
+<tr><td>Ctrl+V</td>
+<td>(M)Paste(paste)</td>
+</tr>
+<tr><td>Ctrl+W</td>
+<td>(M)Select Word(election words)</td>
+</tr>
+<tr><td>Ctrl+Shift+W</td>
+<td>(M)Select Word Extend(extended term election)</td>
+</tr>
+<tr><td>Ctrl+X</td>
+<td>(M)Cut(shear)</td>
+</tr>
+<tr><td>Ctrl+Y</td>
+<td>(M)Redo(rework)</td>
+</tr>
+<tr><td>Ctrl+Z</td>
+<td>(M)Undo(revoked)</td>
+</tr>
+<tr><td>Ctrl+/</td>
+<td>(M)will be selected before the text of the Notes (the new version 2.9)</td>
+</tr>
+<tr><td>Ctrl+</td>
+<td>(M)will be selected before the text of the footnote Removal (2.9 Edition)</td>
+</tr>
+<tr><td>Ctrl+Alt+L</td>
+<td>(M)to open/close the left column window (new version 3.1)</td>
+</tr>
+<tr><td>Ctrl+Alt+B</td>
+<td>(M)to open/close the window bottom column (new version 3.1)</td>
+</tr>
+<tr><td>Ctrl+Alt+R</td>
+<td>(M)Shell remove the contents of window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id38" id="pop-up-menu" name="pop-up-menu">22&nbsp;&nbsp;&nbsp;Pop-up menu</a></h1>
+<p>Now UliPad support in the document window pop up menu.</p>
+<p>In internal documents pop up menu function with the main Edit menu (programming) the same function.</p>
+<p>Tab pages of documents in the pop File menu and the main menu () function basically the same.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id39" id="ulipad-unicode-support" name="ulipad-unicode-support">23&nbsp;&nbsp;&nbsp;UliPad Unicode support</a></h1>
+<p>UliPad fully supports Unicode, of course, is the premise you have to install the scripting Unicode version.</p>
+<p>Unicode support, then facing local Unicode encoding and conversion problems. In UliPad, this change occurred in open document and preserve the files.
+UliPad code system conversion in the coding used three sources: specified encoding, document coding and coding default. UliPad in dealing with the coding is based on three
+The order, that is, if the space is designated for the use of coded documents using coding, coding is empty if the document is used by default encoding. So how are these three coding to?
+How will handle?</p>
+<ol class="arabic">
+<li><p class="first">Designated coding</p>
+<p>If you want to open the file or save the file, a separate designated coding, then he needs in the options menu, set &quot;When you open or save files that coding
+Options dialog &quot;for the selected option. This way, when the Open or Save paper, the coding options dialog box will pop up, users are good coding election, will UliPad
+With this encoding of the document coding and decoding. If treatment fails, then open the file or save the file failed. If successful, this will set up document coding coding.</p>
+</li>
+<li><p class="first">Document Coding</p>
+<p>When a user specified encoding, and the success of open or save the document, this document coding for the specified encoding. If the user does not use a designated code,
+If the user is set up a menu of options &quot;utf-8 automatic encoding detection&quot; for the options selected, in an open document, automatically judgment UliPad
+The content of the document is to utf-8 encoding, if the document is encoded as utf-8, if not the default document coding for coding.</p>
+</li>
+<li><p class="first">Default Encoding</p>
+<p>The default encoding support is activated when UliPad, UliPad based operating system environment by the use of the coding system as the default encoding. But individual circumstances
+Under UliPad received coding system may be a problem, then you can start the accession to the command line options for encoding e-correct coding can be.</p>
+</li>
+</ol>
+<p>Note that if you set the need to use a designated code, but they can only open the file in the pop-up dialog box and save the file open dialog box can be used when other
+Circumstances or automatic test utf-8 encoding, or use the default encoding.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id40" id="presentations" name="presentations">24&nbsp;&nbsp;&nbsp;Presentations</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id41" id="script-script-sample-preparation" name="script-script-sample-preparation">24.1&nbsp;&nbsp;&nbsp;Script (script) sample preparation</a></h2>
+<p>The script feature allows users to prepare their own handling code can be in the right UliPad object for processing. Its purpose is to prepare fast, and can be used as food
+On the single UliPad. It is an independent source Python. Following a script prepared by the steps:</p>
+<ol class="arabic simple">
+<li>The preparation of the script, preservation</li>
+<li>In Script (script) added to the entrance of the menu</li>
+</ol>
+<p>The second step is not operating here for illustration. Now some of the script available for some examples.</p>
+<div class="section">
+<h3><a class="toc-backref" href="#id42" id="the-most-simple-scripts" name="the-most-simple-scripts">24.1.1&nbsp;&nbsp;&nbsp;The most simple scripts</a></h3>
+<pre class="literal-block">
+1       #---------------------------------------------------
+2       #                   UliPad script
+3       # Author  :limodou(chatme&#64;263.net)
+4       # Date    :2004/07/11
+5       # Version :1.0
+6       # Description:
+7       #     Add linenum to each line of selected text
+8       #
+9       #---------------------------------------------------
+10
+11      def run(win):
+12          win.document.SetText(&quot;Hello, UliPad&quot;)
+13
+14      run(win)
+</pre>
+<dl class="docutils">
+<dt>1-9 trip</dt>
+<dd>The Notes can not write. However, if used to give people, you know the people or the situation well.</dd>
+<dt>11-12</dt>
+<dd><p class="first">The definition of a run function, parameter is available win an object and it is the most UliPad outer window, it has the menu, tools of the state, you have to see
+To document. The current document is being edited win.document. Through win object, you can visit any one of the UliPad object. Such as:
+Win.messagewindow news that window, you can use it to export some of the information. On the whole UliPad frame in the technical documentation will be detailed depiction
+Reference here not elaborate.</p>
+<p class="last">12 to call the current document window SetText method for setting the document says, &quot;Hello, UliPad.&quot; Remember, it will remove all previous East
+West. Therefore it is only a sample. You can read this code: win.messagewindow.SetText ( &quot;Hello, UliPad&quot;), take a look at the information window
+There is not anything. Also read: win.document.AddText ( &quot;Hello, UliPad&quot;), take a look at the cursor is not in the document processing increased
+The text, and did not remove the original content.</p>
+</dd>
+<dt>14 OK</dt>
+<dd><p class="first">This function is called. Function wording seemed clear, but you can not use it, as can be:</p>
+<pre class="literal-block">
+Win.document.SetText ( &quot;Hello, UliPad&quot;)
+</pre>
+<p class="last">To try to run effects.</p>
+</dd>
+</dl>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id43" id="to-increase-the-line-of-text" name="to-increase-the-line-of-text">24.1.2&nbsp;&nbsp;&nbsp;To increase the line of text</a></h3>
+<pre class="literal-block">
+1       #---------------------------------------------------
+2       #                   UliPad script
+3       # Author  :limodou
+4       # Date    :2004/07/11
+5       # Version :1.0
+6       # Description:
+7       #     Add linenum to each line of selected text
+8       #
+9       #---------------------------------------------------
+10
+11      def run(win):
+12          linenums = win.document.getSelectionLines()
+13          for i, linenum in enumerate(linenums):
+14                  text = str(i+1).ljust(8) + win.document.getLineText(linenum)
+15                  win.document.replaceLineText(linenum, text)
+16
+17      run(win)
+</pre>
+<p>This script is used to document the selected text will increase, from a start. This example is the use of this function to realize.</p>
+<dl class="docutils">
+<dt>12 OK</dt>
+<dd>Firms need to be dealt with, the scope. GetSelectionLines function is defined in Editor.py</dd>
+<dt>14 OK</dt>
+<dd>Have to be dealt with the text, and add to its information. GetLineText is defined in Editor.py</dd>
+<dt>15 OK</dt>
+<dd>After the text will replace the original text. ReplaceLineText function is defined in Editor.py</dd>
+</dl>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id44" id="restructuredtext-converting-documents-to-html-conversion" name="restructuredtext-converting-documents-to-html-conversion">24.1.3&nbsp;&nbsp;&nbsp;ReStructuredText converting documents to HTML conversion</a></h3>
+<pre class="literal-block">
+1       #---------------------------------------------------
+2       #                   UliPad script
+3       # Author  :limodou
+4       # Date    :2004/07/08
+5       # Version :1.0
+6       # Description:
+7       #     Convert reStructuredText to Html
+8       #
+9       #---------------------------------------------------
+10      def run(win):
+11          from docutils.core import publish_file
+12          import os.path
+13          import cStringIO
+14
+15          filename = win.document.filename
+16          fi=cStringIO.StringIO(win.document.GetText().encode(win.document.locale))
+17          f, ext = os.path.splitext(filename)
+18          htmlfile = f+'.htm'
+19          fo=open(htmlfile, &quot;w&quot;)
+20          publish_file(source=fi, destination=fo, writer_name='html')
+21          fi.close()
+22          fo.close()
+23          win.messagewindow.SetText('Success!')
+24          win.panel.bottom.notebook.showWindow(1)
+25      #   win.editctrl.new(htmlfile)
+26
+27      run(win)
+</pre>
+<p>This scripting docutil module to be used for the current reStructureText converted to HTML. No. 25 can be converted to text displayed. However commented out of here.</p>
+<p>With no detailed description, and only on the content of the UliPad</p>
+<dl class="docutils">
+<dt>15 OK</dt>
+<dd>The current document file.</dd>
+<dt>16 OK</dt>
+<dd>Document content will be converted to documents used by the encoder. Because UliPad use the Unicode, in the use of the former first docutil coding to cost more
+For processing. Locale is the current document encoding.</dd>
+<dt>17-18 OK</dt>
+<dd>According to the original documents were generated. Htm file.</dd>
+<dt>20 OK</dt>
+<dd>Html document called Generation docutil</dd>
+<dt>21-22 OK</dt>
+<dd>Close the file</dd>
+<dt>23 OK</dt>
+<dd>In the message window that successful information</dd>
+<dt>24 OK</dt>
+<dd>News that window</dd>
+</dl>
+<p>This script It should be noted, the new document, if not preserved, the filename attribute it to'', it converts directly at the processing of documents
+Possible problems. This script does not require you to switch to the depositary, to be careful in using some.</p>
+</div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id45" id="ftp-use" name="ftp-use">24.2&nbsp;&nbsp;&nbsp;Ftp use</a></h2>
+<ol class="arabic">
+<li><p class="first">Select files -&gt; Ftp or point of Ftp button in the toolbar, which can be opened next Form Ftp pages.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Ftp first to conduct site configuration. Set point in the Site (Site settings), then a dialog box will pop up. To add a new site, you must enter the site</dt>
+<dd><p class="first last">The site names and IP addresses, then, can increase the use of buttons. To delete a site, the first site chosen to delete, and then delete points. To modify a point
+At first selected to amend the site, then revise, and update can be chosen.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Site settings, after the withdrawal, the main Ftp window above the drop-down list to choose a site. It's right for a user name and password. Site change when the drop-down list, users</dt>
+<dd><p class="first last">Name and password will be changed simultaneously. Connecting with the right to disconnect button. Select Connect, will be selected Ftp site and connect. If the user name or password
+Empty, pop-up dialog box will be required input. Note that if the right user name and password changes do not affect the preservation Site settings. In other words, here
+Setting up a user name and password, only to the effect of the link. If you want to permanent preservation, please update site configuration. Choose disconnect, disconnect and Ftp Site
+Connectivity.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The middle pages of documents, the directory listing. Every time that a directory of all files and directories. If a parent directory, the first of the designated parent directory nodes.</dt>
+<dd><p class="first last">When connected after the success of right-mouse menu there a right, these operations are carried out under the state of the link. Users can open files or directories, the new document,
+The new directory, delete, rename and set the current directory, upload documents, the mass document. Open files can be double-click on a document. When opening files,
+The use of binary open. The upload and-under, then transmission can be specified: binary and text mode. Only for documents from top to bottom-and will not open the file.
+When you open a remote file, if the revisions can be retained as usual documents to operate the same method as that document -&gt; Save or click on the toolbar -
+Depositors button. Open for the remote files, can not keep statistics on the number of remote files, can be saved only for the local paper.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The following pages for the coding options, this feature is a remote file open when the use of the open coding. Automatic determine whether UTF-8 still function on the remote file</dt>
+<dd><p class="first last">The effective. When coding in the preservation of this non-functional, if we want to preserve the coding change, it could use the file -&gt; change coding transcoding. The right to a remote directory,
+Remote users can specify a directory, and when connected Ftp site to be automatically Jump this directory. And the link has been successful, it may modify this path, then
+Click refresh button or menu in the right set, which can change the current directory. Another site is the right set-up and closed.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id46" id="user-defined-shortcuts-new-version-2-8" name="user-defined-shortcuts-new-version-2-8">24.3&nbsp;&nbsp;&nbsp;User-defined shortcuts (new version 2.8)</a></h2>
+<p>Hack is now offered only one solution. Users can edit window and the main window menu-defined shortcuts. The increase in config.ini or main_hotkey Festival Editor_hotkey Festival, and then increase: news = menu shortcuts, such as:</p>
+<pre class="literal-block">
+[Main_hotkey]
+IDM_FILE_SAVE_AS F12 =
+</pre>
+<p>The above will be for [Save as] an increased menu of F12 keys. If main_hotkey Festival did not exist, as long as their own can be created.</p>
+<p>The menu of information inquiries can be run UliPad, in debug.txt paper, &quot;[INFO] - [makemenu] makeaccelerator ...&quot; after
+Face to find.</p>
+<p>Editor_hotkey main_hotkey and on the distinction is that the main window is defined hotkey overall effect, and in the definition of editor hotkey only when imported Coke
+Point editor will be in effect.</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id47" id="catalog-browsing-3-0-new" name="catalog-browsing-3-0-new">24.4&nbsp;&nbsp;&nbsp;Catalog browsing (3.0 new)</a></h2>
+<ol class="arabic simple">
+<li>An increase in catalog</li>
+<li>Closure of a directory</li>
+<li>An increase of folders</li>
+<li>An increase in paper</li>
+<li>To delete a file or directory</li>
+<li>Click to edit nodes can be renamed</li>
+<li>Refresh Contents</li>
+<li>Not automatically display all tree, but show levels to improve speed, it will open up a directory list</li>
+<li>Double-click the file node will be set in open Editor</li>
+<li>F2 key to open this window</li>
+</ol>
+<p><cite>_</cite> [Return]</p>
+<!-- _ `[Return]`: index.htm -->
+</div>
+</div>
+</div>
+</body>
+</html>

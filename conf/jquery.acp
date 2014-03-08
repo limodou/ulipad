@@ -1,0 +1,20 @@
+[include]
+
+[autostring]
+
+[autostring_append]
+
+[autore]
+<(\w+)[^>]*> = \0!^</\1>
+
+[autore_append]
+
+[autovalues]
+
+[auto_default]
+1 = @acp.jquery.jquery.default_identifier
+
+[auto_complete]
+calltip = @acp.jquery.jquery.calltip
+autodot = @acp.jquery.jquery.autodot
+#analysis = @acp.jquery.jquery.analysis

@@ -1,0 +1,5 @@
+mkdir <#appdir#>
+copytree data/images <#appdir#>/images
+run data/MainFrame.py text "text" <#appdir#>/MainFrame.py
+run data/resource.py text "text" <#appdir#>/resource.py
+run data/main.py python "app" <#appdir#>/<#appname#>.py

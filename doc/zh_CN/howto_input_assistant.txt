@@ -1,0 +1,197 @@
+==========================
+HOW TO USE INPUT ASSISTANT
+==========================
+
+:Author: limodou
+:Contact: limodou@gmail.com
+
+InputAssistant can help you auto-completing some code. And it permits you
+write some rules in an acp(Auto Completion Pattern) file. The acp file is an
+ini-like file, and it can be used to deal with dict4ini module. You can find this
+module in UliPad's `modules` folder, and more details about it you can see Dict4Ini_ .
+
+.. _Dict4Ini: http://wiki.woodpecker.org.cn/moin/Dict4Ini
+
+In an acp file, you can do many things, here is the details about the format
+of it:
+
+Basic
+------
+
+1. Notices
+
+    * The acp file is an ini-like format file
+    * The `key` can not include equal symbol(`'='`), if you want to use it you should 
+      use escape string <equal>
+    * There are serval escape string like <equal> for now they are::
+    
+        '='     <equal>
+        '\t'    <tab>       ;but it's some problems for now
+        '/'     <div>
+        ' '     <space>
+        '['     <square>
+    * The `key` is just a pattern, and when you press a keystroke, if it matches the last 
+      character of a key, then the value of this key will replace or append or popup a list
+      for current input word. For example, there is a key pattern `def<space>`, when you 
+      entered `def` string, and press space keystroke, it will match the `def<space>` pattern,
+      so the InputAssistant will take place.
+    * There are three kind of results: replace, append and popup a list.
+    * If the `value` is defined as a list, when InputAssistant taking place it'll popup a list,
+      and let user to choose one.
+      
+2. Value format
+
+    
+
+1.  based on string match input assistant
+
+    including replacement and append, for example:
+
+    replacement style::
+
+       [autostring]
+       def<space> = "def !^():\n\t"
+
+    append style::
+
+       [autostring_append]
+       def<space> = "!^():\n\t"
+
+2) based on regular expression match input assistant
+
+also include replacement and append, for example:
+
+replacement style:
+
+   [autore]
+   (^\s*)if<space> = \1if !^:\n\t
+
+append style:
+
+   [autore_append]
+   from\s+([\w.]+)\s+import(.*)<space> = @acp.python.import.fromimport
+   if\s+__name__<space> = == '__main__'
+
+3) the match value could be string, list, or even a function
+
+string:
+
+   [autostring]
+   def<space> = def !^():\n\t
+
+list:
+
+   [autostring_append]
+   < = a,blockquote,br,body,center,
+
+function:
+
+   [autore_append]
+   from\s+([\w.]+)\s+import(.*)<space> = @acp.python.import.fromimport
+
+if the match value is a list, UliPad will popup a list enable you to
+choice from them, and the function can return four format output:
+
+   'append', string
+   'append', list
+   'replace', string
+   'replace', list
+
+it works just like above.
+
+4) default auto identifier input assistant
+
+if you define like this in acp file:
+
+   [auto_default]
+   1 = @acp.python.import.default_identifier
+   2 = a,b,c,
+
+so if there are not matches will be applied, this mechanism will be
+effected. And UliPad will calculate all the result according the
+vaules of auto_default section(the key is not used), and combine them
+into one list, so you can select a match string from the popup list.
+As you see, there are could be more than one entry in auto_default
+section, and the value could be a function or a list.
+
+5) function calltip (developing)
+
+Just as you type '(' then will find a function defination match, and
+popup a calltip window to help you know the info about this function.
+This functionality is in developing now, I hope user could define a
+import file, just like:
+
+   def functionA(a,b,c):
+       """docstring"""
+       pass
+
+so UliPad could deal with them just like import python modules. then
+as you type ')', the popup windows will be hidden.
+
+This mechanism will be defined as:
+
+   [auto_complete]
+   calltip = @acp.python.import.calltip
+
+So you see, it should be a function.
+
+6) auto dot extend input assistant
+
+should be define in auto_complete section also, just like:
+
+   [auto_complete]
+   autodot = @acp.python.import.autodot
+
+This functionality is also in developing now. And as you type a '.',
+UliPad will call the autodot function to get a list, and let you
+choose from it.
+
+7) auto background analysis mechanism
+
+This mechanism is mainly used for defaullt auto identifier input
+assistant, because except for reversed words and bulitin functions or
+methods, there are also locale identifier in current document, so how
+to get them from current document and combine them for input
+assistant, and I think there should be a syntax analyser for that, so
+this mechanism is designed for that. And the processing will be
+executed in threading. This functionality is also in developing.
+
+8) aoto assign input assistant to file type
+
+As you see, many acp files are named according to a certain language,
+right, if you open a certain file type, just like python, the
+python.acp will be auto assigned to it.
+
+9) manually assign input assistant to an opened document
+
+You can also manully assign a acp file to an opened document, so the
+document will multi acp files at a time.
+
+10) A main acp file could include sub acp file
+
+If you define such string in a acp file:
+
+   [include]
+   1=django_py.acp
+
+This will indicate that, as importing this acp file , also need to
+import the acp files which dedefine in include section. And let us
+look at django_py.acp:
+
+   [default]
+   projectname = django
+
+You can see that there is a default section in django_py.acp file, if
+the content of it is empty, so django_py.acp will be available for
+each python file. But if you defined a projectname entry, only when
+you are work at a "django" project, this acp file could be available.
+And the projectname could be a list, just like:
+
+   django,python,
+
+So this funcationality is also concerned with simple project
+management in UliPad you know.
+
+So there are many things converned with input assistant, and you can
+use it to well support a framework or something else, it'll speed up
+you developing efficiency I hope.

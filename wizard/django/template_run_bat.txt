@@ -1,0 +1,2 @@
+set PYTHONPATH=<#proj_dir#>
+set DJANGO_SETTINGS_MODULE=<#proj_name#>.settings

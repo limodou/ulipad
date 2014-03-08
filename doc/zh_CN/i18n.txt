@@ -1,0 +1,271 @@
+============
+ i18n的实现
+============
+
+:作者: limodou
+:联系: limodou@gmail.com
+:主页: http://code.google.com/p/ulipad/
+:BLOG: http://www.donews.net/limodou
+:版权: GPL
+
+.. contents::
+
+
+一、通常的实现方法
+------------------------
+
+什么是i18n，它是国际化的简称(Internationalization，去掉开始的I和最后的N，中间一共18个字符)。对于它的实现，
+在 Python 的文档关于 gettext 中有详细的描述。同时我在wxPyWiki上找到关于wxPyCookbook上关于国际化实现的教程，
+我便按文档和教程开始了我的实验。
+
+例子我使用教程上提供的，不过我进行了修改。一是增加了中文，去掉了西班牙语和法语的处理。二是将某些信息放在另一
+个模块中，测试跨模块的实现。同时在这个模块中将进行国际化处理的内容放在了列表中，如::
+
+	message = [_('English'), _('Chinese')]
+
+下面我描述一个通常的方法。
+
+1. 在主模块中导入gettext模块，它需要放在进行国际化处理的语句、模块导入之前。如::
+
+	gettext.install('i18ntest', './locale', unicode=True)
+
+   三个参数的意思分别为：
+
+   * 作用域名，用于限定翻译文件的主名 
+   * 路径，存放翻译文件的路径 
+   * unicode，是否使用unicode(如果你的应用程序是unicode的，则此处应为True)
+
+   上述的指令将安装一个缺省的国际化处理类。在我们需要安装某种特定的国际化处理类时，我们可以::
+
+	gettext.translation('i18ntest', './locale', languages=['en']).install(True)
+
+   这样将安装指定的翻译文件。前两个参数同gettext.install，第三个参数指明语言的种类。gettext.translation将
+   返回一个新的对象。执行它的install函数将安装支持指定语言的国际化处理功能。install中的参为是否使用unicode。
+
+2. 在所有需要进行国际化处理的字符串上加上_()，如：English和Chinese需要国际化处理，那么要转化为：_('English')
+   和_('Chinese')。这一步工作可能会比较麻烦。
+
+   经过上述的处理，你的程序虽然还没有真正的翻译文件但仍然是可以运行的。
+
+3. 使用pygettext.py进行字符串的抽取。pygettext.py是在python的安装包中自带的一个工具，它位于tools/i18n目录
+   中，同时还有一个叫msgfmt.py的程序，是用来将翻译文件转换成gettext可识别的二进制文件。命令行参数如下::
+
+	Python pygettext.py 文件名
+
+   文件名可以同时有多个。执行python pygettext.py --help 可以看它支持哪些选项。如果没有指定输出文件名，则缺
+   省会生成一个名为messages.pot的文件。它就是最原始的用来翻译成其它语言的文件。打开它你会看到可能如下的内容::
+
+	# SOME DESCRIPTIVE TITLE.
+	# Copyright (C) YEAR ORGANIZATION
+	# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+	#
+	msgid ""
+	msgstr ""
+	"Project-Id-Version: PACKAGE VERSION\n"
+	"POT-Creation-Date: Mon Jun 14 13:28:26 2004\n"
+	"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+	"Last-Translator: FULL NAME <\n">EMAIL@ADDRESS>\n"
+	"Language-Team: LANGUAGE <\n">LL@li.org>\n"
+	"MIME-Version: 1.0\n"
+	"Content-Type: text/plain; charset=CHARSET\n"
+	"Content-Transfer-Encoding: ENCODING\n"
+	"Generated-By: pygettext.py 1.5\n"
+	
+	#: i18ntest.py:28 i18ntest.py:76
+	msgid "MiniApp"
+	msgstr ""
+	
+	#: i18ntest.py:39 i18ntest.py:85
+	msgid "E&xit"
+	msgstr ""
+
+   一个messages.pot由以下内容组成:
+
+   * '#'开始的注释行 
+   * 空行
+   * msgid行，表明一个翻译项，可以有多行。如果为多行，则形如::
+
+		 msgid ""
+		 "This is a multiline\n"
+		 "test"
+		 如果msgid内容为空，则表示msgstr是文档的信息 
+		
+   * msgstr行，表明一个译文，可以为多行，格式同msgid。如果msgid为空，则为文档信息。在文档信息中可以录入关
+     于此译文的一些情况，同时最重要的就是charset域，用于指明此文档的编码信息，也就是保存此文档时所用的编码。
+     建议对中文使用utf-8编码。
+	
+   那么我们得到这个pot文件后，先将其保存为不同的版本，以便下面的翻译。如：messages_cn.po。翻译时，只考虑
+   msgid不为空的地方，将译文写在msgstr处即可。
+
+4. 使用msgfmt.py将po文件转换为二进制的mo文件。命令行如下::
+
+	python msgfmt.py messages_cn.po
+
+   这样将生成一个名为messages_cn.mo的二进制文件。
+
+5. 安装mo文件。其实就是将mo文件放在正确的位置。gettext要求翻译文件组织成如下目录::
+
+	./locale/en/LC_MESSAGES 
+	./locale/cn/LC_MESSAGES 
+
+   locale是在gettext.translation中指定的。en, cn是语言分类。LC_MESSAGES是要求的。同时mo文件应改为与作用域
+   名相同，如i18ntest.mo。
+
+   经过以上的步骤，一个支持国际化处理的程序可用了。
+
+   在wxPyWiki教程中使用了mki18n.py的程序。但我使用了python自带的工具，与教程有所区别。
+
+二、遇到的问题
+--------------------
+
+采用通常的方法存在一些不方便的地方，感觉有以下几点：
+
+1. pygettext.py可以一次读取多个文件，但当文件太多时，在命令行下不容易放下。不支持目录和文件列表的处理。 
+2. 当我的程序修改后，需要翻译的地方也发生了变化，如果将新的变化与原来已经翻译好的内容合并？ 
+3. local/en/LC_MESSAGE这种目录组织有些麻烦。
+
+三、解决方法
+--------------------
+
+对于第一个问题，我的解决方法是修改pygettext.py源程序。我没有实现目录的处理，实现的是文件列表的处理。首先将
+需要进行处理的 Python 源文件名生成一个文件，一个文件占一行。然后在pygettext.py中增加处理文件列表的命令行选
+项。修改后的文件如果有感兴趣的可以下载最新的 UliPad.py 源代码(在本文发表时，只可以从cvs下载)。
+
+对于第二个问题，我的解决方法是编写一个合并程序。它首先将已经翻译好的文件读取出来，按关键字保存到一个字典中。
+再读取最新生成的翻译文件，对翻译文件中的每一个翻译项，如果字典中不存在，则直接将此项插入到字典中；如果存在，
+并且译文不为空的话，则替换原译文。处理完新的翻译文件后，再去除字典中的关键字在新的翻译文件中不存在的项。这一
+点可能要注意，因为我每次生成的新的翻译文件都是一个全集，因此我采用这种方法是为了去除无用的翻译项。如果新的翻
+译文件不是全集，应该把去除字典关键字的操作去掉。但如果要去除无用的翻译项只能由人工来完成了。此程序也在 UliPad 源代码中。
+
+对于第三个问题，我查阅了gettext.py源代码。原因就出在find()函数。它最后需要生成一个mo文件名，代码如下::
+
+	mofile = os.path.join(localedir, lang, 'LC_MESSAGES', '%s.mo' % domain)
+
+可以看到一个mo文件是由目录名、语言的种类、LC_MESSAGES、和作用域名组成的。形如::
+
+	localedir/lang/LC_MESSAGES/domain.mo
+
+因此，需要象这样建立相应的目录，并将mo文件放到相应的目录下。
+
+我的想法是：将所有翻译文件放在同一目录（如果项目很大，涉及到许多程序的翻译就另当别论），
+翻译文件为：主名_地区编码.mo。为什么不用语言编码呢？因为象中文有简体中文和繁体中文的区别，语言编码都是zh，
+这样根本区分不出来。如果用地区编码则可以，分别为cn和tw。
+
+因此为了实现此功能，我根据gettext编写了自已的i18n模式，在实现了gettext功能的基础上还满足了我的要求。同时此
+模块还可以根据操作缺省的locale自动调用相应的翻译文件。此文件同在 UliPad 源代码中。
+
+这样，在 UliPad 中与i18n有关的内容有：
+
+* pygettext.py(修改) 
+* msgfmt.py 
+* i18n.py(实现gettext功能) 
+* mergepo.py(合并po语言文件)
+
+四、UliPad中的具体使用
+------------------------------
+
+在UliPad的启动程序--UliPad.py中靠近前面的地方加入::
+
+	1    sys.path.append('./modules')
+	2    import i18n
+	3    i18n = i18n.I18n('UliPad', './lang', unicode=True)
+	4    try:
+	5        import Lang
+	6    except:
+	7        pass
+	8    else:
+	9        i18n.install(Lang.language)
+
+i18n是放在modules目录中的。第三行为生成一个i18n对象，它的调用参数同gettext.install。这样运行到第3行，将会
+自动调用缺省翻译文件。缺省翻译文件为：取系统缺省locale，得到地区代码，判断与地区代码相匹配的翻译文件是否存
+在，如果存在则装入；如果不存在，则不使用任何翻译文件，这样系统没有国际化的处理。
+
+第5行是导入Lang模块。它其实是我使用了一个小花招。用户可以指定语言的种类，如果指定完毕，则会在modules目录下
+生成一个Lang.py文件，其内容为：language="语言"。也就是将用户选定的语言地区代码保存到这个文件中，以便下一次
+启动时调用相应的语言文件。因此，UliPad 在用户修改了语言之后，只有重启新的语言设置才会生效。
+
+导入i18n只需要在启动模块中导入即可，其它模块不用导入。
+
+然后在所有可以翻译的地方加入_()(好累的工作)。
+
+接着生成了一个文件清单。
+
+调用pygettext.py生成语言文件UliPad_cn.po。
+
+对UliPad_cn.po进行翻译。
+
+调用msgfmt.py将UliPad_cn.po编译成mo文件。
+
+将UliPad_cn.mo文件拷贝到lang目录下。
+
+启动 UliPad ，OK，基本上没问题了。
+
+如果对源程序有修改，则再调用pygettext.py生成新的翻译文件messages.pot。调用mergepo.py(合并语言文件)将新旧
+进行融合。再生成mo文件，拷贝到lang目录下，如此循环。
+
+但在 UliPad 中还存在一个问题：如何处理xml的资源文件。
+
+在 UliPad 中，象查找、查找并替换、包括文本、反包括文本这几项功能的对话框都是使用了xml的资源文件，因此无法
+象一般的源程序一样加入_()的处理。我的方法就是生成不同语言的xml资源文件，在需要使用资源文件时，根据程序选定
+的语言，调用相应的资源文件。因为资源文件是xml文件，因此文本的编码应与xml的encoding声明相一致。对于中文的翻
+译文件，建议使用utf-8编码。因为utf-8是xml缺省使用的编码。
+
+
+附：gettext的实现原理
+------------------------------
+
+只是本人的理解!
+
+gettext的功能其实挺简单：定义_()函数并安装，根据传入的翻译项从mo文件中取得译文，并根据uniocde标识进行应用
+的unicode编码处理。
+
+一个gettext对象提供了两个基本的获得译文的函数：gettext和ugettext。一个用来获得未进行编码转换的译文，一个用
+来获得转成unicode的译文。根据unicode的标志，这两个函数之一将被引用到_()函数上。如果未安装任何译文，则缺省返
+回是只是翻译项，即原样返回。因此不安装任何译文，gettext一样是可以用的。
+
+如何安装_()。
+
+::
+
+	import __buildin__
+	__buildin__.__dict__['_']=unicode and self.ugettext or self.gettext
+
+这样就将_()函数变成一个内置函数了，在其它的后续的模块中就可以直接使用它了。因此，使用gettext时，安装要很靠
+前，并且只需要在启动模块中装入即可。
+
+后记：为什么 UliPad 不动态更新界面
+
+既然实现了国际化处理，如果用户改变了使用的语言，如果整个应用立即改变不是更好吗？当然是很吸引人，但对于 UliPad 
+存在问题。一方面所有界面与国际化处理相关的地方，都要用代码去实现更新过程，工作量大。另外，除非测试，一个用户
+不会总是在各种语言之间切换来切换去，一般都是固定使用某种语言，因此，在重新启动后启用新的语言设置是可以接受的
+方案。还有一个重要的原因就是：使用_()这种方式只适合函数调用方式，对于全局变量或模块变量无能为力。为什么呢？比如::
+
+	message = _('Chinese')
+
+这样定义了一个变量。如果它是存在一个模块中，作为模块的全局变量的话，当导入这个模块时，这个语句会执行。并且导
+入过程只会执行一次。这样当语句执行完毕后message就是具体的值，而不再是message=_('Chinese')这种语句了。这样，
+当我们改变了语言，message只会是上一个语言的译文，不会变成新的译文。这一点真是很难解决。而为什么在函数调用时
+可以呢？严格来说应该是这样的形式可以::
+
+	call(_('Chinese'))
+
+这是因为，当调用函数时参数是动态计算的，因此每次调用call时都会重新计算参数的值，因此这种方式可以的。总的来
+说，如果在执行时可以每次调用_()函数的话，这样就可以实现动态语言切换。如果不行，则使用静态语言切换。因此 UliPad 
+使用了静态语言的切换。
+
+i18n的一个小问题
+---------------------------
+
+不仅是我发现，别的使用 UliPad 的人也发现，有时在 Shell 窗口中执行过一些语句后，再回到文档窗口中时，随着鼠
+标的移动文本自动会选中，甚至按键都不起作用。这个问题很有趣，为什么执行过Shell命令就不行了呢？后来我发现，这
+是因为i18n中使用的_()函数与Shell中的_变量冲突所致。在Shell中，执行完一条命令后，命令的结果就保存在_变量中。
+但i18n把这个'_'使用为一个内置的函数，因此造成两者的冲突。于是我不得不将 UliPad 中的所有_()函数全部改成了
+tr()(自定义的)，这下子才解决这个问题。从而可以说明，PyShell(使用它生成的Shell窗口)的变量空间与UliPad是有
+重叠的。可能也没有办法，因为i18n中的_()函数是通过将其置入内置__builtin__中的，而__builtin__是全局共享的，
+因此对它有改变势必会影响到别的模块。
+
+还好这个问题是可以解决的。但PyShell好象不支持中文。本来想多实现一些功能，但却带来一些负作用，小心为妙呀。
+
+`[返回]`_
+
+.. _`[返回]`: technical.htm

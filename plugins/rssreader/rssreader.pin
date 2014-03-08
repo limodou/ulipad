@@ -1,0 +1,40 @@
+[info]
+author = limodou
+date = 2005-12-20
+version = "1.0"
+description = "RSS Reader"
+homepage = http://wiki.woodpecker.org.cn/moin/NewEdit
+
+[modules]
+feedparser = feedparser
+sqlalchemy = sqlalchemy
+pycurl = pycurl
+pysqlite2 = pysqlite2
+
+[feedparser]
+name = feedparser
+homepage = http://feedparser.org
+download = http://sourceforge.net/projects/feedparser/
+description = "Universal Feed Parser is a Python module for downloading and parsing syndicated feeds. It can handle RSS 0.90, Netscape RSS 0.91, Userland RSS 0.91, RSS 0.92, RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0, Atom, and CDF feeds."
+version = "3.3"
+
+[sqlalchemy]
+name = sqlalchemy
+homepage = http://www.sqlalchemy.org
+download = http://www.sqlalchemy.org/trac/
+description = "The Python SQL toolkit and Object Relational Mapper for application developers and programmers who want the full power and flexibility of SQL."
+version = "0.91alpha"
+
+[pycurl]
+name = pycurl
+homepage = http://pycurl.sourceforge.net/
+download = http://pycurl.sourceforge.net/
+description = "PycURL is a Python interface to libcurl. PycURL can be used to fetch objects identified by a URL from a Python program, similar to the urllib Python module. PycURL is mature, very fast, and supports a lot of features."
+version = "7.15.0"
+
+[pysqlite2]
+name = pysqlite2
+homepage = http://initd.org/tracker/pysqlite
+download = http://initd.org/tracker/pysqlite
+description = "pysqlite is a Python DB-API 2.0 interface for the SQLite embedded relational database engine."
+version = "2.0.6"

@@ -1,0 +1,17 @@
+[info]
+author = limodou
+date = 2007-06-19
+version = "1.0"
+description = ""
+homepage = http://www.donews.net/limodou
+
+[modules]
+mako = mako
+
+[mako]
+name = mako
+homepage = http://www.makotemplates.org/
+download = http://www.makotemplates.org/download.html
+description = "Mako is a template library written in Python. It provides a familiar, non-XML syntax which compiles into Python modules for maximum performance."
+version = "0.1.7"
+

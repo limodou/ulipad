@@ -1,0 +1,28 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CloseOther\n"
+"POT-Creation-Date: Sun Oct 15 19:45:49 2006\n"
+"PO-Revision-Date: 2006-10-15 19:50+0800\n"
+"Last-Translator: weizi <nmweizi@163.com>\n"
+"Language-Team: weizi <nmweizi@163.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+
+#: ..\plugins\closeother\__init__.py:34
+#: ..\plugins\closeother\__init__.py:42
+msgid "Close Other"
+msgstr "关闭其他"
+
+#: ..\plugins\closeother\__init__.py:34
+#: ..\plugins\closeother\__init__.py:42
+msgid "Closes other document windows"
+msgstr "关闭除了当前文档以外的所有文档"
+

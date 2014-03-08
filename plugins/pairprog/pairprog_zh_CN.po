@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pairprog 1.0\n"
+"POT-Creation-Date: Mon Nov 13 10:17:35 2006\n"
+"PO-Revision-Date: 2006-11-13 16:44+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: ulipad <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ..\plugins\pairprog\Concurrent.py:50
+msgid "Name"
+msgstr "名字"
+
+#: ..\plugins\pairprog\Concurrent.py:53
+msgid "Host"
+msgstr "主机"
+
+#: ..\plugins\pairprog\Concurrent.py:56
+msgid "Port"
+msgstr "端口"
+
+#: ..\plugins\pairprog\Concurrent.py:59
+#: ..\plugins\pairprog\Concurrent.py:336
+msgid "Start Server"
+msgstr "启动服务器"
+
+#: ..\plugins\pairprog\Concurrent.py:61
+#: ..\plugins\pairprog\Concurrent.py:361
+msgid "Connect Server"
+msgstr "连接服务器"
+
+#: ..\plugins\pairprog\Concurrent.py:117
+#: ..\plugins\pairprog\Concurrent.py:140
+msgid "Username should not be empty or '*'"
+msgstr "用户名不能为空或为'*'"
+
+#: ..\plugins\pairprog\Concurrent.py:123
+#: ..\plugins\pairprog\Concurrent.py:146
+msgid "Host address cannot be empty!"
+msgstr "主机地址不能为空！"
+
+#: ..\plugins\pairprog\Concurrent.py:184
+msgid "Add Current Document"
+msgstr "加入当前文档"
+
+#: ..\plugins\pairprog\Concurrent.py:185
+msgid "Remove Document"
+msgstr "删除文档"
+
+#: ..\plugins\pairprog\Concurrent.py:191
+msgid "Reget Document"
+msgstr "重取文档"
+
+#: ..\plugins\pairprog\Concurrent.py:216
+msgid "Kick User"
+msgstr "踢掉用户"
+
+#: ..\plugins\pairprog\Concurrent.py:248
+msgid "%(user)s selects %(filename)s"
+msgstr "%(user)s 选中 %(filename)s"
+
+#: ..\plugins\pairprog\Concurrent.py:260
+msgid "%(user)s discards %(filename)s"
+msgstr "%(user)s 放弃 %(filename)s"
+
+#: ..\plugins\pairprog\Concurrent.py:263
+#: ..\plugins\pairprog\Concurrent.py:277
+#: ..\plugins\pairprog\Concurrent.py:300
+msgid "You should select one item first"
+msgstr "你应首先选中一项"
+
+#: ..\plugins\pairprog\Concurrent.py:265
+#: ..\plugins\pairprog\Concurrent.py:279
+#: ..\plugins\pairprog\Concurrent.py:302
+msgid "No item exists"
+msgstr "项目不存在"
+
+#: ..\plugins\pairprog\Concurrent.py:293
+msgid "User [%s] has been kicked off"
+msgstr "用户 [%s] 已经被踢掉了"
+
+#: ..\plugins\pairprog\Concurrent.py:326
+msgid "Stop Server"
+msgstr "停止服务器"
+
+#: ..\plugins\pairprog\Concurrent.py:351
+msgid "Disconnect Server"
+msgstr "断开服务器"
+
+#: ..\plugins\pairprog\Concurrent.py:382
+msgid "System"
+msgstr "系统"
+
+#: ..\plugins\pairprog\Concurrent.py:424
+msgid "Username [%s] has also existed! Please try another"
+msgstr "用户名 [%s] 已经存在了！请试其它的"
+
+#: ..\plugins\pairprog\Concurrent.py:438
+msgid "User [%s] has entered the chatroom"
+msgstr "用户 [%s] 已经进入了聊天室"
+
+#: ..\plugins\pairprog\Concurrent.py:479
+msgid "User [%s] has leaved the chatroom"
+msgstr "用户 [%s] 已经离开了聊天室"
+
+#: ..\plugins\pairprog\Concurrent.py:534
+msgid "User [%(user)s] asks file [%(filename)s]"
+msgstr "用户 [%(user)s] 请求文件 [%(filename)s]"
+
+#: ..\plugins\pairprog\Concurrent.py:540
+msgid "Cann't find the file [%s]"
+msgstr "不能找到文件 [%s]"
+
+#: ..\plugins\pairprog\Concurrent.py:588
+msgid "Server is closed"
+msgstr "服务器已经关闭"
+
+#: ..\plugins\pairprog\Concurrent.py:618
+#: ..\plugins\pairprog\Concurrent.py:621
+msgid "User Name"
+msgstr "用户名"
+
+#: ..\plugins\pairprog\Concurrent.py:622
+msgid "Action"
+msgstr "动作"
+
+#: ..\plugins\pairprog\Concurrent.py:634
+msgid "Documents"
+msgstr "文档"
+
+#: ..\plugins\pairprog\Concurrent.py:636
+msgid "Document Name"
+msgstr "文档名"
+
+#: ..\plugins\pairprog\Concurrent.py:648
+msgid "Chat Box"
+msgstr "聊天框"
+
+#: ..\plugins\pairprog\Concurrent.py:656
+msgid "Message"
+msgstr "消息"
+
+#: ..\plugins\pairprog\Concurrent.py:659
+msgid "Send"
+msgstr "发送"
+
+#: ..\plugins\pairprog\Concurrent.py:661
+msgid "Clear"
+msgstr "清除"
+
+#: ..\plugins\pairprog\mConcurrent.py:99
+msgid "Collaborative Programming"
+msgstr "协作编程"
+
+#: ..\plugins\pairprog\mConcurrent.py:99
+msgid "Collaborative programming."
+msgstr "协作编程。"
+
+#: ..\plugins\pairprog\mConcurrent.py:110
+msgid "Collaborative"
+msgstr "协作"
+

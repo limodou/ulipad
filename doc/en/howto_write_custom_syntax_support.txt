@@ -1,0 +1,151 @@
+====================================
+How to write custom syntax support
+====================================
+
+:Author: limodou
+:Contact: limodou@gmail.com
+
+From revision 134 I changed the custom syntax support module. There are two old
+custom syntax support module: CustomLexer.py and NewCustomLexer.py in mixins 
+folder. And now they are gone, NCustomLexer.py is the only one. Why I removed them:
+
+#. No one seems to use CustomLexer.py module
+#. NCustomLexer.py will be more easy and suiable for user write their own syntax
+   support module.
+#. All old custom syntax modules based on NewCustomLexer.py have been rewritten
+   by myself.
+
+So I'll cover that how to use this new module, and if you are using NewCustomLexer,
+now you should migrate to this new module, and you'll find it's more easy to use.
+
+There are already many examples in UliPad which use NCustomLexer.py, so I'll 
+select some of them to demostrate how to use NCustomLexer.py.
+
+The simplest one
+-----------------------
+
+All new customized language syntax highlight classes should be derived from 
+NCustomLexer.CustomLexer class, and NCustomLexer.CustomLexer itself has some 
+syntax hightlight support already. And is support below syntax element types:
+
+#. Comment line
+#. Keywords
+#. String(double quoted string and single quoted string)
+#. Integer
+
+So if your language only have above syntax element type, so only things you need
+to do are config the parameters. And for UliPad, Fortran plugin is such thing.
+Let's see the source code of it::
+
+    from mixins.NCustomLexer import *
+    
+    class FortranLexer(CustomLexer):
+
+        metaname = 'fortran'
+        casesensitive = False
+
+        keywords = ('''
+            admit allocatable allocate assign assignment at backspace block call case 
+            character close common complex contains continue cycle data deallocate 
+            default dimension do double else elseif elsewhere end enddo endfile endif 
+            endwhile entry equivalence execute exit external forall format function
+            go goto guess if implicit in inout inquire integer intent interface intrinsic
+            kind logical loop map module namelist none nullify only open operator optional 
+            otherwise out parameter pointer private procedure program public quit
+            read real record recursive remote result return rewind save select sequence 
+            stop structure subroutine target then to type union until use where while 
+            write''').split()
+
+        preview_code = """! Free Format
+    program main
+    write(*,*) "Hello" !This is also comment
+    write(*,*) &
+    "Hello"
+    wri&
+    &te(*,*) "Hello"
+    end
+    """
+        
+        comment_begin = '!'
+
+#. You should import everything from NCustomLexer.
+#. Then, you should create a new class and it should inherit CustomLexer class.
+#. You should configure some class attributes:
+    **metaname(must)**
+        Every class should define this class attribute. It will be used as an 
+        unique identifier.
+    **casesensitive(default True)**
+        If ``True``, the keywords is case sensitive and ``False`` is not case
+        sensitive.
+    **keywords(default [])**
+        It should be a keywords string list.
+    **preview_code(default "")**
+        It's a sample text of current language, so that you can see the effect
+        in the Syntax Preferenece dialog.
+    **comment_begin**
+        In CustomLexer, there are some default pattern, and some of them can be
+        configured. For example: comment line and string. 
+        
+        For comment line, there are some config options predefined in CustomLexer
+        class::
+        
+            comment_pattern = ''
+            comment_begin = '#'
+            comment_end = ''
+
+        So you can choice which mode you want to use: defining your own comment
+        line pattern or using default comment line pattern. If you leave ``comment_pattern``
+        False value, then UliPad will use default comment line pattern, and 
+        the pattern is::
+        
+            re.compile(r'^(%s.*?)%s$' % (self.comment_begin, self.comment_end), re.M)
+            
+        So only you to do is define the begin pattern and end pattern of a comment
+        line.
+        
+        And if comment_pattern is not False value, then UliPad will use it to 
+        parse the comment line.
+        
+        For Fortran language, the comment line is a single line, then leading with
+        ``!``. So just define ``comment_begin = '!'`` is enough.
+        
+Above codes are very simple and easy to understand. And how to hook it into UliPad?
+You can see the detail of plugins/fortran/__init__.py, and the content is::
+
+    import wx
+    from modules import Mixin
+    import FortranLexer
+
+    def add_lexer(lexer):
+        lexer.extend([
+            (FortranLexer.FortranLexer.metaname, tr('Fortran|*.f90,*f77,*.for,*.ftn,*.f'),
+                wx.stc.STC_LEX_CONTAINER, 'fortran.stx', FortranLexer.FortranLexer),
+        ])
+    Mixin.setPlugin('lexerfactory', 'add_lexer', add_lexer)
+    
+    def add_new_files(new_files):
+        new_files.extend([
+            ('Fortran', FortranLexer.FortranLexer.metaname),
+        ])
+    Mixin.setPlugin('mainframe', 'add_new_files', add_new_files)
+
+In ``add_lexer`` function, you should append new entry to ``lexer`` list. The element
+should be 5 elements tuple, and the meaning of them are::
+
+    (language name, filename wildchar, Lexer index, syntax file, Lexer class object)
+
+For custom syntax, lexer index should be wx.stc.STC_LEX_CONTAINER.
+
+syntax file can be used to save the syntax configuration options and UliPad also
+can read it when highlighting this language.
+
+In ``add_new_files`` function, you can add a new menu entry to New... file menu item.
+
+And now, Fortran language is already configured well in UliPad.
+
+For new language syntax support, I suggest that you create a new plugin, just like
+Fortran plugin, and if you want to enable it, you need to check it in [Tool]->
+[Plugins Manager...] menu, and it'll be availabe in the next startup time.
+
+`[Return] <index.htm>`_
+        

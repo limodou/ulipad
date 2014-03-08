@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>HOW TO USE INPUT ASSISTANT</title>
+<meta name="author" content="limodou" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="how-to-use-input-assistant">
+<h1 class="title">HOW TO USE INPUT ASSISTANT</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>limodou</td></tr>
+<tr><th class="docinfo-name">Contact:</th>
+<td><a class="first last reference" href="mailto:limodou&#64;gmail.com">limodou&#64;gmail.com</a></td></tr>
+</tbody>
+</table>
+<p>InputAssistant can help you auto-completing some code. And it permits you
+write some rules in an acp(Auto Completion Pattern) file. The acp file is an
+ini-like file, and it can be used to deal with dict4ini module. You can find this
+module in UliPad's <cite>modules</cite> folder, and more details about it you can see <a class="reference" href="http://code.google.com/p/dict4ini">Dict4Ini</a> .</p>
+<p>In an acp file, you can do many things, here is the details about the format
+of it:</p>
+<div class="section">
+<h1><a id="basic" name="basic">Basic</a></h1>
+<ol class="arabic">
+<li><p class="first">Notices</p>
+<blockquote>
+<ul>
+<li><p class="first">The acp file is an ini-like format file</p>
+</li>
+<li><p class="first">The <cite>key</cite> can not include equal symbol(<cite>'='</cite>), if you want to use it you should
+use escape string &lt;equal&gt;</p>
+</li>
+<li><p class="first">There are serval escape string like &lt;equal&gt; for now they are:</p>
+<pre class="literal-block">
+'='     &lt;equal&gt;
+'\t'    &lt;tab&gt;       ;but it's some problems for now
+'/'     &lt;div&gt;
+' '     &lt;space&gt;
+'['     &lt;square&gt;
+</pre>
+</li>
+<li><p class="first">The <cite>key</cite> is just a pattern, and when you press a keystroke, if it matches the last
+character of a key, then the value of this key will replace or append or popup a list
+for current input word. For example, there is a key pattern <cite>def&lt;space&gt;</cite>, when you
+entered <cite>def</cite> string, and press space keystroke, it will match the <cite>def&lt;space&gt;</cite> pattern,
+so the InputAssistant will take place.</p>
+</li>
+<li><p class="first">There are three kind of results: replace, append and popup a list.</p>
+</li>
+<li><p class="first">If the <cite>value</cite> is defined as a list, when InputAssistant taking place it'll popup a list,
+and let user to choose one.</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Value format</p>
+</li>
+</ol>
+<ol class="arabic">
+<li><p class="first">based on string match input assistant</p>
+<p>including replacement and append, for example:</p>
+<p>replacement style:</p>
+<pre class="literal-block">
+[autostring]
+def&lt;space&gt; = &quot;def !^():\n\t&quot;
+</pre>
+<p>append style:</p>
+<pre class="literal-block">
+[autostring_append]
+def&lt;space&gt; = &quot;!^():\n\t&quot;
+</pre>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li>based on regular expression match input assistant</li>
+</ol>
+<p>also include replacement and append, for example:</p>
+<p>replacement style:</p>
+<blockquote>
+[autore]
+(^s*)if&lt;space&gt; = 1if !^:nt</blockquote>
+<p>append style:</p>
+<blockquote>
+[autore_append]
+froms+([w.]+)s+import(.*)&lt;space&gt; = &#64;acp.python.import.fromimport
+ifs+__name__&lt;space&gt; = == '__main__'</blockquote>
+<ol class="arabic simple" start="3">
+<li>the match value could be string, list, or even a function</li>
+</ol>
+<p>string:</p>
+<blockquote>
+[autostring]
+def&lt;space&gt; = def !^():nt</blockquote>
+<p>list:</p>
+<blockquote>
+[autostring_append]
+&lt; = a,blockquote,br,body,center,</blockquote>
+<p>function:</p>
+<blockquote>
+[autore_append]
+froms+([w.]+)s+import(.*)&lt;space&gt; = &#64;acp.python.import.fromimport</blockquote>
+<p>if the match value is a list, UliPad will popup a list enable you to
+choice from them, and the function can return four format output:</p>
+<blockquote>
+'append', string
+'append', list
+'replace', string
+'replace', list</blockquote>
+<p>it works just like above.</p>
+<ol class="arabic simple" start="4">
+<li>default auto identifier input assistant</li>
+</ol>
+<p>if you define like this in acp file:</p>
+<blockquote>
+[auto_default]
+1 = &#64;acp.python.import.default_identifier
+2 = a,b,c,</blockquote>
+<p>so if there are not matches will be applied, this mechanism will be
+effected. And UliPad will calculate all the result according the
+vaules of auto_default section(the key is not used), and combine them
+into one list, so you can select a match string from the popup list.
+As you see, there are could be more than one entry in auto_default
+section, and the value could be a function or a list.</p>
+<ol class="arabic simple" start="5">
+<li>function calltip (developing)</li>
+</ol>
+<p>Just as you type '(' then will find a function defination match, and
+popup a calltip window to help you know the info about this function.
+This functionality is in developing now, I hope user could define a
+import file, just like:</p>
+<blockquote>
+<dl class="docutils">
+<dt>def functionA(a,b,c):</dt>
+<dd>&quot;&quot;&quot;docstring&quot;&quot;&quot;
+pass</dd>
+</dl>
+</blockquote>
+<p>so UliPad could deal with them just like import python modules. then
+as you type ')', the popup windows will be hidden.</p>
+<p>This mechanism will be defined as:</p>
+<blockquote>
+[auto_complete]
+calltip = &#64;acp.python.import.calltip</blockquote>
+<p>So you see, it should be a function.</p>
+<ol class="arabic simple" start="6">
+<li>auto dot extend input assistant</li>
+</ol>
+<p>should be define in auto_complete section also, just like:</p>
+<blockquote>
+[auto_complete]
+autodot = &#64;acp.python.import.autodot</blockquote>
+<p>This functionality is also in developing now. And as you type a '.',
+UliPad will call the autodot function to get a list, and let you
+choose from it.</p>
+<ol class="arabic simple" start="7">
+<li>auto background analysis mechanism</li>
+</ol>
+<p>This mechanism is mainly used for defaullt auto identifier input
+assistant, because except for reversed words and bulitin functions or
+methods, there are also locale identifier in current document, so how
+to get them from current document and combine them for input
+assistant, and I think there should be a syntax analyser for that, so
+this mechanism is designed for that. And the processing will be
+executed in threading. This functionality is also in developing.</p>
+<ol class="arabic simple" start="8">
+<li>aoto assign input assistant to file type</li>
+</ol>
+<p>As you see, many acp files are named according to a certain language,
+right, if you open a certain file type, just like python, the
+python.acp will be auto assigned to it.</p>
+<ol class="arabic simple" start="9">
+<li>manually assign input assistant to an opened document</li>
+</ol>
+<p>You can also manully assign a acp file to an opened document, so the
+document will multi acp files at a time.</p>
+<ol class="arabic simple" start="10">
+<li>A main acp file could include sub acp file</li>
+</ol>
+<p>If you define such string in a acp file:</p>
+<blockquote>
+[include]
+1=django_py.acp</blockquote>
+<p>This will indicate that, as importing this acp file , also need to
+import the acp files which dedefine in include section. And let us
+look at django_py.acp:</p>
+<blockquote>
+[default]
+projectname = django</blockquote>
+<p>You can see that there is a default section in django_py.acp file, if
+the content of it is empty, so django_py.acp will be available for
+each python file. But if you defined a projectname entry, only when
+you are work at a &quot;django&quot; project, this acp file could be available.
+And the projectname could be a list, just like:</p>
+<blockquote>
+django,python,</blockquote>
+<p>So this funcationality is also concerned with simple project
+management in UliPad you know.</p>
+<p>So there are many things converned with input assistant, and you can
+use it to well support a framework or something else, it'll speed up
+you developing efficiency I hope.</p>
+</div>
+</div>
+</body>
+</html>

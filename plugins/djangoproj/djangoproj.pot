@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Wed Feb 08 00:38:26 2006\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:39
+msgid "Install Contribute Application"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:40
+msgid "Django &Command"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:44
+msgid "Install Admin"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:48
+msgid "Start &Developing Server"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:49
+msgid "Start &Shell"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:56
+msgid "Create New Application"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:62
+msgid "Install Application"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:108
+#: ..\plugins\djangoproj\editor_ext.py:51
+msgid "There is some wrong as executing the menu."
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:129
+#: ..\plugins\djangoproj\dirbrowser_ext.py:151
+#: ..\plugins\djangoproj\dirbrowser_ext.py:174
+msgid "Completed!"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:197
+msgid "Django application name:"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:198
+msgid "Create templates directory in app folder:"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:199
+msgid "Create templatetags directory in app folder:"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:202
+msgid "Input"
+msgstr ""
+
+#: ..\plugins\djangoproj\dirbrowser_ext.py:208
+msgid "Django application name cannot be empty."
+msgstr ""
+
+#: ..\plugins\djangoproj\editor_ext.py:33
+msgid "&Django"
+msgstr ""
+
+#: ..\plugins\djangoproj\editor_ext.py:38
+msgid "&New Model"
+msgstr ""
+
+#: ..\plugins\djangoproj\editor_ext.py:38
+msgid "Create a new model."
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:2
+msgid "Model Name:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:7
+msgid "Field Name:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:8
+msgid "File Type:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:15
+msgid "Field Verbose:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:16
+msgid "Boolean parameter"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:20
+msgid "Para choices:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:21
+msgid "Para db_column:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:22
+msgid "Para default:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:23
+msgid "Para help_text:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:24
+msgid "Para unique_for_date:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:25
+msgid "Para unique_for_month:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:26
+msgid "Para unique_for_year:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:27
+msgid "Para validator_list:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:28
+msgid "(CharField)Para maxlength:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:29
+msgid "(Date*Field)Para auto_now:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:30
+msgid "(Date*Field)Para auto_now_add:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:31
+msgid "(File/ImageField)Para upload_to:"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:37
+msgid "Model Information"
+msgstr ""
+
+#: ..\plugins\djangoproj\res_model.py:38
+msgid "Fields Information"
+msgstr ""
+

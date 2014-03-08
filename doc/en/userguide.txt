@@ -1,0 +1,1575 @@
+====================
+  UliPad User Manual
+====================
+
+: Author: limodou
+: Contact: limodou@gmail.com
+: Home: http://code.google.com/p/ulipad/
+: BLOG: http://www.donews.net/limodou
+: Copyright: GPL
+
+.. contents:: Content
+
+(Note: translated from Chinese Simplified by translate.google.com.  Will be improved over time.)
+
+.. sectnum::
+
+Explanation
+---------------
+This handbook uses the comparison menu function to carry on the description, the individual topic alone explains.
+
+Copyright 
+----------------------
+
+This software uses the GPL copyright license.
+
+Project membership and methodology
+-------------------------------------
+
+At present I am the sole developer.  If you have any recommendations or suggestions regarding UliPad or its documentation, please send me an eMail.  You can also post a message to my blog.
+
+UliPad Main Window:
+
+.. Image:: screenshot_01.jpg
+
+This image shows (from the top):
+    Title Bar
+    Main Menu
+    Tool Bar(s)
+    Tabbed Document Windows
+    Status Bar
+    
+Certain application windows may appear on the left (next to the tabbed document windows) or at the bottom (above the status bar). 
+
+Tabbed Document Windows
+-----------------------
+
+Each document that you open for editing appears in a tabbed document window.  You may have multiple windows open at one time.  The full path of the current document is be displayed in the Title Bar.  The encoding of the document determines the delimter for the file name.  Parentheses for WIN for the DOS / Windows, square brackets for UNIX for UNIX format or MAC format.  Each document may have different encoding. 
+
+Installation and Operating Environment
+--------------------------------------
+
+Source Version
+--------------
+
+The source version of UliPad can be used with both Windows and Linux.
+They require Python version 2.3 and above, for scripting 2.4.2.3.2.3.
+
+Unicode Version
+---------------
+
+Source package can be unpacked into any directory.
+Python version 2.8 is strongly recommend,  for scripting version 2.4.+.+.
+
+Windows Installation Package
+----------------------------
+
+Only runs in the Windows environment.  The installation process does not require the preinstallation of Python or scripting.
+
+Latest update
+--------------
+
+3.7 Version
+~~~~~~~~~~~~~
+
+New Features and Changes:
+
+#. PEP8 sytle checking.
+#. Enhance display of tab tips.
+#. New option in Preferences dialog, which is used when you toggle comment lines (Ctrl+/ or Ctrl+\).  You can add new comment characters in the Edit->Preference->Document->Show Comment Character dialog.
+#. Auto-save of TODO window status.
+#. Shortcut for quote dialog changed from Ctrl+Q to Ctrl+'.
+#. Number of recent files increased to 20.
+#. Change shortcut Ctrl+Alt+L to Alt+Z, Ctrl+Alt+B to Alt+X
+#. Save the status of Message window word wrap
+#. Saved the snippets window position.
+#. The results of find in files can only show the filenames and you can copy them to clipboard.
+#. Spanish language translation and Traditional Chinese language translation.
+#. ZestyParser Module to parse the source code syntax.
+#. Improved word-completion functionality.
+#. config.txt documentation.
+#. When saving files, automatically adding accordingly filename suffix.
+#. Mixin reload mechanism, which isvery useful during development.
+#. Folder-sort functionality to directory browser window.
+#. New template in input assistant, and you can press TAB key to jump to the next field. The template just like: ${1:something}.
+#. LUA syntax support.
+#. New mako(template module) support plugin.
+#. Renamed batch filenames to plugin.
+#. FTP window can now be opened in left or bottom pane according.
+#. Alt+R shortcut for open recently files.
+#. Merged new 1.20 version winpdb to ulipad.
+
+
+Bug fixes:
+
+#. ctag support bug.
+#. default style bug.
+#. erroneous cursor jumping after processing undo.
+#. xml lexer type bug.
+#. paste text when the text block has no indent.
+#. open multi-view window from menu items.
+#. Loss of the input focus when opening bottom pane or double-click on directory browser entries.
+#. Opening multi-find dialog.
+#. Register functionality in windows.
+
+Version 3.6
+~~~~~~~~~~~~
+
+New features:
+
+#. Jump enhanced definition, cannot ctag support in the paper Jump
+#. Automatic completed a perfect right: automatic judgment type of structure identification
+#. The search is on the increase in the scope set
+#. Notes epydoc increase in the parameter types of support
+#. Increased support for Collaborative Development
+#. Fortran increase, Lua syntax highlighted support
+#. Strengthening of the structure and content browser that can display class attributes and docstring
+#. Additional information suggested that the automatic css
+
+Modifications:
+
+#. Improved category browser window, click class category icon can be, and folding
+#. Amendments to the operating parameters window pop canceled point, the bug is still running
+#. ReStructuredText syntax highlighted that the treatment
+#. Python syntax analysis that the bug
+#. That directory browser window when closed, not open to the resumption directory bug
+#. When the file or directory that UliPad not with a drive, open a command line window failed, the wrong menu
+#. Music plug-in that the bug
+#. Delete to open the latest catalog features
+#. When the revised code amendment, editctrl the tag title page did not show changes state bug
+
+
+Version 3.5
+News
+
+New features:
+
+#. Increased Message window does not automatically remove the information processing options to increase Shift + F5 keys
+#. FlatNotebook use as a component Notebook
+#. Additional plug-in spelling checker, you need to install the module pyenchant
+#. Save increase the size of the sidebar column function
+#. Double-click the Notebook increase Tab to maximize the function of the column can only maximize the sidebar to 50%
+#. Acp enhanced format, can () # # that the selected text
+#. EPyDoc increase support for the generating function
+#. Increase the personal information management, only one name
+#. Increased session management functions, improve document tab direction changes without rebooting
+#. Increased dynamic search function is the regular expression
+#. Nmweizi increase from the CloseOther plug-in can save the current document other closing documents
+#. More intelligent navigation functions, you can file access memory path
+#. An increase in the checkbox stop automatically updated in view window rst html
+#. Increase the correct syntax check automatically close inspection window
+#. Increased directory browser window to drag catalog and document the functional
+#. Notebook menu can be dynamically generated Right
+#. The Notebook right on the menu to increase the current open document Dos window function (available under Window)
+
+Modifications:
+
+#. In OnKeyDown removed in the right Input Assistant, simplify procedures
+#. That did not keep check syntax bug
+#. That was unable to open the document search bug
+#. That toolbar button Enabled state incorrect bug
+#. Font handling syntax highlighted that the bug
+#. Remodeling, that ... New Tools menu and the menu of the inconsistency bug
+#. After amendments in the importation SaveFile set point loss bug
+#. That Ctrl + F4 will withdraw from the bug UliPad
+#. To increase the installed processing: Reconstruction, increase processing removes the configuration
+#. Recent documents and recent directory pop-up menu to menu handling, could accelerate the pace of opening files
+#. Python implementation of procedures that do not redirect the bug, while an option to increase it every time that parameter setting window
+#. Improved tools for the definition of control support
+#. Update rerange.py support to the Chinese Script
+#. Input Assistant solve the performance problems
+#. Enter a Ctrl + Shift + Enter into
+
+
+Version 3.4
+News
+
+New features:
+
+#. Notebook read FlatNotebook Control
+#. Increased Ctrl + Enter function directly increase for the next trip here
+#. Back button that automatically increase the default function identifier
+#. JQuery increase in the importation of support: project settings, automatic generation function Notes information
+#. Let caretlinkback can be configured in config.ini set [default] message_caretlinkback color = #
+#. Increased labeling documents direction set. The parameters can be set in the document pages
+#. Django increase production of functional dot app
+#. Copies of the initial increase, the end of the set, for the choice of characters
+#. The first visit by an increase in the gap between the follow-up to automatically adjust the Script (rerange.py)
+#. Increased multi-view function
+#. Increased orders search function, both normal mode and Impact
+#. Django template and increase ReST syntax highlighted support
+#. ReST increase project support
+#. ReST increase the Html View function, the content changes can be automatically updated
+#. Ctags increase support (Ctrl + I)
+#. Grammar check will be moved to plug-in to the core
+#. _project Increase in the installed automatic and automatic syntax highlighted bundled paper bundled acp
+
+Modifications:
+
+#. That opened the Tab Notebook dos prompt window mistakes
+#. That position Globals.app self =
+#. Automatic suggested that the identifier will be automatically extended to function, not only of Python effective, but can acp document control
+#. That category browser, and should change when the final location of a bug
+#. Set byte patterns will all seven types of documents no longer a judge
+#. Sort auxiliary input that case insensitive when the bug
+#. On_char that when dealing with the processing of the selected text, editor no longer do, but by processing plugin
+#. GUI implementation of procedures that deal with the problem, no more pop-up window of dos
+#. Pop open the window that is not displayed the Bug
+#. That is the picture that started with options error bug
+#. An increase edittype attribute to indicate whether the editor, only to the original logo documenttype different types of documents
+#. 修正当DEBUG=False时仍然可以创建debug.txt和error.txt的问题
+#. That disappeared when the input focus, the pop-up list window and Calltip not disappear Bug
+#. 修正缩近粘贴的bug。 Copies of the document are amended at the end of his few mistakes
+#. Input will be transferred to the Assistant mAutoComplete module
+#. The paper will examine the default value is set to True
+#. The last amendment to open the window size is not correct position bug
+#. Adjust the right on_char InputAssistant treatment, the time will soon be canceled automatically when
+#. When all amendments that CallTip lack of space, shown in the following
+#. Matching that label, right /> no matching filled
+#. When that other editors to switch back to html document window, the window automatically restore the bug
+#. Idle will be home for the processing threads, do not handle OnIdle
+#. When that did not shut down a deposit documents, the existence of a reservation after missing document problem
+#. That backward look at the change when the case is not the bug
+#. Close automatically hide other side column, accelerate the closing speed
+
+
+Version 3.3
+News
+
+New features:
+
+#. When running Python mistakes, mistakes in the message window can double-click Prompt Jump to the wrong source trip
+#. The increase in the directory browser window: Win open platform for resource management, file and directory copy, Cut, Paste, directory search, and other functions, while supporting Ctrl + C, Ctrl + V, Ctrl + X shortcuts
+#. In Django directory, we can start testing the server and Shell open window
+#. The cursor in some form, such as Notes, string, automatically complete ban
+#. Re-open a file, the cursor remain in the original location
+#. DDE function of port services can reuse Socket
+#. Enhanced Python documents. Automatic functions. The import from and support. Attribute function of the automatic choice
+#. Additional copies are block support. The choice before the first alt, it can choose to block out the
+#. Increased series models, according to Alt + C switch. The model can be imported as a character, in other firms in automatically
+#. More Python paper copies of the reduction in support, configuration parameters can turn off some features
+#. The need to increase the load automatically checks whether the document confirmed the need options
+#. Enhanced auto-complete, can support a combination of control characters, but the menu key combinations will implement
+#. Increasing the current paper documents to set up independent ACP function
+
+The new plug-in:
+
+#. A gauge ruler
+
+New shortcuts:
+
+#. Alt + C mode switching out
+#. Ctrl + Del can be deleted after the current location so blank
+
+Modifications:
+
+#. In the dialog box that help links, and can click on
+#. Some adjustment of the location of the menu
+#. Surrounding the menu shortcuts to Ctrl + ', read from Ctrl + Q
+#. News Wrap window support function
+#. Right DjangoProj improved plug-in, dynamic modification settings.py
+#. When opening files to replace the use of Unicode conversion parameters
+#. That judgment Python document coding incorrect Bug
+#. That reading, grammar configuration files were done to the Chinese character code bug
+#. That is the regular expression replaced imprecise bug
+#. Recent amendments to automatically detect shrinkage at incorrect bug
+#. Html editors that in the js code of the total wave of bug
+#. New amendments to open the file, the cursor not stay with the original line
+#. When the round that, if moved to the area below visualization, see the bug
+#. Tab conversion projects in nearly all shrink to nearly four spaces shrink
+#. Remove dialog box on the revision of the version
+
+Version 3.2
+News
+
+New features:
+
+1. When MessageWindow increase of error in the abnormal, will be based on current information automatically abnormal Jump to the wrong documents to the designated function
+2. Windows platform increased directory browser window, a directory of open window function Dos
+3. Last automatically preserve open directory, start again automatically open the last directory
+4. Config.ini can set the default font editor, in the Chinese environment for the "m"
+5. Judge python automatic document coding and conversion after preservation
+6. Increased new document coding default settings, user-defined coding if not empty, the user will be defined as the default coding coding. And if
+    Air default coding is used.
+7. Edit window in the right changes on the menu to increase the menu document coding
+8. Window increase TODO
+9. With more simple function, and can automatically keep the size and location
+10. According to the text of the Notes at automatic choice, and it can be installed in config.ini comment_chars use as a section, while language is key,
+     A default can have as a default value
+11. Ruby increase classbrowser function
+12. Increased dynamic menu shortcuts treatment
+13. Generation increased debug the control default under the debug output is not needed to set up the only output config.ini
+14. An increase in the parameters set document syntax highlighted button
+15. Increased automatic extensions, and supports item processing and nested
+16. Increased simple template function, the code snippet can add <# = (name inputname, description = info, defult value) # =>,
+     In this double-click pop-up dialog snippets will let you input information.
+17. They may set up a directory of types, with some expansion
+18. Increased proxy server parameters
+19. Increased sharing network window, only for the RSS reader
+
+The new plug-in:
+
+1. Rssreader RSS reader
+2. Docbook docbook support
+3. Django project support djangoproj
+
+
+New shortcuts:
+
+1. Ctrl + Alt + R remove the contents of Shell window
+2. F5 Python running
+
+Modifications:
+
+1. Multithreading pyw solve congestion problems running
+2. Module information indicating that the wrong question
+3. Tab in the implementation of the switch box and automatically adjust the menu at nearly shrinkage
+4. Update judge the effectiveness of the image processing
+5. The amendment ftp directory of a bug
+6. Adjustment documents switching the dynamic menu generation, and grammar switching, reduce unnecessary update
+
+Version 3.1
+News
+
+New features:
+
+1. Increased number of plug-in
+2. Increased number of shortcuts
+3. Makedot.py increase conversion dot documents and view pictures script
+4. Increased automatic inspection directive. Preservation can automatically check Python syntax
+5. Increased automatic extensions, support for expanded document. Under the project can be achieved and the option of using paper
+6. Java increase, ruby, perl, css, syntax highlighted support javascript
+7. Increased directory browsing
+8. By setting a _project documents in support of a simple function of the project
+9. Increased RemoveBlankLine.py scripts, files can be deleted in the current space trip
+10. Increase in open document can specify when empty file, the use of a template text Filled
+11. New increase can select files syntax
+
+The new plug-in:
+
+1. Pycheck syntax check
+2. Plug-handling wizard Wizard
+3. Plugintmp can generate a plugin framework
+4. Django django support plug-generating projects
+
+New shortcuts:
+
+1. Alt + L to open / close the left column window
+2. Alt + B Open / Close bottom window column
+3. Alt + E to open error.txt
+4. Alt + D opened debug.txt
+5. F2 directory browser window open
+
+Modifications:
+
+1. When the revised document change, Tab pages were heading before the asterisk
+2. Increased CheckList module, plug-in management interface improvements
+3. Amendments in the notebook space, double-click the tab will close the current document bug
+4. Laws winpdb plug-in the wrong path
+5. Remove automatically added (, (, [and function
+6. Upgrade Script menu for the top menu
+7. Laws findtext is empty, the cycle of death wrong
+8. Save the title of the amendment when the asterisk is not changed bug
+9. Laws press Ctrl + Tab key when the cursor is not switching to edit window bug
+10. That button height
+11. That switch automatically shrink nearly at the menu bug
+12. Set a one-time operation to be adapted, using BeginUndoAction (), and EndUndoAction ()
+13. That can not choose automatic reduction in the use of tabs and shrink nearly menu
+14. Configuration files can be adjusted from UliPad installation directory and read conf directory
+
+
+Version 3.0
+News
+
+New:
+
+1. Additional versions of the Revision of
+2. Increased directory browsing
+3. Additional information display modules, mainly for the extension of Information Display
+4. Additional plug-pytts
+5. Additional plug-winpdb
+6. Additional plug - Wizard
+
+Modifications:
+
+1. Laws done automatically when a drop-down list, the drop-down list still switching window display bug
+2. Laws help information site addresses, blog, etc. Contact
+3. Removal project and the path function
+4. Extensions structure, plug-in directory
+5. Laws i18n handling, support multiple serial mo document processing, as well as document processing plug-in translation
+6. Photo processing support gif, png image and object
+7. The homepage of the repository and transferred to the SVN Woodpecker
+8. That document is not changed documents switch coding problems
+9. Laws ftp port, the problem can not be greater than 100
+
+Version 2.9
+News
+
+New:
+
+1. The Notes will increase and the anti-Notes shortcut (Ctrl + / Notes increase Ctrl + \ \ canceled Notes)
+2. Additional modules into specified files, selected a string by string F6 can be expressed by the introduction of module documents
+3. Startup document editing window opening delayed
+4. Increased functionality provided explanations can be implemented at runtime to use the interpreter, whether at the same time can be set using input and output redirection
+5. Increased enforcement procedures and automatically switches to the proceedings of the function of the directory
+6. The previous record increase in the function of open trails
+7. Increased Chinese directory support
+8. Close to increase the current document shortcuts Ctrl + F4
+9. To increase the protection of the abnormal into mixins
+
+Modifications:
+
+1. FTP upload changes in the document did not change the wrong text
+2. That generation plug-in the wrong document directory __init__.py
+3. Amendments were assigned to the wrong frame.workpath
+4. UliPad structural adjustment application.
+5. Find window can be closed by the ESC
+6. UliPad in the implementation of procedures, not to redirect input and output when using asynchronous implementation
+7. With DDE support the use of CallAfter
+8. Chinese version of that election, according to enter text does not remove the bug
+9. Amendments to the use of external menu os.startfile ()
+10. When snippet that did not exist when dealing with the creation Path
+11. That default coding system from the treatment
+12. That code fragment window button incorrect error handling state
+13. That done automatically, removed from the text string matching ranking incorrect Bug
+14. Changes in default coding error reading, the use utf-8 encoding
+15. That syntax color change, the documents are not updated Bug. Colourize increase in force parameters, when True, it enforceable.
+16. When changes in a document on the air when opening files, can not correctly handle the type of file handling switching
+17. When changes automatically save a document, preserve unicode not correct coding problems. But for others like ftp document preservation may be a problem.
+18. Laws targets compared with an increase __eq__, __ne__ method
+19. When no corresponding change the syntax of documents, use the default option in the set of grammar, syntax text to the use of default
+20. Laws dealing with syntax highlighted when the same type of language will no longer deal with a syntax highlighted
+21. Laws dealing with the analysis ftp list
+22. Save all changes, not all of the closure did not open the document processing
+
+Version 2.8
+News
+
+New:
+
+1. Replacement search function, if search is a regular expression, the replacement is a regular expression substitution
+2. Shell window, message window, the implementation of Python code, Chinese import and export support
+3. Increased automatically filled, the function suggested that functional grammar
+4. The last increase in the status bar that the remaining memory field (only for Windows)
+5. Html code directly to the output to a window in Html
+6. Additional user-defined shortcuts
+
+Modifications:
+
+1. Redesign Blog editing features
+2. That preservation code fragment window mistakes
+3. Amendments were selected classification code fragment, preserved by mistake when mistakes
+4. Utf-8 encoding checks to direct conversion, the use of default coding error.
+5. Amendments to the wrong Blog Links
+6. Shell Canada to amend the new orders and Script, automatic right to enter editorial suggested that state
+7. Shell, Message, code fragments window can be closed
+8. Windows platform in the registration of the resource management context menu, in accordance with extensions corresponding treatment
+9. Redesigned interface in the document search
+10. Blog for the classification of the information that describes the classification counterparts
+11. Laws wxPythonDoc plug-in for wxPythonDocument
+12. PythonDoc wxPythonDocument changes and the use of the path sys.prefix
+
+Version 2.7
+News
+
+New:
+
+1. In Windows Registry to support UliPad resources management in the context of the menu functions, while providing anti-registered.
+2. Html text converted to increase the functions now support reSt-> html, textile-> html, py-> html,
+    At the same time provide a wide range of output modes: replace the current output window to the news, output to a separate window Html
+3. View Html files increased functionality, you can use the built-in browser to HtmlWindow Html files. Under Windows
+    The use of embedded IE browser to view
+4. The project will increase the current management of all open documents into projects to the function
+5. The use of the browser window open or blog editing window, Tab label will show the different icons
+
+Modifications:
+
+1. Laws dealing with hotkeys. Shell and Message window can also use Ctrl + C, Ctrl + V, a hotkey
+2. Shell revised in order to increase a visit to the command line can not be amended to suggest Bug
+3. Shell in the implementation of that order, the error window open source Bug
+4. That category in the blank browser window with the click wrong Bug
+5. Plugins structural adjustment, increased abnormal processing functions
+6. Right version of the canceled check
+
+Html to increase the text and Html browsing is the key to supplement Html editor of blog writing and preview support. For Windows installation
+Procedures, the installation will be automatically registered on the registry, to be UliPad resources management in the context of the menu. Unloading automatically deleted
+Registry.
+
+The plugins function to adjust, so if you have to use a plugin needed re-setting.
+
+Version 2.6.1
+~~~~~~~~~~~~~~
+
+New:
+
+1. Judge documents automatically shrink nearly website, automatic adjustment
+2. Additional plug-in editing features Blog
+
+Modifications:
+
+1. Document not corrected version of the Bug reopened
+2. Ftp download automatically fill in the documents
+3. Ftp layout adjustment
+
+Update:
+
+Blog is optional plug-in installed, and so in a formal packages without. Require a separate download. To install the plug-in blog, but also the installation Meteor module.
+
+Version 2.6
+News
+
+New:
+
+1. BookMark support of Jump
+2. The current operation can be set path for the script is running
+3. Generate InnoSetup format of the Windows installation procedures
+4. Ftp increase the upload and download function
+5. Additional command line options can not open the f-last session of the documents kept by the
+
+Modifications:
+
+1. The entire structure of the software to adjust the speed of activated
+2. All the documents are processed automatically path for absolute path
+
+Update:
+
+Because the process of revising the structure of similar upgrade version 2.5, running UliPad should be preceded implementation tools/convert_opt2.6.py to transform UliPad.opt.
+Also you can simply delete UliPad.opt document.
+
+Version 2.5
+News
+
+New:
+
+1. Increased shrinkage nearly context
+2. Increased simple project management capabilities
+3. Whether the increase will show where the cursor function
+4. An increase in the commencement or prohibit the use of psyco module from the command line option-s, the default for not opening
+5. The change increased document coding function, save the file can preserve this coding
+6. Ftp increase function remotely open, edit documents, and preservation. The directory also provides construction, the new document, delete, rename, upload, and under-functional Common Ftp
+7. Increased function automatically closed, as the importation of certain symmetric symbols, such as (),[],{} the input symbols left, the right symbols are automatically filled
+
+Modifications:
+
+1. Failure of that Floder
+2. When the cursor changes to the former location blank, blank maintaining unchanged
+3. Name changes in the Chinese situation. The document will automatically be converted to unicode processing, transmission, and DDE to utf-8
+4. Syntax highlighted settings can be modified: the cursor color, background color line where the cursor, select the text color
+5. Save the file after that, when unable to find the name of the document for grammatical interpretation, will be used to change the current default style specified pattern
+6. Coding to the translation of documents into utf-8
+7. P. Parameters panel will be replaced by scrolledwindow
+8. The redesigned into plug-in structure, according to revise the algorithm into plugin read and write plugin method
+9. Open the document syntax highlighted the window parameters, automatic light of the current document syntax types selected types of initial Grammar
+
+Update:
+
+Because the process of revising the structure, resulting in the original configuration files with the new version under which the error occurred. Therefore, the installation of version 2.5, can be implemented tools
+Directory convert_opt2.5.py to carry out the configuration file conversion. This procedure only to the previous version 2.5 configuration file in force. There are the simplest way is to delete the
+Configuration files can be. Meanwhile, the software provided by the plug-in (from http://UliPad.tigris.org download) may also exist, if used to re-download.
+
+Version 2.4
+News
+
+New:
+
+1. The code fragment Import and export functions, or can be derived into a classification
+2. Increased printing, printing support HTML documents
+3. Psyco increase the acceleration modules support the use of this function first module installed psyco
+4. Increased user plug-in management functions
+5. Parameter settings can set the default new document types syntax highlighted
+6. Additional procedures to stop running Python and the menu toolbar buttons
+7. Operation Python procedures can receive input
+
+Modifications:
+
+1. DDE services in the port specified in config.ini
+2. Laws help print documents for the whole path, and the use of file: / / / protocol
+3. View changes in the document, double-click on the outcome document Jump to a few of the many problems here
+4. Laws exist when mixed carriage return, the issue of preservation of a paperwork error
+
+Version 2.3
+News
+
+New:
+
+1. DDE increase simulation functions, command line options to increase Prohibited DDE
+2. Increased Revcheck function requires Python 2.3 and above, 2.4 above scripting
+3. Syntax attributes set to increase: colors, fonts, grammar extensions. And through configuration files for preservation.
+4. Re-setting designated Grammar
+
+Modifications:
+
+1. Some window display / hidden menu with the left window and the bottom window
+2. Save the new document to correct incorrect errors (in the second version 2.2 solution)
+3. Functionality support. Pyw Suffix
+4. Increased error log (error.txt)
+5. View corrected, the word can not preserve the option selected issues
+6. Correction re-selected menu language, check the status that is not correct errors
+
+Version 2.2
+News
+
+New:
+
+1. Code fragments management - you can reuse the code will be saved, and when necessary inserted into documents
+2. Shell command menu management - can run some of the external orders, and generates the menu called UliPad
+3. Open and Save can choose whether or not to display the dialog box coding options to achieve the conversion document coding
+4. In the current state of the document can show that the coding
+
+Modifications:
+
+1. Amendments to the Resource Document Object Generation incorrect question
+2. Increase in preserving paper documents by automatically converted carriage return processing
+3. That preservation code fragments when utf-8 with incorrect coding errors
+4. When unicode handle failure, the paper does not deal with
+5. Increase the Tools menu, it shifted to the Script menu below
+
+Version 2.1
+News
+
+New:
+
+1. Automatic check whether the documents were other procedures updated
+2. When opening files can be set to do it automatically backup
+3. Preservation can be re-installed after the last document
+4. Increase in order to open the file specified parameters
+5. In order to increase the use of default coding options
+
+Modifications:
+
+1. That PyShell window with a built-in function _ gettext function _ in the translation of the conflict, will be renamed for all translation function tr ()
+2. Unicode increase conversion error, and has not supported version unicode version
+3. That extended the term can not handle the election '. 'Problem
+4. Read language.ini documents, the air filter can be started and the line #
+
+Version 2.0
+News
+
+New:
+
+1. Window layout adjustment, increase Shell and information window.
+2. The documents were different menus and toolbars can dynamically switch (now only Python).
+3. Increased script (script) management menu. Users can edit a document prepared by the processing Python procedures, and through the script menu management.
+4. Additional documents drag function now can only wait until the menu and toolbars.
+5. Python increase class browser window function.
+6. Increased international processing, users can prepare their own language corresponding asked. Now supports both Chinese and English.
+7. Increase in the document search capabilities.
+8. Increased C, HTML, XML keyword identification function.
+9. More Python implementation of the document function, and the command line parameters can be set.
+10. Ownership will increase conversion table at the box function.
+
+Modifications:
+
+1. That can not be activated when the input focus switched to the wrong document.
+2. That maximum, minimum, preservation of incorrect coordinates wrong.
+3. That first capitalization functional errors.
+4. When the document was amended newline MIX, switching documents show that not correct mistakes.
+
+Start UliPad
+-------------
+
+UliPad start in the implementation of the command line::
+
+   Python UliPad.py-u | - v | - n | [e-defaultencoding] files ...
+
+   U-show usage
+
+   V-show version
+
+   N Prohibited DDE-function (2.3 new)
+
+   E-defaultencoding optional, default use of coding
+
+   S accelerate the use of psyco-module (2.5 new)
+
+   F-start the conversation overlooked last open file
+
+   Files list of documents ... There can be multiple, separate spaces
+
+Double-click the icon UliPad.pyw start.
+
+File (document)
+----------------
+
+New (New)
+   Generating new document
+
+Open (open document)
+   Open the document exists, one can open multiple documents
+
+Reopen (re-open the document)
+   After re-load the last preserve documents
+
+Recent Open (recently opened files)
+   When users open or save a document, the document's recent documents preserved in the next users can directly from the recent documents dishes
+   Single-open this document. If the file has been opened open, direct switching to the Tab pages of documents.
+
+Open Recent Path (recently opened Path)
+   When users open or save a document, the document will be kept in the path recently path, the next user can direct path from the recent food
+   Single-open the path to the latest visit. This function can also be tools of buttons to perform.
+
+Directory Browser (directory browser) (new version 3.1)
+   Contents can browse and corresponding subdirectories. Right menu will be more functional.
+
+Close (closed)
+   Closure of the current document
+
+Close All (the closure of all documentation)
+   The closure of all open documents
+
+Save (Conservation)
+   To save the current document
+
+Save As (Save as)
+   Renamed the current document preservation
+
+Save All (Save all)
+   Keep all open documents
+
+Page Setup (Page Setup) (new version 2.4)
+   Print page settings
+
+Printer Setup (Printer configuration) (new version 2.4)
+   Printer configuration
+
+Print Preview (Print Preview) (new version 2.4)
+   Print preview effects
+
+Print (Print) (new version 2.4)
+   Print the document
+
+Html File (html) (new version 2.4)
+   Html files including the Print and Print Preview function
+
+Ftp ... (Ftp function) (new version 2.5)
+   Ftp support, users can open, edit, preserve, delete, read, in the new document, the new directory, upload and-under. See more details on the use of Ftp.
+
+Exit (exit)
+   Exit procedures
+
+Edit (Editor)
+--------------
+
+Undo (revoked)
+   Revocation of the last editing operation
+
+Redo (rework)
+   Rework earlier revocation action
+
+Cut (shear)
+   Shear selected text to paste board
+
+Copy (copy)
+   Copies of selected text to paste board
+
+Paste (paste)
+   Paste to copy the text plate
+
+Selection (option)
+~~~~~~~~~~~~~~~~~~~
+
+Select Word (election words)
+   Selected Words
+
+Select Word Extend (Extension elections words)
+   Will '. 'As part of the word choice. Press Ctrl + mouse click can be implemented with the same function.
+
+Match Select (Left First) (matching options - to the left of priority)
+   The option to enclose the text, such as the use of text ()[]{} \ '\' \ "\" including, the implementation of this function can be selected to enclose the text. If there are nested in a section of text, such as
+
+::
+  
+       (Print "% s% s"% (a, b))
+           ^ ^ ^
+           A b c
+
+In the outer brackets are \ "\" and () nested. If you want to select the outer brackets within the text, it can be inserted at the point and the outer brackets, including nested at \ "\" between
+As indicated above can have three locations. If it is a position, when the match left, the left will include a look at the, it will find '('. Then, the right to search and '('
+Match ')'. View matching can be identified nested parentheses right, until the website to find the right match. Then the website will include all the selected text. If they can not find a matching response
+Fu, not choice. If the insertion point at position b, then left when the search will find '\ "', and you might not expect. This is because the double quotes (and single quotes) is not
+分左右的，因此对于它们的处理要小心些。 If the insertion point at location c, matching will still find that the left side of the '\ "' is the first of a website, thereby creating and location
+B the same effect. So in order to select the correct text, you should insert placed in a location near the point. Or to put it in place, insert c, but the use of the right matching function.
+
+Excluding selected text found outside including at the most, is not included in most cases outside the brackets.
+
+Match Select (Right First) (matching options - the right to priority)
+   Priority and left to the contrary, this function is to find the right priorities. Select the text does not include the outside, including Fu.
+
+Enlarge Selection (expanded choice)
+   Text can be selected to the regional expansion about a character, only byte characters effectively. Choose applicable to the use of matching function, also chose to include their characters, the use of this function.
+
+Select Line (selected current line)
+   Will the current insertion point where all the selected firms, including trailing at the end of the line.
+
+Select All (Select All)
+   Selecting all the current document.
+
+Duplication (copy)
+~~~~~~~~~~~~~~~~~~~~
+
+Replication is the main idea of reuse previous input, including input before the characters, words and sentences. To resume the importation of used before with the previous first match of the content, so you first need
+Enter to match the beginning of characters, can be arbitrary number. Note that only deals with the identifier (English letters, numbers ,'.', '_'). Before the implementation of the functions of the corresponding match into matching forward aspirin
+Distribution and backward match. The match will identify with the character sequence began importing the same identifier, if found in the current location will be suggested that a window (with the word, sentence before matching), and if you
+To the contents of the box or round match selected by the ESC can cancel this match. If not want the match to continue the implementation of the next match.
+
+Matching input to the first few characters to match a string, the string matching identification is: starting from the current insertion point View left, if the characters on the identifier, string matching deposit, and then the next
+View. Until character identifier is not concentrated so far. Note that only matched against the angle characters, not dealing with Chinese characters.
+
+The character '. 'Is counted as set identifier, can be extended through the reproduction mode selected or not selected.
+
+Duplicate Extend Mode (extended copy mode)
+   Specify '. 'As a word is a part of.
+
+Duplicate Current Line (copy current line)
+   Copies of the current trip, inserted into the current line below.
+
+Duplicate Previous Char (a copy on the characters)
+  向前匹配，复制匹配串后的一个字符。 Note: only right in front of the contents of a recent match, can not continue to matching.
+
+Duplicate Next Char (a copy of characters)
+   Ditto, only backward direction.
+
+Duplicate Previous Word (copy on a single word)
+   Forward matching, matching if successful, will be a complete success matching words that prompted window, or spaces selected by round, will be removed from the matching string of paste in the current insertion point behind. Importing "abc"
+   Matching success "abcdef", according round after "def" glue behind in the current insertion point. If the match is not to be continued, then the match will be the continuation of the successful start to the
+   Before the match.
+
+Duplicate Next Word (copy of a word)
+   Next match function Ibid.
+
+Duplicate Previous Line (a copy before the sentence)
+   Matching forward, but success is matched with the entire sentence.
+
+Duplicate Previous Line (after copying a sentence)
+   Next match function Ibid.
+
+Format (format)
+~~~~~~~~~~~~~~~~
+
+Format menu functions can be dealt with here or visit. If not select any text, dealing with the current insertion point of the trip. If the selected text, which deals with all the selected text trip.
+
+Trim Trailing Spaces (Removal of the tail blank)
+   Remove trailing blank.
+
+Leading Spaces to Tabs (converted to pre blank tabs)
+   The first blank will be converted to shrink by nearly requirements of the tabs.
+
+Leading Tabs to Spaces (pre tabs to spaces)
+   The first will be converted to tabs shrink by nearly requirements of the space.
+
+All Tabs to Spaces (Table Address to the ownership box) (2.0 new)
+   All the tabs will be converted to shrink by nearly requirements of the space.
+
+Increase Indent (increase of nearly shrinkage)
+   Increased shrinkage in the text.
+
+Decrease Indent (decrease shrink nearly)
+   Reduce the text of the recent shrinkage.
+
+Comment Line (OK Notes)
+   In the selected text, add notes address. When the dialog box pops up asking you input Notes Address.
+
+Line Uncomment (OK removed Notes)
+   Before removing selected text at the Notes. If it does not exist, not for treatment.
+
+Text Quote (including text)
+   The selected text is enclosed with two strings. There are several predefined string can be used, including, if :()[]{} such. You can also include their own input string.
+
+Text 15 (including deleted from the text string)
+   Selected including two removed from the text string. Strings choice Ibid.
+
+Case (case)
+~~~~~~~~~~~~
+
+Upper Case (into uppercase)
+   The text will be selected into capital
+
+Lower Case (into lowercase)
+   Will selected text into a small set
+
+Invert Case (case swap)
+   Case-swap will be selected text
+
+Capitalize (capitalize)
+   The text will be selected in the first word of all the letters into capital.
+
+Convert (conversion) (2.7 new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In Html Window (Html output window)
+   Text conversion output options, select, converted to a Html, the results will be displayed in a separate pop-up window Html
+
+In Message Window (in the news window in the output)
+   Text conversion output options, select, converted to a Html, the results will be displayed in the message window
+
+Replace Selected Text (Replacement selected text)
+   Text conversion output options, select, converted to a Html, will replace the current results of the selected text
+
+ReSt to Html (reSt to Html)
+   ReStructuredText converted to Html
+
+Py to Html (Py to Html)
+   Python source code into Html
+
+Textile to Html (Tabac to Html)
+   Textile converted to text format Html
+
+View (view)
+-------------
+
+Tabs And Spaces (tabs, and blank)
+   Show or hide tabs and gaps. General tabs and spaces is not visible, if switching to demonstrate, for a space that, tabs showed an arrow.
+
+Indentation Guides (shrink nearly instructions)
+   That shrinkage or nearly hidden instructions. If that is nearly the same reduction will be a dotted line together.
+
+Right Edge Indicator (right profession instructions)
+   That reconnection instructions or hidden line. If that were set out in a line Department. It can help you determine whether the party too long.
+
+End-Of-Line Marker (at the end of line)
+   Show or hide OK at the end.
+
+Zoom In (enlarge)
+   Large screen fonts.
+
+Zoom Out (narrow)
+   Narrow screen fonts.
+
+Search (search)
+----------------
+
+Find ... (search)
+   View designated Series. Support is a regular expression. If the first section of selected text, was elected as a complete set of text strings will be displayed in search box. If the selected text contains carriage return, not as a complete set of strings.
+
+Direct Find (Direct View)
+   Elected in a text, the implementation of this function will not find pop-up window, but direct search.
+
+Replace ... (Replacement)
+   First designated string search to find a replacement after. The entire document can be matched to all Series replacement. If the implementation of this function has been selected before a text can be specified in selected within all replacement.
+
+Find Next (search under a)
+   Look down at the next match series.
+
+Find Previous (find a)
+   Next up the search string matching.
+
+In Find Files (in the document search) (2.0 new)
+   In the specified directory, file extensions specified in the search for a particular string.
+
+Go to Line ... (OK, Jump)
+   Jump to the designated trip.
+
+Go to Last Modify (jump last modified)
+   Jump to the last local been revised.
+
+Toggle Marker (label switching)
+   UliPad can set any number of labels, these labels can be between Jump. Set label or canceled. The labels are set to line the left side of a blue arrow.
+
+Clear All Marker (remove all labels)
+   Remove all set label.
+
+Next Marker (at the next label)
+   Jump to the next line of the label.
+
+Previous Marker (a label)
+   Jump to a label on a line.
+
+Document (document)
+---------------------
+
+Word-wrap (automatic folding OK)
+   Setting / discount will automatically canceled. When installed automatic folding tour, when his words too long, according to the window size automatically for the next trip.
+
+Auto Indent (nearly automatic shrink)
+   Setting / shrink nearly canceled automatically. When it is set automatically shrink near, press enter key, the new party will automatically maintain the party's recent shrinkage. If the removal of some function, then press the enter key, insert point of the party is always in a position.
+
+Change encoding ... (Save coding change) (new version 2.5)
+   Change the current document coding, to be used in the preservation of this coding. The remote file conversion coding particularly useful.
+
+Syntax Highlight ... (syntax highlighted) (2.3 new)
+   Reset the current document syntax specified.
+
+Syntax Preference ... (syntax parameter setting) (2.3 new)
+   Grammar parameter settings can be set grammatical marker colors, font names, font size, font attributes.
+
+Convert Line Ending (conversion at the end of line)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some formats can be converted to other formats newline.
+
+Convert to Windows Format (converted to Dos / Windows format)
+   Conversion to Dos / Windows format
+
+Convert to Unix Format (converted to Unix format)
+   Format conversion to Unix
+
+Convert to MAC Format (MAC format for conversion)
+   The MAC format conversion
+
+
+Tool2  (2.2 new)
+----------------------
+
+Shell Command (Shell command) (2.2 new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Shell will allow you to order the external orders generated menu, conducted in UliPad call.
+
+Shell Command Manage ... (Shell order management ...)
+   The increase in orders for Shell, delete, rename Mobile
+
+Script (script) (2.0 new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Script functions I have wanted to achieve, you can prepare the special purpose Python procedures, placing it under UliPad, a special document on the current text
+handling.  Take advantage of this feature, users can extend UliPad text processing functions. To be placed UliPad menu script, the first to the existence of this script, if
+No one editorial post. Then, the script management functions can be script file to the script menu. Management of the script window, you can change the description of the script (
+In a description of a mouse click, can be amended). This description will serve as a menu item displayed in the script menu.
+
+Users will be prepared script UliPad as part of the implementation, there are no restrictions on all UliPad resources can be used. But bearing in mind that the use of
+When the object to pass to win access to all resources. Win target window for the whole framework of the visit is to use the current document window, you can use win.document.
+Windows can access information visit win.messagewindow. Documents window with the document may vary, the default file type for the window wxStyledTextCtrl.
+WxStyledTextCtrl window for news category. So you can use wxStyledTextCtrl method. The most basic method for::
+
+     GetLength () returns the length of documents
+     GetText () returns the contents of documents, and if Unicode version, it will return Unicode content
+     AddText (text) in the current cursor, insert text
+     InsertText (pos, text) in the document before the designated location inserted text
+     ReplaceSelection (text) to replace selected text
+     SetText (text) file to set the text for text, the text before all lost
+     SelectAll () all the selected text
+     SetSelection (start, end) set up regional elections
+     GetSelectedText () was selected text
+     GetSelection () selected by the scope of return for a tuple (start, end)
+     GotoPos (pos) Jump to the designated location
+     GotoLine (pos) Jump to the designated trip
+     GetCurrentPos () to insert the location
+    
+At present there are many methods listed above only some commonly used method.
+
+Script Manage ... (script Management)
+   The script for the increase, delete, rename mobile.
+
+Snippets (fragments) (2.2 new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fragment is to achieve code reusability. In peacetime the programming you may have many code can be reusable, you can be a classification according to their organizations. At the same time
+In time of need you they can be inserted into documents. Fragment features include: the use of fragments and fragments management.
+
+When using fragments in the document will pop up a window on the left, the window is divided into upper and lower two parts.上部为片段的分类，组织为树状结构。 Bottom of the list structure,
+A breakdown shows that for every inside all the code fragments. When a choice of classification, the following code fragment will change with the classification change. When substituting
+Double-click code fragment, the selected code fragment content will be inserted into the current document at the cursor.
+
+The organization is divided into segments: the management and classification code fragment management.
+
+The classification, you can, delete, modify, add a sub. Select one, it may be moves lower. And it can change the level, by the left
+And the shift to achieve. Thus, classification of the Organization for a full tree structure. When changes to the preservation, we can select [applications] button. Keep out, choose
+[OK] button.
+
+The code fragment, you can addition, deletion, modification. We must first select a classification before it can be classified under this fragment management. When right into a classification
+OK revised, classification box will be locked until you preserve it, or abandon preservation will be released. At this point in the use of attention please.
+
+Manage Snippets Catalog (fragment Classification Management)
+   Fragments of the classification management can increase, and delete, modify, the increase of mobile order (Move, Move down), change the level of classification (backspace, shift).
+
+Manage Snippets Code (code fragment Management)
+   The separate fragments of code management can increase the deletion and modification.
+
+Plugin Manage (plug-in management) (2.4 new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Additional users can prepare their own plug-management capabilities. Published see specific plug-in "technical manuals." This function only start after the set up of plug-ins to work.
+
+Option (optional)
+------------------
+
+Preference ... (parameters)
+   UliPad set for some variable parameters.
+
+Language (language) (2.0 new)
+   The selection process for the language used by the interface. Now supports both Chinese and English. The Chinese platform and run for the first time, if the judgment platform environment for the Chinese so,
+   Automatic use of the Chinese language environment. If users want to increase their own language support, tools directory can be found in the corresponding documentation and tools for the corresponding language translation can be.
+   The following steps:
+
+1. UliPad.pot copy of the target language to translate documents, the documents shall be: ``UliPad_locale.po``. If China cn, tw Taiwan.
+2. You can translate the empty msgid in UliPad_locale.po, was asked in msgstr Department. Msgid consistent with the format. If there is %d like Please do not replace Fu format change their order.
+3. In build.bat document, the implementation of the orders of corresponding documents compiled as a po mo documents and copied to lang directory.
+4. Lang revised directory of language.ini document. The new language, format: the area code. Such as: fr French
+5. UliPad start, then Option-> Language, plus selected new language. UliPad can restart again.
+
+Register to Explore (Registration resources management) (2.7 new)
+   Registration will UliPad management of the resources in the context menu
+
+Unregister from Explore (from the resource management of the anti-Registration) (2.7 new)
+   Will UliPad management of resources from the context menu-registration
+
+Document (related documents)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Double click will close the selected document
+   When you were selected in a double-click Tab labels can close selected documents.
+
+Whitespace is visible on startup
+   Selected activated UliPad, tabs and spaces are visible.
+
+Indentation guides is visible on startup
+   Instructions were selected shrink in the past when it launched UliPad visible.
+
+Long line indicator is visible on startup
+   Long instructions (right profession) is activated when UliPad visible.
+
+Long line indicator column
+   Instructions set for the beginning of a long trip out, the default 100
+
+Tab width
+   A number of tabs or spaces, for the four default
+
+Auto indent
+   Nearly automatically shrink. Set preserved and the same features as the menu.
+
+Use Tabs
+   Whether the reduction in the use of tabs, selected using tabs, not selected, the use of space.
+
+Auto detect UTF-8 encoding
+   Automatically detects whether the document coding utf-8, if it is automatically corresponding data conversion.
+
+Auto word-wrap
+  Automatic pack trip.  
+
+Use code fold
+   Whether the use of code folding function. If selected, it would be the right side of a border area code folding, code instructions for grading the situation. Click on the plus and minus sign icon,
+   Code folding can achieve.
+
+Default line ending used in document
+   The document using default at the end of the line. This option for the new document. If the document has been opened, UliPad will automatically identify the document by the end of the line at, and in the right state of the documents will
+   At the end of the line type that out.
+
+Auto make backup file as open a file
+   When opening files automatically backup files (new version 2.1)
+
+Auto check if there are some opened files were modified by others (new version 2.1)
+   Automatic check whether an open document was revised by others
+
+Auto close enclosing char, like: (, [((2.5 new)
+   Whether automatic right ([, (including the right to filled characters
+
+Auto close enclosing char, like: ', "<(2.5 new)
+   Whether automatic right ', "<including the right to filled characters
+
+Choose where converted text is outputed (2.7 new)
+   Choose where converted text output function menu with the corresponding menu Convert
+
+General (Universal)
+At
+
+Max number of recent files
+   A recently updated list of the greatest number.
+
+Max number of save find text
+   Saved search string to the number. UliPad can look to the past to preserve the contents, according to the frequency of use automatically updated. The maximum value set for the number of previously preserved View
+   The contents.
+
+Auto load the files of last session
+   Last session open automatically into the document. Using this function, the last open document, the procedure will directly from the depositary. Again activated automatically when opened last dealt with the document.
+
+Saves current status when exit the program
+   In keeping with the current state of procedure. The last refers to the implementation of the window coordinates, and the last line of the insertion points.
+
+Use duplication extend mode ( '. 'Will be treated as word chars)
+   Set copy expansion mode, and function as Duplication Extend Word.
+
+Show encoding selection dialog as opening or saving file. (220 new)
+   When you open or save the file selection dialog box is displayed when coding.
+
+Default syntax highlight. (240 new)
+   The default syntax highlighted.
+
+Show caret line. (250 new)
+   That line where the cursor. Selected this function, the cursor which will be designated to the background color. Grammar settings can be made.
+
+Python(2.0 New)
+~~~~~~~~~~~~~~~
+
+Show class browser window as open source file python
+   Python source files in the open category browser window display
+
+Use context sensitive indent (2.5 new)
+   The use of context-sensitive shrink near. For example: when the input function definition, or block at the beginning, when the last of ':', and his party in the next automatic
+   A recent increase in shrinkage. When the input to a return, break, continue to be an automatic reduction of indentation.
+
+Enable Calltip (2.8 new)
+  允许函数提示功能 == Allow function suggested that function
+
+Enable auto completion (2.8 new)
+   Allows automatic function
+
+Window (window) (2.6 new)
+--------------------------
+
+Left Window (left window) (2.3 new)
+   Show or hide the left side of the window, now contains:-source code window
+
+Bottom Window (bottom window) (2.3 new)
+   Or hidden at the bottom of that window now includes: Python Shell window, which is a Python interactive window, users can input Python orders; News
+   Windows, the window is the window with Python Shell together. When Python implementation procedures can be used to show that its output. If the user prepared script can be used as an output.
+
+Shell Open Window (Shell window open)
+   Shell open window
+
+Open Message Window (news window open)
+   Open source window
+
+Snippets Open Window (code fragment open window)
+   Open code fragment window
+
+Python (2.0 new)
+-----------------
+
+This menu only when you open the document will be a Python.
+
+Class Browser (browse categories)
+   The document will open the left side of a browser window, it will show that all the files and functions of the function. Double-click on the function name, will jump to the corresponding trip.
+
+Class Browser Refresh (refresh browser category)
+   Category refresh browser window content. Class browser window as you edit the document automatically change when the implementation of a browser refresh function, the corresponding changes will occur.
+
+Run (Running)
+   Current operating procedures. The results showed that in the message window.
+
+Arguments Set (set of command line parameters)
+   Installed in the current operating procedures used by the command line parameters.
+
+Help (Help)
+------------
+
+UliPad Help Document (help files)
+   Open the help documentation pages.
+
+Extended Module Info (extension information) (3.0 new)
+   View can write plug-in the configuration file extension information
+
+Visit Project Homepage
+   Project Home visit
+
+Visit My Blog
+   Visit my blog
+
+Contract to Me
+   Give me e-mail
+
+About ...
+   On the software
+
+
+Shortcuts
+-----------
+
+Use the edit button to speed up the pace. Menu shortcuts in the corresponding menu item in the right side. Some editors and the shortcut menu and no association.
+
+* All functions explained in a former (M) expressed the corresponding menu function. *
+
+============================== ==============================================================================
+   Shortcuts names             Corresponding function
+============================== ==============================================================================
+F1                              (M)UliPad Help Document(help files)
+F2                              (M)Directory Browser(directory browser) (new version 3.1)
+F3                              (M)Find Next(search next)
+Shift+F3                        (M)Find Previous(find previous)
+F4                              (M)Direct Find(Direct View)
+Ctrl+F4                         (M)Close(closed)(new version 2.9)
+F5                              (M)Operation Python procedures(3.2 Edition)
+F6                              (M)will be present as a series of modules corresponding to 
+                                   the open source modules (new version 2.9)
+F8                              (M)Next Marker(at the next label)(3.2 revised)
+Shift+F8                        (M)Previous Marker(a label)(3.2 revised)
+F9                              (M)Toggle Marker (label switching)
+Ctrl+Shift+F9                   (M)Bookmark Clear All (the removal of all labels)
+F10                             (M)Duplicate Extend Mode (extended copy mode)
+Ctrl+A                          (M)Select All (Select All)
+Ctrl+B                          (M)Go to Last Modify (jump last modified)
+Ctrl+C                          (M)Copy (copy)
+Ctrl+D                          to delete current line
+Ctrl+Shift+D                    to delete the current line, and to copy paste board
+Ctrl+E                          (M)Match Select (Left First) (matching options - to the left of priority)
+Ctrl+Shift+E                    (M)Match Select (Right First) (matching options - the right to priority)
+Ctrl+Alt+E                      (M)Enlarge Selection (expanded choice)
+Ctrl+F                          (M)Find ... (search)
+Ctrl+G                          (M)Go to Line ...(OK, Jump)
+Ctrl+H                          (M)Replace ...(Replacement)
+Ctrl+I or Ctrl+Tab              (M)Increase Indent(increase of nearly shrinkage)
+Ctrl+Shift+I or Shift+Tab       (M)Decrease Indent(decrease shrink nearly)
+Ctrl+J                          (M)Duplicate Current Line(copy current line)
+Ctrl+L                          (M)Duplicate Previous Line(a copy before the sentence)
+Ctrl+Shift+L                    (M)Duplicate Previous Line(after copying a sentence)
+Ctrl+M                          (M)Duplicate Previous Char(a copy on the characters)
+Ctrl+Shift+M                    (M)Duplicate Next Char(a copy of characters)
+Ctrl+N                          (M)New(New)
+Ctrl+O                          (M)Open(open document)
+Ctrl+P                          (M)Duplicate Previous Word(copy on a single word)
+Ctrl+Shift+P                    (M)Duplicate Next Word(copy of a word)
+Ctrl+"                          (M)Text Quote(including text)
+Ctrl+Shift+"                    (M)Text Unquote(including deleted from the text string)
+Ctrl+R                          (M)Select Line(selected current line)
+Ctrl+S                          (M)Save(Conservation)
+Ctrl+T                          (M)Todo window(new version 3.1)(3.3 Revised Version)
+Ctrl+U                          (M)Upper Case(into uppercase)
+Ctrl+Shift+U                    (M)Lower Case(into lowercase)
+Ctrl+V                          (M)Paste(paste)
+Ctrl+W                          (M)Select Word(election words)
+Ctrl+Shift+W                    (M)Select Word Extend(extended term election)
+Ctrl+X                          (M)Cut(shear)
+Ctrl+Y                          (M)Redo(rework)
+Ctrl+Z                          (M)Undo(revoked)
+Ctrl+/                          (M)will be selected before the text of the Notes (the new version 2.9)
+Ctrl+\                          (M)will be selected before the text of the footnote Removal (2.9 Edition)
+Ctrl+Alt+L                      (M)to open/close the left column window (new version 3.1)
+Ctrl+Alt+B                      (M)to open/close the window bottom column (new version 3.1)
+Ctrl+Alt+R                      (M)Shell remove the contents of window
+============================== ==============================================================================
+
+Pop-up menu
+------------
+
+Now UliPad support in the document window pop up menu.
+
+In internal documents pop up menu function with the main Edit menu (programming) the same function.
+
+Tab pages of documents in the pop File menu and the main menu () function basically the same.
+
+UliPad Unicode support
+-----------------------
+
+UliPad fully supports Unicode, of course, is the premise you have to install the scripting Unicode version.
+
+Unicode support, then facing local Unicode encoding and conversion problems. In UliPad, this change occurred in open document and preserve the files.
+UliPad code system conversion in the coding used three sources: specified encoding, document coding and coding default. UliPad in dealing with the coding is based on three
+The order, that is, if the space is designated for the use of coded documents using coding, coding is empty if the document is used by default encoding. So how are these three coding to?
+How will handle?
+
+1. Designated coding
+
+   If you want to open the file or save the file, a separate designated coding, then he needs in the options menu, set "When you open or save files that coding
+   Options dialog "for the selected option. This way, when the Open or Save paper, the coding options dialog box will pop up, users are good coding election, will UliPad
+   With this encoding of the document coding and decoding. If treatment fails, then open the file or save the file failed. If successful, this will set up document coding coding.
+
+2. Document Coding
+
+   When a user specified encoding, and the success of open or save the document, this document coding for the specified encoding. If the user does not use a designated code,
+   If the user is set up a menu of options "utf-8 automatic encoding detection" for the options selected, in an open document, automatically judgment UliPad
+   The content of the document is to utf-8 encoding, if the document is encoded as utf-8, if not the default document coding for coding.
+
+3. Default Encoding
+
+   The default encoding support is activated when UliPad, UliPad based operating system environment by the use of the coding system as the default encoding. But individual circumstances
+   Under UliPad received coding system may be a problem, then you can start the accession to the command line options for encoding e-correct coding can be.
+
+Note that if you set the need to use a designated code, but they can only open the file in the pop-up dialog box and save the file open dialog box can be used when other
+Circumstances or automatic test utf-8 encoding, or use the default encoding.
+
+Presentations
+---------------
+
+Script (script) sample preparation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The script feature allows users to prepare their own handling code can be in the right UliPad object for processing. Its purpose is to prepare fast, and can be used as food
+On the single UliPad. It is an independent source Python. Following a script prepared by the steps:
+
+1. The preparation of the script, preservation
+2. In Script (script) added to the entrance of the menu
+
+The second step is not operating here for illustration. Now some of the script available for some examples.
+
+The most simple scripts
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    1       #---------------------------------------------------
+    2       #                   UliPad script
+    3       # Author  :limodou(chatme@263.net)
+    4       # Date    :2004/07/11
+    5       # Version :1.0
+    6       # Description:
+    7       #     Add linenum to each line of selected text
+    8       #
+    9       #---------------------------------------------------
+    10      
+    11      def run(win):
+    12      	win.document.SetText("Hello, UliPad")
+    13      
+    14      run(win)
+
+1-9 trip
+   The Notes can not write. However, if used to give people, you know the people or the situation well.
+
+11-12
+   The definition of a run function, parameter is available win an object and it is the most UliPad outer window, it has the menu, tools of the state, you have to see
+   To document. The current document is being edited win.document. Through win object, you can visit any one of the UliPad object. Such as:
+   Win.messagewindow news that window, you can use it to export some of the information. On the whole UliPad frame in the technical documentation will be detailed depiction
+   Reference here not elaborate.
+
+   12 to call the current document window SetText method for setting the document says, "Hello, UliPad." Remember, it will remove all previous East
+   West. Therefore it is only a sample. You can read this code: win.messagewindow.SetText ( "Hello, UliPad"), take a look at the information window
+   There is not anything. Also read: win.document.AddText ( "Hello, UliPad"), take a look at the cursor is not in the document processing increased
+   The text, and did not remove the original content.
+
+14 OK
+   This function is called. Function wording seemed clear, but you can not use it, as can be::
+
+     Win.document.SetText ( "Hello, UliPad")
+
+   To try to run effects.
+
+To increase the line of text
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    1       #---------------------------------------------------
+    2       #                   UliPad script
+    3       # Author  :limodou
+    4       # Date    :2004/07/11
+    5       # Version :1.0
+    6       # Description:
+    7       #     Add linenum to each line of selected text
+    8       #
+    9       #---------------------------------------------------
+    10      
+    11      def run(win):
+    12      	linenums = win.document.getSelectionLines()
+    13      	for i, linenum in enumerate(linenums):
+    14      		text = str(i+1).ljust(8) + win.document.getLineText(linenum)
+    15      		win.document.replaceLineText(linenum, text)
+    16      
+    17      run(win)
+
+This script is used to document the selected text will increase, from a start. This example is the use of this function to realize.
+
+12 OK
+   Firms need to be dealt with, the scope. GetSelectionLines function is defined in Editor.py
+
+14 OK
+   Have to be dealt with the text, and add to its information. GetLineText is defined in Editor.py
+
+15 OK
+   After the text will replace the original text. ReplaceLineText function is defined in Editor.py
+
+ReStructuredText converting documents to HTML conversion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    1       #---------------------------------------------------
+    2       #                   UliPad script
+    3       # Author  :limodou
+    4       # Date    :2004/07/08
+    5       # Version :1.0
+    6       # Description:
+    7       #     Convert reStructuredText to Html
+    8       #
+    9       #---------------------------------------------------
+    10      def run(win):
+    11      	from docutils.core import publish_file
+    12      	import os.path
+    13      	import cStringIO
+    14      	
+    15      	filename = win.document.filename
+    16      	fi=cStringIO.StringIO(win.document.GetText().encode(win.document.locale))
+    17      	f, ext = os.path.splitext(filename)
+    18      	htmlfile = f+'.htm'
+    19      	fo=open(htmlfile, "w")
+    20      	publish_file(source=fi, destination=fo, writer_name='html')
+    21      	fi.close()
+    22      	fo.close()
+    23      	win.messagewindow.SetText('Success!')
+    24      	win.panel.bottom.notebook.showWindow(1)
+    25      #	win.editctrl.new(htmlfile)
+    26      
+    27      run(win)
+
+This scripting docutil module to be used for the current reStructureText converted to HTML. No. 25 can be converted to text displayed. However commented out of here.
+
+With no detailed description, and only on the content of the UliPad
+
+15 OK
+   The current document file.
+
+16 OK
+   Document content will be converted to documents used by the encoder. Because UliPad use the Unicode, in the use of the former first docutil coding to cost more
+   For processing. Locale is the current document encoding.
+
+17-18 OK
+   According to the original documents were generated. Htm file.
+
+20 OK
+   Html document called Generation docutil
+
+21-22 OK
+   Close the file
+
+23 OK
+   In the message window that successful information
+
+24 OK
+   News that window
+
+This script It should be noted, the new document, if not preserved, the filename attribute it to'', it converts directly at the processing of documents
+Possible problems. This script does not require you to switch to the depositary, to be careful in using some.
+
+Ftp use
+~~~~~~~~~~~
+
+1. Select files -> Ftp or point of Ftp button in the toolbar, which can be opened next Form Ftp pages.
+2. Ftp first to conduct site configuration. Set point in the Site (Site settings), then a dialog box will pop up. To add a new site, you must enter the site
+    The site names and IP addresses, then, can increase the use of buttons. To delete a site, the first site chosen to delete, and then delete points. To modify a point
+    At first selected to amend the site, then revise, and update can be chosen.
+3. Site settings, after the withdrawal, the main Ftp window above the drop-down list to choose a site. It's right for a user name and password. Site change when the drop-down list, users
+    Name and password will be changed simultaneously. Connecting with the right to disconnect button. Select Connect, will be selected Ftp site and connect. If the user name or password
+    Empty, pop-up dialog box will be required input. Note that if the right user name and password changes do not affect the preservation Site settings. In other words, here
+    Setting up a user name and password, only to the effect of the link. If you want to permanent preservation, please update site configuration. Choose disconnect, disconnect and Ftp Site
+    Connectivity.
+4. The middle pages of documents, the directory listing. Every time that a directory of all files and directories. If a parent directory, the first of the designated parent directory nodes.
+    When connected after the success of right-mouse menu there a right, these operations are carried out under the state of the link. Users can open files or directories, the new document,
+    The new directory, delete, rename and set the current directory, upload documents, the mass document. Open files can be double-click on a document. When opening files,
+    The use of binary open. The upload and-under, then transmission can be specified: binary and text mode. Only for documents from top to bottom-and will not open the file.
+    When you open a remote file, if the revisions can be retained as usual documents to operate the same method as that document -> Save or click on the toolbar -
+    Depositors button. Open for the remote files, can not keep statistics on the number of remote files, can be saved only for the local paper.
+5. The following pages for the coding options, this feature is a remote file open when the use of the open coding. Automatic determine whether UTF-8 still function on the remote file
+    The effective. When coding in the preservation of this non-functional, if we want to preserve the coding change, it could use the file -> change coding transcoding. The right to a remote directory,
+    Remote users can specify a directory, and when connected Ftp site to be automatically Jump this directory. And the link has been successful, it may modify this path, then
+    Click refresh button or menu in the right set, which can change the current directory. Another site is the right set-up and closed.
+
+User-defined shortcuts (new version 2.8)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Hack is now offered only one solution. Users can edit window and the main window menu-defined shortcuts. The increase in config.ini or main_hotkey Festival Editor_hotkey Festival, and then increase: news = menu shortcuts, such as::
+
+     [Main_hotkey]
+     IDM_FILE_SAVE_AS F12 =
+
+The above will be for [Save as] an increased menu of F12 keys. If main_hotkey Festival did not exist, as long as their own can be created.
+
+The menu of information inquiries can be run UliPad, in debug.txt paper, "[INFO] - [makemenu] makeaccelerator ..." after
+Face to find.
+
+Editor_hotkey main_hotkey and on the distinction is that the main window is defined hotkey overall effect, and in the definition of editor hotkey only when imported Coke
+Point editor will be in effect.
+
+Catalog browsing (3.0 new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. An increase in catalog
+2. Closure of a directory
+3. An increase of folders
+4. An increase in paper
+5. To delete a file or directory
+6. Click to edit nodes can be renamed
+7. Refresh Contents
+8. Not automatically display all tree, but show levels to improve speed, it will open up a directory list
+9. Double-click the file node will be set in open Editor
+10. F2 key to open this window
+
+`_` [Return]
+
+.. _ `[Return]`: index.htm

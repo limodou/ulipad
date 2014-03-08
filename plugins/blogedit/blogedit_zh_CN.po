@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blog Edit 1.0\n"
+"POT-Creation-Date: Sun Oct 02 22:38:18 2005\n"
+"PO-Revision-Date: 2005-10-02 22:48+0800\n"
+"Last-Translator: limodou <limodou@gmail.com>\n"
+"Language-Team: NewEdit <limodou@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:55
+msgid "Account:"
+msgstr "帐号："
+
+#: ..\plugins\blogedit\BlogManageWindow.py:63
+msgid "Manage"
+msgstr "管理"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:68
+msgid "New"
+msgstr "新建"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:73
+msgid "Del"
+msgstr "删除"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:78
+msgid "Get Post"
+msgstr "取回发贴"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:83
+msgid ">"
+msgstr ""
+
+#: ..\plugins\blogedit\BlogManageWindow.py:88
+msgid "Cache"
+msgstr "缓冲"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:152
+msgid "Enter the number from the lastest one:"
+msgstr "输入从最后一条开始的数目："
+
+#: ..\plugins\blogedit\BlogManageWindow.py:152
+msgid "Get Recent Posts"
+msgstr "取回最近的贴子"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:162
+msgid "Getting entries..."
+msgstr "正在获取记录..."
+
+#: ..\plugins\blogedit\BlogManageWindow.py:206
+#: ..\plugins\blogedit\BlogManageWindow.py:317
+#: ..\plugins\blogedit\BlogPage.py:251
+msgid "Done"
+msgstr "完成"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:215
+msgid "Check Path"
+msgstr "路径检查"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:215
+msgid ""
+"The path %s is not exists. \n"
+"Do you want to create it?"
+msgstr ""
+"路径 %s 不存在。\n"
+"想要创建一个吗？"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:240
+msgid "Category"
+msgstr "分类"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:241
+msgid "Title"
+msgstr "标题"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:242
+msgid "Date"
+msgstr "日期"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:243
+msgid "PostId"
+msgstr "发贴ID"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:294
+msgid "You should select on entry first!"
+msgstr "你首先要创择一条记录！"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:303
+msgid "Deleting entry..."
+msgstr "正在删除记录..."
+
+#: ..\plugins\blogedit\BlogManageWindow.py:309
+msgid "Delete is successful!"
+msgstr "删除成功！"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:312
+msgid "Delete error!"
+msgstr "删除出错！"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:361
+msgid "Add Blog Site"
+msgstr "增加Blog站点"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:361
+msgid "The site name is duplicated! Try another."
+msgstr "站点名重复！请试另一个。"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:375
+msgid "Login is successful!"
+msgstr "登录成功！"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:378
+msgid "Login is faild!"
+msgstr "登录失败！"
+
+#: ..\plugins\blogedit\BlogManageWindow.py:410
+msgid "Choose a directory"
+msgstr "选择一个目录"
+
+#: ..\plugins\blogedit\BlogPage.py:60
+msgid "Title:"
+msgstr "标题："
+
+#: ..\plugins\blogedit\BlogPage.py:66
+msgid "Category:"
+msgstr "分类："
+
+#: ..\plugins\blogedit\BlogPage.py:74
+msgid "Send"
+msgstr "发送"
+
+#: ..\plugins\blogedit\BlogPage.py:79
+msgid "Site"
+msgstr "站点"
+
+#: ..\plugins\blogedit\BlogPage.py:84
+msgid "Info"
+msgstr "信息"
+
+#: ..\plugins\blogedit\BlogPage.py:110
+#: ..\plugins\blogedit\BlogPage.py:220
+msgid "Blog Window"
+msgstr "Blog窗口"
+
+#: ..\plugins\blogedit\BlogPage.py:110
+#: ..\plugins\blogedit\BlogPage.py:220
+msgid ""
+"Your blog account is empty! \n"
+"Please config it first."
+msgstr ""
+"你的Blog帐户为空！\n"
+"请首先配置它。"
+
+#: ..\plugins\blogedit\BlogPage.py:115
+msgid "New Post"
+msgstr "新贴"
+
+#: ..\plugins\blogedit\BlogPage.py:143
+msgid "Site Manage"
+msgstr "站点管理"
+
+#: ..\plugins\blogedit\BlogPage.py:175
+msgid ""
+"Title      : %(title)s\n"
+"Categories : [%(categories)s]\n"
+"DateCreated: %(dateCreated)s\n"
+"PostId     : %(postid)s\n"
+"Account    : %(account)s\n"
+"Xmlrpcurl  : %(xmlrpcurl)s\n"
+"\t\t"
+msgstr ""
+"标题      : %(title)s\n"
+"分类      : [%(categories)s]\n"
+"创建日期  : %(dateCreated)s\n"
+"发贴ID    : %(postid)s\n"
+"帐号      : %(account)s\n"
+"Xmlrpcurl  : %(xmlrpcurl)s\n"
+"\t\t"
+
+#: ..\plugins\blogedit\BlogPage.py:182
+msgid "Blog Information"
+msgstr "Blog信息"
+
+#: ..\plugins\blogedit\BlogPage.py:222
+msgid "Posting entry..."
+msgstr "正在张贴记录..."
+
+#: ..\plugins\blogedit\BlogPage.py:229
+msgid "Modify is successful!"
+msgstr "修改成功！"
+
+#: ..\plugins\blogedit\BlogPage.py:233
+msgid "Modify error!"
+msgstr "修改出错！"
+
+#: ..\plugins\blogedit\BlogPage.py:237
+msgid "Post is successful! Id=%s"
+msgstr "发贴成功！Id=%s"
+
+#: ..\plugins\blogedit\BlogPage.py:247
+msgid "Post error!"
+msgstr "发贴失败！"
+
+#: ..\plugins\blogedit\BlogPage.py:279
+msgid "The category [%s] is not existed!"
+msgstr "分类 [%s] 不存在！"
+
+#: ..\plugins\blogedit\__init__.py:33
+#: ..\plugins\blogedit\__init__.py:40
+msgid "Open Blog Window"
+msgstr "打开Blog窗口"
+
+#: ..\plugins\blogedit\__init__.py:33
+#: ..\plugins\blogedit\__init__.py:40
+msgid "Opens blog window."
+msgstr "打开Blog窗口。"
+
+#: ..\plugins\blogedit\__init__.py:60
+#: ..\plugins\blogedit\__init__.py:69
+msgid "There is something wrong as running Blog Edit"
+msgstr "在运行Blog Edit时出现错误"
+
+#: ..\plugins\blogedit\__init__.py:90
+msgid "Opens new blog window."
+msgstr "打开新建blog窗口。"
+
+#: ..\plugins\blogedit\__init__.py:90
+msgid "new blog"
+msgstr "新建Blog"
+

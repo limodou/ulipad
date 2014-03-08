@@ -1,0 +1,179 @@
+====================================
+Change Log
+====================================
+
+:Author: limodou
+:Contact: limodou@gmail.com
+
+.. contents:: Content
+.. sectnum::
+
+3.9 Version
+~~~~~~~~~~~~
+
+New Features and Changes:
+
+#. Add php.acp thanks for ÎºÕñ <etggy@163.com>
+#. Replace old snippet with new snippet, more details please see <`Snippet Howto <howto_snippet.htm>`_>
+#. Binding F5 to editor but not MainFrame, and add F5(Refresh) support in Directory Browser.
+#. Improve python class browser, threading update, change some icons
+#. Add indent cursor move functionality see <`Indent Moving Howto <howto_indent_moving.htm>`_>
+#. Improve threading document modification process, so you can get better efficiency
+#. Introduce meide(http://code.google.com/p/meide) project to simplify the interface creation
+#. Add FNB.FNB_DROPDOWN_TABS_LIST style to EditorCtrl
+#. Change auto file check in Editor on_set_focus event handler
+#. Change DDE to asyncore and asynchat framework
+#. Change preference dialog from notebook to treebook
+#. Add icon set theme support
+#. Add strip line ending when saving functionality option in Preferences
+#. Strip leading space when doing "Run in Shell"
+#. Add auto detect python interpreter in windows platform
+#. Improve ReST document render, and fix the setfocus lost bug when auto modified
+   the html output, thanks a lot to ygao
+#. Change setmenutext to use fix width to set the menu text, replace with '\t'
+#. Chanage notebook left double click to right double click(enlarge notebook size)
+#. Add search text count in Find & Replace pane
+#. Add line ending mixture check when saving file feature
+#. Improve preference dialog input assistant checkbox process.
+   When you check the first checkbox(Enable input assistant) it'll
+   automatically toggle other 5 checkboxes.
+#. Change new toolbutton to dropdown toolbutton, and it can remember the last
+   new file type(select new type menu first), then when you select new menu,
+   it'll create a new file with the last new file type
+#. Improve command search and pairprog plugin caret display process
+#. Add auto new version of UliPad check
+#. Add slice language syntax support
+#. Add auto pop up project setting dialog when adding directory to directoy browser window
+#. Add Open Explorer Window Here menu to editoctrl tab context menu
+#. Add open snippet tool button, change open dirbrowser and open snippet toolbutton to check toolbutton
+#. Change ``explorer.exe %s`` as ``explorer.exe /e, %s`` in windows platform
+#. Add copy filename to clipboard menu on document area tab context menu
+#. Add wrap text feature, via [Edit]->[Format]->[Wrap Text...]
+
+New Plugins:
+
+#. canvas_test_plugin, you can directly test DC api
+#. web2py_plugin, supply web2py shell
+
+Bug fix:
+
+#. Fix webopen twice open bug
+#. Fix editor shortcuts key caption error
+#. Fix if set DROP_DOWN_TABS_LIST style, right arrow will disappear bug
+#. Fix utf-16 convertion bug
+#. Fix mako tag auto complete bug #issue 14
+#. Fix if lines are folded, when goto hiding lines will no effect bug
+#. Fix DDE bug, thanks to LP <liupengf12@gmail.com>
+#. Fix webopen bug, can't correctly deal with 'mailto:'
+#. Fix smart tabs bug
+#. Fix copy and paste lineending is not correct bug
+#. Fix tab invisible bug after changing size or changing the page title
+#. Fix template line-ending not match the default line-ending setting
+#. Fix password widget is not Password type widget bug
+#. Fix script filename cannot be unicode(chinese) bug
+#. Fix syntax check exception process bug
+#. Fix ruler bug
+
+3.8 Version
+~~~~~~~~~~~~~
+
+New Features and Changes:
+
+#. Add mako template syntax highlight support
+#. Add new option in preference, [Python]->Automatically save modified file
+   when running python program, if it's checked, it'll automatically save
+   the modified file.
+#. Add Shift+Delete => Cut, Shift+Insert => Paste
+#. Upgrade winpdb to lastest version
+#. Now you can set pythonpath option in config.ini/[default],
+   and ulipad will insert it into the sys.path. pythonpath can
+   be a string or a string list of directory.
+#. Svn support, you should install pysvn first, and also support proxy.
+#. Change long line indicator default is true.
+#. Add doctest support, you can run the doctest of current document in UliPad
+#. Add time stamp info in debug and error file
+#. Replace the shell window popup menu, and add Copy Without Prompts
+   and Paste and Run menu items. And if the result can't be convert to
+   unicode, then display the result as repr().
+#. Script Manager can find menu name from the script content, you
+   can define it as a comment line, format is: #\s*name:(.*)$
+#. Add Run in Shell menu item in Editor context menu
+#. Add script and shell key binding. Change Shell to External Tool
+#. Change Find in Files dialog to panel
+#. Using meide module to create Preference dialog
+#. Add an option to control if show the docstring in class browser window.
+#. Don't create a tmp file again, directly save the file
+#. Improve Find in Files process with thread
+#. Add some config.ini options support in Preference Dialog
+#. Refactor Find & Replace with pane, but not dialog
+#. Made Open Command Here work in Linux
+#. Add dropfile plugin. thanks Tyberius Prime. Now you can drop files on
+   toolbar, then UliPad will open it. Just like drop files on Directory
+   Browser window.
+#. Add new custom lexer class and refactor related lexer process
+#. Upgrade FlatNotebook.py to lastest version, thanks to swordsp
+#. Improve default identifiers process, add type judgement
+#. Add pylint plugin
+
+Bug fix:
+
+#. Fix print bug, add print line number functionality
+#. Fix snippet template indent bug(when using tab mode, the '\t'
+   in template will be replaced with spaces). And you can press
+   Alt+Q to cancel current snippet.
+#. Fix press Ctrl+B jump position is not correct bug.
+#. Fix that when you change the file type, the icon in directory
+   and dynamic menu don't change bug
+#. Fix line number margin width, and find back End-of-line Marker menu
+#. Fix adding empty directory error
+#. Fix open un-exists file will popup two message dialog bug
+#. Fix line end mix checking bug also including twice prompt dialog bug
+#. Fix webbrowser bug. Thanks Tom Eubank
+#. Fix message console postion bug, thanks for swordsp
+
+3.7 Version
+~~~~~~~~~~~~~
+
+New Features and Changes:
+
+#. Add PEP8 sytle checking
+#. Enhance calltip showing
+#. Add a new option in Preference, which is used for when you toggle comment lines(Ctrl+/ or Ctrl+\) if it'll popup a comment dialog. You can find it in Preference->Document->Show comment character dialog when adding comment.
+#. Saving auto todo window status
+#. Changing shortcut of quote dialog from Ctrl+Q to Ctrl+'
+#. Changing the number of recent files to 20
+#. Changing shortcut Ctrl+Alt+L to Alt+Z, Ctrl+Alt+B to Alt+X
+#. Saving the status of Message window word wrap
+#. Saving the snippets window position
+#. The results of find in files can only show the filenames and you can copy them to clipboard
+#. Add Spanish language translation and Traditional Chinese language translation
+#. Using ZestyParser Module to parse the source code syntax
+#. Improving input assistant functionality
+#. Adding config.txt documentation
+#. When saving files, automatically adding accordingly filename suffix
+#. Adding mixin reload mechanism, it will be very useful when developing
+#. Adding folder sort functionality when adding new folder to directory browser window
+#. Adding template in input assistant, and you can press TAB key to jump to the next field. The template just like: ${1:something}.
+#. Adding LUA syntax support
+#. Adding mako(template module) support plugin
+#. Adding batch filenames rename plugin
+#. Enable ftp window be openned left or bottom pane according to the openning position
+#. Adding Alt+R shortcut for open recently files
+#. Merging new 1.20 version winpdb to ulipad
+
+
+Bug fix:
+
+#. Fix ctag support bug
+#. Fix default style bug
+#. Fix the wrong cursor jumping after undo operating
+#. Fix xml lexer type bug
+#. Fix copying bug when the text block has no indent
+#. Fix openning multi-view bug from menu items
+#. Fix the input focus losing bug when openning bottom pane or double-click on directory browser entries
+#. Fix user can open multi find dialogs bug
+#. Fix register functionality in windows
+
+[previous change log are skipped]
+
+`[Return] <index.htm>`_

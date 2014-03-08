@@ -1,0 +1,8 @@
+mkdir <#proj_dir#>
+cd <#proj_dir#>
+shell django-admin.py startproject <#proj_name#>
+run <#_workpath#>/template_run_bat.txt text "text" <#proj_dir#>/<#proj_name#>/run.bat
+run <#_workpath#>/template_run_sh.txt text "text" <#proj_dir#>/<#proj_name#>/run
+copy <#_workpath#>/_project <#proj_dir#>/<#proj_name#>/_project
+mkdir <#proj_dir#>/<#proj_name#>/templates
+mkdir <#proj_dir#>/<#proj_name#>/media

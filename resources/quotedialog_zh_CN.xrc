@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+  <object class="wxDialog" name="QuoteDialog">
+    <title>包括字符选择...</title>
+    <centered>1</centered>
+    <size>340, 210</size>
+    <object class="wxRadioBox" name="ID_KIND">
+      <label>包括类型</label>
+      <content>
+        <item>'  xxx  '</item>
+        <item>&quot;  xxx  &quot;</item>
+        <item>'''  xxx  '''</item>
+        <item>&quot;&quot;&quot;  xxx  &quot;&quot;&quot;</item>
+        <item>(  xxx )</item>
+        <item>[  xxx  ]</item>
+        <item>{  xxx  }</item>
+        <item>&lt;  xxx  &gt;</item>
+        <item>/*  xxx  */</item>
+      </content>
+      <dimension>3</dimension>
+      <pos>10, 2</pos>
+      <style>wxRA_SPECIFY_COLS</style>
+    </object>
+    <object class="wxCheckBox" name="ID_USER">
+      <label>用户定义包括字符</label>
+      <checked>0</checked>
+      <pos>10, 100</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_START">
+      <pos>100, 120</pos>
+    </object>
+    <object class="wxTextCtrl" name="ID_END">
+      <pos>100, 145</pos>
+    </object>
+    <object class="wxButton" name="ID_OK">
+      <label>确定</label>
+      <default>1</default>
+      <pos>250, 120</pos>
+      <size>80, -1</size>
+    </object>
+    <object class="wxButton" name="ID_CANCEL">
+      <label>取消</label>
+      <pos>250, 145</pos>
+      <size>80, -1</size>
+    </object>
+    <object class="wxStaticText">
+      <label>开始字符:</label>
+      <pos>10, 125</pos>
+    </object>
+    <object class="wxStaticText">
+      <label>结束字符:</label>
+      <pos>10, 149</pos>
+    </object>
+    <style>wxDEFAULT_DIALOG_STYLE</style>
+  </object>
+</resource>
