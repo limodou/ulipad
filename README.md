@@ -16,20 +16,20 @@ The name comes from Claudio Grondi (thank you!).
 
 Claudio Grondi said:
 
-< As we are on the way to make NewEdit THE programmer editor I think, that
-< a new unique name will help here much (NewEdit is just cheap...).
-<
-< I suggest to use 'UliPad'.
-<
-< It has the shortcut of UnLImited.
-< It tells it is a plain text editor (Pad).
-< It tells something about the original author (LImodou).
-<
-< But the most important advantage is:
-<
-<    Google has no entry for 'UliPad' yet!
-<
-< Wonderful! It seems many people like it.
+> As we are on the way to make NewEdit THE programmer editor I think, that
+> a new unique name will help here much (NewEdit is just cheap...).
+>
+> I suggest to use 'UliPad'.
+>
+> It has the shortcut of UnLImited.
+> It tells it is a plain text editor (Pad).
+> It tells something about the original author (LImodou).
+>
+> But the most important advantage is:
+>
+>    Google has no entry for 'UliPad' yet!
+>
+> Wonderful! It seems many people like it.
 
 # Description
 
