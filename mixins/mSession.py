@@ -121,7 +121,7 @@ from modules.EasyGuider import obj2ini
 
 def OnFileSessionOpen(win, event=None, filename=None):
     if not filename:
-        dlg = wx.FileDialog(win, tr("Choose A Session File"), win.pref.last_session_dir, "", 'UliPad Session File (*.ses)|*.ses', wx.OPEN|wx.HIDE_READONLY)
+        dlg = wx.FileDialog(win, tr("Choose A Session File"), win.pref.last_session_dir, "", 'UliPad Session File (*.ses)|*.ses', wx.OPEN)
         filename = None
         if dlg.ShowModal() == wx.ID_OK:
             filename = dlg.GetPath()

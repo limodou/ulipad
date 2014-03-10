@@ -192,7 +192,7 @@ def OnFileNew(win, event):
 Mixin.setMixin('mainframe', 'OnFileNew', OnFileNew)
 
 def OnFileOpen(win, event):
-    dlg = wx.FileDialog(win, tr("File List"), win.pref.last_dir, "", '|'.join(win.filewildchar), wx.OPEN|wx.HIDE_READONLY|wx.MULTIPLE)
+    dlg = wx.FileDialog(win, tr("File List"), win.pref.last_dir, "", '|'.join(win.filewildchar), wx.OPEN|wx.MULTIPLE)
     dlg.SetFilterIndex(getFilterIndex(win))
     if dlg.ShowModal() == wx.ID_OK:
         encoding = win.execplugin('getencoding', win, win)
@@ -2638,7 +2638,7 @@ from modules.EasyGuider import obj2ini
 
 def OnFileSessionOpen(win, event=None, filename=None):
     if not filename:
-        dlg = wx.FileDialog(win, tr("Choose A Session File"), win.pref.last_session_dir, "", 'UliPad Session File (*.ses)|*.ses', wx.OPEN|wx.HIDE_READONLY)
+        dlg = wx.FileDialog(win, tr("Choose A Session File"), win.pref.last_session_dir, "", 'UliPad Session File (*.ses)|*.ses', wx.OPEN)
         filename = None
         if dlg.ShowModal() == wx.ID_OK:
             filename = dlg.GetPath()
@@ -9012,7 +9012,7 @@ Mixin.setMixin('mainframe', 'OnHelpCheckUpdate', OnHelpCheckUpdate)
 def on_show(win):
     if not Globals.pref.check_update:
         return
-    wx.FutureCall(1000, check_update())
+    wx.FutureCall(1000, check_update)
 Mixin.setPlugin('mainframe', 'show', on_show)
 
 

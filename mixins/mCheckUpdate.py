@@ -138,5 +138,5 @@ Mixin.setMixin('mainframe', 'OnHelpCheckUpdate', OnHelpCheckUpdate)
 def on_show(win):
     if not Globals.pref.check_update:
         return
-    wx.FutureCall(1000, check_update())
+    wx.FutureCall(1000, check_update)
 Mixin.setPlugin('mainframe', 'show', on_show)

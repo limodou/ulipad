@@ -927,10 +927,14 @@ class Grid(LayoutBase):
         return self.proportion
         
     def _create_sizer(self, win):
-        sizer = wx.GridBagSizer(self.vgap, self.hgap)
+        sizer = wx.GridBagSizer(vgap=self.vgap, hgap=self.hgap)
         return sizer
     
     def _init(self):
+        #fix assert according https://groups.google.com/forum/#!topic/wxpython-users/ScLFezk6JMM
+        sizer = self.get_sizer()
+        sizer.GetCols()
+        sizer.GetRows()
         self.add_growable_col(self.growablecol)
         self.add_growable_row(self.growablerow)
         
@@ -940,9 +944,9 @@ class Grid(LayoutBase):
             if col is not None:
                 if isinstance(col, (list, tuple)):
                     for i in col:
-                        sizer.AddGrowableCol(i)
+                        sizer.AddGrowableCol(i-1)
                 else:
-                    sizer.AddGrowableCol(col)
+                    sizer.AddGrowableCol(col-1)
         if isinstance(col, (list, tuple)):
             for i in col:
                 if i not in self.growablecol:
@@ -957,9 +961,9 @@ class Grid(LayoutBase):
             if row is not None:
                 if isinstance(row, (list, tuple)):
                     for i in row:
-                        sizer.AddGrowableRow(i)
+                        sizer.AddGrowableRow(i-1)
                 else:
-                    sizer.AddGrowableRow(row)
+                    sizer.AddGrowableRow(row-1)
         if isinstance(row, (list, tuple)):
             for i in row:
                 if i not in self.growablerow:

@@ -25,7 +25,7 @@ import wx
 
 class MyCallTip(wx.ScrolledWindow):
     def __init__(self, parent):
-        wx.ScrolledWindow.__init__(self, parent, -1, size=(200, 50), style=wx.SIMPLE_BORDER |wx.NO_3D)
+        wx.ScrolledWindow.__init__(self, parent, -1, size=(200, 50), style=wx.SIMPLE_BORDER)
         self.EnableScrolling(False, True)
         
 #        self.Enable(False)

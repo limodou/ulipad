@@ -51,6 +51,9 @@ keylist = {
     '/'     :wx.stc.STC_KEY_DIVIDE,
 }
 
+class MyKeyEvent:
+    pass
+
 class TextEditor(wx.stc.StyledTextCtrl, Mixin.Mixin, DocumentBase.DocumentBase):
 
     __mixinname__ = 'editor'
@@ -421,20 +424,34 @@ class TextEditor(wx.stc.StyledTextCtrl, Mixin.Mixin, DocumentBase.DocumentBase):
             event.Skip()
 
     def clone_key_event(self, event):
-        evt = wx.KeyEvent()
-        evt.m_altDown = event.m_altDown
-        evt.m_controlDown = event.m_controlDown
-        evt.m_keyCode = event.m_keyCode
-        evt.m_metaDown = event.m_metaDown
-        if wx.Platform == '__WXMSW__':
-            evt.m_rawCode = event.m_rawCode
-            evt.m_rawFlags = event.m_rawFlags
-        evt.m_scanCode = event.m_scanCode
-        evt.m_shiftDown = event.m_shiftDown
-        evt.m_x = event.m_x
-        evt.m_y = event.m_y
-        evt.SetEventType(event.GetEventType())
-        evt.SetId(event.GetId())
+        if wx.version().split('.')[:2] > ['2', '8']:
+            evt = MyKeyEvent()
+            evt.altDown = event.altDown
+            evt.controlDown = event.controlDown
+            evt.KeyCode = event.KeyCode
+            evt.metaDown = event.metaDown
+            if wx.Platform == '__WXMSW__':
+                evt.RawKeyCode = event.RawKeyCode
+                evt.RawKeyFlags = event.RawKeyFlags
+            #evt.m_scanCode = event.m_scanCode
+            evt.shiftDown = event.shiftDown
+            evt.X = event.X
+            evt.Y = event.Y
+        else:
+            evt = wx.KeyEvent()
+            evt.m_altDown = event.m_altDown
+            evt.m_controlDown = event.m_controlDown
+            evt.m_keyCode = event.m_keyCode
+            evt.m_metaDown = event.m_metaDown
+            if wx.Platform == '__WXMSW__':
+                evt.m_rawCode = event.m_rawCode
+                evt.m_rawFlags = event.m_rawFlags
+            #evt.m_scanCode = event.m_scanCode
+            evt.m_shiftDown = event.m_shiftDown
+            evt.m_x = event.m_x
+            evt.m_y = event.m_y
+            evt.SetEventType(event.GetEventType())
+            evt.SetId(event.GetId())
         return evt
 
 #    def post_key(self, event):

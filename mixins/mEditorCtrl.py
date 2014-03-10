@@ -102,7 +102,7 @@ def OnFileNew(win, event):
 Mixin.setMixin('mainframe', 'OnFileNew', OnFileNew)
 
 def OnFileOpen(win, event):
-    dlg = wx.FileDialog(win, tr("File List"), win.pref.last_dir, "", '|'.join(win.filewildchar), wx.OPEN|wx.HIDE_READONLY|wx.MULTIPLE)
+    dlg = wx.FileDialog(win, tr("File List"), win.pref.last_dir, "", '|'.join(win.filewildchar), wx.OPEN|wx.MULTIPLE)
     dlg.SetFilterIndex(getFilterIndex(win))
     if dlg.ShowModal() == wx.ID_OK:
         encoding = win.execplugin('getencoding', win, win)

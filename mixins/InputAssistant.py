@@ -68,10 +68,17 @@ class InputAssistant(Mixin.Mixin):
 
         self.syncvar = syncvar
 
-        key = event.GetKeyCode()
-        ctrl = event.ControlDown()
-        alt = event.AltDown()
-        shift = event.ShiftDown()
+        if wx.version().split('.')[:2] > ['2', '8']:
+            key = event.KeyCode
+            ctrl = event.controlDown
+            alt = event.altDown
+            shift = event.shiftDown
+        else:
+            key = event.GetKeyCode()
+            ctrl = event.ControlDown()
+            alt = event.AltDown()
+            shift = event.ShiftDown()
+            
         self.on_char = on_char
         self.oldpos = editor.GetCurrentPos()
         self.editor = editor
