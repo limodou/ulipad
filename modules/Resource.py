@@ -87,14 +87,17 @@ class xmlDefaultHandler(wx.xrc.XmlResourceHandler):
         # Specify the styles recognized by objects of this type
         self.AddStyle("wxDEFAULT_DIALOG_STYLE",         wx.DEFAULT_DIALOG_STYLE)
         self.AddStyle("wxSTAY_ON_TOP",                          wx.STAY_ON_TOP)
-        self.AddStyle("wxDIALOG_MODAL",                         wx.DIALOG_MODAL)
-        self.AddStyle("wxDIALOG_MODELESS",                      wx.DIALOG_MODELESS)
-        self.AddStyle("wxCAPTION",                                      wx.CAPTION)
+        
+        if wx.version().split('.')[:2] <= ['2', '8']:
+            self.AddStyle("wxDIALOG_MODAL",                         wx.DIALOG_MODAL)
+            self.AddStyle("wxDIALOG_MODELESS",                      wx.DIALOG_MODELESS)
+            self.AddStyle("wxNO_3D",                                wx.NO_3D)
+            
+        self.AddStyle("wxCAPTION",                              wx.CAPTION)
         self.AddStyle("wxSYSTEM_MENU",                          wx.SYSTEM_MENU)
         self.AddStyle("wxRESIZE_BORDER",                        wx.RESIZE_BORDER)
         self.AddStyle("wxRESIZE_BOX",                           wx.RESIZE_BOX)
         self.AddStyle("wxTHICK_FRAME",                          wx.THICK_FRAME)
-        self.AddStyle("wxNO_3D",                                        wx.NO_3D)
         self.AddStyle("wxTAB_TRAVERSAL",                        wx.TAB_TRAVERSAL)
         self.AddStyle("wxCLIP_CHILDREN",                        wx.CLIP_CHILDREN)
         self.AddStyle("wxSIMPLE_BORDER",                        wx.SIMPLE_BORDER)
@@ -103,7 +106,7 @@ class xmlDefaultHandler(wx.xrc.XmlResourceHandler):
         self.AddStyle("wxRAISED_BORDER",                        wx.RAISED_BORDER)
         self.AddStyle("wxSTATIC_BORDER",                        wx.STATIC_BORDER)
         self.AddStyle("wxNO_BORDER",                            wx.NO_BORDER)
-        self.AddStyle("wxTRANSPARENT_WINDOW",           wx.TRANSPARENT_WINDOW)
+        self.AddStyle("wxTRANSPARENT_WINDOW",                   wx.TRANSPARENT_WINDOW)
         self.AddStyle("wxWANTS_CHARS",                          wx.WANTS_CHARS)
         self.AddStyle("wxNO_FULL_REPAINT_ON_RESIZE",wx.NO_FULL_REPAINT_ON_RESIZE)
 
@@ -138,7 +141,7 @@ class xmlDefaultHandler(wx.xrc.XmlResourceHandler):
                     self.GetSize(),
                     self.GetStyle()
                     )
-        elif issubclass(self,winclass, wx.Panel):
+        elif issubclass(self.winclass, wx.Panel):
             obj = self.winclass(self.parentwin,
                     self.GetID(),
                     self.GetPosition(),

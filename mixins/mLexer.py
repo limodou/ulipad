@@ -57,6 +57,8 @@ def add_lexer(lexer):
             wx.stc.STC_LEX_HTML, 'asp.stx', LexerClass1.ASPLexer),
         (LexerRst.RstLexer.metaname, 'reStructuredText|*.rst',
             wx.stc.STC_LEX_CONTAINER, 'rst.stx', LexerRst.RstLexer),
+        ('md', 'Markdown|*.md;*.markdown',
+            wx.stc.STC_LEX_NULL, 'md.stx', LexerClass.TextLexer),
         (LexerClass1.LuaLexer.metaname, 'Lua|*.lua;*.wlua',
             wx.stc.STC_LEX_LUA, 'lua.stx', LexerClass1.LuaLexer),
         (LexerClass1.SliceLexer.metaname, 'Slice|*.ice',
@@ -81,6 +83,7 @@ def add_new_files(new_files):
         ('PHP', LexerClass1.PHPLexer.metaname),
         ('ASP', LexerClass1.ASPLexer.metaname),
         ('reStructuredText', LexerRst.RstLexer.metaname),
+        ('Markdown', 'md'),
         ('Lua', LexerClass1.LuaLexer.metaname),
         ('Slice', LexerClass1.SliceLexer.metaname),
         ('Bash', LexerClass1.BashLexer.metaname)
