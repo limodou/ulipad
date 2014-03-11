@@ -146,6 +146,7 @@ def set_image(tree, node, index, img_flag):
 def after_addpath(dirwin, item):
     from modules import common
     import SvnSupport as vc
+    from modules import Casing
 
     def walk(dirwin, item):
 #        svn_lock.acquire()
@@ -169,7 +170,7 @@ def after_addpath(dirwin, item):
         node, cookie = dirwin.tree.GetFirstChild(item)
         while dirwin.is_ok(node):
             filename = dirwin.tree.GetItemText(node)
-            f = entries.get(filename, '')
+            f = entries.get(filename, ' ')
             if dirwin.isFile(node):
                 img_index = dirwin.get_file_image(filename)
                 new_img_index = get_fix_imgindex(img_index, f)
@@ -190,9 +191,11 @@ def after_addpath(dirwin, item):
 #        finally:
 #            svn_lock.release()
 
-    from modules import Casing
-    d = Casing.Casing(walk, dirwin, item)
-    d.start_thread()
+    is_svn_dir = detect_svn(common.getCurrentDir(dirwin.get_node_filename(item)))
+
+    if is_svn_dir:
+        d = Casing.Casing(walk, dirwin, item)
+        d.start_thread()
 
 Mixin.setPlugin('dirbrowser', 'after_expanding', after_addpath)
 Mixin.setPlugin('dirbrowser', 'after_refresh', after_addpath)

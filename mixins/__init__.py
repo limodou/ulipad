@@ -163,5 +163,6 @@
 ##4.2
 #import mMDProject
 #import mMDFileType
+#import mGit
 
 import Import

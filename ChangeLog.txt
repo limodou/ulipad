@@ -1,6 +1,7 @@
-﻿## 2014/03/10
+## 2014/03/10
 
 * Add markdown filetype and render support, you can just like rest filetype view the output in pane.
+* Add git status display in directory browser window
 
 [2013/10/15]
 InputAssistant.py   Fix get_calltip bug.
