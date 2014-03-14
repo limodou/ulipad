@@ -83,6 +83,8 @@ def git_after_addpath(dirwin, item):
         node, cookie = dirwin.tree.GetFirstChild(item)
         while dirwin.is_ok(node):
             filename = os.path.join(dir, dirwin.tree.GetItemText(node)).replace('\\', '/')
+            if not dirwin.isFile(node):
+                filename = filename + '/'
             f = files.get(filename, ' ')
             if dirwin.isFile(node):
                 img_index = dirwin.get_file_image(filename)
@@ -106,7 +108,6 @@ def git_after_addpath(dirwin, item):
     repo_path = detect_git(path)
     if repo_path:
         repo = Git(path)
-        
         d = Casing.Casing(walk, dirwin, item, os.path.relpath(path, repo_path), None)
         d.start_thread()
 

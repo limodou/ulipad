@@ -16,10 +16,11 @@ class Git(object):
               
     def _exec(self, cmd):
 #        cmd = ('git --git-dir=%s ' % self.path) + str(cmd)
+        from subprocess import Popen, PIPE
         cmd = 'git ' + str(cmd)
 #        print cmd
-        in_, out_, err_ = os.popen3(cmd, 't')
-        return out_
+        p = Popen(cmd, shell=True, stdout=PIPE, cwd=self.path)
+        return p.stdout
     
     @property
     def branch(self):

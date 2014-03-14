@@ -9490,7 +9490,6 @@ def git_after_addpath(dirwin, item):
         dir = os.path.normpath(dir).replace('\\', '/')
         if dir == '.':
             dir = ''
-        print '====================', dir
         if dirwin.isFile(item):
             path = dirwin.get_node_filename(item)
             filename = os.path.join(dir, dirwin.tree.GetItemText(item)).replace('\\', '/')
@@ -9498,7 +9497,6 @@ def git_after_addpath(dirwin, item):
             img_index = dirwin.get_file_image(filename)
             new_img_index = git_get_fix_imgindex(img_index, f)
             old_img_index = dirwin.tree.GetItemImage(item)
-            print '=====', path, filename, img_index, new_img_index, old_img_index
             if new_img_index != old_img_index:
                 git_set_image(dirwin.tree, item, new_img_index, wx.TreeItemIcon_Normal)
             return
@@ -9509,12 +9507,13 @@ def git_after_addpath(dirwin, item):
         node, cookie = dirwin.tree.GetFirstChild(item)
         while dirwin.is_ok(node):
             filename = os.path.join(dir, dirwin.tree.GetItemText(node)).replace('\\', '/')
+            if not dirwin.isFile(node):
+                filename = filename + '/'
             f = files.get(filename, ' ')
             if dirwin.isFile(node):
                 img_index = dirwin.get_file_image(filename)
                 new_img_index = git_get_fix_imgindex(img_index, f)
                 old_img_index = dirwin.tree.GetItemImage(node)
-                print '------', filename, f, img_index, new_img_index, old_img_index
                 if new_img_index != old_img_index:
                     git_set_image(dirwin.tree, node, new_img_index, wx.TreeItemIcon_Normal)
             else:
@@ -9522,7 +9521,6 @@ def git_after_addpath(dirwin, item):
                 new_img_index = (git_get_fix_imgindex(dirwin.close_image, f),
                     git_get_fix_imgindex(dirwin.open_image, f))
                 old_img_index = dirwin.tree.GetItemImage(node)
-                print '------', filename, f, img_index, new_img_index, old_img_index
                 if old_img_index not in new_img_index:
                     git_set_image(dirwin.tree, node, new_img_index[1], wx.TreeItemIcon_Expanded)
                     git_set_image(dirwin.tree, node, new_img_index[0], wx.TreeItemIcon_Normal)
@@ -9532,10 +9530,8 @@ def git_after_addpath(dirwin, item):
 
     path = common.getCurrentDir(dirwin.get_node_filename(item))
     repo_path = detect_git(path)
-    print '-----------', path, detect_git(path), os.path.relpath(path, repo_path)
     if repo_path:
         repo = Git(path)
-
         d = Casing.Casing(walk, dirwin, item, os.path.relpath(path, repo_path), None)
         d.start_thread()
 
