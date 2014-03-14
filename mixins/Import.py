@@ -7194,7 +7194,7 @@ def define_column_mode_region(win, startline, endline):
         win.MarkerAdd(i, win.marker_columnmode)
         i += 1
     pos = win.GetCurrentPos()
-    win.SetSelection(-1, pos)
+    win.SetSelection(pos, pos)
 
 def selectmultiline(win):
     start, end = win.GetSelection()
@@ -7208,6 +7208,12 @@ def auto_column_mode(win):
         startline = win.LineFromPosition(start)
         endline = win.LineFromPosition(end)
         curline = win.GetCurrentLine()
+
+        col = win.GetColumn(win.GetCurrentPos())
+        if endline == curline and col == 0:
+            endline -= 1
+            curline = endline
+
         if win.columnmode_lines: #judge if need to expand
             b, e = win.columnmode_lines
             #expand upward or expand downward
@@ -7241,7 +7247,7 @@ Mixin.setMixin('editor', 'InColumnModeRegion', InColumnModeRegion)
 def on_key_up(win, event):
     key = event.GetKeyCode()
     shift = event.ShiftDown()
-    if win.column_mode and not (key in (wx.WXK_DOWN, wx.WXK_UP) and shift):
+    if win.column_mode and key in (wx.WXK_DOWN, wx.WXK_UP) and shift:
         auto_column_mode(win)
     return False
 Mixin.setPlugin('editor', 'on_key_up', on_key_up)
