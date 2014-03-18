@@ -9463,7 +9463,7 @@ def git_add_image(imagelist, image, imgindex):
     m = [
         ('M', common.getpngimage('images/TortoiseModified.gif')),
         ('A', common.getpngimage('images/TortoiseAdded.gif')),
-        ('C', common.getpngimage('images/TortoiseConflict.gif')),
+        ('U', common.getpngimage('images/TortoiseConflict.gif')),
         ('D', common.getpngimage('images/TortoiseDeleted.gif')),
         (' ', common.getpngimage('images/TortoiseInSubVersion.gif')),
     ]
