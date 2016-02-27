@@ -486,10 +486,8 @@ class InputAssistant(Mixin.Mixin):
     def postcall(self, f, *args):
         if self.on_char and not self.syncvar.empty or self.oldpos != self.editor.GetCurrentPos():
             raise StopException
-        print 'xxxxxxxxxxx'
         if self.editor.AutoCompActive():
             wx.CallAfter(self.editor.AutoCompCancel)
-        print 'xxxx======='
         #wx.CallAfter(f, *args)
         return
 

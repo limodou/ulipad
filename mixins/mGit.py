@@ -79,7 +79,7 @@ def git_after_addpath(dirwin, item):
 
     def walk(dirwin, item, dir, files):
 
-       if files is None:
+        if files is None:
             files = {}
             for flag, filename in repo.status_files():
                 files[filename] = flag
