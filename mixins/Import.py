@@ -9513,7 +9513,6 @@ def git_after_addpath(dirwin, item):
         if files is None:
             files = {}
             for flag, filename in repo.status_files():
-                print dir, flag, filename
                 files[filename] = flag
 
         dir = os.path.normpath(dir).replace('\\', '/')
