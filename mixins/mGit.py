@@ -22,10 +22,31 @@
 #   $Id$
 
 import os
+import sys
 import wx
 from modules import Mixin
 from modules import common
 from modules.Debug import error
+
+def add_pref_page(pages_order):
+    pages_order.update({
+        tr('Git'):900,
+    }
+    )
+Mixin.setPlugin('preference', 'add_pref_page', add_pref_page)
+
+def pref_init(pref):
+    if sys.platform == 'win32':
+        pref.git_path = 'git.exe'
+    else:
+        pref.git_path = 'git'
+Mixin.setPlugin('preference', 'init', pref_init)
+
+def add_pref(preflist):
+    preflist.extend([
+        (tr('Git'), 100, 'openfile', 'git_path', tr('Git executable path:'), {'span':True}),
+    ])
+Mixin.setPlugin('preference', 'add_pref', add_pref)
 
 _git_image_ids = {}
 def git_add_image(imagelist, image, imgindex):
@@ -57,8 +78,8 @@ def git_after_addpath(dirwin, item):
     from Git import Git
 
     def walk(dirwin, item, dir, files):
-        
-        if files is None:
+
+       if files is None:
             files = {}
             for flag, filename in repo.status_files():
                 files[filename] = flag

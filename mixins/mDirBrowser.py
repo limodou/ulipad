@@ -23,6 +23,7 @@
 
 import wx
 import os
+import sys
 from modules import Mixin
 from modules import Globals
 
@@ -122,7 +123,7 @@ def pref_init(pref):
     pref.last_dir_paths = []
     pref.open_last_dir_as_startup = True
     pref.dirbrowser_last_addpath = os.getcwd()
-    if wx.Platform == '__WXMSW__':
+    if sys.platform == 'win32':
         cmdline = os.environ['ComSpec']
         pref.command_line = cmdline
     else:

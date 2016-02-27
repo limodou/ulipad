@@ -1,4 +1,6 @@
 import os
+import wx
+from modules import Globals
 
 class Git(object):
     def __init__(self, path):
@@ -16,11 +18,16 @@ class Git(object):
               
     def _exec(self, cmd):
 #        cmd = ('git --git-dir=%s ' % self.path) + str(cmd)
-        from subprocess import Popen, PIPE
-        cmd = 'git ' + str(cmd)
+        from subprocess import check_output
+        git  =  Globals.mainframe.pref.git_path
+        cmd = git + ' ' + str(cmd)
 #        print cmd
-        p = Popen(cmd, shell=True, stdout=PIPE, cwd=self.path)
-        return p.stdout
+        try:
+            p = check_output(cmd, shell=True, cwd=self.path)
+        except Exception as e:
+            wx.MessageBox(tr("Unable to open the clipboard"), tr("Error"))
+            return []
+        return p.splitlines()
     
     @property
     def branch(self):

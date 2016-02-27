@@ -411,6 +411,7 @@ class InputAssistant(Mixin.Mixin):
 
                     win.word_len = win.GetCurrentPos() - length, -1
                     self.postcall(win.AutoCompShow, length, ' '.join(slist))
+                    win.AutoCompShow(length, ' '.join(slist))
                     return True
 
         if not word: return False
@@ -433,6 +434,7 @@ class InputAssistant(Mixin.Mixin):
 
                     win.word_len = win.GetCurrentPos() - length, -1
                     self.postcall(win.AutoCompShow, len(s), ' '.join(slist))
+                    win.AutoCompShow(len(s), ' '.join(slist))
                     return True
 
         return False
@@ -484,9 +486,11 @@ class InputAssistant(Mixin.Mixin):
     def postcall(self, f, *args):
         if self.on_char and not self.syncvar.empty or self.oldpos != self.editor.GetCurrentPos():
             raise StopException
+        print 'xxxxxxxxxxx'
         if self.editor.AutoCompActive():
             wx.CallAfter(self.editor.AutoCompCancel)
-        wx.CallAfter(f, *args)
+        print 'xxxx======='
+        #wx.CallAfter(f, *args)
         return
 
     def process_calltip_end(self):
@@ -553,6 +557,7 @@ class InputAssistant(Mixin.Mixin):
 #            self.postcall(win.UserListShow, list_type, s)
             win.word_len = win.GetCurrentPos(), -1
             self.postcall(win.AutoCompShow, 0, s)
+            win.AutoCompShow(0, s)
             return True
         return False
 

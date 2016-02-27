@@ -27,10 +27,8 @@ import wx
 import wx.html as html
 import tempfile
 import os
+import sys
 from modules import Globals
-
-if wx.Platform == '__WXMSW__':
-    import wx.lib.iewin as iewin
 
 class HtmlImpactView(wx.Panel):
     def __init__(self, parent, content):
@@ -38,13 +36,13 @@ class HtmlImpactView(wx.Panel):
 
         mainframe = Globals.mainframe
         box = wx.BoxSizer(wx.VERTICAL)
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
             self.html = IEHtmlWindow(self)
         else:
             self.html = DefaultHtmlWindow(self)
         self.tmpfilename = None
         self.load(content)
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
             box.Add(self.html.ie, 1, wx.EXPAND|wx.ALL, 1)
         else:
             box.Add(self.html, 1, wx.EXPAND|wx.ALL, 1)
@@ -82,12 +80,12 @@ class HtmlDialog(wx.Dialog):
         os.close(fd)
 
         box = wx.BoxSizer(wx.VERTICAL)
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
             self.html = IEHtmlWindow(self)
         else:
             self.html = DefaultHtmlWindow(self)
         self.html.Load(self.filename)
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
             box.Add(self.html.ie, 1, wx.EXPAND|wx.ALL, 1)
         else:
             box.Add(self.html, 1, wx.EXPAND|wx.ALL, 1)
@@ -119,7 +117,7 @@ class HtmlPage(wx.Panel, DocumentBase.DocumentBase, Mixin.Mixin):
         wx.Panel.__init__(self, parent, -1)
         DocumentBase.DocumentBase.__init__(self, parent, filename, documenttype)
         self.mainframe = mainframe
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
             self.html = IEHtmlWindow(self, filename)
         else:
             self.html = DefaultHtmlWindow(self, filename)
@@ -150,7 +148,7 @@ class HtmlPage(wx.Panel, DocumentBase.DocumentBase, Mixin.Mixin):
 
         self.box.Add(wx.StaticLine(self, -1), 0, wx.EXPAND)
 
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
             self.box.Add(self.html.ie, 1, wx.GROW)
         else:
             self.box.Add(self.html, 1, wx.GROW)
@@ -167,7 +165,8 @@ class HtmlPage(wx.Panel, DocumentBase.DocumentBase, Mixin.Mixin):
         wx.EVT_BUTTON(self.btnRefresh, self.ID_REFRESH, self.OnRefresh)
         wx.EVT_UPDATE_UI(self.btnBack, self.ID_BACK, self.OnUpdateUI)
         wx.EVT_UPDATE_UI(self.btnForward, self.ID_FORWARD, self.OnUpdateUI)
-        if wx.Platform == '__WXMSW__':
+        if sys.platform == 'win32':
+            import wx.lib.iewin as iewin
             iewin.EVT_StatusTextChange(self.html.ie, self.html.ie.GetId(), self.OnStatusTextChange)
 
     def openfile(self, filename='', encoding='', delay=False, *args, **kwargs):
@@ -247,6 +246,7 @@ class DefaultHtmlWindow(html.HtmlWindow, HtmlWindowBase):
 
 class IEHtmlWindow(HtmlWindowBase):
     def __init__(self, parent, filename=''):
+        import wx.lib.iewin as iewin
         HtmlWindowBase.__init__(self, parent, filename)
         self.ie = iewin.IEHtmlWindow(parent, -1, style = wx.NO_FULL_REPAINT_ON_RESIZE)
 
@@ -270,4 +270,5 @@ class IEHtmlWindow(HtmlWindowBase):
         self.ie.LoadString(text)
 
     def DoRefresh(self):
+        import wx.lib.iewin as iewin
         self.ie.RefreshPage(iewin.REFRESH_COMPLETELY)
